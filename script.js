@@ -19,7 +19,7 @@ var Game = {
         return;
       }
 
-      this.map[key] = "A";
+      this.map[key] = "O";
     }
     
     digger.create(digCallback.bind(this));
