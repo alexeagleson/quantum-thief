@@ -33,6 +33,8 @@ var Game = {
 
         this.engine = new ROT.Engine(scheduler);
         this.engine.start();
+      
+      view.createMoveButtons();
     },
     
     _generateMap: function() {
@@ -129,4 +131,13 @@ Player.prototype._draw = function() {
     Game.display.draw(this._x, this._y, "@");
 }    
 
-Game.init();
+var view = {
+  createMoveButtons: function() {
+    var thisDiv = document.createElement("div");
+    var buttonLeft = document.createElement("button");
+    buttonLeft.innerText = "fart";
+    buttonLeft.addEventListener("click", myScript);
+    thisDiv.appendChild(buttonLeft);
+    document.body.appendChild(thisDiv);    
+  }
+}
