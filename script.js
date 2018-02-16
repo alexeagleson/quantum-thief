@@ -9,17 +9,20 @@ var Game = {
   },
   
   generateMap: function() {
-    var digger = new ROT.Map.Rogue(80, 80);
+    var digger = new ROT.Map.Rogue();
 
     var digCallback = function(x, y, value) {
         
+      // Calls this callback function when the map generator flags a wall (as 1)
+      
       var key = x + "," + y;
       
-      if (value) { 
+      if (value) {
+        this.map[key] = "#";
         return;
       }
 
-      this.map[key] = "O";
+      this.map[key] = ".";
     }
     
     digger.create(digCallback.bind(this));
