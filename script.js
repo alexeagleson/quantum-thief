@@ -140,13 +140,35 @@ Player.prototype._draw = function() {
 }    
 
 var view = {
-  createMoveButtons: function(direction) {
+  createMoveButtons: function() {
     var moveButtonsDiv = document.createElement("div");
+    
     var buttonLeft = document.createElement("button");
-    buttonLeft.innerText = "fart";
+    var buttonRight = document.createElement("button");
+    var buttonUp = document.createElement("button");
+    var buttonDown = document.createElement("button");
+    
+    buttonLeft.className = "moveButton";
+    buttonRight.className = "moveButton";
+    buttonUp.className = "moveButton";
+    buttonDown.className = "moveButton";
+    
+    buttonLeft.innerText = "Left";
+    buttonRight.innerText = "Right";
+    buttonUp.innerText = "Up";
+    buttonDown.innerText = "Down";
+
     buttonLeft.addEventListener("click", handlers.moveLeft);
-    thisDiv.appendChild(buttonLeft);
-    document.body.appendChild(thisDiv);    
+    buttonRight.addEventListener("click", handlers.moveRight);
+    buttonUp.addEventListener("click", handlers.moveUp);
+    buttonDown.addEventListener("click", handlers.moveDown);
+
+    moveButtonsDiv.appendChild(buttonLeft);
+    moveButtonsDiv.appendChild(buttonRight);
+    moveButtonsDiv.appendChild(buttonUp);
+    moveButtonsDiv.appendChild(buttonDown);
+
+    document.body.appendChild(moveButtonsDiv);    
   }
 }
 
