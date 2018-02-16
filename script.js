@@ -1,3 +1,6 @@
+var tileSet = document.createElement("img");
+tileSet.src = "http://ondras.github.io/rot.js/manual/tiles.png";
+
 var Game = {
     display: null,
     map: {},
@@ -6,19 +9,19 @@ var Game = {
     
     init: function() {
       
-        var options = {
-            layout: "tile",
-            bg: "transparent",
-            tileWidth: 64,
-            tileHeight: 64,
-            tileSet: tileSet,
-            tileMap: {
-                "@": [0, 0],
-                "#": [0, 64],
-                "a": [64, 0],
-                "!": [64, 64]
-            }
-        }
+      var options = {
+          layout: "tile",
+          bg: "transparent",
+          tileWidth: 64,
+          tileHeight: 64,
+          tileSet: tileSet,
+          tileMap: {
+              "@": [0, 0],
+              "#": [0, 64],
+              "a": [64, 0],
+              "!": [64, 64]
+          }
+      }
       
         this.display = new ROT.Display(options);
         document.body.appendChild(this.display.getContainer());
@@ -33,14 +36,18 @@ var Game = {
     },
     
     _generateMap: function() {
-        var digger = new ROT.Map.Digger();
+        var digger = new ROT.Map.Rogue();
         var freeCells = [];
         
         var digCallback = function(x, y, value) {
-            if (value) { return; }
+          var key = x+","+y;  
+          if (value) {
+              this.map[key] = "#";
+              return; 
+            }
             
-            var key = x+","+y;
-            this.map[key] = ".";
+            
+            this.map[key] = "a";
             freeCells.push(key);
         }
         digger.create(digCallback.bind(this));
@@ -63,7 +70,7 @@ var Game = {
         for (var i=0;i<10;i++) {
             var index = Math.floor(ROT.RNG.getUniform() * freeCells.length);
             var key = freeCells.splice(index, 1)[0];
-            this.map[key] = "*";
+            this.map[key] = "!";
         }
     },
     
@@ -119,7 +126,7 @@ Player.prototype.handleEvent = function(e) {
 }
 
 Player.prototype._draw = function() {
-    Game.display.draw(this._x, this._y, "@", "#ff0");
+    Game.display.draw(this._x, this._y, "@");
 }    
 
 Game.init();
