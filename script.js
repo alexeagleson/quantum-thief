@@ -90,6 +90,20 @@ var Player = function(x, y) {
     this._x = x;
     this._y = y;
     this._draw();
+  
+    this.move = function(directionArray) {
+      var newX = this._x + directionArray[0];
+      var newY = this._y + directionArray[1];
+      var newKey = newX + "," + newY;
+      if (!(newKey in Game.map)) {
+        return; 
+      }
+
+      Game.display.draw(this._x, this._y, Game.map[this._x + "," + this._y]);
+      this._x = newX;
+      this._y = newY;
+      this._draw();
+    };
 }
     
 Player.prototype.act = function() {
@@ -114,15 +128,9 @@ Player.prototype.handleEvent = function(e) {
 
     /* is there a free space? */
     var dir = ROT.DIRS[8][keyMap[code]];
-    var newX = this._x + dir[0];
-    var newY = this._y + dir[1];
-    var newKey = newX + "," + newY;
-    if (!(newKey in Game.map)) { return; }
 
-    Game.display.draw(this._x, this._y, Game.map[this._x+","+this._y]);
-    this._x = newX;
-    this._y = newY;
-    this._draw();
+    this.move(dir);
+  
     window.removeEventListener("keydown", this);
     Game.engine.unlock();
 }
@@ -132,12 +140,27 @@ Player.prototype._draw = function() {
 }    
 
 var view = {
-  createMoveButtons: function() {
-    var thisDiv = document.createElement("div");
+  createMoveButtons: function(direction) {
+    var moveButtonsDiv = document.createElement("div");
     var buttonLeft = document.createElement("button");
     buttonLeft.innerText = "fart";
-    buttonLeft.addEventListener("click", myScript);
+    buttonLeft.addEventListener("click", handlers.moveLeft);
     thisDiv.appendChild(buttonLeft);
     document.body.appendChild(thisDiv);    
+  }
+}
+
+var handlers = {
+  moveLeft: function() {
+    Game.player.move([-1, 0]);
+  },
+  moveRight: function() {
+    Game.player.move([1, 0]);
+  },
+  moveUp: function() {
+    Game.player.move([0, -1]);
+  },
+  moveDown: function() {
+    Game.player.move([0, 1]);
   }
 }
