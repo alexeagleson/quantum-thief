@@ -2,7 +2,13 @@ h1 {
   color: fuchsia;
 }
 
-.moveButton{
-    height:400px;
-    width:400px;
+.moveButton {
+  height:100px;
+  width:200px;
+  font-size: 300%;
+  margin: 10px;
+}
+
+.allButtons {
+  padding: 10px;
 }

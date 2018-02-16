@@ -38,7 +38,7 @@ var Game = {
     },
     
     _generateMap: function() {
-        var digger = new ROT.Map.Rogue();
+        var digger = new ROT.Map.Rogue(20, 25);
         var freeCells = [];
         
         var digCallback = function(x, y, value) {
@@ -142,6 +142,7 @@ Player.prototype._draw = function() {
 var view = {
   createMoveButtons: function() {
     var moveButtonsDiv = document.createElement("div");
+    moveButtonsDiv.className = "allButtons";
     
     var buttonLeft = document.createElement("button");
     var buttonRight = document.createElement("button");
