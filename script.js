@@ -9,7 +9,7 @@ var Game = {
   },
   
   generateMap: function() {
-    var digger = new ROT.Map.Digger();
+    var digger = new ROT.Map.Rogue(80, 80);
 
     var digCallback = function(x, y, value) {
         
