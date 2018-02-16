@@ -1,10 +1,39 @@
 var tileSet = document.createElement("img");
 tileSet.src = "http://ondras.github.io/rot.js/manual/tiles.png";
 
+var Player = function(x, y) {
+    this.x = x;
+    this.y = y;
+    this.draw();
+}
+
+Player.prototype.draw = function() {
+    Game.display.draw(this.x, this.y, "@");
+}
+
+Player.prototype.act = function() {
+  Game.engine.lock();
+  /* wait for user input; do stuff when user hits a key */
+  window.addEventListener("keydown", this);
+}
+ 
+Player.prototype.handleEvent = function(e) {
+  /* process user input */
+}
+
 var Game = {
   display: null,
+  
+  player: null,
+  
+  engine: null,
 
   init: function() {
+    
+    var scheduler = new ROT.Scheduler.Simple();
+    scheduler.add(this.player, true);
+    this.engine = new ROT.Engine(scheduler);
+    this.engine.start();
     
     var options = {
         layout: "tile",
@@ -28,6 +57,7 @@ var Game = {
   
   generateMap: function() {
     var digger = new ROT.Map.Rogue();
+    var freeCells = [];
 
     var digCallback = function(x, y, value) {
         
@@ -41,13 +71,16 @@ var Game = {
       }
 
       this.map[key] = "a";
+      freeCells.push(key);
     }
     
     digger.create(digCallback.bind(this));
     
-    this.generateBoxes();
+    this.generateBoxes(freeCells);
 
     this.drawWholeMap();
+    
+    this.createPlayer(freeCells);
   },
   
   generateBoxes: function(freeCells) {
@@ -67,7 +100,17 @@ var Game = {
       
       this.display.draw(x, y, this.map[key])
     }
-  }
+  },
+  
+  createPlayer: function(freeCells) {
+      var index = Math.floor(ROT.RNG.getUniform() * freeCells.length);
+      var key = freeCells.splice(index, 1)[0];
+      var parts = key.split(",");
+      var x = parseInt(parts[0]);
+      var y = parseInt(parts[1]);
+      this.player = new Player(x, y);
+  },
+  
 }
 
 Game.map = {};
