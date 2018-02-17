@@ -86,6 +86,17 @@ var Game = {
     }
 };
 
+var Tile = function(x, y, char, wall) {
+    this._x = x;
+    this._y = y;
+    this._char = char;
+    this._wall = wall;
+    
+    this._draw = function() {
+      Game.display.draw(this._x, this._y, Game.map[this._x + "," + this._y]._char);
+    };
+}
+
 var Player = function(x, y) {
     this._x = x;
     this._y = y;
@@ -99,10 +110,10 @@ var Player = function(x, y) {
         return; 
       }
 
-      Game.display.draw(this._x, this._y, Game.map[this._x + "," + this._y]);
+      Game.map[this._x + "," + this._y]._draw();
       this._x = newX;
       this._y = newY;
-      this._draw();
+      Game.map[this._x + "," + this._y]._draw();
     };
 }
     
