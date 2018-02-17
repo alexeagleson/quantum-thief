@@ -1,7 +1,7 @@
 var tileSet = document.createElement("img");
 //tileSet.src = "http://ondras.github.io/rot.js/manual/tiles.png";
 //tileSet.src = "http://2.bp.blogspot.com/_VSJ0_iRR18s/SMaRLuujkvI/AAAAAAAAAPA/XJZS30OkEpI/s400/nethack.gif";
-tileSet.src = "http://2.bp.blogspot.com/-apOgGCUa2tY/UkrrvGC0lXI/AAAAAAAAABQ/INvtj-x66wM/s1600/PeopleSpriteSheet3.png";
+//tileSet.src = "http://2.bp.blogspot.com/-apOgGCUa2tY/UkrrvGC0lXI/AAAAAAAAABQ/INvtj-x66wM/s1600/PeopleSpriteSheet3.png";
 tileSet.src = "https://i.stack.imgur.com/5z1KX.png";
 
 var Game = {
@@ -24,10 +24,10 @@ var Game = {
       tileHeight: 32,
       tileSet: tileSet,
       tileMap: {
-        "@": [0, 0],
+        "@": [224, 64],
         "#": [0, 32],
         "a": [32, 0],
-        "!": [32, 32]
+        "!": [64, 64]
       }
     }
 
@@ -52,7 +52,13 @@ var Game = {
   },
   
   _createMenu: function () {
-    this.menu = new ROT.Display({width:40, height:20});
+    this.menu = new ROT.Display();
+    
+    this.menu.setOptions({
+        width: 35,
+        height: 25,
+        fontSize: 32
+    });
     this.menu.getContainer().className = "menuDisplay";
     this.menu.getContainer().style.display = "none";
     document.body.appendChild(this.menu.getContainer());
