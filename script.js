@@ -8,7 +8,7 @@ var Game = {
   map: {},
   engine: null,
   player: null,
-  moveButtons: null,
+  menuOpen: false,
   
   allObjects: [],
   nonAffixedObjects: [],
@@ -40,20 +40,16 @@ var Game = {
     this.engine = new ROT.Engine(scheduler);
     this.engine.start();
 
-    this.moveButtons = view.createMoveButtons();
+    view.createMoveButtons();
     
     this.menu = new ROT.Display();
     
   },
   
-  _showMenu: function() {
-    var x = document.getElementsByTagName("canvas")[0];
-    var y = document.getElementsByClassName("allButtons")[0];
-    x.style.display = "none";
-    y.style.display = "none";
-    //document.body.removeChild(x);
-    this.menu = new ROT.Display({width:40, height:20});
-    this.menu.getContainer().className = "menuDisplay";
+  _createMenu: function () {
+  this.menu = new ROT.Display({width:40, height:20});
+  this.menu.getContainer().className = "menuDisplay";
+    this.menu.getContainer().style.display = "None";
     document.body.appendChild(this.menu.getContainer());
     
     this.menu.drawText(5,  2, "Hello world");
@@ -68,6 +64,24 @@ var Game = {
     long = long.join(" ");
 
     this.menu.drawText(1, 10, long, 38);
+  }
+  
+  _showMenu: function() {
+    var moveButtonsDOM = document.getElementsByClassName("moveButtons")[0];
+    var gameDisplayDOM = document.getElementsByClassName("gameDisplay")[0];
+    var menuDisplayDOM = document.getElementsByClassName("menuDisplay")[0];
+    
+    if (this.menuOpen === false) {
+      this.menuOpen = true;
+      moveButtonsDOM.style.display = "none";
+      gameDisplayDOM.style.display = "none";
+      menuDisplayDOM.style.display = "block";
+    } else {
+      this.menuOpen = false;
+      moveButtonsDOM.style.display = "block";
+      gameDisplayDOM.style.display = "block";
+      menuDisplayDOM.style.display = "none";
+    }
     
   },
 
@@ -203,7 +217,9 @@ Object.prototype.handleEvent = function(e) {
 var view = {
   createMoveButtons: function() {
     var moveButtonsDiv = document.createElement("div");
-    moveButtonsDiv.className = "allButtons";
+    moveButtonsDiv.className = "moveButtons";
+    var menuButtonsDiv = document.createElement("div");
+    menuButtonsDiv.className = "menuButtons";
     
     var buttonLeft = document.createElement("button");
     var buttonRight = document.createElement("button");
@@ -215,7 +231,7 @@ var view = {
     buttonRight.className = "moveButton";
     buttonUp.className = "moveButton";
     buttonDown.className = "moveButton";
-    buttonMenu.className = "moveButton";
+    buttonMenu.className = "menuButton";
     
     buttonLeft.innerText = "Left";
     buttonRight.innerText = "Right";
@@ -233,9 +249,12 @@ var view = {
     moveButtonsDiv.appendChild(buttonRight);
     moveButtonsDiv.appendChild(buttonUp);
     moveButtonsDiv.appendChild(buttonDown);
-    moveButtonsDiv.appendChild(buttonMenu);
+    
+    menuButtonsDiv.appendChild(buttonMenu);
 
-    document.body.appendChild(moveButtonsDiv);    
+    document.body.appendChild(moveButtonsDiv);
+    document.body.appendChild(menuButtonsDiv);
+    
   }
 }
 

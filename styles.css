@@ -9,6 +9,13 @@ h1 {
   margin: 10px;
 }
 
+.menuButton {
+  height:100px;
+  width:200px;
+  font-size: 300%;
+  margin: 10px;
+}
+
 .allButtons {
   padding: 10px;
 }
