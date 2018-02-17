@@ -1,5 +1,6 @@
 var tileSet = document.createElement("img");
-tileSet.src = "http://ondras.github.io/rot.js/manual/tiles.png";
+//tileSet.src = "http://ondras.github.io/rot.js/manual/tiles.png";
+tileSet.src = "http://2.bp.blogspot.com/_VSJ0_iRR18s/SMaRLuujkvI/AAAAAAAAAPA/XJZS30OkEpI/s400/nethack.gif";
 
 var Game = {
 
@@ -17,14 +18,14 @@ var Game = {
     var options = {
       layout: "tile",
       bg: "transparent",
-      tileWidth: 64,
-      tileHeight: 64,
+      tileWidth: 16,
+      tileHeight: 16,
       tileSet: tileSet,
       tileMap: {
         "@": [0, 0],
-        "#": [0, 64],
-        "a": [64, 0],
-        "!": [64, 64]
+        "#": [0, 16],
+        "a": [16, 0],
+        "!": [16, 16]
       }
     }
 
@@ -79,14 +80,14 @@ var Game = {
     
     if (this.menuOpen === false) {
       this.menuOpen = true;
-      moveButtonsDOM.style.display = "none";
-      gameDisplayDOM.style.display = "none";
-      menuDisplayDOM.style.display = "block";
-    } else {
-      this.menuOpen = false;
       moveButtonsDOM.style.display = "block";
       gameDisplayDOM.style.display = "block";
       menuDisplayDOM.style.display = "none";
+    } else {
+      this.menuOpen = false;
+      moveButtonsDOM.style.display = "none";
+      gameDisplayDOM.style.display = "none";
+      menuDisplayDOM.style.display = "block";
     }
   },
 
