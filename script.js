@@ -8,6 +8,7 @@ var Game = {
   map: {},
   engine: null,
   player: null,
+  moveButtons: null,
   
   allObjects: [],
   nonAffixedObjects: [],
@@ -39,7 +40,7 @@ var Game = {
     this.engine = new ROT.Engine(scheduler);
     this.engine.start();
 
-    view.createMoveButtons();
+    this.moveButtons = view.createMoveButtons();
     
     this.menu = new ROT.Display();
     
@@ -47,7 +48,10 @@ var Game = {
   
   _showMenu: function() {
     var x = document.getElementsByTagName("canvas")[0];
-    document.body.removeChild(x);
+    var y = document.getElementsByClassName("allButtons")[0];
+    x.style.display = "none";
+    y.style.display = "none";
+    //document.body.removeChild(x);
     this.menu = new ROT.Display({width:40, height:20});
     this.menu.getContainer().className = "menuDisplay";
     document.body.appendChild(this.menu.getContainer());
@@ -205,26 +209,31 @@ var view = {
     var buttonRight = document.createElement("button");
     var buttonUp = document.createElement("button");
     var buttonDown = document.createElement("button");
-    
+    var buttonMenu = document.createElement("button");
+
     buttonLeft.className = "moveButton";
     buttonRight.className = "moveButton";
     buttonUp.className = "moveButton";
     buttonDown.className = "moveButton";
+    buttonMenu.className = "moveButton";
     
     buttonLeft.innerText = "Left";
     buttonRight.innerText = "Right";
     buttonUp.innerText = "Up";
     buttonDown.innerText = "Down";
+    buttonMenu.innerText = "Menu";
 
     buttonLeft.addEventListener("click", handlers.moveLeft);
     buttonRight.addEventListener("click", handlers.moveRight);
     buttonUp.addEventListener("click", handlers.moveUp);
-    buttonDown.addEventListener("click", Game._showMenu);
+    buttonDown.addEventListener("click", handlers.moveDown);
+    buttonMenu.addEventListener("click", Game._showMenu);
 
     moveButtonsDiv.appendChild(buttonLeft);
     moveButtonsDiv.appendChild(buttonRight);
     moveButtonsDiv.appendChild(buttonUp);
     moveButtonsDiv.appendChild(buttonDown);
+    moveButtonsDiv.appendChild(buttonMenu);
 
     document.body.appendChild(moveButtonsDiv);    
   }
