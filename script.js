@@ -2,7 +2,7 @@ var tileSet = document.createElement("img");
 //tileSet.src = "http://ondras.github.io/rot.js/manual/tiles.png";
 //tileSet.src = "http://2.bp.blogspot.com/_VSJ0_iRR18s/SMaRLuujkvI/AAAAAAAAAPA/XJZS30OkEpI/s400/nethack.gif";
 //tileSet.src = "http://2.bp.blogspot.com/-apOgGCUa2tY/UkrrvGC0lXI/AAAAAAAAABQ/INvtj-x66wM/s1600/PeopleSpriteSheet3.png";
-tileSet.src = "https://cdn.glitch.com/65d1c64a-f6b1-4419-b107-12f1a855a66a%2F5z1KX.png?1518897872260d";
+tileSet.src = "https://cdn.glitch.com/65d1c64a-f6b1-4419-b107-12f1a855a66a%2FPeopleSpriteSheet3.png?1518898106569";
 
 var Game = {
 
@@ -24,10 +24,10 @@ var Game = {
       tileHeight: 32,
       tileSet: tileSet,
       tileMap: {
-        "@": [224, 64],
+        "@": [0, 0],
         "#": [0, 32],
         "a": [32, 0],
-        "!": [64, 64]
+        "!": [256, 96]
       }
     }
 
@@ -67,17 +67,9 @@ var Game = {
     this.menu.drawText(5,  2, "Hello world");
 
     /* last argument specifies maximum length */
-    this.menu.drawText(0, 5, "This line of text is very long.", 20);
+    this.menu.drawText(1, 5, "This line of text is very long.", 18);
 
-    /* lines are broken at word boundaries; lines are trimmed */
-    var words = ["lorem", "ipsum", "dolor", "sit", "amet"];
-    var long = [];
-    for (var i=0;i<30;i++) { 
-      long.push(words.random()); 
-    }
-    long = long.join(" ");
-
-    this.menu.drawText(1, 10, long, 38);
+    this.menu.drawText(1, 10, "You coud use this menu to support something like character dialogue.  Maybe show a character %c{blue}portrait%c{} somewhere?  I dunno.  Either way it's prety %c{red}easy%c{} to use.", 18);
   },
   
   _showMenu: function() {

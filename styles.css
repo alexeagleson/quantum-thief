@@ -3,19 +3,19 @@ h1 {
 }
 
 .moveButton {
-  height:100px;
-  width:200px;
-  font-size: 300%;
-  margin: 10px;
+  height:50px;
+  width:100px;
+  font-size: 200%;
+  margin: 5px;
 }
 
 .menuButton {
-  height:100px;
-  width:200px;
-  font-size: 300%;
-  margin: 10px;
+  height:50px;
+  width:100px;
+  font-size: 200%;
+  margin: 5px;
 }
 
 .allButtons {
-  padding: 10px;
+  padding: 5px;
 }
