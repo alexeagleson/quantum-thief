@@ -2,6 +2,7 @@ var tileSet = document.createElement("img");
 //tileSet.src = "http://ondras.github.io/rot.js/manual/tiles.png";
 //tileSet.src = "http://2.bp.blogspot.com/_VSJ0_iRR18s/SMaRLuujkvI/AAAAAAAAAPA/XJZS30OkEpI/s400/nethack.gif";
 tileSet.src = "http://2.bp.blogspot.com/-apOgGCUa2tY/UkrrvGC0lXI/AAAAAAAAABQ/INvtj-x66wM/s1600/PeopleSpriteSheet3.png";
+https://i.stack.imgur.com/5z1KX.png";
 
 var Game = {
 
