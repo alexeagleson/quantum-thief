@@ -44,12 +44,12 @@ var Game = {
         var digCallback = function(x, y, value) {
           var key = x + "," + y;  
           if (value) {
-              this.map[key] = "#";
+              this.map[key] = new Tile(x, y, "#", true);
               return; 
             }
             
             
-            this.map[key] = "a";
+            this.map[key] = new Tile(x, y, "a", false);
             freeCells.push(key);
         }
         digger.create(digCallback.bind(this));
@@ -84,7 +84,7 @@ var Game = {
             var parts = key.split(",");
             var x = parseInt(parts[0]);
             var y = parseInt(parts[1]);
-            this.display.draw(x, y, this.map[key]);
+            this.display.draw(x, y, this.map[key]._char);
         }
     }
 };
@@ -101,22 +101,29 @@ var Tile = function(x, y, char, wall) {
 }
 
 var Player = function(x, y) {
-    this._x = x;
-    this._y = y;
-  
-    this.move = function(directionArray) {
-      var newX = this._x + directionArray[0];
-      var newY = this._y + directionArray[1];
-      var newKey = newX + "," + newY;
-      if (!(newKey in Game.map)) {
-        return; 
-      }
+  this._x = x;
+  this._y = y;
+  this._char = "@";
 
-      Game.map[this._x + "," + this._y]._draw();
-      this._x = newX;
-      this._y = newY;
-      Game.map[this._x + "," + this._y]._draw();
-    };
+  this.move = function(directionArray) {
+    var newX = this._x + directionArray[0];
+    var newY = this._y + directionArray[1];
+    var newKey = newX + "," + newY;
+    if (!(newKey in Game.map)) {
+      return; 
+    }
+
+    Game.map[this._x + "," + this._y]._draw();
+    this._x = newX;
+    this._y = newY;
+    this._draw();
+    
+  };
+  
+  this._draw = function() {
+    Game.display.draw(this._x, this._y, this._char);
+  }
+  
 }
     
 Player.prototype.act = function() {
@@ -148,9 +155,6 @@ Player.prototype.handleEvent = function(e) {
     Game.engine.unlock();
 }
 
-Player.prototype._draw = function() {
-    Game.display.draw(this._x, this._y, "@");
-}    
 
 var view = {
   createMoveButtons: function() {
