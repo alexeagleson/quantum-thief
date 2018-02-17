@@ -42,7 +42,7 @@ var Game = {
         var freeCells = [];
         
         var digCallback = function(x, y, value) {
-          var key = x+","+y;  
+          var key = x + "," + y;  
           if (value) {
               this.map[key] = "#";
               return; 
@@ -69,11 +69,14 @@ var Game = {
     },
     
     _generateBoxes: function(freeCells) {
-        for (var i=0;i<10;i++) {
-            var index = Math.floor(ROT.RNG.getUniform() * freeCells.length);
-            var key = freeCells.splice(index, 1)[0];
-            this.map[key] = "!";
-        }
+      for (var i = 0; i < 10; i++) {
+        var index = Math.floor(ROT.RNG.getUniform() * freeCells.length);
+        var key = freeCells.splice(index, 1)[0];
+        var parts = key.split(",");
+        var x = parseInt(parts[0]);
+        var y = parseInt(parts[1]);
+        this.map[key] = new Tile(x, y, "!", false);
+      }
     },
     
     _drawWholeMap: function() {
@@ -100,7 +103,6 @@ var Tile = function(x, y, char, wall) {
 var Player = function(x, y) {
     this._x = x;
     this._y = y;
-    this._draw();
   
     this.move = function(directionArray) {
       var newX = this._x + directionArray[0];
