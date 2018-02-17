@@ -2,105 +2,115 @@ var tileSet = document.createElement("img");
 tileSet.src = "http://ondras.github.io/rot.js/manual/tiles.png";
 
 var Game = {
-    display: null,
-    map: {},
-    engine: null,
-    player: null,
-    
-    init: function() {
-      
-      var options = {
-          layout: "tile",
-          bg: "transparent",
-          tileWidth: 64,
-          tileHeight: 64,
-          tileSet: tileSet,
-          tileMap: {
-              "@": [0, 0],
-              "#": [0, 64],
-              "a": [64, 0],
-              "!": [64, 64]
-          }
-      }
-      
-        this.display = new ROT.Display(options);
-        document.body.appendChild(this.display.getContainer());
-        
-        this._generateMap();
-        
-        var scheduler = new ROT.Scheduler.Simple();
-        scheduler.add(this.player, true);
 
-        this.engine = new ROT.Engine(scheduler);
-        this.engine.start();
-      
-      view.createMoveButtons();
-    },
-    
-    _generateMap: function() {
-        var digger = new ROT.Map.Rogue(20, 25);
-        var freeCells = [];
-        
-        var digCallback = function(x, y, value) {
-          var key = x + "," + y;  
-          if (value) {
-              this.map[key] = new Tile(x, y, "#", true);
-              return; 
-            }
-            
-            
-            this.map[key] = new Tile(x, y, "a", false);
-            freeCells.push(key);
-        }
-        digger.create(digCallback.bind(this));
-        
-        this._generateBoxes(freeCells);
-        this._drawWholeMap();
-        this._createPlayer(freeCells);
-    },
-    
-    _createPlayer: function(freeCells) {
-        var index = Math.floor(ROT.RNG.getUniform() * freeCells.length);
-        var key = freeCells.splice(index, 1)[0];
-        var parts = key.split(",");
-        var x = parseInt(parts[0]);
-        var y = parseInt(parts[1]);
-        this.player = new Player(x, y);
-    },
-    
-    _generateBoxes: function(freeCells) {
-      for (var i = 0; i < 10; i++) {
-        var index = Math.floor(ROT.RNG.getUniform() * freeCells.length);
-        var key = freeCells.splice(index, 1)[0];
-        var parts = key.split(",");
-        var x = parseInt(parts[0]);
-        var y = parseInt(parts[1]);
-        this.map[key] = new Tile(x, y, "!", false);
+  display: null,
+  map: {},
+  engine: null,
+  player: null,
+  
+  allObjects: [],
+  nonAffixedObjects: [],
+
+  init: function() {
+    debugger;
+    var options = {
+      layout: "tile",
+      bg: "transparent",
+      tileWidth: 64,
+      tileHeight: 64,
+      tileSet: tileSet,
+      tileMap: {
+        "@": [0, 0],
+        "#": [0, 64],
+        "a": [64, 0],
+        "!": [64, 64]
       }
-    },
-    
-    _drawWholeMap: function() {
-        for (var key in this.map) {
-            var parts = key.split(",");
-            var x = parseInt(parts[0]);
-            var y = parseInt(parts[1]);
-            this.display.draw(x, y, this.map[key]._char);
-        }
     }
+
+    this.display = new ROT.Display(options);
+    document.body.appendChild(this.display.getContainer());
+
+    this._generateMap();
+
+    var scheduler = new ROT.Scheduler.Simple();
+    scheduler.add(this.player, true);
+
+    this.engine = new ROT.Engine(scheduler);
+    this.engine.start();
+
+    view.createMoveButtons();
+  },
+
+  _generateMap: function() {
+    var digger = new ROT.Map.Rogue(20, 25);
+    var freeCells = [];
+
+    var digCallback = function(x, y, value) {
+      var key = x + "," + y;  
+      if (value) {
+          this.map[key] = new Tile(x, y, "#", true);
+          return; 
+        }
+
+
+        this.map[key] = new Tile(x, y, "a", false);
+        freeCells.push(key);
+    }
+    digger.create(digCallback.bind(this));
+
+    this._generateBoxes(freeCells);
+    this._drawWholeMap();
+    this._createPlayer(freeCells);
+  },
+
+  _createPlayer: function(freeCells) {
+    var index = Math.floor(ROT.RNG.getUniform() * freeCells.length);
+    var key = freeCells.splice(index, 1)[0];
+    var parts = key.split(",");
+    var x = parseInt(parts[0]);
+    var y = parseInt(parts[1]);
+    this.player = new Object(x, y);
+  },
+
+  _generateBoxes: function(freeCells) {
+    for (var i = 0; i < 10; i++) {
+      var index = Math.floor(ROT.RNG.getUniform() * freeCells.length);
+      var key = freeCells.splice(index, 1)[0];
+      var parts = key.split(",");
+      var x = parseInt(parts[0]);
+      var y = parseInt(parts[1]);
+      this.map[key] = new Tile(x, y, "!", false);
+    }
+  },
+
+  _drawWholeMap: function() {
+    for (var key in this.map) {
+      var parts = key.split(",");
+      var x = parseInt(parts[0]);
+      var y = parseInt(parts[1]);
+      this.map[key]._draw();
+    }
+  }
 };
 
 var Tile = function(x, y, char, wall) {
-    this._x = x;
-    this._y = y;
-    this._char = char;
-    this._wall = wall;
+  this._x = x;
+  this._y = y;
+  this._wall = wall;
+  this._char = char;
+
+  this._objectsOnThisTile = [];
+
+  this._draw = function() {
+    Game.display.draw(this._x, this._y, Game.map[this._x + "," + this._y]._char);
     
-    this._draw = function() {
-      Game.display.draw(this._x, this._y, Game.map[this._x + "," + this._y]._char);
-    };
+    //this._objectsOnThisTile.forEach(function(object) {
+    //  Game.display.draw(object._x, object._y, object._char);
+    //});
+  };
 }
 
-var Player = function(x, y) {
+var Object = function(x, y) {
   this._x = x;
   this._y = y;
   this._char = "@";
@@ -116,22 +126,19 @@ var Player = function(x, y) {
     Game.map[this._x + "," + this._y]._draw();
     this._x = newX;
     this._y = newY;
-    this._draw();
+    Game.map[this._x + "," + this._y]._draw();
     
-  };
-  
-  this._draw = function() {
-    Game.display.draw(this._x, this._y, this._char);
-  }
-  
+  };  
 }
+
+
     
-Player.prototype.act = function() {
+Object.prototype.act = function() {
     Game.engine.lock();
     window.addEventListener("keydown", this);
 }
     
-Player.prototype.handleEvent = function(e) {
+Object.prototype.handleEvent = function(e) {
     var keyMap = {};
     keyMap[38] = 0;
     keyMap[33] = 1;
