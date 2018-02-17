@@ -2,7 +2,7 @@ var tileSet = document.createElement("img");
 //tileSet.src = "http://ondras.github.io/rot.js/manual/tiles.png";
 //tileSet.src = "http://2.bp.blogspot.com/_VSJ0_iRR18s/SMaRLuujkvI/AAAAAAAAAPA/XJZS30OkEpI/s400/nethack.gif";
 //tileSet.src = "http://2.bp.blogspot.com/-apOgGCUa2tY/UkrrvGC0lXI/AAAAAAAAABQ/INvtj-x66wM/s1600/PeopleSpriteSheet3.png";
-tileSet.src = "https://i.stack.imgur.com/5z1KX.png";
+tileSet.src = "https://cdn.glitch.com/65d1c64a-f6b1-4419-b107-12f1a855a66a%2F5z1KX.png?1518897872260d";
 
 var Game = {
 
@@ -55,9 +55,10 @@ var Game = {
     this.menu = new ROT.Display();
     
     this.menu.setOptions({
-        width: 35,
+        width: 20,
         height: 25,
-        fontSize: 32
+        fontSize: 32,
+      forceSquareRatio:true
     });
     this.menu.getContainer().className = "menuDisplay";
     this.menu.getContainer().style.display = "none";
@@ -66,7 +67,7 @@ var Game = {
     this.menu.drawText(5,  2, "Hello world");
 
     /* last argument specifies maximum length */
-    this.menu.drawText(20, 5, "This line of text is very long.", 16);
+    this.menu.drawText(0, 5, "This line of text is very long.", 20);
 
     /* lines are broken at word boundaries; lines are trimmed */
     var words = ["lorem", "ipsum", "dolor", "sit", "amet"];
