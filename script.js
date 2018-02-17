@@ -13,7 +13,6 @@ var Game = {
   nonAffixedObjects: [],
 
   init: function() {
-    debugger;
     var options = {
       layout: "tile",
       bg: "transparent",
@@ -29,6 +28,7 @@ var Game = {
     }
 
     this.display = new ROT.Display(options);
+    this.display.getContainer().className = "gameDisplay";
     document.body.appendChild(this.display.getContainer());
 
     this._generateMap();
@@ -48,6 +48,23 @@ var Game = {
   _showMenu: function() {
     var x = document.getElementsByTagName("canvas")[0];
     document.body.removeChild(x);
+    this.menu = new ROT.Display({width:40, height:20});
+    this.menu.getContainer().className = "menuDisplay";
+    document.body.appendChild(this.menu.getContainer());
+    
+    this.menu.drawText(5,  2, "Hello world");
+
+    /* last argument specifies maximum length */
+    this.menu.drawText(20, 5, "This line of text is very long.", 16);
+
+    /* lines are broken at word boundaries; lines are trimmed */
+    var words = ["lorem", "ipsum", "dolor", "sit", "amet"];
+    var long = [];
+    for (var i=0;i<30;i++) { long.push(words.random()); }
+    long = long.join(" ");
+
+    this.menu.drawText(1, 10, long, 38);
+    
   },
 
   _generateMap: function() {
