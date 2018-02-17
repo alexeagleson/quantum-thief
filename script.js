@@ -1,6 +1,7 @@
 var tileSet = document.createElement("img");
 //tileSet.src = "http://ondras.github.io/rot.js/manual/tiles.png";
-tileSet.src = "http://2.bp.blogspot.com/_VSJ0_iRR18s/SMaRLuujkvI/AAAAAAAAAPA/XJZS30OkEpI/s400/nethack.gif";
+//tileSet.src = "http://2.bp.blogspot.com/_VSJ0_iRR18s/SMaRLuujkvI/AAAAAAAAAPA/XJZS30OkEpI/s400/nethack.gif";
+tileSet.src = "http://2.bp.blogspot.com/-apOgGCUa2tY/UkrrvGC0lXI/AAAAAAAAABQ/INvtj-x66wM/s1600/PeopleSpriteSheet3.png";
 
 var Game = {
 
@@ -18,14 +19,14 @@ var Game = {
     var options = {
       layout: "tile",
       bg: "transparent",
-      tileWidth: 16,
-      tileHeight: 16,
+      tileWidth: 32,
+      tileHeight: 32,
       tileSet: tileSet,
       tileMap: {
         "@": [0, 0],
-        "#": [0, 16],
-        "a": [16, 0],
-        "!": [16, 16]
+        "#": [0, 32],
+        "a": [32, 0],
+        "!": [32, 32]
       }
     }
 
