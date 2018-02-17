@@ -4,6 +4,7 @@ tileSet.src = "http://ondras.github.io/rot.js/manual/tiles.png";
 var Game = {
 
   display: null,
+  menu: null,
   map: {},
   engine: null,
   player: null,
@@ -39,6 +40,14 @@ var Game = {
     this.engine.start();
 
     view.createMoveButtons();
+    
+    this.menu = new ROT.Display();
+    
+  },
+  
+  _showMenu: function() {
+    var x = document.getElementsByTagName("canvas")[0];
+    document.body.removeChild(x);
   },
 
   _generateMap: function() {
@@ -193,7 +202,7 @@ var view = {
     buttonLeft.addEventListener("click", handlers.moveLeft);
     buttonRight.addEventListener("click", handlers.moveRight);
     buttonUp.addEventListener("click", handlers.moveUp);
-    buttonDown.addEventListener("click", handlers.moveDown);
+    buttonDown.addEventListener("click", Game._showMenu);
 
     moveButtonsDiv.appendChild(buttonLeft);
     moveButtonsDiv.appendChild(buttonRight);
