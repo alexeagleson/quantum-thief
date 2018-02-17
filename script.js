@@ -70,6 +70,7 @@ var Game = {
     var x = parseInt(parts[0]);
     var y = parseInt(parts[1]);
     this.player = new Object(x, y);
+    this.map[key]._objectsOnThisTile.push(this.player);
   },
 
   _generateBoxes: function(freeCells) {
@@ -104,9 +105,9 @@ var Tile = function(x, y, char, wall) {
   this._draw = function() {
     Game.display.draw(this._x, this._y, Game.map[this._x + "," + this._y]._char);
     
-    //this._objectsOnThisTile.forEach(function(object) {
-    //  Game.display.draw(object._x, object._y, object._char);
-    //});
+    this._objectsOnThisTile.forEach(function(object) {
+      Game.display.draw(object._x, object._y, object._char);
+    });
   };
 }
 
@@ -119,15 +120,21 @@ var Object = function(x, y) {
     var newX = this._x + directionArray[0];
     var newY = this._y + directionArray[1];
     var newKey = newX + "," + newY;
+    
     if (!(newKey in Game.map)) {
       return; 
     }
+    
+    if (Game.map[newX + "," + newY]._wall) {
+      return;
+    }
 
+    Game.map[this._x + "," + this._y]._objectsOnThisTile = [];
     Game.map[this._x + "," + this._y]._draw();
     this._x = newX;
     this._y = newY;
+    Game.map[this._x + "," + this._y]._objectsOnThisTile.push(this);
     Game.map[this._x + "," + this._y]._draw();
-    
   };  
 }
 
