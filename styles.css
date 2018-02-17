@@ -1,5 +1,7 @@
 h1 {
   color: fuchsia;
+  margin: 2px;
+  padding: 2px;
 }
 
 .moveButton {

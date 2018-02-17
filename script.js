@@ -110,8 +110,10 @@ var Game = {
     digger.create(digCallback.bind(this));
 
     this._generateBoxes(freeCells);
-    this._drawWholeMap();
     this._createPlayer(freeCells);
+    
+    this._drawWholeMap();
+    
   },
 
   _createPlayer: function(freeCells) {
