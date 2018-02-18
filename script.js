@@ -238,7 +238,7 @@ var view = {
   // listen to events...
   mc.on("panleft panright tap press", function(ev) {
 
-    thisOne.innerHTML = ev.type + " gesture detected.";
+    
 
     if (ev.type === "tap") {
       var gameDisplayDOM = document.getElementsByClassName("gameDisplay")[0];
@@ -252,6 +252,8 @@ var view = {
       
       var dx = tapPixelX - playerPixelX;
       var dy = tapPixelY - playerPixelY;
+      
+      thisOne.innerHTML = ev.type + " gesture detected " + tapPixelX + " , " + tapPixelY;
       
       if (dx > 0 && (Math.abs(dx) > Math.abs(dy))) {
         handlers.moveRight();
@@ -267,7 +269,7 @@ var view = {
       //console.log(tapPixelX, tapPixelY);
     }
     console.log(ev);
-    console.log();
+    console.log(gameDisplayRect);
   });
     
   var moveButtonsDiv = document.createElement("div");
