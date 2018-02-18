@@ -1,8 +1,8 @@
 var tileSet = document.createElement("img");
 //tileSet.src = "http://ondras.github.io/rot.js/manual/tiles.png";
 //tileSet.src = "http://2.bp.blogspot.com/_VSJ0_iRR18s/SMaRLuujkvI/AAAAAAAAAPA/XJZS30OkEpI/s400/nethack.gif";
-//tileSet.src = "http://2.bp.blogspot.com/-apOgGCUa2tY/UkrrvGC0lXI/AAAAAAAAABQ/INvtj-x66wM/s1600/PeopleSpriteSheet3.png";
-tileSet.src = "https://cdn.glitch.com/65d1c64a-f6b1-4419-b107-12f1a855a66a%2FPeopleSpriteSheet3.png?1518898106569";
+tileSet.src = "http://2.bp.blogspot.com/-apOgGCUa2tY/UkrrvGC0lXI/AAAAAAAAABQ/INvtj-x66wM/s1600/PeopleSpriteSheet3.png";
+//tileSet.src = "https://cdn.glitch.com/65d1c64a-f6b1-4419-b107-12f1a855a66a%2FPeopleSpriteSheet3.png?1518898106569";
 
 var Game = {
 
@@ -17,6 +17,7 @@ var Game = {
   nonAffixedObjects: [],
 
   init: function() {
+    /*
     var options = {
       layout: "tile",
       bg: "transparent",
@@ -30,6 +31,23 @@ var Game = {
         "!": [256, 96]
       }
     }
+    */
+    
+    
+    var options = {
+      layout: "tile",
+      bg: "transparent",
+      tileWidth: 32,
+      tileHeight: 32,
+      tileSet: tileSet,
+      tileMap: {
+        "@": [0, 0],
+        "#": [0, 32],
+        "a": [32, 0],
+        "!": [32, 32]
+      }
+    }
+    
 
     this.display = new ROT.Display(options);
     this.display.getContainer().className = "gameDisplay";
