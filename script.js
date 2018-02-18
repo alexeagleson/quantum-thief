@@ -6,6 +6,7 @@ tileSet.src = "https://cdn.glitch.com/65d1c64a-f6b1-4419-b107-12f1a855a66a%2FPeo
 
 var Game = {
 
+  
   display: null,
   menu: null,
   map: {},
@@ -32,23 +33,6 @@ var Game = {
       }
     }
     
-    
-    
-    var options = {
-      layout: "tile",
-      bg: "transparent",
-      tileWidth: 32,
-      tileHeight: 32,
-      tileSet: tileSet,
-      tileMap: {
-        "@": [0, 0],
-        "#": [0, 32],
-        "a": [32, 0],
-        "!": [32, 32]
-      }
-    }
-    
-
     this.display = new ROT.Display(options);
     this.display.getContainer().className = "gameDisplay";
     document.body.appendChild(this.display.getContainer());
@@ -299,3 +283,4 @@ var handlers = {
     Game.player.move([0, 1]);
   }
 }
+
