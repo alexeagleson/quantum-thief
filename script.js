@@ -44,10 +44,7 @@ var Game = {
     var gameCanvas = this.display.getContainer();
     
 
-    
-    
-    
-    
+    handlers.addMouseAndTouchListener(gameCanvas);
     
     document.body.appendChild(this.display.getContainer());
     
@@ -342,14 +339,13 @@ var handlers = {
   moveDown: function() {
     Game.player.move([0, 1]);
   },
-  addTouchListener: function(canvasDOM) {
+  addMouseAndTouchListener: function(gameCanvas) {
+
     var mousePos = { x:0, y:0 };
-    var lastPos = mousePos;
     var thisOne = document.getElementById("thisOne");
     
-    canvasDOM.addEventListener("mousedown", function (e) {
-      lastPos = getMousePos(gameCanvas, e);
-      var thisOne = document.getElementById("thisOne");
+    gameCanvas.addEventListener("mousedown", function (e) {
+      mousePos = getMousePos(gameCanvas, e);
       thisOne.innerHTML = mousePos.x + "," + mousePos.y;
     }, false);
     
@@ -357,13 +353,15 @@ var handlers = {
     gameCanvas.addEventListener("touchstart", function (e) {
       mousePos = getTouchPos(gameCanvas, e);
       
-      thisOne.innerHTML = mousePos.x + "," + mousePos.y;
+      
       //console.log(mousePos);
       var touch = e.touches[0];
       var mouseEvent = new MouseEvent("mousedown", {
         clientX: touch.clientX,
         clientY: touch.clientY
       });
+      thisOne.innerHTML = mousePos.x + "," + mousePos.y;
+      //processMouseAndTouchInput
       gameCanvas.dispatchEvent(mouseEvent);
     }, false);
 
@@ -382,11 +380,10 @@ var handlers = {
       return {
         x: mouseEvent.clientX - rect.left,
         y: mouseEvent.clientY - rect.top
-    };
+      };
     }
-    
-    
-    
+  },
+  processMouseAndTouchInput(coords) {
   }
 }
 
