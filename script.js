@@ -250,11 +250,19 @@ var view = {
       var gameDisplayDOM = document.getElementsByClassName("gameDisplay")[0];
       var gameDisplayRect = gameDisplayDOM.getBoundingClientRect();
       
+      
+      
       var tapPixelX = ev.center.x - gameDisplayRect.x;
       var tapPixelY = ev.center.y - gameDisplayRect.top;
       
-      var playerPixelX = (Game.player._x * 32) + 16;
-      var playerPixelY = (Game.player._y * 32) + 16;
+      var pageMeta = document.getElementsByTagName('meta')[0];
+      
+      console.log(pageMeta);
+      
+      pixelScale = 32 * 1;
+      
+      var playerPixelX = (Game.player._x * pixelScale);
+      var playerPixelY = (Game.player._y * pixelScale);
       
       var dx = tapPixelX - playerPixelX;
       var dy = tapPixelY - playerPixelY;
