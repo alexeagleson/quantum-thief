@@ -229,25 +229,45 @@ var view = {
   createMoveButtons: function() {
 
   var thisOne = document.getElementById("thisONe");
+    
   var gameDisplayDOM = document.getElementsByClassName("gameDisplay")[0];
   var mc = new Hammer(gameDisplayDOM);
 
+  
+    
   // listen to events...
   mc.on("panleft panright tap press", function(ev) {
 
     thisOne.innerHTML = ev.type + " gesture detected.";
-    
-    var tapPixelX = ev.center.x;
-    var tapPixelY = ev.center.y;
 
     if (ev.type === "tap") {
+      var gameDisplayDOM = document.getElementsByClassName("gameDisplay")[0];
+      var gameDisplayRect = gameDisplayDOM.getBoundingClientRect();
+      
+      var tapPixelX = ev.center.x - gameDisplayRect.x;
+      var tapPixelY = ev.center.y - gameDisplayRect.top;
+      
       var playerPixelX = (Game.player._x * 32) + 16;
       var playerPixelY = (Game.player._y * 32) + 16;
-      console.log(playerPixelX, playerPixelY);
-      console.log(tapPixelX, tapPixelY);
+      
+      var dx = tapPixelX - playerPixelX;
+      var dy = tapPixelY - playerPixelY;
+      
+      if (dx > 0 && (Math.abs(dx) > Math.abs(dy))) {
+        handlers.moveRight();
+      } else if (dx < 0 && (Math.abs(dx) > Math.abs(dy))) {
+        handlers.moveLeft();
+      } else if (dy < 0 && (Math.abs(dy) > Math.abs(dx))) {
+        handlers.moveUp();
+      } else if (dy > 0 && (Math.abs(dy) > Math.abs(dx))) {
+        handlers.moveDown();
+      }
+      
+      console.log(dx, dy);
+      //console.log(tapPixelX, tapPixelY);
     }
     console.log(ev);
-    console.log(gameDisplayDOM.getBoundingClientRect());
+    console.log();
   });
     
   var moveButtonsDiv = document.createElement("div");
