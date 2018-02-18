@@ -227,6 +227,18 @@ Object.prototype.handleEvent = function(e) {
 
 var view = {
   createMoveButtons: function() {
+    
+    var thisOne = document.getElementById("thisONe");
+    var gameDisplayDOM = document.getElementsByClassName("gameDisplay")[0];
+    var mc = new Hammer(gameDisplayDOM);
+    
+        // listen to events...
+    mc.on("panleft panright tap press", function(ev) {
+        
+        thisOne.innerHTML = ev.type + " gesture detected.";
+        console.log(ev);
+    });
+    
     var moveButtonsDiv = document.createElement("div");
     moveButtonsDiv.className = "moveButtons";
     var menuButtonsDiv = document.createElement("div");
