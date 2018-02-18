@@ -42,33 +42,8 @@ var Game = {
     this.display.getContainer().className = "gameDisplay";
     
     var gameCanvas = this.display.getContainer();
-
-    // Set up touch events for mobile, etc
-    gameCanvas.addEventListener("touchstart", function (e) {
-      var mousePos = getTouchPos(gameCanvas, e);
-      var thisOne = document.getElementById("thisOne");
-      thisOne.innerHTML = mousePos.x;
-      //console.log(mousePos);
-      var touch = e.touches[0];
-      var mouseEvent = new MouseEvent("mousedown", {
-        clientX: touch.clientX,
-        clientY: touch.clientY
-      });
-      gameCanvas.dispatchEvent(mouseEvent);
-    }, false);
-
-
-    // Get the position of a touch relative to the canvas
-    function getTouchPos(canvasDom, touchEvent) {
-      var rect = canvasDom.getBoundingClientRect();
-      return {
-        x: touchEvent.touches[0].clientX - rect.left,
-        y: touchEvent.touches[0].clientY - rect.top
-      };
-    }
     
-    
-    
+
     
     
     
@@ -366,6 +341,52 @@ var handlers = {
   },
   moveDown: function() {
     Game.player.move([0, 1]);
+  },
+  addTouchListener: function(canvasDOM) {
+    var mousePos = { x:0, y:0 };
+    var lastPos = mousePos;
+    var thisOne = document.getElementById("thisOne");
+    
+    canvasDOM.addEventListener("mousedown", function (e) {
+      lastPos = getMousePos(gameCanvas, e);
+      var thisOne = document.getElementById("thisOne");
+      thisOne.innerHTML = mousePos.x + "," + mousePos.y;
+    }, false);
+    
+    // Set up touch events for mobile, etc
+    gameCanvas.addEventListener("touchstart", function (e) {
+      mousePos = getTouchPos(gameCanvas, e);
+      
+      thisOne.innerHTML = mousePos.x + "," + mousePos.y;
+      //console.log(mousePos);
+      var touch = e.touches[0];
+      var mouseEvent = new MouseEvent("mousedown", {
+        clientX: touch.clientX,
+        clientY: touch.clientY
+      });
+      gameCanvas.dispatchEvent(mouseEvent);
+    }, false);
+
+    // Get the position of a touch relative to the canvas
+    function getTouchPos(canvasDom, touchEvent) {
+      var rect = canvasDom.getBoundingClientRect();
+      return {
+        x: touchEvent.touches[0].clientX - rect.left,
+        y: touchEvent.touches[0].clientY - rect.top
+      };
+    }
+    
+    // Get the position of the mouse relative to the canvas
+    function getMousePos(canvasDom, mouseEvent) {
+      var rect = canvasDom.getBoundingClientRect();
+      return {
+        x: mouseEvent.clientX - rect.left,
+        y: mouseEvent.clientY - rect.top
+    };
+    }
+    
+    
+    
   }
 }
 
