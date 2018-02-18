@@ -227,56 +227,67 @@ Object.prototype.handleEvent = function(e) {
 
 var view = {
   createMoveButtons: function() {
-    
-    var thisOne = document.getElementById("thisONe");
-    var gameDisplayDOM = document.getElementsByClassName("gameDisplay")[0];
-    var mc = new Hammer(gameDisplayDOM);
-    
-        // listen to events...
-    mc.on("panleft panright tap press", function(ev) {
-        
-        thisOne.innerHTML = ev.type + " gesture detected.";
-        console.log(ev);
-    });
-    
-    var moveButtonsDiv = document.createElement("div");
-    moveButtonsDiv.className = "moveButtons";
-    var menuButtonsDiv = document.createElement("div");
-    menuButtonsDiv.className = "menuButtons";
-    
-    var buttonLeft = document.createElement("button");
-    var buttonRight = document.createElement("button");
-    var buttonUp = document.createElement("button");
-    var buttonDown = document.createElement("button");
-    var buttonMenu = document.createElement("button");
 
-    buttonLeft.className = "moveButton";
-    buttonRight.className = "moveButton";
-    buttonUp.className = "moveButton";
-    buttonDown.className = "moveButton";
-    buttonMenu.className = "menuButton";
+  var thisOne = document.getElementById("thisONe");
+  var gameDisplayDOM = document.getElementsByClassName("gameDisplay")[0];
+  var mc = new Hammer(gameDisplayDOM);
+
+  // listen to events...
+  mc.on("panleft panright tap press", function(ev) {
+
+    thisOne.innerHTML = ev.type + " gesture detected.";
     
-    buttonLeft.innerText = "Left";
-    buttonRight.innerText = "Right";
-    buttonUp.innerText = "Up";
-    buttonDown.innerText = "Down";
-    buttonMenu.innerText = "Menu";
+    var tapPixelX = ev.center.x;
+    var tapPixelY = ev.center.y;
 
-    buttonLeft.addEventListener("click", handlers.moveLeft);
-    buttonRight.addEventListener("click", handlers.moveRight);
-    buttonUp.addEventListener("click", handlers.moveUp);
-    buttonDown.addEventListener("click", handlers.moveDown);
-    buttonMenu.addEventListener("click", Game._showMenu);
-
-    moveButtonsDiv.appendChild(buttonLeft);
-    moveButtonsDiv.appendChild(buttonRight);
-    moveButtonsDiv.appendChild(buttonUp);
-    moveButtonsDiv.appendChild(buttonDown);
+    if (ev.type === "tap") {
+      var playerPixelX = (Game.player._x * 32) + 16;
+      var playerPixelY = (Game.player._y * 32) + 16;
+      console.log(playerPixelX, playerPixelY);
+      console.log(tapPixelX, tapPixelY);
+    }
+    console.log(ev);
+    console.log(gameDisplayDOM.getBoundingClientRect());
+  });
     
-    menuButtonsDiv.appendChild(buttonMenu);
+  var moveButtonsDiv = document.createElement("div");
+  moveButtonsDiv.className = "moveButtons";
+  var menuButtonsDiv = document.createElement("div");
+  menuButtonsDiv.className = "menuButtons";
 
-    document.body.appendChild(moveButtonsDiv);
-    document.body.appendChild(menuButtonsDiv);
+  var buttonLeft = document.createElement("button");
+  var buttonRight = document.createElement("button");
+  var buttonUp = document.createElement("button");
+  var buttonDown = document.createElement("button");
+  var buttonMenu = document.createElement("button");
+
+  buttonLeft.className = "moveButton";
+  buttonRight.className = "moveButton";
+  buttonUp.className = "moveButton";
+  buttonDown.className = "moveButton";
+  buttonMenu.className = "menuButton";
+
+  buttonLeft.innerText = "Left";
+  buttonRight.innerText = "Right";
+  buttonUp.innerText = "Up";
+  buttonDown.innerText = "Down";
+  buttonMenu.innerText = "Menu";
+
+  buttonLeft.addEventListener("click", handlers.moveLeft);
+  buttonRight.addEventListener("click", handlers.moveRight);
+  buttonUp.addEventListener("click", handlers.moveUp);
+  buttonDown.addEventListener("click", handlers.moveDown);
+  buttonMenu.addEventListener("click", Game._showMenu);
+
+  moveButtonsDiv.appendChild(buttonLeft);
+  moveButtonsDiv.appendChild(buttonRight);
+  moveButtonsDiv.appendChild(buttonUp);
+  moveButtonsDiv.appendChild(buttonDown);
+
+  menuButtonsDiv.appendChild(buttonMenu);
+
+  document.body.appendChild(moveButtonsDiv);
+  document.body.appendChild(menuButtonsDiv);
     
   }
 }
