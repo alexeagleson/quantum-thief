@@ -232,80 +232,51 @@ Object.prototype.handleEvent = function(e) {
     this.move(dir);
   
     window.removeEventListener("keydown", this);
+  
     Game.engine.unlock();
 }
 
 
 var view = {
   createMoveButtons: function() {
-    /*
-    var thisOne = document.getElementById("thisONe");
+    var moveButtonsDiv = document.createElement("div");
+    moveButtonsDiv.className = "moveButtons";
+    var menuButtonsDiv = document.createElement("div");
+    menuButtonsDiv.className = "menuButtons";
 
-    var gameDisplayDOM = document.getElementsByClassName("gameDisplay")[0];
-    var mc = new Hammer(gameDisplayDOM);
+    var buttonLeft = document.createElement("button");
+    var buttonRight = document.createElement("button");
+    var buttonUp = document.createElement("button");
+    var buttonDown = document.createElement("button");
+    var buttonMenu = document.createElement("button");
 
+    buttonLeft.className = "moveButton";
+    buttonRight.className = "moveButton";
+    buttonUp.className = "moveButton";
+    buttonDown.className = "moveButton";
+    buttonMenu.className = "menuButton";
 
+    buttonLeft.innerText = "Left";
+    buttonRight.innerText = "Right";
+    buttonUp.innerText = "Up";
+    buttonDown.innerText = "Down";
+    buttonMenu.innerText = "Menu";
 
-    // listen to events...
-    mc.on("panleft panright tap press", function(ev) {
+    buttonLeft.addEventListener("click", handlers.moveLeft);
+    buttonRight.addEventListener("click", handlers.moveRight);
+    buttonUp.addEventListener("click", handlers.moveUp);
+    buttonDown.addEventListener("click", handlers.moveDown);
+    buttonMenu.addEventListener("click", Game._showMenu);
 
+    moveButtonsDiv.appendChild(buttonLeft);
+    moveButtonsDiv.appendChild(buttonRight);
+    moveButtonsDiv.appendChild(buttonUp);
+    moveButtonsDiv.appendChild(buttonDown);
 
+    menuButtonsDiv.appendChild(buttonMenu);
 
-    if (ev.type === "tap") {
-      var gameDisplayDOM = document.getElementsByClassName("gameDisplay")[0];
-      var gameDisplayRect = gameDisplayDOM.getBoundingClientRect();
-      
-
-      var tapPixelX = ev.center.x - gameDisplayRect.x;
-      var tapPixelY = ev.center.y - gameDisplayRect.top;
-      
-      
-      console.log(dx, dy);
-      //console.log(tapPixelX, tapPixelY);
-    }
-    console.log(ev);
-    console.log(window);
-  });
-  */
-  var moveButtonsDiv = document.createElement("div");
-  moveButtonsDiv.className = "moveButtons";
-  var menuButtonsDiv = document.createElement("div");
-  menuButtonsDiv.className = "menuButtons";
-
-  var buttonLeft = document.createElement("button");
-  var buttonRight = document.createElement("button");
-  var buttonUp = document.createElement("button");
-  var buttonDown = document.createElement("button");
-  var buttonMenu = document.createElement("button");
-
-  buttonLeft.className = "moveButton";
-  buttonRight.className = "moveButton";
-  buttonUp.className = "moveButton";
-  buttonDown.className = "moveButton";
-  buttonMenu.className = "menuButton";
-
-  buttonLeft.innerText = "Left";
-  buttonRight.innerText = "Right";
-  buttonUp.innerText = "Up";
-  buttonDown.innerText = "Down";
-  buttonMenu.innerText = "Menu";
-
-  buttonLeft.addEventListener("click", handlers.moveLeft);
-  buttonRight.addEventListener("click", handlers.moveRight);
-  buttonUp.addEventListener("click", handlers.moveUp);
-  buttonDown.addEventListener("click", handlers.moveDown);
-  buttonMenu.addEventListener("click", Game._showMenu);
-
-  moveButtonsDiv.appendChild(buttonLeft);
-  moveButtonsDiv.appendChild(buttonRight);
-  moveButtonsDiv.appendChild(buttonUp);
-  moveButtonsDiv.appendChild(buttonDown);
-
-  menuButtonsDiv.appendChild(buttonMenu);
-
-  document.body.appendChild(moveButtonsDiv);
-  document.body.appendChild(menuButtonsDiv);
-    
+    document.body.appendChild(moveButtonsDiv);
+    document.body.appendChild(menuButtonsDiv);
   }
 }
 
@@ -367,16 +338,11 @@ var handlers = {
     }
   },
   processMouseAndTouchInput(coords) {
-    
-    
-
     var playerPixelX = (Game.player._x * 32);
     var playerPixelY = (Game.player._y * 32);
 
     var dx = coords.x - playerPixelX;
     var dy = coords.y - playerPixelY;
-
-    //thisOne.innerHTML = ev.type + " gesture detected " + tapPixelX + " , " + tapPixelY + "window " + window.devicePixelRatio;
 
     if (dx > 0 && (Math.abs(dx) > Math.abs(dy))) {
       handlers.moveRight();
@@ -387,8 +353,7 @@ var handlers = {
     } else if (dy > 0 && (Math.abs(dy) > Math.abs(dx))) {
       handlers.moveDown();
     }
-    
-    
+    setTimeout(function() { Game.player.turnReady = true; }, 1000); 
   }
 }
 
