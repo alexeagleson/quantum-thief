@@ -250,11 +250,9 @@ var view = {
       var gameDisplayDOM = document.getElementsByClassName("gameDisplay")[0];
       var gameDisplayRect = gameDisplayDOM.getBoundingClientRect();
       
-      
-      
+
       var tapPixelX = ev.center.x - gameDisplayRect.x;
       var tapPixelY = ev.center.y - gameDisplayRect.top;
-
       
       var playerPixelX = (Game.player._x * 32);
       var playerPixelY = (Game.player._y * 32);
@@ -262,7 +260,7 @@ var view = {
       var dx = tapPixelX - playerPixelX;
       var dy = tapPixelY - playerPixelY;
       
-      thisOne.innerHTML = ev.type + " gesture detected " + tapPixelX + " , " + tapPixelY;
+      thisOne.innerHTML = ev.type + " gesture detected " + tapPixelX + " , " + tapPixelY + "window " + window.devicePixelRatio;
       
       if (dx > 0 && (Math.abs(dx) > Math.abs(dy))) {
         handlers.moveRight();
@@ -278,7 +276,7 @@ var view = {
       //console.log(tapPixelX, tapPixelY);
     }
     console.log(ev);
-    console.log(gameDisplayRect);
+    console.log(window);
   });
     
   var moveButtonsDiv = document.createElement("div");
