@@ -181,6 +181,7 @@ var Object = function(x, y) {
   this._x = x;
   this._y = y;
   this._char = "@";
+  this.turnReady = true,
 
   this.move = function(directionArray) {
     var newX = this._x + directionArray[0];
@@ -338,6 +339,10 @@ var handlers = {
     }
   },
   processMouseAndTouchInput(coords) {
+    if (!Game.player.turnReady) {
+      return;
+    }
+    
     var playerPixelX = (Game.player._x * 32);
     var playerPixelY = (Game.player._y * 32);
 
@@ -353,7 +358,8 @@ var handlers = {
     } else if (dy > 0 && (Math.abs(dy) > Math.abs(dx))) {
       handlers.moveDown();
     }
-    setTimeout(function() { Game.player.turnReady = true; }, 1000); 
+    Game.player.turnReady = false;
+    setTimeout(function() { Game.player.turnReady = true; }, 250); 
   }
 }
 
