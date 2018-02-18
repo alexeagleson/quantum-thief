@@ -259,23 +259,6 @@ var view = {
       var tapPixelX = ev.center.x - gameDisplayRect.x;
       var tapPixelY = ev.center.y - gameDisplayRect.top;
       
-      var playerPixelX = (Game.player._x * 32);
-      var playerPixelY = (Game.player._y * 32);
-      
-      var dx = tapPixelX - playerPixelX;
-      var dy = tapPixelY - playerPixelY;
-      
-      thisOne.innerHTML = ev.type + " gesture detected " + tapPixelX + " , " + tapPixelY + "window " + window.devicePixelRatio;
-      
-      if (dx > 0 && (Math.abs(dx) > Math.abs(dy))) {
-        handlers.moveRight();
-      } else if (dx < 0 && (Math.abs(dx) > Math.abs(dy))) {
-        handlers.moveLeft();
-      } else if (dy < 0 && (Math.abs(dy) > Math.abs(dx))) {
-        handlers.moveUp();
-      } else if (dy > 0 && (Math.abs(dy) > Math.abs(dx))) {
-        handlers.moveDown();
-      }
       
       console.log(dx, dy);
       //console.log(tapPixelX, tapPixelY);
@@ -347,22 +330,22 @@ var handlers = {
     gameCanvas.addEventListener("mousedown", function (e) {
       mousePos = getMousePos(gameCanvas, e);
       thisOne.innerHTML = mousePos.x + "," + mousePos.y;
+      handlers.processMouseAndTouchInput(mousePos);
     }, false);
     
     // Set up touch events for mobile, etc
     gameCanvas.addEventListener("touchstart", function (e) {
       mousePos = getTouchPos(gameCanvas, e);
-      
-      
-      //console.log(mousePos);
+
       var touch = e.touches[0];
       var mouseEvent = new MouseEvent("mousedown", {
         clientX: touch.clientX,
         clientY: touch.clientY
       });
       thisOne.innerHTML = mousePos.x + "," + mousePos.y;
-      //processMouseAndTouchInput
+      handlers.processMouseAndTouchInput(mousePos);
       gameCanvas.dispatchEvent(mouseEvent);
+      gameCanvas.dispatchEvent(e);
     }, false);
 
     // Get the position of a touch relative to the canvas
@@ -384,6 +367,28 @@ var handlers = {
     }
   },
   processMouseAndTouchInput(coords) {
+    
+    
+
+    var playerPixelX = (Game.player._x * 32);
+    var playerPixelY = (Game.player._y * 32);
+
+    var dx = coords.x - playerPixelX;
+    var dy = coords.y - playerPixelY;
+
+    //thisOne.innerHTML = ev.type + " gesture detected " + tapPixelX + " , " + tapPixelY + "window " + window.devicePixelRatio;
+
+    if (dx > 0 && (Math.abs(dx) > Math.abs(dy))) {
+      handlers.moveRight();
+    } else if (dx < 0 && (Math.abs(dx) > Math.abs(dy))) {
+      handlers.moveLeft();
+    } else if (dy < 0 && (Math.abs(dy) > Math.abs(dx))) {
+      handlers.moveUp();
+    } else if (dy > 0 && (Math.abs(dy) > Math.abs(dx))) {
+      handlers.moveDown();
+    }
+    
+    
   }
 }
 
