@@ -254,20 +254,15 @@ var view = {
       
       var tapPixelX = ev.center.x - gameDisplayRect.x;
       var tapPixelY = ev.center.y - gameDisplayRect.top;
+
       
-      var pageMeta = document.getElementsByTagName('meta')[0];
-      
-      console.log(pageMeta);
-      
-      pixelScale = 32 * 1;
-      
-      var playerPixelX = (Game.player._x * pixelScale);
-      var playerPixelY = (Game.player._y * pixelScale);
+      var playerPixelX = (Game.player._x * 32);
+      var playerPixelY = (Game.player._y * 32);
       
       var dx = tapPixelX - playerPixelX;
       var dy = tapPixelY - playerPixelY;
       
-      thisOne.innerHTML = ev.type + " gesture detected " + tapPixelX + " , " + tapPixelY + " ppp " + gameDisplayRect.width + "," + gameDisplayRect.height;
+      thisOne.innerHTML = ev.type + " gesture detected " + tapPixelX + " , " + tapPixelY;
       
       if (dx > 0 && (Math.abs(dx) > Math.abs(dy))) {
         handlers.moveRight();
