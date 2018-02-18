@@ -34,7 +34,14 @@ var Game = {
     }
     
     this.display = new ROT.Display(options);
+    
+    
+    
+    //<canvas name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+    
+    this.display.getContainer().content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"
     this.display.getContainer().className = "gameDisplay";
+    console.log(this.display.getContainer());
     document.body.appendChild(this.display.getContainer());
     
     this._createMenu();
@@ -253,7 +260,7 @@ var view = {
       var dx = tapPixelX - playerPixelX;
       var dy = tapPixelY - playerPixelY;
       
-      thisOne.innerHTML = ev.type + " gesture detected " + tapPixelX + " , " + tapPixelY;
+      thisOne.innerHTML = ev.type + " gesture detected " + tapPixelX + " , " + tapPixelY + " ppp " + gameDisplayRect.width + "," + gameDisplayRect.height;
       
       if (dx > 0 && (Math.abs(dx) > Math.abs(dy))) {
         handlers.moveRight();
