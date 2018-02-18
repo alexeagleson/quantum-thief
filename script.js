@@ -39,7 +39,6 @@ var Game = {
     
     //<canvas name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
     
-    this.display.getContainer().content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"
     this.display.getContainer().className = "gameDisplay";
     console.log(this.display.getContainer());
     document.body.appendChild(this.display.getContainer());
