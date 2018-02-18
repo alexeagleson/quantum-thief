@@ -17,7 +17,7 @@ var Game = {
   nonAffixedObjects: [],
 
   init: function() {
-    /*
+    
     var options = {
       layout: "tile",
       bg: "transparent",
@@ -31,7 +31,7 @@ var Game = {
         "!": [256, 96]
       }
     }
-    */
+    
     
     
     var options = {
