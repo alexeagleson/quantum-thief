@@ -40,7 +40,40 @@ var Game = {
     //<canvas name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
     
     this.display.getContainer().className = "gameDisplay";
-    console.log(this.display.getContainer());
+    
+    var gameCanvas = this.display.getContainer();
+
+    // Set up touch events for mobile, etc
+    gameCanvas.addEventListener("touchstart", function (e) {
+      var mousePos = getTouchPos(gameCanvas, e);
+      var thisOne = document.getElementById("thisOne");
+      thisOne.innerHTML = mousePos.x;
+      //console.log(mousePos);
+      var touch = e.touches[0];
+      var mouseEvent = new MouseEvent("mousedown", {
+        clientX: touch.clientX,
+        clientY: touch.clientY
+      });
+      gameCanvas.dispatchEvent(mouseEvent);
+    }, false);
+
+
+    // Get the position of a touch relative to the canvas
+    function getTouchPos(canvasDom, touchEvent) {
+      var rect = canvasDom.getBoundingClientRect();
+      return {
+        x: touchEvent.touches[0].clientX - rect.left,
+        y: touchEvent.touches[0].clientY - rect.top
+      };
+    }
+    
+    
+    
+    
+    
+    
+    
+    
     document.body.appendChild(this.display.getContainer());
     
     this._createMenu();
@@ -233,18 +266,18 @@ Object.prototype.handleEvent = function(e) {
 
 var view = {
   createMoveButtons: function() {
+    /*
+    var thisOne = document.getElementById("thisONe");
 
-  var thisOne = document.getElementById("thisONe");
-    
-  var gameDisplayDOM = document.getElementsByClassName("gameDisplay")[0];
-  var mc = new Hammer(gameDisplayDOM);
+    var gameDisplayDOM = document.getElementsByClassName("gameDisplay")[0];
+    var mc = new Hammer(gameDisplayDOM);
 
-  
-    
-  // listen to events...
-  mc.on("panleft panright tap press", function(ev) {
 
-    
+
+    // listen to events...
+    mc.on("panleft panright tap press", function(ev) {
+
+
 
     if (ev.type === "tap") {
       var gameDisplayDOM = document.getElementsByClassName("gameDisplay")[0];
@@ -278,7 +311,7 @@ var view = {
     console.log(ev);
     console.log(window);
   });
-    
+  */
   var moveButtonsDiv = document.createElement("div");
   moveButtonsDiv.className = "moveButtons";
   var menuButtonsDiv = document.createElement("div");
