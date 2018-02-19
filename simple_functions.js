@@ -38,3 +38,26 @@ function rollDie(dieSize) {
   var value = Math.floor(ROT.RNG.getUniform() * (dieSize)) + 1;
   return value;
 }
+
+function normalizeToValue(number, minValue, maxValue) {
+  
+  if (number < minValue) {
+    number = minValue;
+  } else if (number > maxValue) {
+    number = maxValue;
+  }
+  return number;
+}
+
+function sanitizeNumber(value, minValue, maxValue) {
+  
+  if (isNaN(value)) {
+    return false; 
+  }
+  
+  if (minValue === undefined) {
+    return value;
+  } else {
+    return normalizeToValue(value, minValue, maxValue);
+  }
+}

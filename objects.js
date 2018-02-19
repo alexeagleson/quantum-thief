@@ -46,16 +46,15 @@ var Object = function(x, y) {
     var astar = new ROT.Path.AStar(Game.player.x, Game.player.y, Game.checkIfWall);
 
     // compute from given coords #1
-    astar.compute(this.x, this.y, function(x, y) {
-      console.log("next coords" + x + " " + y);
-      //return;
-    });
+    astar.compute(this.x, this.y, function(x, y) {});
 
+    this.move(astar._dirs[0]);
+    
+    //this.move(this.x - x, this.y - y);
     
     
     
-    
-    
+    /*
     var d4 = rollDie(4);
 
     if (d4 === 1) {
@@ -66,7 +65,7 @@ var Object = function(x, y) {
       this.move([0, 1]);
     } else if (d4 === 4) {
       this.move([0, -1]);
-    }
+    }*/
 
     Game.engine.unlock(); 
     

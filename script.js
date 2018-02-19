@@ -127,14 +127,12 @@ var Game = {
   
   /* input callback informs about map structure */
   checkIfWall: function(x, y) {
-    alert("Hello!" + x + y);
-    // Tells whether a tile can be passed through
-    console.log(this.map);
-    if (typeof(this.map[x + "," + y]) != "undefined") {
-      return (!Game.map[x + "," + y].wall);
-    } else {
+    if (x < 0 || x > 19) {
+      return false;
+    } else if (y < 0 || y > 24) {
       return false;
     }
+    return (!Game.map[x + "," + y].wall);
   }
   
 };
