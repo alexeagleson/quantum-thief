@@ -1,57 +1,68 @@
 var Tile = function(x, y, char, wall) {
-  this._x = x;
-  this._y = y;
-  this._wall = wall;
-  this._char = char;
+  this.x = x;
+  this.y = y;
+  this.wall = wall;
+  this.char = char;
 
-  this._objectsOnThisTile = [];
+  this.objectsOnThisTile = [];
 
-  this._draw = function() {
-    Game.display.draw(this._x, this._y, Game.map[this._x + "," + this._y]._char);
+  this.draw = function() {
+    Game.display.draw(this.x, this.y, Game.map[this.x + "," + this.y].char);
     
-    this._objectsOnThisTile.forEach(function(object) {
-      Game.display.draw(object._x, object._y, object._char);
+    this.objectsOnThisTile.forEach(function(object) {
+      Game.display.draw(object.x, object.y, object.char);
     });
   };
 }
 
 var Object = function(x, y) {
-  this._x = x;
-  this._y = y;
-  this._char = "@";
+  this.x = x;
+  this.y = y;
+  this.char = "@";
   this.turnReady = true,
     
   this.act = function() {
-    
     Game.engine.lock();
     
-    window.addEventListener("keydown", this);
+    if (this == Game.player) {
+      this.handlePlayerTurn();
+    } else{
+      this.handleNpcTurn();
+    }
+  },
+    
+  this.handlePlayerTurn() {
     var gameCanvas = Game.display.getContainer();
+    
+    window.addEventListener("keydown", this);
     gameCanvas.addEventListener("mousedown", this);
     gameCanvas.addEventListener("touchstart", this);
-
+  },
     
+  this.handleNpcTurn() {
+    
+    this.
   },
 
   this.move = function(directionArray) {
-    var newX = this._x + directionArray[0];
-    var newY = this._y + directionArray[1];
+    var newX = this.x + directionArray[0];
+    var newY = this.y + directionArray[1];
     var newKey = newX + "," + newY;
     
     if (!(newKey in Game.map)) {
       return; 
     }
     
-    if (Game.map[newX + "," + newY]._wall) {
+    if (Game.map[newX + "," + newY].wall) {
       return;
     }
 
-    Game.map[this._x + "," + this._y]._objectsOnThisTile = [];
-    Game.map[this._x + "," + this._y]._draw();
-    this._x = newX;
-    this._y = newY;
-    Game.map[this._x + "," + this._y]._objectsOnThisTile.push(this);
-    Game.map[this._x + "," + this._y]._draw();
+    Game.map[this.x + "," + this.y].objectsOnThisTile = [];
+    Game.map[this.x + "," + this.y].draw();
+    this.x = newX;
+    this.y = newY;
+    Game.map[this.x + "," + this.y].objectsOnThisTile.push(this);
+    Game.map[this.x + "," + this.y].draw();
   },  
 
   this.handleEvent = function(e) {
@@ -94,7 +105,7 @@ var Object = function(x, y) {
 
     setTimeout(function() { 
       Game.engine.unlock(); 
-    }, 100); 
+    }, 10); 
   }
 }
 

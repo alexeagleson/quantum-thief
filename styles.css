@@ -4,20 +4,9 @@ h1 {
   padding: 2px;
 }
 
-.moveButton {
-  height:50px;
-  width:100px;
-  font-size: 200%;
-  margin: 5px;
-}
-
 .menuButton {
   height:50px;
   width:100px;
   font-size: 200%;
   margin: 5px;
-}
-
-.gameDisplay {
-  touch-action: manipulation;
 }

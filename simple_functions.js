@@ -17,8 +17,8 @@ function getMousePos(canvasDom, mouseEvent) {
 }
 
 function convertMouseTouchToMovement(mouseTouchCoords) {
-  var playerPixelX = (Game.player._x * 32);
-  var playerPixelY = (Game.player._y * 32);
+  var playerPixelX = (Game.player.x * 32);
+  var playerPixelY = (Game.player.y * 32);
 
   var dx = mouseTouchCoords.x - playerPixelX;
   var dy = mouseTouchCoords.y - playerPixelY;
