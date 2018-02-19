@@ -41,15 +41,19 @@ var Object = function(x, y) {
     
   this.handleNpcTurn = function() {
     var d4 = rollDie(4);
-    if (rollD4 === 1) {
+
+    if (d4 === 1) {
       this.move([1, 0]);
-    } else if (rollD4 === 2) {
+    } else if (d4 === 2) {
       this.move([-1, 0]);
-    } else if (rollD4 === 3) {
+    } else if (d4 === 3) {
       this.move([0, 1]);
-    } else if (rollD4 === 4) {
+    } else if (d4 === 4) {
       this.move([0, -1]);
     }
+
+    Game.engine.unlock(); 
+    
   },
 
   this.move = function(directionArray) {

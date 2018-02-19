@@ -9,7 +9,8 @@ var Game = {
   player: null,
   
   allObjects: [],
-  nonAffixedObjects: [],
+  inactiveObjects: [],
+  activeObjects: [],
 
   init: function() {
     
@@ -38,7 +39,11 @@ var Game = {
     this.generateMap();
 
     var scheduler = new ROT.Scheduler.Simple();
-    scheduler.add(this.player, true);
+    
+    this.activeObjects.forEach(function(object) {
+      scheduler.add(object, true);
+    })
+    
 
     this.engine = new ROT.Engine(scheduler);
     this.engine.start();
@@ -78,7 +83,12 @@ var Game = {
     digger.create(digCallback.bind(this));
 
     this.generateBoxes(freeCells);
-    this.createObject(freeCells);
+    
+    this.player = this.createObject(freeCells);
+    this.activeObjects.push(this.player);
+    
+    var secondObject = this.createObject(freeCells);
+    this.activeObjects.push(secondObject);
     
     this.drawWholeMap();
     
