@@ -186,7 +186,7 @@ var view = {
     
     if (menuText) {
       alert(menuText);
-      this.menu.drawText(1, 15, menuText, 38);
+      //this.menu.drawText(1, 15, menuText, 38);
     }
     
     if (view.menuOpen === false) {
