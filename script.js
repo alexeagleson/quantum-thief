@@ -31,7 +31,11 @@ var Game = {
     this.display = new ROT.Display(options);
     var gameCanvas = this.display.getContainer();
     gameCanvas.className = "gameDisplay";
+    gameCanvas.width = 640;
+    gameCanvas.height = 800;
     document.body.appendChild(gameCanvas);
+    
+    console.log(this.display.getContainer());
 
     this.createMenu();
     view.createMenuButton();
@@ -61,6 +65,7 @@ var Game = {
     
     this.menu.getContainer().className = "menuDisplay";
     this.menu.getContainer().style.display = "none";
+    
     document.body.appendChild(this.menu.getContainer());
 
     this.menu.drawText(1, 10, "You coud use this menu to support something like character dialogue.  Maybe show a character %c{blue}portrait%c{} somewhere?  I dunno.  Either way it's prety %c{red}easy%c{} to use.", 38);
