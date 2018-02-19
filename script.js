@@ -4,6 +4,8 @@ tileSet.src = "https://cdn.glitch.com/65d1c64a-f6b1-4419-b107-12f1a855a66a%2FPeo
 var Game = {
   display: null,
   menu: null,
+  dialogueMenu: null,
+  
   map: {},
   engine: null,
   player: null,
@@ -32,19 +34,7 @@ var Game = {
           "!": [256, 96]
         }
       }
-    } else {
-      var options = {
-        width: 20,
-        height: 25,
-        fontSize: 32,
-        forceSquareRatio:true
-      }
-    }
-    
-    this.display = new ROT.Display(options);
-    var gameCanvas = this.display.getContainer();
-    gameCanvas.className = "gameDisplay";
-    document.body.appendChild(gameCanvas);
+
 
     this.createMenu();
     view.createMenuButton();
@@ -62,13 +52,30 @@ var Game = {
     this.engine.start();
   },
   
+  createCanvas: function(options, className) {
+    var options = {
+      width: 20,
+      height: 25,
+      fontSize: 32,
+      forceSquareRatio:true
+    }
+
+    
+    this.display = new ROT.Display(options);
+    var thisCanvas = this.display.getContainer();
+    thisCanvas.className = className;
+    document.body.appendChild(thisCanvas);
+    
+    return thisCanvas;
+  },
+  
   createMenu: function () {
     this.menu = new ROT.Display();
     
     this.menu.setOptions({
-      width: 40,
-      height: 50,
-      fontSize: 16,
+      width: 20,
+      height: 25,
+      fontSize: 32,
       forceSquareRatio:true
     });
     
