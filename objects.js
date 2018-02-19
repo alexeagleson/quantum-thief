@@ -133,12 +133,12 @@ var Object = function(x, y) {
     }
       
     gameCanvas.removeEventListener("mousedown", this);
-    gameCanvas.removeEventListener("touchstart", this);
+    gameCanvas.removeEventListener("touchend", this);
     window.removeEventListener("keydown", this);
 
     setTimeout(function() { 
       Game.engine.unlock(); 
-    }, 500); 
+    }, 200); 
   }
 }
 
