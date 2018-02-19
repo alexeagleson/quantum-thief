@@ -16,10 +16,11 @@ var Game = {
 
   init: function() {
     
-    var gameType = "normal";
-    
-    if (gameType == "normal") {
-      var options = {
+    this.display = this.createCanvas("gameDisplay");
+    this.display.getContainer().style.display = "block";
+
+    if (true) {
+      this.display.setOptions({
         width: 20,
         height: 25,
         layout: "tile",
@@ -33,10 +34,14 @@ var Game = {
           "a": [32, 0],
           "!": [256, 96]
         }
-      }
+      });
+    }
 
+    this.menu = this.createCanvas("menuDisplay");
+    this.menu.drawText(1, 10, "You coud use this menu to support something like character dialogue.  Maybe show a character %c{blue}portrait%c{} somewhere?  I dunno.  Either way it's prety %c{red}easy%c{} to use.", 38);
 
-    this.createMenu();
+    this.dialogueMenu = this.createCanvas("dialogueDisplay");
+      
     view.createMenuButton();
     
     this.generateMap();
@@ -47,12 +52,11 @@ var Game = {
       scheduler.add(object, true);
     })
     
-
     this.engine = new ROT.Engine(scheduler);
     this.engine.start();
   },
   
-  createCanvas: function(options, className) {
+  createCanvas: function(className) {
     var options = {
       width: 20,
       height: 25,
@@ -60,33 +64,14 @@ var Game = {
       forceSquareRatio:true
     }
 
-    
-    this.display = new ROT.Display(options);
-    var thisCanvas = this.display.getContainer();
+    thisRotDisplay = new ROT.Display(options);
+    var thisCanvas = thisRotDisplay.getContainer();
     thisCanvas.className = className;
     document.body.appendChild(thisCanvas);
-    
-    return thisCanvas;
+    thisCanvas.style.display = "none";
+    return thisRotDisplay;
   },
   
-  createMenu: function () {
-    this.menu = new ROT.Display();
-    
-    this.menu.setOptions({
-      width: 20,
-      height: 25,
-      fontSize: 32,
-      forceSquareRatio:true
-    });
-    
-    this.menu.getContainer().className = "menuDisplay";
-    this.menu.getContainer().style.display = "none";
-    
-    document.body.appendChild(this.menu.getContainer());
-
-    this.menu.drawText(1, 10, "You coud use this menu to support something like character dialogue.  Maybe show a character %c{blue}portrait%c{} somewhere?  I dunno.  Either way it's prety %c{red}easy%c{} to use.", 38);
-  },
-
   generateMap: function() {
     var digger = new ROT.Map.Rogue(Game.display._options.width, Game.display._options.height);
     var freeCells = [];
@@ -190,12 +175,7 @@ var view = {
   toggleMenu: function(menuText) {
     var gameDisplayDOM = document.getElementsByClassName("gameDisplay")[0];
     var menuDisplayDOM = document.getElementsByClassName("menuDisplay")[0];
-    
-    if (!(typeof menuText === 'undefined')) {
-      Game.menu.clear();
-      Game.menu.drawText(1, 15, menuText, 38);
-    }
-      
+    var dialogueDisplayDOM = 
     
     if (view.menuOpen === false) {
       view.menuOpen = true;
@@ -207,6 +187,9 @@ var view = {
       menuDisplayDOM.style.display = "none";
     }
   },
+  
+  showGame: function() {
+  }
 }
 
 
