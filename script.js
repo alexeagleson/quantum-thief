@@ -184,10 +184,11 @@ var view = {
     var gameDisplayDOM = document.getElementsByClassName("gameDisplay")[0];
     var menuDisplayDOM = document.getElementsByClassName("menuDisplay")[0];
     
-    if (menuText) {
-      alert(menuText);
-      //this.menu.drawText(1, 15, menuText, 38);
+    if (!(typeof menuText === 'undefined')) {
+      Game.menu.clear();
+      Game.menu.drawText(1, 15, menuText, 38);
     }
+      
     
     if (view.menuOpen === false) {
       view.menuOpen = true;
