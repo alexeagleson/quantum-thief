@@ -55,7 +55,7 @@ var Object = function(x, y) {
       this.move([0, -1]);
     }*/
 
-    let astar = new ROT.Path.AStar(Game.player.x, Game.player.y, Game.checkIfWall);
+    let astar = new ROT.Path.AStar(Game.player.x, Game.player.y, Game.checkIfWall, {topology: 4});
     let addPath = (x, y) => this.path.push({x, y});
     astar.compute(this.x, this.y, addPath);
   
@@ -70,15 +70,10 @@ var Object = function(x, y) {
     Game.map[this.x + "," + this.y].objectsOnThisTile.push(this);
     Game.map[this.x + "," + this.y].draw();
     
-    
+    this.path = [];
     
     Game.engine.unlock(); 
     return true;
-    
-    
-    
-
-    
     
   },
 
@@ -143,7 +138,7 @@ var Object = function(x, y) {
 
     setTimeout(function() { 
       Game.engine.unlock(); 
-    }, 50); 
+    }, 500); 
   }
 }
 
