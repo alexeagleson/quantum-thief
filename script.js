@@ -1,12 +1,7 @@
 var tileSet = document.createElement("img");
-//tileSet.src = "http://ondras.github.io/rot.js/manual/tiles.png";
-//tileSet.src = "http://2.bp.blogspot.com/_VSJ0_iRR18s/SMaRLuujkvI/AAAAAAAAAPA/XJZS30OkEpI/s400/nethack.gif";
-//tileSet.src = "http://2.bp.blogspot.com/-apOgGCUa2tY/UkrrvGC0lXI/AAAAAAAAABQ/INvtj-x66wM/s1600/PeopleSpriteSheet3.png";
 tileSet.src = "https://cdn.glitch.com/65d1c64a-f6b1-4419-b107-12f1a855a66a%2FPeopleSpriteSheet3.png?1518898106569";
 
 var Game = {
-
-  
   display: null,
   menu: null,
   map: {},
@@ -34,22 +29,12 @@ var Game = {
     }
     
     this.display = new ROT.Display(options);
-    
-    
-    
-    //<canvas name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
-    
-    this.display.getContainer().className = "gameDisplay";
-    
     var gameCanvas = this.display.getContainer();
-    
-
+    gameCanvas.className = "gameDisplay";
     handlers.addMouseAndTouchListener(gameCanvas);
-    
-    document.body.appendChild(this.display.getContainer());
+    document.body.appendChild(gameCanvas);
     
     this._createMenu();
-
     this._generateMap();
 
     var scheduler = new ROT.Scheduler.Simple();
@@ -59,50 +44,23 @@ var Game = {
     this.engine.start();
 
     view.createMoveButtons();
-    
-    this.menu = new ROT.Display();
-    
   },
   
   _createMenu: function () {
     this.menu = new ROT.Display();
     
     this.menu.setOptions({
-        width: 20,
-        height: 25,
-        fontSize: 32,
+      width: 40,
+      height: 50,
+      fontSize: 16,
       forceSquareRatio:true
     });
+    
     this.menu.getContainer().className = "menuDisplay";
     this.menu.getContainer().style.display = "none";
     document.body.appendChild(this.menu.getContainer());
 
-    this.menu.drawText(5,  2, "Hello world");
-
-    /* last argument specifies maximum length */
-    this.menu.drawText(1, 5, "This line of text is very long.", 18);
-
-    this.menu.drawText(1, 10, "You coud use this menu to support something like character dialogue.  Maybe show a character %c{blue}portrait%c{} somewhere?  I dunno.  Either way it's prety %c{red}easy%c{} to use.", 18);
-  },
-  
-  _showMenu: function() {
-    debugger;
-    
-    var moveButtonsDOM = document.getElementsByClassName("moveButtons")[0];
-    var gameDisplayDOM = document.getElementsByClassName("gameDisplay")[0];
-    var menuDisplayDOM = document.getElementsByClassName("menuDisplay")[0];
-    
-    if (this.menuOpen === false) {
-      this.menuOpen = true;
-      moveButtonsDOM.style.display = "block";
-      gameDisplayDOM.style.display = "block";
-      menuDisplayDOM.style.display = "none";
-    } else {
-      this.menuOpen = false;
-      moveButtonsDOM.style.display = "none";
-      gameDisplayDOM.style.display = "none";
-      menuDisplayDOM.style.display = "block";
-    }
+    this.menu.drawText(1, 10, "You coud use this menu to support something like character dialogue.  Maybe show a character %c{blue}portrait%c{} somewhere?  I dunno.  Either way it's prety %c{red}easy%c{} to use.", 38);
   },
 
   _generateMap: function() {
@@ -115,7 +73,6 @@ var Game = {
           this.map[key] = new Tile(x, y, "#", true);
           return; 
         }
-
 
         this.map[key] = new Tile(x, y, "a", false);
         freeCells.push(key);
@@ -189,7 +146,7 @@ var view = {
     buttonRight.addEventListener("click", handlers.moveRight);
     buttonUp.addEventListener("click", handlers.moveUp);
     buttonDown.addEventListener("click", handlers.moveDown);
-    buttonMenu.addEventListener("click", Game._showMenu);
+    buttonMenu.addEventListener("click", Game.toggleMenu);
 
     moveButtonsDiv.appendChild(buttonLeft);
     moveButtonsDiv.appendChild(buttonRight);
@@ -200,7 +157,24 @@ var view = {
 
     document.body.appendChild(moveButtonsDiv);
     document.body.appendChild(menuButtonsDiv);
-  }
+  },
+  toggleMenu: function() {
+    var moveButtonsDOM = document.getElementsByClassName("moveButtons")[0];
+    var gameDisplayDOM = document.getElementsByClassName("gameDisplay")[0];
+    var menuDisplayDOM = document.getElementsByClassName("menuDisplay")[0];
+    
+    if (Game.menuOpen === false) {
+      Game.menuOpen = true;
+      moveButtonsDOM.style.display = "block";
+      gameDisplayDOM.style.display = "block";
+      menuDisplayDOM.style.display = "none";
+    } else {
+      Game.menuOpen = false;
+      moveButtonsDOM.style.display = "none";
+      gameDisplayDOM.style.display = "none";
+      menuDisplayDOM.style.display = "block";
+    }
+  },
 }
 
 var handlers = {
