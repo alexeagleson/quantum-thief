@@ -19,7 +19,7 @@ var Object = function(x, y) {
   this.x = x;
   this.y = y;
   this.char = "@";
-  this.turnReady = true,
+  this.wall = true,
   this.path = [],
     
   this.act = function() {
@@ -41,19 +41,6 @@ var Object = function(x, y) {
   },
     
   this.handleNpcTurn = function() {
-        
-    /*
-    var d4 = rollDie(4);
-
-    if (d4 === 1) {
-      this.move([1, 0]);
-    } else if (d4 === 2) {
-      this.move([-1, 0]);
-    } else if (d4 === 3) {
-      this.move([0, 1]);
-    } else if (d4 === 4) {
-      this.move([0, -1]);
-    }*/
 
     let astar = new ROT.Path.AStar(Game.player.x, Game.player.y, Game.checkIfWall, {topology: 4});
     let addPath = (x, y) => this.path.push({x, y});
@@ -61,7 +48,13 @@ var Object = function(x, y) {
   
     this.path.shift();
     let step = this.path.shift();
-    if(!step) return false;
+    
+    this.path = [];
+    Game.engine.unlock();
+    
+    if(!step) {
+      return false;
+    }
 
     Game.map[this.x + "," + this.y].objectsOnThisTile = [];
     Game.map[this.x + "," + this.y].draw();
@@ -70,9 +63,6 @@ var Object = function(x, y) {
     Game.map[this.x + "," + this.y].objectsOnThisTile.push(this);
     Game.map[this.x + "," + this.y].draw();
     
-    this.path = [];
-    
-    Game.engine.unlock(); 
     return true;
     
   },
@@ -83,11 +73,11 @@ var Object = function(x, y) {
     var newKey = newX + "," + newY;
     
     if (!(newKey in Game.map)) {
-      return; 
+      return false; 
     }
     
     if (Game.map[newX + "," + newY].wall) {
-      return;
+      return false;
     }
 
     Game.map[this.x + "," + this.y].objectsOnThisTile = [];
@@ -96,7 +86,26 @@ var Object = function(x, y) {
     this.y = newY;
     Game.map[this.x + "," + this.y].objectsOnThisTile.push(this);
     Game.map[this.x + "," + this.y].draw();
+    
+    return true;
   },  
+    
+  this.moveRandom = function() {
+    var d4 = rollDie(4);
+    var moveSuccess = false;
+    
+    if (d4 === 1) {
+      moveSuccess = this.move([1, 0]);
+    } else if (d4 === 2) {
+      moveSuccess = this.move([-1, 0]);
+    } else if (d4 === 3) {
+      moveSuccess = this.move([0, 1]);
+    } else if (d4 === 4) {
+      moveSuccess = this.move([0, -1]);
+    }
+    
+    return moveSuccess;
+  },
 
   this.handleEvent = function(e) {
     var gameCanvas = Game.display.getContainer();

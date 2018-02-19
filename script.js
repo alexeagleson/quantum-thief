@@ -139,7 +139,15 @@ var Game = {
     } else if (y < 0 || y > 24) {
       return false;
     }
-    return (!Game.map[x + "," + y].wall);
+    tileWall = Game.map[x + "," + y].wall;
+    
+    if (tileWall) { 
+      return (false); 
+    }
+    
+    tileWall = Game.map[x + "," + y].objectsOnThisTile.forEach(function(object) {
+      
+    })
   }
   
 };
