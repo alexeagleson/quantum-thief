@@ -1,5 +1,5 @@
-var tileSet = document.createElement("img");
-tileSet.src = "https://cdn.glitch.com/65d1c64a-f6b1-4419-b107-12f1a855a66a%2FPeopleSpriteSheet3.png?1518898106569";
+//var tileSet = document.createElement("img");
+//tileSet.src = "https://cdn.glitch.com/65d1c64a-f6b1-4419-b107-12f1a855a66a%2FPeopleSpriteSheet3.png?1518898106569";
 
 var Game = {
   display: null,
@@ -13,7 +13,7 @@ var Game = {
   activeObjects: [],
 
   init: function() {
-    
+    /*
     var options = {
       layout: "tile",
       bg: "transparent",
@@ -26,13 +26,13 @@ var Game = {
         "a": [32, 0],
         "!": [256, 96]
       }
-    }
+    }*/
     
-    this.display = new ROT.Display(options);
+    this.display = new ROT.Display();
     var gameCanvas = this.display.getContainer();
     gameCanvas.className = "gameDisplay";
-    gameCanvas.width = 640;
-    gameCanvas.height = 800;
+    //gameCanvas.width = 640;
+    //gameCanvas.height = 800;
     document.body.appendChild(gameCanvas);
     
     //var c = document.getElementsByName("viewport")[0];
