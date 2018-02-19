@@ -12,43 +12,39 @@ var Game = {
   inactiveObjects: [],
   activeObjects: [],
 
-  init: function(gameType) {
+  init: function() {
     
-    if gameType
-    var options = {
-      width: 20,
-      height: 25,
-      layout: "tile",
-      bg: "transparent",
-      tileWidth: 32,
-      tileHeight: 32,
-      tileSet: tileSet,
-      tileMap: {
-        "@": [0, 0],
-        "#": [0, 32],
-        "a": [32, 0],
-        "!": [256, 96]
+    var gameType = "normal";
+    
+    if (gameType == "normal") {
+      var options = {
+        width: 20,
+        height: 25,
+        layout: "tile",
+        bg: "transparent",
+        tileWidth: 32,
+        tileHeight: 32,
+        tileSet: tileSet,
+        tileMap: {
+          "@": [0, 0],
+          "#": [0, 32],
+          "a": [32, 0],
+          "!": [256, 96]
+        }
+      }
+    } else {
+      var options = {
+        width: 20,
+        height: 25,
+        fontSize: 32,
+        forceSquareRatio:true
       }
     }
-    
-    /*
-    var options = {
-      width: 20,
-      height: 25,
-      fontSize: 32,
-      forceSquareRatio:true
-    }*/
     
     this.display = new ROT.Display(options);
     var gameCanvas = this.display.getContainer();
     gameCanvas.className = "gameDisplay";
-    //gameCanvas.width = 640;
-    //gameCanvas.height = 800;
     document.body.appendChild(gameCanvas);
-    
-    //var c = document.getElementsByName("viewport")[0];
-    //c.content="initial-scale=2.0, maximum-scale=2.0, minimum-scale=2.0, user-scalable=no"
-    //console.log(c);
 
     this.createMenu();
     view.createMenuButton();
@@ -85,7 +81,7 @@ var Game = {
   },
 
   generateMap: function() {
-    var digger = new ROT.Map.Rogue(20, 25);
+    var digger = new ROT.Map.Rogue(Game.display._options.width, Game.display._options.height);
     var freeCells = [];
 
     var digCallback = function(x, y, value) {
@@ -145,9 +141,9 @@ var Game = {
   
   /* input callback informs about map structure */
   checkIfWall: function(x, y) {
-    if (x < 0 || x > 19) {
+    if (x < 0 || x > Game.display._options.width - 1) {
       return false;
-    } else if (y < 0 || y > 24) {
+    } else if (y < 0 || y > Game.display._options.height - 1) {
       return false;
     }
     

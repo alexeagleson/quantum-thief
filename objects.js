@@ -169,7 +169,7 @@ var Object = function(x, y) {
 
     setTimeout(function() { 
       Game.engine.unlock(); 
-    }, 500); 
+    }, 300); 
   }
 }
 
