@@ -31,9 +31,9 @@ var Game = {
     this.display = new ROT.Display(options);
     var gameCanvas = this.display.getContainer();
     gameCanvas.className = "gameDisplay";
-    handlers.addMouseAndTouchListener(gameCanvas);
+
     document.body.appendChild(gameCanvas);
-    
+
     this._createMenu();
     this._generateMap();
 

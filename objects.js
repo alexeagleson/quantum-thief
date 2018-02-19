@@ -22,22 +22,17 @@ var Object = function(x, y) {
   this.turnReady = true,
     
   this.act = function() {
+    
     Game.engine.lock();
     window.addEventListener("keydown", this);
+    
+    
     var gameCanvas = Game.display.getContainer();
 
     
     
-    gameCanvas.addEventListener("mousedown", function (e) {
-
-    }, false);
-    
-    // Set up touch events for mobile, etc
-    gameCanvas.addEventListener("touchstart", function (e) {
-
-
-
-  },
+    gameCanvas.addEventListener("mousedown", this);
+    gameCanvas.addEventListener("touchstart", this);
 
     
   },
@@ -65,11 +60,21 @@ var Object = function(x, y) {
 
   this.handleEvent = function(e) {
     
-    var mousePos = { x:0, y:0 };
+    var gameCanvas = Game.display.getContainer();
     
-    mouse
-            mousePos = getMousePos(gameCanvas, e);
+    if (e.type === "mousedown") {
+      var mousePos = getMousePos(gameCanvas, e);
       handlers.processMouseAndTouchInput(mousePos);
+      console.log(e);
+      //alert(gameCanvas.dispatchEvent(e));
+    } else if (e.type === "touchstart") {
+    }
+    
+    //var mousePos = { x:0, y:0 };
+    /*
+    mouse
+            
+      
       
       
       touch
@@ -83,7 +88,7 @@ var Object = function(x, y) {
       handlers.processMouseAndTouchInput(mousePos);
       gameCanvas.dispatchEvent(mouseEvent);
       gameCanvas.dispatchEvent(e);
-      
+      */
       
       
       
@@ -133,3 +138,4 @@ function getMousePos(canvasDom, mouseEvent) {
     y: mouseEvent.clientY - rect.top
   };
 }
+
