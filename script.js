@@ -190,47 +190,7 @@ var handlers = {
   moveDown: function() {
     Game.player.move([0, 1]);
   },
-  addMouseAndTouchListener: function(gameCanvas) {
 
-    var mousePos = { x:0, y:0 };
-    
-    gameCanvas.addEventListener("mousedown", function (e) {
-      mousePos = getMousePos(gameCanvas, e);
-      handlers.processMouseAndTouchInput(mousePos);
-    }, false);
-    
-    // Set up touch events for mobile, etc
-    gameCanvas.addEventListener("touchstart", function (e) {
-      mousePos = getTouchPos(gameCanvas, e);
-
-      var touch = e.touches[0];
-      var mouseEvent = new MouseEvent("mousedown", {
-        clientX: touch.clientX,
-        clientY: touch.clientY
-      });
-      handlers.processMouseAndTouchInput(mousePos);
-      gameCanvas.dispatchEvent(mouseEvent);
-      gameCanvas.dispatchEvent(e);
-    }, false);
-
-    // Get the position of a touch relative to the canvas
-    function getTouchPos(canvasDom, touchEvent) {
-      var rect = canvasDom.getBoundingClientRect();
-      return {
-        x: touchEvent.touches[0].clientX - rect.left,
-        y: touchEvent.touches[0].clientY - rect.top
-      };
-    }
-    
-    // Get the position of the mouse relative to the canvas
-    function getMousePos(canvasDom, mouseEvent) {
-      var rect = canvasDom.getBoundingClientRect();
-      return {
-        x: mouseEvent.clientX - rect.left,
-        y: mouseEvent.clientY - rect.top
-      };
-    }
-  },
   processMouseAndTouchInput(coords) {
     if (!Game.player.turnReady) {
       return;
