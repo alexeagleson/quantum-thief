@@ -35,7 +35,9 @@ var Game = {
     gameCanvas.height = 800;
     document.body.appendChild(gameCanvas);
     
-    console.log(this.display.getContainer());
+    //var c = document.getElementsByName("viewport")[0];
+    //c.content="initial-scale=2.0, maximum-scale=2.0, minimum-scale=2.0, user-scalable=no"
+    //console.log(c);
 
     this.createMenu();
     view.createMenuButton();
