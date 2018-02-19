@@ -11,7 +11,6 @@ var Tile = function(x, y, char, wall) {
     
     this._objectsOnThisTile.forEach(function(object) {
       Game.display.draw(object._x, object._y, object._char);
-
     });
   };
 }
@@ -22,7 +21,7 @@ var Object = function(x, y) {
   this._char = "@";
   this.turnReady = true,
     
-  act = function() {
+  this.act = function() {
       Game.engine.lock();
       window.addEventListener("keydown", this);
   },
@@ -48,7 +47,7 @@ var Object = function(x, y) {
     Game.map[this._x + "," + this._y]._draw();
   },  
 
-  handleEvent = function(e) {
+  this.handleEvent = function(e) {
       var keyMap = {};
       keyMap[38] = 0;
       keyMap[33] = 1;
@@ -72,7 +71,6 @@ var Object = function(x, y) {
 
       Game.engine.unlock();
   }
-
 }
 
 
