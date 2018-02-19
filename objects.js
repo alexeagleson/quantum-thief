@@ -55,15 +55,8 @@ var Object = function(x, y) {
     if(!step) {
       return false;
     }
-
-    Game.map[this.x + "," + this.y].objectsOnThisTile = [];
-    Game.map[this.x + "," + this.y].draw();
-    this.x = step.x;
-    this.y = step.y;
-    Game.map[this.x + "," + this.y].objectsOnThisTile.push(this);
-    Game.map[this.x + "," + this.y].draw();
     
-    return true;
+    return this.moveToward(step.x, step.y);
     
   },
 
@@ -85,16 +78,34 @@ var Object = function(x, y) {
         return false;
       }
     });
-
+    
     Game.map[this.x + "," + this.y].objectsOnThisTile = [];
     Game.map[this.x + "," + this.y].draw();
     this.x = newX;
     this.y = newY;
     Game.map[this.x + "," + this.y].objectsOnThisTile.push(this);
     Game.map[this.x + "," + this.y].draw();
-    
+
     return true;
-  },  
+  }, 
+    
+  this.moveToward = function() {
+    var dx = targetTileX - this.x;
+    var dy = targetTileY - this.y;
+    
+    //alert(dx + " " + dy);
+
+    if (dx > 0 && (Math.abs(dx) > Math.abs(dy))) {
+      return this.move([1, 0]);
+    } else if (dx < 0 && (Math.abs(dx) > Math.abs(dy))) {
+      return this.move([-1, 0]);
+    } else if (dy < 0 && (Math.abs(dy) > Math.abs(dx))) {
+      return this.move([0, -1]);
+    } else if (dy > 0 && (Math.abs(dy) > Math.abs(dx))) {
+      return this.move([0, 1]);
+    }
+    return false;
+  },
     
   this.moveRandom = function() {
     var d4 = rollDie(4);
@@ -118,11 +129,11 @@ var Object = function(x, y) {
     
     if (e.type === "mousedown") {
       var mousePos = getMousePos(gameCanvas, e);
-      Game.player.move(convertMouseTouchToMovement(mousePos));
+      Game.player.moveToward(convertMouseTouchToTile(mousePos));
       
     } else if (e.type === "touchstart") {
       var mousePos = getTouchPos(gameCanvas, e);
-      Game.player.move(convertMouseTouchToMovement(mousePos));
+      Game.player.moveToward(convertMouseTouchToTile(mousePos));
       
     } else if (e.type === "keydown") {
       var keyMap = {};
