@@ -192,9 +192,6 @@ var handlers = {
   },
 
   processMouseAndTouchInput(coords) {
-    if (!Game.player.turnReady) {
-      return;
-    }
     
     var playerPixelX = (Game.player._x * 32);
     var playerPixelY = (Game.player._y * 32);
@@ -211,8 +208,6 @@ var handlers = {
     } else if (dy > 0 && (Math.abs(dy) > Math.abs(dx))) {
       handlers.moveDown();
     }
-    Game.player.turnReady = false;
-    setTimeout(function() { Game.player.turnReady = true; }, 250); 
   }
 }
 

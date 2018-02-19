@@ -24,13 +24,9 @@ var Object = function(x, y) {
   this.act = function() {
     
     Game.engine.lock();
+    
     window.addEventListener("keydown", this);
-    
-    
     var gameCanvas = Game.display.getContainer();
-
-    
-    
     gameCanvas.addEventListener("mousedown", this);
     gameCanvas.addEventListener("touchstart", this);
 
@@ -60,39 +56,23 @@ var Object = function(x, y) {
 
   this.handleEvent = function(e) {
     
+    
+    if (!Game.player.turnReady) {
+      return;
+    }
+    
     var gameCanvas = Game.display.getContainer();
     
     if (e.type === "mousedown") {
       var mousePos = getMousePos(gameCanvas, e);
       handlers.processMouseAndTouchInput(mousePos);
-      console.log(e);
-      //alert(gameCanvas.dispatchEvent(e));
+      
     } else if (e.type === "touchstart") {
-    }
-    
-    //var mousePos = { x:0, y:0 };
-    /*
-    mouse
-            
       
-      
-      
-      touch
-            mousePos = getTouchPos(gameCanvas, e);
-
-      var touch = e.touches[0];
-      var mouseEvent = new MouseEvent("mousedown", {
-        clientX: touch.clientX,
-        clientY: touch.clientY
-      });
+      var mousePos = getTouchPos(gameCanvas, e);
       handlers.processMouseAndTouchInput(mousePos);
-      gameCanvas.dispatchEvent(mouseEvent);
-      gameCanvas.dispatchEvent(e);
-      */
       
-      
-      
-    
+    } else if (e.type === "keydown") {
       var keyMap = {};
       keyMap[38] = 0;
       keyMap[33] = 1;
@@ -111,10 +91,16 @@ var Object = function(x, y) {
       var dir = ROT.DIRS[8][keyMap[code]];
 
       this.move(dir);
+    }
+      
+    gameCanvas.removeEventListener("mousedown", this);
+    gameCanvas.removeEventListener("touchstart", this);
+    window.removeEventListener("keydown", this);
+    
+    Game.player.turnReady = false;
+    setTimeout(function() { Game.player.turnReady = true; }, 250); 
 
-      window.removeEventListener("keydown", this);
-
-      Game.engine.unlock();
+    Game.engine.unlock();
   }
 }
 
