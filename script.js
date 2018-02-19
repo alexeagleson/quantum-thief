@@ -1,5 +1,5 @@
-//var tileSet = document.createElement("img");
-//tileSet.src = "https://cdn.glitch.com/65d1c64a-f6b1-4419-b107-12f1a855a66a%2FPeopleSpriteSheet3.png?1518898106569";
+var tileSet = document.createElement("img");
+tileSet.src = "https://cdn.glitch.com/65d1c64a-f6b1-4419-b107-12f1a855a66a%2FPeopleSpriteSheet3.png?1518898106569";
 
 var Game = {
   display: null,
@@ -12,9 +12,12 @@ var Game = {
   inactiveObjects: [],
   activeObjects: [],
 
-  init: function() {
-    /*
+  init: function(gameType) {
+    
+    if gameType
     var options = {
+      width: 20,
+      height: 25,
       layout: "tile",
       bg: "transparent",
       tileWidth: 32,
@@ -26,9 +29,17 @@ var Game = {
         "a": [32, 0],
         "!": [256, 96]
       }
+    }
+    
+    /*
+    var options = {
+      width: 20,
+      height: 25,
+      fontSize: 32,
+      forceSquareRatio:true
     }*/
     
-    this.display = new ROT.Display();
+    this.display = new ROT.Display(options);
     var gameCanvas = this.display.getContainer();
     gameCanvas.className = "gameDisplay";
     //gameCanvas.width = 640;
