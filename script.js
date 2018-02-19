@@ -177,37 +177,4 @@ var view = {
   },
 }
 
-var handlers = {
-  moveLeft: function() {
-    Game.player.move([-1, 0]);
-  },
-  moveRight: function() {
-    Game.player.move([1, 0]);
-  },
-  moveUp: function() {
-    Game.player.move([0, -1]);
-  },
-  moveDown: function() {
-    Game.player.move([0, 1]);
-  },
-
-  processMouseAndTouchInput(coords) {
-    
-    var playerPixelX = (Game.player._x * 32);
-    var playerPixelY = (Game.player._y * 32);
-
-    var dx = coords.x - playerPixelX;
-    var dy = coords.y - playerPixelY;
-
-    if (dx > 0 && (Math.abs(dx) > Math.abs(dy))) {
-      handlers.moveRight();
-    } else if (dx < 0 && (Math.abs(dx) > Math.abs(dy))) {
-      handlers.moveLeft();
-    } else if (dy < 0 && (Math.abs(dy) > Math.abs(dx))) {
-      handlers.moveUp();
-    } else if (dy > 0 && (Math.abs(dy) > Math.abs(dx))) {
-      handlers.moveDown();
-    }
-  }
-}
 

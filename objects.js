@@ -55,22 +55,15 @@ var Object = function(x, y) {
   },  
 
   this.handleEvent = function(e) {
-    
-    
-    if (!Game.player.turnReady) {
-      return;
-    }
-    
     var gameCanvas = Game.display.getContainer();
     
     if (e.type === "mousedown") {
       var mousePos = getMousePos(gameCanvas, e);
-      handlers.processMouseAndTouchInput(mousePos);
+      Game.player.move(convertMouseTouchToMovement(mousePos));
       
     } else if (e.type === "touchstart") {
-      
       var mousePos = getTouchPos(gameCanvas, e);
-      handlers.processMouseAndTouchInput(mousePos);
+      Game.player.move(convertMouseTouchToMovement(mousePos));
       
     } else if (e.type === "keydown") {
       var keyMap = {};
@@ -84,10 +77,12 @@ var Object = function(x, y) {
       keyMap[36] = 7;
 
       var code = e.keyCode;
-      /* one of numpad directions? */
-      if (!(code in keyMap)) { return; }
+      // one of numpad directions?
+      if (!(code in keyMap)) {
+        return;
+      }
 
-      /* is there a free space? */
+      // is there a free space?
       var dir = ROT.DIRS[8][keyMap[code]];
 
       this.move(dir);
@@ -96,32 +91,15 @@ var Object = function(x, y) {
     gameCanvas.removeEventListener("mousedown", this);
     gameCanvas.removeEventListener("touchstart", this);
     window.removeEventListener("keydown", this);
-    
-    Game.player.turnReady = false;
-    setTimeout(function() { Game.player.turnReady = true; }, 250); 
 
-    Game.engine.unlock();
+    setTimeout(function() { 
+      Game.engine.unlock(); 
+    }, 100); 
   }
 }
 
 
 
 
-// Get the position of a touch relative to the canvas
-function getTouchPos(canvasDom, touchEvent) {
-  var rect = canvasDom.getBoundingClientRect();
-  return {
-    x: touchEvent.touches[0].clientX - rect.left,
-    y: touchEvent.touches[0].clientY - rect.top
-  };
-}
 
-// Get the position of the mouse relative to the canvas
-function getMousePos(canvasDom, mouseEvent) {
-  var rect = canvasDom.getBoundingClientRect();
-  return {
-    x: mouseEvent.clientX - rect.left,
-    y: mouseEvent.clientY - rect.top
-  };
-}
 
