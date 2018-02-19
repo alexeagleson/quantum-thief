@@ -33,3 +33,8 @@ function convertMouseTouchToMovement(mouseTouchCoords) {
     return [0, 1];
   }
 }
+
+function rollDie(dieSize) {
+  var value = Math.floor(ROT.RNG.getUniform() * (dieSize)) + 1;
+  return value;
+}

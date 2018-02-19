@@ -24,14 +24,14 @@ var Object = function(x, y) {
   this.act = function() {
     Game.engine.lock();
     
-    if (this == Game.player) {
+    if (this === Game.player) {
       this.handlePlayerTurn();
     } else{
       this.handleNpcTurn();
     }
   },
     
-  this.handlePlayerTurn() {
+  this.handlePlayerTurn = function() {
     var gameCanvas = Game.display.getContainer();
     
     window.addEventListener("keydown", this);
@@ -39,9 +39,17 @@ var Object = function(x, y) {
     gameCanvas.addEventListener("touchstart", this);
   },
     
-  this.handleNpcTurn() {
-    
-    this.
+  this.handleNpcTurn = function() {
+    var d4 = rollDie(4);
+    if (rollD4 === 1) {
+      this.move([1, 0]);
+    } else if (rollD4 === 2) {
+      this.move([-1, 0]);
+    } else if (rollD4 === 3) {
+      this.move([0, 1]);
+    } else if (rollD4 === 4) {
+      this.move([0, -1]);
+    }
   },
 
   this.move = function(directionArray) {
@@ -105,7 +113,7 @@ var Object = function(x, y) {
 
     setTimeout(function() { 
       Game.engine.unlock(); 
-    }, 10); 
+    }, 50); 
   }
 }
 
