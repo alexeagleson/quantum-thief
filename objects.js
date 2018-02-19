@@ -20,6 +20,7 @@ var Object = function(x, y) {
   this.y = y;
   this.char = "@";
   this.turnReady = true,
+  this.path = [],
     
   this.act = function() {
     Game.engine.lock();
@@ -40,21 +41,7 @@ var Object = function(x, y) {
   },
     
   this.handleNpcTurn = function() {
-    
-
-    /* prepare path to given coords */
-    var astar = new ROT.Path.AStar(Game.player.x, Game.player.y, Game.checkIfWall);
-
-    // compute from given coords #1
-    astar.compute(this.x, this.y, function(x, y) {});
-
-    //this.move(astar._dirs[0]);
-    console.log(astar);
-    
-    //this.move(this.x - x, this.y - y);
-    
-    
-    
+        
     /*
     var d4 = rollDie(4);
 
@@ -68,7 +55,30 @@ var Object = function(x, y) {
       this.move([0, -1]);
     }*/
 
+    let astar = new ROT.Path.AStar(Game.player.x, Game.player.y, Game.checkIfWall);
+    let addPath = (x, y) => this.path.push({x, y});
+    astar.compute(this.x, this.y, addPath);
+  
+    this.path.shift();
+    let step = this.path.shift();
+    if(!step) return false;
+
+    Game.map[this.x + "," + this.y].objectsOnThisTile = [];
+    Game.map[this.x + "," + this.y].draw();
+    this.x = step.x;
+    this.y = step.y;
+    Game.map[this.x + "," + this.y].objectsOnThisTile.push(this);
+    Game.map[this.x + "," + this.y].draw();
+    
+    
+    
     Game.engine.unlock(); 
+    return true;
+    
+    
+    
+
+    
     
   },
 
