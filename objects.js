@@ -56,7 +56,7 @@ var Object = function(x, y) {
       return false;
     }
     
-    return this.moveToward(step.x, step.y);
+    return this.moveToward({x: step.x, y: step.y});
     
   },
 
@@ -73,11 +73,18 @@ var Object = function(x, y) {
       return false;
     }
     
+    var tileOccupied = false;
+    
     Game.map[newX + "," + newY].objectsOnThisTile.forEach(function(object) {
       if (object.wall) {
+        tileOccupied = true;
         return false;
       }
     });
+    
+    if (tileOccupied) {
+      return false;
+    }
     
     Game.map[this.x + "," + this.y].objectsOnThisTile = [];
     Game.map[this.x + "," + this.y].draw();
@@ -89,11 +96,9 @@ var Object = function(x, y) {
     return true;
   }, 
     
-  this.moveToward = function() {
-    var dx = targetTileX - this.x;
-    var dy = targetTileY - this.y;
-    
-    //alert(dx + " " + dy);
+  this.moveToward = function(targetTileCoords) {
+    var dx = targetTileCoords.x - this.x;
+    var dy = targetTileCoords.y - this.y;
 
     if (dx > 0 && (Math.abs(dx) > Math.abs(dy))) {
       return this.move([1, 0]);
@@ -164,7 +169,7 @@ var Object = function(x, y) {
 
     setTimeout(function() { 
       Game.engine.unlock(); 
-    }, 500); 
+    }, 200); 
   }
 }
 

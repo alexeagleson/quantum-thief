@@ -19,7 +19,8 @@ function getMousePos(canvasDom, mouseEvent) {
 function convertMouseTouchToTile(mouseTouchCoords) {
   var tileX = Math.floor(mouseTouchCoords.x / 32);
   var tileY = Math.floor(mouseTouchCoords.y / 32);
-  return (tileX, tileY);
+  console.log(Game.map[tileX + "," + tileY]);
+  return ({x: tileX, y: tileY});
 }
 
 function rollDie(dieSize) {

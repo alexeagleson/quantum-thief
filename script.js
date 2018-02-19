@@ -145,7 +145,6 @@ var Game = {
     }
     
     Game.map[x + "," + y].objectsOnThisTile.forEach(function(object) {
-      console.log(object);
       if (object.wall) {
         return false;
       }
