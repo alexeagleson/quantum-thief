@@ -77,12 +77,13 @@ var Object = function(x, y) {
     
     Game.map[newX + "," + newY].objectsOnThisTile.forEach(function(object) {
       if (object.wall) {
-        tileOccupied = true;
+        tileOccupied = object;
         return false;
       }
     });
     
     if (tileOccupied) {
+      this.talkTo(tileOccupied);
       return false;
     }
     
@@ -127,6 +128,10 @@ var Object = function(x, y) {
     }
     
     return moveSuccess;
+  },
+    
+  this.talkTo = function(object) {
+    view.toggleMenu("Hello!");
   },
 
   this.handleEvent = function(e) {
