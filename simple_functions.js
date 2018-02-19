@@ -16,23 +16,13 @@ function getMousePos(canvasDom, mouseEvent) {
   };
 }
 
-function convertMouseTouchToMovement(mouseTouchCoords) {
-  var playerPixelX = (Game.player.x * 32);
-  var playerPixelY = (Game.player.y * 32);
-
-  var dx = mouseTouchCoords.x - playerPixelX;
-  var dy = mouseTouchCoords.y - playerPixelY;
-
-  if (dx > 0 && (Math.abs(dx) > Math.abs(dy))) {
-    return [1, 0];
-  } else if (dx < 0 && (Math.abs(dx) > Math.abs(dy))) {
-    return [-1, 0];
-  } else if (dy < 0 && (Math.abs(dy) > Math.abs(dx))) {
-    return [0, -1];
-  } else if (dy > 0 && (Math.abs(dy) > Math.abs(dx))) {
-    return [0, 1];
-  }
+function convertMouseTouchToTile(mouseTouchCoords) {
+  var tileX = Math.floor(mouseTouchCoords.x / 32);
+  var tileY = Math.floor(mouseTouchCoords.y / 32);
+  return ([tileX, tileY]);
 }
+
+
 
 function rollDie(dieSize) {
   var value = Math.floor(ROT.RNG.getUniform() * (dieSize)) + 1;

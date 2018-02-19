@@ -139,15 +139,19 @@ var Game = {
     } else if (y < 0 || y > 24) {
       return false;
     }
-    tileWall = Game.map[x + "," + y].wall;
     
-    if (tileWall) { 
-      return (false); 
+    if (Game.map[x + "," + y].wall) { 
+      return false; 
     }
     
-    tileWall = Game.map[x + "," + y].objectsOnThisTile.forEach(function(object) {
-      
-    })
+    Game.map[x + "," + y].objectsOnThisTile.forEach(function(object) {
+      console.log(object);
+      if (object.wall) {
+        return false;
+      }
+    });
+    
+    return true;
   }
   
 };

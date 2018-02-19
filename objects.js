@@ -79,6 +79,12 @@ var Object = function(x, y) {
     if (Game.map[newX + "," + newY].wall) {
       return false;
     }
+    
+    Game.map[newX + "," + newY].objectsOnThisTile.forEach(function(object) {
+      if (object.wall) {
+        return false;
+      }
+    });
 
     Game.map[this.x + "," + this.y].objectsOnThisTile = [];
     Game.map[this.x + "," + this.y].draw();
