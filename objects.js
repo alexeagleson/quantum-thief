@@ -48,7 +48,8 @@ var Object = function(x, y) {
     // compute from given coords #1
     astar.compute(this.x, this.y, function(x, y) {});
 
-    this.move(astar._dirs[0]);
+    //this.move(astar._dirs[0]);
+    console.log(astar);
     
     //this.move(this.x - x, this.y - y);
     
