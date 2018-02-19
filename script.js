@@ -123,7 +123,14 @@ var Game = {
       var y = parseInt(parts[1]);
       this.map[key].draw();
     }
+  },
+  
+  /* input callback informs about map structure */
+  checkIfWall: function(x, y) {
+    // Tells whether a tile can be passed through
+    return (!this.map[x + "," + y].wall);
   }
+  
 };
 
 var view = {

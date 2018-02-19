@@ -40,6 +40,21 @@ var Object = function(x, y) {
   },
     
   this.handleNpcTurn = function() {
+    
+    /* prepare path to given coords */
+    var astar = new ROT.Path.AStar(Game.player.x, Game.player.y, Game.checkIfWall);
+
+    /* compute from given coords #1 */
+    astar.compute(this, 45, function(x, y) {
+      alert("next coords" + x + " " + y);
+      return;
+    });
+
+    
+    
+    
+    
+    
     var d4 = rollDie(4);
 
     if (d4 === 1) {
