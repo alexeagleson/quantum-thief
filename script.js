@@ -18,7 +18,7 @@ var Game = {
     this.display = this.createCanvas("gameDisplay");
     this.display.getContainer().style.display = "block";
 
-    if (false) {
+    if (true) {
       this.display.setOptions({
         width: 20,
         height: 25,
@@ -190,6 +190,8 @@ var view = {
     var gameDisplayDOM = document.getElementsByClassName("gameDisplay")[0];
     var menuDisplayDOM = document.getElementsByClassName("menuDisplay")[0];
     
+    view.menuOpen = true;
+
     gameDisplayDOM.style.display = "none";
     menuDisplayDOM.style.display = "block";
   },
