@@ -37,7 +37,6 @@ var Game = {
     }
 
     this.menu = this.createCanvas("menuDisplay");
-    this.menu.drawText(1, 10, "You coud use this menu to support something like character dialogue.  Maybe show a character %c{blue}portrait%c{} somewhere?  I dunno.  Either way it's prety %c{red}easy%c{} to use.", 38);
 
     view.createMenuButton();
     
@@ -169,10 +168,10 @@ var view = {
     document.body.appendChild(menuButtonsDiv);
   },
   
-  toggleMenu: function(menuText) {
+  toggleMenu: function() {
     if (view.menuOpen === false) {
       view.menuOpen = true;
-      view.showMenu();
+      view.showMenu("This is the standard game menu.");
     } else {
       view.menuOpen = false;
       view.showGame();
@@ -193,6 +192,9 @@ var view = {
     
     gameDisplayDOM.style.display = "none";
     menuDisplayDOM.style.display = "block";
+    
+    Game.menu.clear();
+    Game.menu.drawText(1, 2, menu_text, (Game.display._options.width - 2));
   },
 }
 
