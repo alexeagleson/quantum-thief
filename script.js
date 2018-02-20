@@ -18,7 +18,7 @@ var Game = {
     this.display = this.createCanvas("gameDisplay");
     this.display.getContainer().style.display = "block";
 
-    if (true) {
+    if (false) {
       this.display.setOptions({
         width: 20,
         height: 25,
@@ -198,8 +198,8 @@ var view = {
 
 function showDialogue(name, dialogue) {
   Game.menu.clear();
-  Game.menu.drawText(1, 2, "%c{red}" + name, (Game.display._options.width - 2));
-  Game.menu.drawText(1, 3, dialogue, (Game.display._options.width - 2));
+  Game.menu.drawText(2, 2, "%c{red}" + name, (Game.display._options.width - 4));
+  Game.menu.drawText(2, 3, dialogue, (Game.display._options.width - 4));
   
   for (var i = 0; i < Game.display._options.width; i++) {
     for (var j = 0; j < Game.display._options.height; j++) {

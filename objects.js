@@ -132,7 +132,7 @@ var Object = function(x, y) {
   },
     
   this.talkTo = function(object) {
-    view.toggleMenu("Hello!");
+    showDialogue(this.name, "While the films follow the book's general storyline, they do omit some of the novel's plot elements and include some additions to and deviations from the source material.");
   },
 
   this.handleEvent = function(e) {
