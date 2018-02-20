@@ -18,7 +18,7 @@ var Game = {
     this.display = this.createCanvas("gameDisplay");
     this.display.getContainer().style.display = "block";
 
-    if (true) {
+    if (false) {
       this.display.setOptions({
         width: 20,
         height: 25,
