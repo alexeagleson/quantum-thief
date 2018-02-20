@@ -179,7 +179,10 @@ var Object = function(x, y) {
   }
 }
 
-
+var Dialogue = function(name, text) {
+  this.name = name;
+  this.text = text;
+}
 
 
 
