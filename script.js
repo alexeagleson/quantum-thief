@@ -4,7 +4,6 @@ tileSet.src = "https://cdn.glitch.com/65d1c64a-f6b1-4419-b107-12f1a855a66a%2FPeo
 var Game = {
   display: null,
   menu: null,
-  dialogueMenu: null,
   
   map: {},
   engine: null,
@@ -40,8 +39,6 @@ var Game = {
     this.menu = this.createCanvas("menuDisplay");
     this.menu.drawText(1, 10, "You coud use this menu to support something like character dialogue.  Maybe show a character %c{blue}portrait%c{} somewhere?  I dunno.  Either way it's prety %c{red}easy%c{} to use.", 38);
 
-    this.dialogueMenu = this.createCanvas("dialogueDisplay");
-      
     view.createMenuButton();
     
     this.generateMap();
@@ -173,23 +170,30 @@ var view = {
   },
   
   toggleMenu: function(menuText) {
-    var gameDisplayDOM = document.getElementsByClassName("gameDisplay")[0];
-    var menuDisplayDOM = document.getElementsByClassName("menuDisplay")[0];
-    var dialogueDisplayDOM = 
-    
     if (view.menuOpen === false) {
       view.menuOpen = true;
-      gameDisplayDOM.style.display = "none";
-      menuDisplayDOM.style.display = "block";
+      view.showMenu();
     } else {
       view.menuOpen = false;
-      gameDisplayDOM.style.display = "block";
-      menuDisplayDOM.style.display = "none";
+      view.showGame();
     }
   },
   
   showGame: function() {
-  }
+    var gameDisplayDOM = document.getElementsByClassName("gameDisplay")[0];
+    var menuDisplayDOM = document.getElementsByClassName("menuDisplay")[0];
+    
+    gameDisplayDOM.style.display = "block";
+    menuDisplayDOM.style.display = "none";
+  },
+  
+  showMenu: function(menu_text) {
+    var gameDisplayDOM = document.getElementsByClassName("gameDisplay")[0];
+    var menuDisplayDOM = document.getElementsByClassName("menuDisplay")[0];
+    
+    gameDisplayDOM.style.display = "none";
+    menuDisplayDOM.style.display = "block";
+  },
 }
 
 
