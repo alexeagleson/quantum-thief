@@ -17,9 +17,15 @@ var Game = {
     
     
     var butt = document.createElement("h1");
-butt.innerHTML = "fart";
-    butt.display.s
-document.body.append(butt);
+    
+    butt.id = "banana";
+    butt.innerHTML = "fart";
+    
+    document.body.appendChild(butt);
+    
+    butt.innerHTML
+    
+    
     
     
     this.display = this.createCanvas("gameDisplay");

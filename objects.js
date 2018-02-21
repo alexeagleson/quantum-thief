@@ -178,6 +178,3 @@ var Object = function(x, y) {
     }, 200); 
   }
 }
-
-
-
