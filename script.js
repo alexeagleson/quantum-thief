@@ -16,46 +16,6 @@ var Game = {
   init: function() {
     
     
-    var butt = document.createElement("h1");
-    
-    butt.id = "banana";
-    butt.className = "orange";
-    butt.innerHTML = "fart";
-    
-    document.body.appendChild(butt);
-    
-    var butt = document.createElement("h1");
-    
-    butt.id = "banana";
-    butt.className = "orange";
-    butt.innerHTML = "bag";
-    
-    document.body.appendChild(butt);
-    
-        var butt = document.createElement("h1");
-    
-    butt.id = "banana";
-    butt.className = "orange";
-    butt.innerHTML = "4444";
-    
-    document.body.appendChild(butt);
-    
-    
-    var banana = document.getElementById("banana");
-    
-    banana.innerHTML = "chicken";
-    
-    var zombies = document.getElementsByClassName("orange");
-    
-    debugger;
-    for (var x = 0; i < zombies.length; i++) {
-      for y
-      zombies[i][j].innerHTML = "coffee";
-    }
-    
-    
-    
-    
     this.display = this.createCanvas("gameDisplay");
     this.display.getContainer().style.display = "block";
 
@@ -201,7 +161,7 @@ var view = {
 
     var buttonMenu = document.createElement("button");
     buttonMenu.className = "menuButton";
-    buttonMenu.innerText = "Menu";
+    buttonMenu.innerText = "Ye Old Menu";
     buttonMenu.addEventListener("click", view.toggleMenu);
 
     menuButtonsDiv.appendChild(buttonMenu);
