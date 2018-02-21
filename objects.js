@@ -62,6 +62,10 @@ var Object = function(x, y) {
   },
 
   this.move = function(directionArray) {
+    
+    var sound = document.getElementById("sound");
+    sound.play()
+    
     var newX = this.x + directionArray[0];
     var newY = this.y + directionArray[1];
     var newKey = newX + "," + newY;
