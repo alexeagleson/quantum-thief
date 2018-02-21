@@ -19,7 +19,7 @@ var Object = function(x, y) {
   this.x = x;
   this.y = y;
   this.char = "@";
-  this.name = "default",
+  this.name = "jimmyjo",
   this.wall = true,
   this.path = [],
     
