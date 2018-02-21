@@ -19,13 +19,30 @@ var Game = {
     var butt = document.createElement("h1");
     
     butt.id = "banana";
+    butt.className = "orange";
     butt.innerHTML = "fart";
     
     document.body.appendChild(butt);
     
-    butt.innerHTML
+    var butt = document.createElement("h1");
+    
+    butt.id = "banana";
+    butt.className = "orange";
+    butt.innerHTML = "bag";
+    
+    document.body.appendChild(butt);
     
     
+    
+    var banana = document.getElementById("banana");
+    
+    banana.innerHTML = "chicken";
+    
+    var orange = document.getElementsByClassName("orange");
+    
+    
+    orange[0].innerHTML = "radish";
+    orange[1].innerHTML = "gagagag";
     
     
     this.display = this.createCanvas("gameDisplay");
