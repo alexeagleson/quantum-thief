@@ -32,17 +32,28 @@ var Game = {
     
     document.body.appendChild(butt);
     
+        var butt = document.createElement("h1");
+    
+    butt.id = "banana";
+    butt.className = "orange";
+    butt.innerHTML = "4444";
+    
+    document.body.appendChild(butt);
     
     
     var banana = document.getElementById("banana");
     
     banana.innerHTML = "chicken";
     
-    var orange = document.getElementsByClassName("orange");
+    var zombies = document.getElementsByClassName("orange");
+    
+    debugger;
+    for (var x = 0; i < zombies.length; i++) {
+      for y
+      zombies[i][j].innerHTML = "coffee";
+    }
     
     
-    orange[0].innerHTML = "radish";
-    orange[1].innerHTML = "gagagag";
     
     
     this.display = this.createCanvas("gameDisplay");
