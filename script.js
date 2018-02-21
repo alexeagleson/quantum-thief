@@ -28,10 +28,10 @@ var Game = {
         tileHeight: 32,
         tileSet: tileSet,
         tileMap: {
-          "@": [0, 0],
+          "@": multiplyBy32([0, 0]),
           "#": multiplyBy32([0, 1]),
-          "a": [32, 0],
-          "!": [256, 96]
+          "a": multiplyBy32([1, 0]),
+          "!": multiplyBy32([2, 7])
         }
       });
     }
