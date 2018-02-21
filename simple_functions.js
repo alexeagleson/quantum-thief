@@ -67,7 +67,7 @@ function playSound(filename) {
     alert ("UNDEFINED SOUND!");
     return;
   }
-  sound.pause();
+  //sound.pause();
   sound.currentTime = 0;
   sound.play();
 }
