@@ -63,7 +63,7 @@ var Object = function(x, y) {
 
   this.move = function(directionArray) {
     
-    playSound("sound");
+    
     
     var newX = this.x + directionArray[0];
     var newY = this.y + directionArray[1];

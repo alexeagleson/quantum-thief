@@ -21,8 +21,8 @@ var Game = {
 
     if (true) {
       this.display.setOptions({
-        width: 20,
-        height: 25,
+        width: Game.display._options.width,
+        height: Game.display._options.height,
         layout: "tile",
         bg: "transparent",
         tileWidth: 32,
@@ -55,7 +55,7 @@ var Game = {
   
   createCanvas: function(className) {
     var options = {
-      width: 20,
+      width: 25,
       height: 25,
       fontSize: 32,
       forceSquareRatio:true

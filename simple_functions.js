@@ -63,11 +63,11 @@ function multiplyBy32(valueArray) {
 
 function playSound(filename) {
   var sound = document.getElementById(filename);
-  if (sound === undefined) {
-    alert ("UNDEFINED SOUND!");
-    return;
-  }
-  //sound.pause();
+  //if (sound === undefined) {
+  //  alert ("UNDEFINED SOUND!");
+  //  return;
+  //}
+  sound.pause();
   sound.currentTime = 0;
   sound.play();
 }
