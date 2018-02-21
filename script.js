@@ -161,7 +161,7 @@ var view = {
 
     var buttonMenu = document.createElement("button");
     buttonMenu.className = "menuButton";
-    buttonMenu.innerText = "Ye Old Menu";
+    buttonMenu.innerText = "Menu";
     buttonMenu.addEventListener("click", view.toggleMenu);
 
     menuButtonsDiv.appendChild(buttonMenu);
