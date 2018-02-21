@@ -15,6 +15,13 @@ var Game = {
 
   init: function() {
     
+    
+    var butt = document.createElement("h1");
+butt.innerHTML = "fart";
+    butt.display.s
+document.body.append(butt);
+    
+    
     this.display = this.createCanvas("gameDisplay");
     this.display.getContainer().style.display = "block";
 
