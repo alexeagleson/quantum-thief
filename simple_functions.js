@@ -50,3 +50,9 @@ function sanitizeNumber(value, minValue, maxValue) {
     return normalizeToValue(value, minValue, maxValue);
   }
 }
+
+function multiplyBy32(x, y) {
+  x = X * 32;
+  y = y * 32;
+  return [x, y];
+}

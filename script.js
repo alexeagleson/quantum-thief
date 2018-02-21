@@ -29,7 +29,7 @@ var Game = {
         tileSet: tileSet,
         tileMap: {
           "@": [0, 0],
-          "#": [0, 32],
+          "#": multiplyBy32(0, 1),
           "a": [32, 0],
           "!": [256, 96]
         }
