@@ -51,8 +51,11 @@ function sanitizeNumber(value, minValue, maxValue) {
   }
 }
 
-function multiplyBy32(x, y) {
-  x = X * 32;
-  y = y * 32;
-  return [x, y];
+function multiplyBy32(valueArray) {
+  
+
+  valueArray[0] = valueArray[0] * 32;
+  valueArray[1] = valueArray[1] * 32;
+  
+  return valueArray;
 }
