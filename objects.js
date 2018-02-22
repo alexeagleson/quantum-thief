@@ -5,8 +5,6 @@ var Menu = function(textStrings, spaces, fgColours) {
   
   this.textAtLines = {};
   
-  this.runResponse = {};
-  
   this.display = function() {
     var currentLine = 2;
     var numLines = 0;
@@ -30,12 +28,6 @@ var Menu = function(textStrings, spaces, fgColours) {
     }
     view.showMenu();
   };
-  
-  this.yesItIs = function() {
-    alert("yes it is!");
-  };
-  
-  
 }
 
 
@@ -181,13 +173,12 @@ var Object = function(x, y) {
     
   this.talkTo = function(object) {
     
-    var textStrings = [this.name, "Hello what are you doing here?", "bimmyjo", "Oh I'm just looking for things.", "jimmyjo", "that is cool"]
+    var textStrings = [this.name, "Hello what are you doing here?", "bimmyjo", "Oh I'm just looking for things.", "jimmyjo", "that is cool"];
     var spaces = [0, 1, 0, 5, 0, 1];
     var fgColours = ["blue", "white", "red", "white", "blue", "white"];
-
-    var thisMenu = new Menu(textStrings, spaces, fgColours);
+    var responseFunction = {"Hello what are you doing here?": response.answer1}
     
-    thisMenu.runResponse["that is cool"] = thisMenu.yesItIs;
+    var thisMenu = new Menu(textStrings, spaces, fgColours);
     
     Game.currentMenuDisplay = thisMenu;
     Game.currentMenuDisplay.display();
@@ -205,7 +196,7 @@ var Object = function(x, y) {
       }
       
       
-      Game.currentMenuDisplay.runResponse[Game.currentMenuDisplay.textAtLines[convertMouseTouchToTile(mousePos).y]]();
+      //Game.currentMenuDisplay.responseFunction[Game.currentMenuDisplay.textAtLines[convertMouseTouchToTile(mousePos).y]]();
       view.showGame();
       
     } else {
