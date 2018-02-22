@@ -31,8 +31,9 @@ var Menu = function(textStrings, spaces, fgColours) {
     view.showMenu();
   };
   
-  this.hello = function() {
-    
+  this.yesItIs = function() {
+    alert("yes it is!");
+  };
   
   
 }
@@ -186,7 +187,7 @@ var Object = function(x, y) {
 
     var thisMenu = new Menu(textStrings, spaces, fgColours);
     
-    thisMenu.runResponse["jimmyjo"] = thisMenu.hello;
+    thisMenu.runResponse["that is cool"] = thisMenu.yesItIs;
     
     Game.currentMenuDisplay = thisMenu;
     Game.currentMenuDisplay.display();
@@ -204,7 +205,7 @@ var Object = function(x, y) {
       }
       
       
-      Game.currentMenuDisplay.runResponse[Game.currentMenuDisplay.textAtLines[convertMouseTouchToTile(mousePos).y]];
+      Game.currentMenuDisplay.runResponse[Game.currentMenuDisplay.textAtLines[convertMouseTouchToTile(mousePos).y]]();
       view.showGame();
       
     } else {
