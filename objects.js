@@ -4,34 +4,37 @@ var Menu = function(textStrings, spaces, fgColours) {
   this.fgColours = fgColours;
   
   this.textAtLines = {};
-}
+  
+  this.display = function() {
+    var currentLine = 2;
+    var numLines = 0;
+    Game.menu.clear();
+    for (var i = 0; i < this.textStrings.length; i++) {
+      Game.menu.drawText(2, currentLine, "%c{" + this.fgColours[i] + "}" + this.textStrings[i], (Game.display._options.width - 4));
+      numLines = Math.floor(this.textStrings[i].length / (Game.display._options.width - 4)) + 1;
 
-function createMenuAndDisplay(menuObject) {
-  var currentLine = 2;
-  var numLines = 0;
-  Game.menu.clear();
-  for (var i = 0; i < menuObject.textStrings.length; i++) {
-    Game.menu.drawText(2, currentLine, "%c{" + menuObject.fgColours[i] + "}" + menuObject.textStrings[i], (Game.display._options.width - 4));
-    numLines = Math.floor(menuObject.textStrings[i].length / (Game.display._options.width - 4)) + 1;
-  
-    for (var j = 0; j < numLines; j++) {
-      menuObject.textAtLines[currentLine + j] = menuObject.textStrings[i];
+      for (var j = 0; j < numLines; j++) {
+        this.textAtLines[currentLine + j] = this.textStrings[i];
+      }
+
+      currentLine += (numLines + this.spaces[i]);
+
+
     }
-    
-    currentLine += (numLines + menuObject.spaces[i]);
-    
-    
-  }
-  
-  for (var i = 0; i < Game.display._options.width; i++) {
-    for (var j = 0; j < Game.display._options.height; j++) {
-      if (i === 0 || j === 0 || i === (Game.display._options.width - 1) || j === (Game.display._options.height - 1)) {
-        Game.menu.drawText(i, j, "#", (Game.display._options.width - 2));
+
+    for (var i = 0; i < Game.display._options.width; i++) {
+      for (var j = 0; j < Game.display._options.height; j++) {
+        if (i === 0 || j === 0 || i === (Game.display._options.width - 1) || j === (Game.display._options.height - 1)) {
+          Game.menu.drawText(i, j, "#", (Game.display._options.width - 2));
+        }
       }
     }
+    view.showMenu();
   }
-  view.showMenu();
+  
 }
+
+
 
 
 var Tile = function(x, y, char, wall) {
@@ -71,10 +74,14 @@ var Object = function(x, y) {
     
   this.handlePlayerTurn = function() {
     var gameCanvas = Game.display.getContainer();
+    var menuCanvas = Game.menu.getContainer();
     
     window.addEventListener("keydown", this);
     gameCanvas.addEventListener("mousedown", this);
     gameCanvas.addEventListener("touchstart", this);
+    menuCanvas.addEventListener("mousedown", this);
+    menuCanvas.addEventListener("touchstart", this);
+
   },
     
   this.handleNpcTurn = function() {
@@ -178,49 +185,63 @@ var Object = function(x, y) {
 
     var thisMenu = new Menu(textStrings, spaces, fgColours);
     
-    createMenuAndDisplay(thisMenu);
-    
-    alert(thisMenu.textAtLines[3]);
-    alert(thisMenu.textAtLines[4]);
+    Game.currentMenuDisplay = thisMenu;
+    Game.currentMenuDisplay.display();
 
   },
 
   this.handleEvent = function(e) {
     var gameCanvas = Game.display.getContainer();
+    var menuCanvas = Game.menu.getContainer();
     
-    if (e.type === "mousedown") {
-      var mousePos = getMousePos(gameCanvas, e);
-      Game.player.moveToward(convertMouseTouchToTile(mousePos));
-      
-    } else if (e.type === "touchstart") {
-      var mousePos = getTouchPos(gameCanvas, e);
-      Game.player.moveToward(convertMouseTouchToTile(mousePos));
-      
-    } else if (e.type === "keydown") {
-      var keyMap = {};
-      keyMap[38] = 0;
-      keyMap[33] = 1;
-      keyMap[39] = 2;
-      keyMap[34] = 3;
-      keyMap[40] = 4;
-      keyMap[35] = 5;
-      keyMap[37] = 6;
-      keyMap[36] = 7;
-
-      var code = e.keyCode;
-      // one of numpad directions?
-      if (!(code in keyMap)) {
-        return;
+    if (view.menuOpen === true) {
+      if (e.type === "mousedown") {
+        var mousePos = getMousePos(gameCanvas, e);
+      } else if (e.type === "touchstart") {
+        var mousePos = getTouchPos(gameCanvas, e);
       }
-
-      // is there a free space?
-      var dir = ROT.DIRS[8][keyMap[code]];
-
-      this.move(dir);
-    }
       
+      //alert("hi");
+      alert(Game.currentMenuDisplay.textAtLines[convertMouseTouchToTile(mousePos).y]);
+      
+      
+    } else {
+
+      if (e.type === "mousedown") {
+        var mousePos = getMousePos(gameCanvas, e);
+        Game.player.moveToward(convertMouseTouchToTile(mousePos));
+
+      } else if (e.type === "touchstart") {
+        var mousePos = getTouchPos(gameCanvas, e);
+        Game.player.moveToward(convertMouseTouchToTile(mousePos));
+
+      } else if (e.type === "keydown") {
+        var keyMap = {};
+        keyMap[38] = 0;
+        keyMap[33] = 1;
+        keyMap[39] = 2;
+        keyMap[34] = 3;
+        keyMap[40] = 4;
+        keyMap[35] = 5;
+        keyMap[37] = 6;
+        keyMap[36] = 7;
+
+        var code = e.keyCode;
+        // one of numpad directions?
+        if (!(code in keyMap)) {
+          return;
+        }
+
+        // is there a free space?
+        var dir = ROT.DIRS[8][keyMap[code]];
+
+        this.move(dir);
+      }
+    }
     gameCanvas.removeEventListener("mousedown", this);
     gameCanvas.removeEventListener("touchstart", this);
+    menuCanvas.removeEventListener("mousedown", this);
+    menuCanvas.removeEventListener("touchstart", this);
     window.removeEventListener("keydown", this);
 
     setTimeout(function() { 

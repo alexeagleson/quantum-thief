@@ -4,6 +4,7 @@ tileSet.src = "https://cdn.glitch.com/65d1c64a-f6b1-4419-b107-12f1a855a66a%2FPeo
 var Game = {
   display: null,
   menu: null,
+  currentMenuDisplay: null,
   
   map: {},
   engine: null,
