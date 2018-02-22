@@ -1,5 +1,5 @@
 var response = {
-  thisanswer1 = function() {
+  answer1: function() {
     alert("yes it is!");
-  };
+  }
 }
