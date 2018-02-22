@@ -1,23 +1,21 @@
-var Menu = function(textStrings, coords, fgColours) {
+var Menu = function(textStrings, spaces, fgColours) {
   this.textStrings = textStrings;
-  //this.spaces = spaces;
+  this.spaces = spaces;
   this.fgColours = fgColours;
-  
-  linesStarts = [];
-  
-  currentY = 2;
-  for (var i = 0; i < this.textStrings; i++) {
-    
-  
-  
-  
-  
 }
 
 function createMenuAndDisplay(menuObject) {
+  var currentLine = 2;
+  var numLines = 0;
   Game.menu.clear();
   for (var i = 0; i < menuObject.textStrings.length; i++) {
-    Game.menu.drawText(menuObject.coords[i][0], menuObject.coords[i][1], "%c{" + menuObject.fgColours[i] + "}" + menuObject.textStrings[i], (Game.display._options.width - 4));
+    Game.menu.drawText(2, currentLine, "%c{" + menuObject.fgColours[i] + "}" + menuObject.textStrings[i], (Game.display._options.width - 4));
+    numLines = Math.floor(menuObject.textStrings[i].length / (Game.display._options.width - 4)) + 1;
+    
+    currentLine += (numLines + menuObject.spaces[i]);
+    //for (var j = 0
+    
+    
   }
   
   for (var i = 0; i < Game.display._options.width; i++) {
@@ -170,10 +168,10 @@ var Object = function(x, y) {
   this.talkTo = function(object) {
     
     var textStrings = [this.name, "Hello what are you doing here?", "bimmyjo", "Oh I'm just looking for things.", "jimmyjo", "that is cool"]
-    var coords = [[2, 2], [2, 3], [2, 6], [2, 7], [2, 10], [2, 11]];
+    var spaces = [0, 1, 0, 5, 0, 1];
     var fgColours = ["blue", "white", "red", "white", "blue", "white"];
 
-    var thisMenu = new Menu(textStrings, coords, fgColours);
+    var thisMenu = new Menu(textStrings, spaces, fgColours);
     
     createMenuAndDisplay(thisMenu);
 
