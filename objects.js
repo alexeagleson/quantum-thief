@@ -5,12 +5,11 @@ var Menu = function(textStrings, spaces, fgColours, responseFunction) {
   this.fgColours = fgColours;
   this.responseFunction = responseFunction;
   
-  this.textStrings.push(";
-  this.spaces = spaces;
-  this.fgColours = fgColours;
-  this.responseFunction = responseFunction;
-  
-  
+  this.textStrings.push("[Done]");
+  this.spaces.push(2);
+  this.fgColours.push("white");
+  this.responseFunction["[Done]"] = response.done;
+    
   this.textAtLines = {};
   
   this.display = function() {
@@ -37,9 +36,6 @@ var Menu = function(textStrings, spaces, fgColours, responseFunction) {
         }
       }
     }
-    
-    
-    
     view.showMenu();
   };
 }
@@ -208,8 +204,10 @@ var Object = function(x, y) {
         var mousePos = getTouchPos(gameCanvas, e);
       }
       
+      while (!Game.currentMenuDisplay.responseFunction[Game.currentMenuDisplay.textAtLines[convertMouseTouchToTile(mousePos).y]]()) {
+        // nothing
+      }
       view.showGame();
-      Game.currentMenuDisplay.responseFunction[Game.currentMenuDisplay.textAtLines[convertMouseTouchToTile(mousePos).y]]();
       
     } else {
 

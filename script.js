@@ -162,26 +162,18 @@ var view = {
     var buttonMenu = document.createElement("button");
     buttonMenu.className = "menuButton";
     buttonMenu.innerText = "Menu";
-    buttonMenu.addEventListener("click", view.toggleMenu);
+    buttonMenu.addEventListener("click", view.showMenu);
 
     menuButtonsDiv.appendChild(buttonMenu);
 
     document.body.appendChild(menuButtonsDiv);
   },
   
-  toggleMenu: function() {
-    if (view.menuOpen === false) {
-      view.menuOpen = true;
-      view.showMenu("This is the standard game menu.");
-    } else {
-      view.menuOpen = false;
-      view.showGame();
-    }
-  },
-  
   showGame: function() {
     var gameDisplayDOM = document.getElementsByClassName("gameDisplay")[0];
     var menuDisplayDOM = document.getElementsByClassName("menuDisplay")[0];
+    
+    view.menuOpen = false;
     
     gameDisplayDOM.style.display = "block";
     menuDisplayDOM.style.display = "none";
