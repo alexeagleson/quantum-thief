@@ -5,6 +5,8 @@ var Menu = function(textStrings, spaces, fgColours) {
   
   this.textAtLines = {};
   
+  this.response = null;
+  
   this.display = function() {
     var currentLine = 2;
     var numLines = 0;
@@ -29,6 +31,7 @@ var Menu = function(textStrings, spaces, fgColours) {
     view.showMenu();
   }
 }
+
 
 var Tile = function(x, y, char, wall) {
   this.x = x;
@@ -180,6 +183,10 @@ var Object = function(x, y) {
     
     Game.currentMenuDisplay = thisMenu;
     Game.currentMenuDisplay.display();
+    
+    if (thisMenu.response === "that is cool") {
+      alert("yes it is");
+    }
 
   },
 
@@ -194,8 +201,8 @@ var Object = function(x, y) {
         var mousePos = getTouchPos(gameCanvas, e);
       }
       
-      //alert("hi");
-      alert(Game.currentMenuDisplay.textAtLines[convertMouseTouchToTile(mousePos).y]);
+      
+      Game.currentMenuDisplay.response = Game.currentMenuDisplay.textAtLines[convertMouseTouchToTile(mousePos).y];
       view.showGame();
       
     } else {
