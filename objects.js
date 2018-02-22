@@ -1,3 +1,26 @@
+var Menu = function(textStrings, coords, fgColours) {
+  this.textStrings = textStrings;
+  this.coords = coords;
+  this.fgColours = fgColours;
+}
+
+function createMenuAndDisplay(menuObject) {
+  Game.menu.clear();
+  for (var i = 0; i < menuObject.textStrings.length; i++) {
+    Game.menu.drawText(menuObject.coords[i][0], menuObject.coords[i][1], "%c{" + menuObject.fgColours[i] + "}" + menuObject.textStrings[i], (Game.display._options.width - 4));
+  }
+  
+  for (var i = 0; i < Game.display._options.width; i++) {
+    for (var j = 0; j < Game.display._options.height; j++) {
+      if (i === 0 || j === 0 || i === (Game.display._options.width - 1) || j === (Game.display._options.height - 1)) {
+        Game.menu.drawText(i, j, "#", (Game.display._options.width - 2));
+      }
+    }
+  }
+  view.showMenu();
+}
+
+
 var Tile = function(x, y, char, wall) {
   this.x = x;
   this.y = y;
@@ -135,6 +158,21 @@ var Object = function(x, y) {
   },
     
   this.talkTo = function(object) {
+    
+    thisMenu = new Menu(
+    
+    
+    
+    createMenuAndDisplay
+    
+    
+    var Menu = function() {
+  this.textStrings = [];
+  this.coords = [];
+  this.fgColours = [];
+}
+    
+    
     showDialogue(this.name, "While the films follow the book's general storyline, they do omit some of the novel's plot elements and include some additions to and deviations from the source material.");
   },
 

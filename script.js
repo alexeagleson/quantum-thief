@@ -199,17 +199,3 @@ var view = {
 }
 
 
-function showDialogue(name, dialogue) {
-  Game.menu.clear();
-  Game.menu.drawText(2, 2, "%c{red}" + name, (Game.display._options.width - 4));
-  Game.menu.drawText(2, 3, dialogue, (Game.display._options.width - 4));
-  
-  for (var i = 0; i < Game.display._options.width; i++) {
-    for (var j = 0; j < Game.display._options.height; j++) {
-      if (i === 0 || j === 0 || i === (Game.display._options.width - 1) || j === (Game.display._options.height - 1)) {
-        Game.menu.drawText(i, j, "#", (Game.display._options.width - 2));
-      }
-    }
-  }
-  view.showMenu();
-}
