@@ -15,7 +15,7 @@ function createMenuAndDisplay(menuObject) {
     numLines = Math.floor(menuObject.textStrings[i].length / (Game.display._options.width - 4)) + 1;
   
     for (var j = 0; j < numLines; j++) {
-      menuObject.textAtLines[str(currentLine + j): menuObject.textStrings[i]];
+      menuObject.textAtLines[currentLine + j] = menuObject.textStrings[i];
     }
     
     currentLine += (numLines + menuObject.spaces[i]);
@@ -180,7 +180,8 @@ var Object = function(x, y) {
     
     createMenuAndDisplay(thisMenu);
     
-    alert(thisMenu.textAtLines[2]);
+    alert(thisMenu.textAtLines[3]);
+    alert(thisMenu.textAtLines[4]);
 
   },
 
