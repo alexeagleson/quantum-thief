@@ -153,8 +153,6 @@ var Game = {
 
 var view = {
   
-  menuOpen: false,
-  
   createMenuButton: function() {
     var menuButtonsDiv = document.createElement("div");
     menuButtonsDiv.className = "menuButtons";
@@ -173,8 +171,6 @@ var view = {
     var gameDisplayDOM = document.getElementsByClassName("gameDisplay")[0];
     var menuDisplayDOM = document.getElementsByClassName("menuDisplay")[0];
     
-    view.menuOpen = false;
-    
     gameDisplayDOM.style.display = "block";
     menuDisplayDOM.style.display = "none";
   },
@@ -182,8 +178,6 @@ var view = {
   showMenu: function() {
     var gameDisplayDOM = document.getElementsByClassName("gameDisplay")[0];
     var menuDisplayDOM = document.getElementsByClassName("menuDisplay")[0];
-    
-    view.menuOpen = true;
 
     gameDisplayDOM.style.display = "none";
     menuDisplayDOM.style.display = "block";

@@ -89,7 +89,6 @@ var Object = function(x, y) {
   },
     
   this.handleNpcTurn = function() {
-
     let astar = new ROT.Path.AStar(Game.player.x, Game.player.y, Game.checkIfWall, {topology: 4});
     let addPath = (x, y) => this.path.push({x, y});
     astar.compute(this.x, this.y, addPath);
@@ -197,16 +196,14 @@ var Object = function(x, y) {
     var gameCanvas = Game.display.getContainer();
     var menuCanvas = Game.menu.getContainer();
     
-    if (view.menuOpen === true) {
+    if (menuCanvas.style.display === "block") {
       if (e.type === "mousedown") {
         var mousePos = getMousePos(gameCanvas, e);
       } else if (e.type === "touchstart") {
         var mousePos = getTouchPos(gameCanvas, e);
       }
       
-      while (!Game.currentMenuDisplay.responseFunction[Game.currentMenuDisplay.textAtLines[convertMouseTouchToTile(mousePos).y]]()) {
-        // nothing
-      }
+      //Game.currentMenuDisplay.responseFunction[Game.currentMenuDisplay.textAtLines[convertMouseTouchToTile(mousePos).y]]();
       view.showGame();
       
     } else {
@@ -242,6 +239,7 @@ var Object = function(x, y) {
         this.move(dir);
       }
     }
+    
     gameCanvas.removeEventListener("mousedown", this);
     gameCanvas.removeEventListener("touchstart", this);
     menuCanvas.removeEventListener("mousedown", this);
