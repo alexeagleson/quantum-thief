@@ -13,12 +13,13 @@ var Menu = function(textStrings, spaces, fgColours, responseFunction) {
   this.textAtLines = {};
   
   this.display = function() {
-    
+    Game.menu.clear();
     Game.currentMenuDisplay = this;
+    var menuCanvas = Game.menu.getContainer();
     
     var currentLine = 2;
     var numLines = 0;
-    Game.menu.clear();
+    
     for (var i = 0; i < this.textStrings.length; i++) {
       Game.menu.drawText(2, currentLine, "%c{" + this.fgColours[i] + "}" + this.textStrings[i], (Game.display._options.width - 4));
       numLines = Math.floor(this.textStrings[i].length / (Game.display._options.width - 4)) + 1;
@@ -36,6 +37,8 @@ var Menu = function(textStrings, spaces, fgColours, responseFunction) {
         }
       }
     }
+    menuCanvas.addEventListener("mousedown", this);
+    menuCanvas.addEventListener("touchstart", this);
     view.showMenu();
   };
 }
@@ -83,8 +86,6 @@ var Object = function(x, y) {
     window.addEventListener("keydown", this);
     gameCanvas.addEventListener("mousedown", this);
     gameCanvas.addEventListener("touchstart", this);
-    menuCanvas.addEventListener("mousedown", this);
-    menuCanvas.addEventListener("touchstart", this);
 
   },
     
@@ -108,9 +109,6 @@ var Object = function(x, y) {
   },
 
   this.move = function(directionArray) {
-    
-    
-    
     var newX = this.x + directionArray[0];
     var newY = this.y + directionArray[1];
     var newKey = newX + "," + newY;
@@ -199,15 +197,12 @@ var Object = function(x, y) {
     if (menuCanvas.style.display === "block") {
       if (e.type === "mousedown") {
         var mousePos = getMousePos(gameCanvas, e);
+        Game.player.moveToward(convertMouseTouchToTile(mousePos));
+
       } else if (e.type === "touchstart") {
         var mousePos = getTouchPos(gameCanvas, e);
-      }
-      
-      //Game.currentMenuDisplay.responseFunction[Game.currentMenuDisplay.textAtLines[convertMouseTouchToTile(mousePos).y]]();
-      view.showGame();
-      
+        Game.player.moveToward(convertMouseTouchToTile(mousePos));
     } else {
-
       if (e.type === "mousedown") {
         var mousePos = getMousePos(gameCanvas, e);
         Game.player.moveToward(convertMouseTouchToTile(mousePos));
