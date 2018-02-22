@@ -5,7 +5,7 @@ var Menu = function(textStrings, spaces, fgColours) {
   
   this.textAtLines = {};
   
-  this.response = null;
+  this.runResponse = {};
   
   this.display = function() {
     var currentLine = 2;
@@ -29,7 +29,12 @@ var Menu = function(textStrings, spaces, fgColours) {
       }
     }
     view.showMenu();
-  }
+  };
+  
+  this.hello = function() {
+    
+  
+  
 }
 
 
@@ -181,13 +186,10 @@ var Object = function(x, y) {
 
     var thisMenu = new Menu(textStrings, spaces, fgColours);
     
+    thisMenu.runResponse["jimmyjo"] = thisMenu.hello;
+    
     Game.currentMenuDisplay = thisMenu;
     Game.currentMenuDisplay.display();
-    
-    if (thisMenu.response === "that is cool") {
-      alert("yes it is");
-    }
-
   },
 
   this.handleEvent = function(e) {
@@ -202,7 +204,7 @@ var Object = function(x, y) {
       }
       
       
-      Game.currentMenuDisplay.response = Game.currentMenuDisplay.textAtLines[convertMouseTouchToTile(mousePos).y];
+      Game.currentMenuDisplay.runResponse[Game.currentMenuDisplay.textAtLines[convertMouseTouchToTile(mousePos).y]];
       view.showGame();
       
     } else {
