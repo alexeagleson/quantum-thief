@@ -2,6 +2,8 @@ var Menu = function(textStrings, spaces, fgColours) {
   this.textStrings = textStrings;
   this.spaces = spaces;
   this.fgColours = fgColours;
+  
+  this.textAtLines = {};
 }
 
 function createMenuAndDisplay(menuObject) {
@@ -11,9 +13,12 @@ function createMenuAndDisplay(menuObject) {
   for (var i = 0; i < menuObject.textStrings.length; i++) {
     Game.menu.drawText(2, currentLine, "%c{" + menuObject.fgColours[i] + "}" + menuObject.textStrings[i], (Game.display._options.width - 4));
     numLines = Math.floor(menuObject.textStrings[i].length / (Game.display._options.width - 4)) + 1;
+  
+    for (var j = 0; j < numLines; j++) {
+      menuObject.textAtLines[str(currentLine + j): menuObject.textStrings[i]];
+    }
     
     currentLine += (numLines + menuObject.spaces[i]);
-    //for (var j = 0
     
     
   }
@@ -174,6 +179,8 @@ var Object = function(x, y) {
     var thisMenu = new Menu(textStrings, spaces, fgColours);
     
     createMenuAndDisplay(thisMenu);
+    
+    alert(thisMenu.textAtLines[2]);
 
   },
 
