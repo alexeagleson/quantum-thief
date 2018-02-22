@@ -89,6 +89,7 @@ var Game = {
     
     this.player = this.createObject(freeCells);
     this.activeObjects.push(this.player);
+    this.player.name = "bob";
     
     var secondObject = this.createObject(freeCells);
     this.activeObjects.push(secondObject);

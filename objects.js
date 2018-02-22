@@ -65,7 +65,9 @@ var Object = function(x, y) {
   this.char = "@";
   this.name = "jimmyjo",
   this.wall = true,
-  this.path = [],tT
+  this.path = [],
+    
+  this.turnTaken = false,
     
   this.act = function() {
     Game.engine.lock();
@@ -203,7 +205,12 @@ var Object = function(x, y) {
 
       Game.currentMenuDisplay.responseFunction[Game.currentMenuDisplay.textAtLines[convertMouseTouchToTile(mousePos).y]]();
       view.showGame();
-    } else {
+      
+    menuCanvas.removeEventListener("mousedown", this);
+    menuCanvas.removeEventListener("touchstart", this);
+
+      
+    } else if (gameCanvas.style.display === "block") {
       if (e.type === "mousedown") {
         var mousePos = getMousePos(gameCanvas, e);
         Game.player.moveToward(convertMouseTouchToTile(mousePos));
@@ -234,16 +241,21 @@ var Object = function(x, y) {
 
         this.move(dir);
       }
-    }
-
+      Game.player.turnTaken = true;
     gameCanvas.removeEventListener("mousedown", this);
     gameCanvas.removeEventListener("touchstart", this);
-    menuCanvas.removeEventListener("mousedown", this);
-    menuCanvas.removeEventListener("touchstart", this);
-    window.removeEventListener("keydown", this);
+      window.removeEventListener("keydown", this);
+    }
+
+
+
     
-    setTimeout(function() { 
-      Game.engine.unlock(); 
-    }, 200); 
+    
+    if (Game.player.turnTaken === true) {
+      setTimeout(function() { 
+        Game.player.turnTaken = false;
+        Game.engine.unlock(); 
+      }, 200);
+    }
   }
 }
