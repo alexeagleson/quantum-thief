@@ -14,8 +14,6 @@ var Menu = function(textStrings, spaces, fgColours, responseFunction) {
   
   this.display = function() {
     
-    Game.engine.lock();
-    
     Game.menu.clear();
     Game.currentMenuDisplay = this;
     var menuCanvas = Game.menu.getContainer();
@@ -41,32 +39,43 @@ var Menu = function(textStrings, spaces, fgColours, responseFunction) {
       }
     }
     view.showMenu();
+    this.handleMenuInput();
   };
   
   this.handleMenuInput = function() {
+    Game.engine.lock();
     var menuCanvas = Game.menu.getContainer();
     menuCanvas.addEventListener("mousedown", this);
     menuCanvas.addEventListener("touchstart", this);
   },
     
   this.handleEvent = function(e) {
+    
     var menuCanvas = Game.menu.getContainer();
     
     if (menuCanvas.style.display === "block") {
-
+      
       if (e.type === "mousedown") {
-        var mousePos = getMousePos(gameCanvas, e);
+        var mousePos = getMousePos(menuCanvas, e);
       } else if (e.type === "touchstart") {
-        var mousePos = getTouchPos(gameCanvas, e);
+        var mousePos = getTouchPos(menuCanvas, e);
       }
 
-      Game.currentMenuDisplay.responseFunction[Game.currentMenuDisplay.textAtLines[convertMouseTouchToTile(mousePos).y]]();
-      view.showGame();
+      var check = Game.currentMenuDisplay.responseFunction[Game.currentMenuDisplay.textAtLines[convertMouseTouchToTile(mousePos).y]]();
       
-    menuCanvas.removeEventListener("mousedown", this);
-    menuCanvas.removeEventListener("touchstart", this);
-  
-  
+      if (check) {
+        view.showGame();
+
+        menuCanvas.removeEventListener("mousedown", this);
+        menuCanvas.removeEventListener("touchstart", this);
+
+        setTimeout(function() { 
+          Game.engine.unlock(); 
+        }, 200);
+      }
+      
+    }
+  }
 }
 
 
@@ -111,10 +120,7 @@ var Object = function(x, y) {
     window.addEventListener("keydown", this);
     gameCanvas.addEventListener("mousedown", this);
     gameCanvas.addEventListener("touchstart", this);
-    
   },
-    
-
     
   this.handleNpcTurn = function() {
     let astar = new ROT.Path.AStar(Game.player.x, Game.player.y, Game.checkIfWall, {topology: 4});
@@ -218,28 +224,8 @@ var Object = function(x, y) {
 
   this.handleEvent = function(e) {
     var gameCanvas = Game.display.getContainer();
-    var menuCanvas = Game.menu.getContainer();
-    
-    
-    
-    
-    if (menuCanvas.style.display === "block") {
-      
-      if (e.type === "mousedown") {
-        var mousePos = getMousePos(gameCanvas, e);
-      } else if (e.type === "touchstart") {
-        var mousePos = getTouchPos(gameCanvas, e);
-      }
 
-      Game.currentMenuDisplay.responseFunction[Game.currentMenuDisplay.textAtLines[convertMouseTouchToTile(mousePos).y]]();
-      view.showGame();
-      
-    menuCanvas.removeEventListener("mousedown", this);
-    menuCanvas.removeEventListener("touchstart", this);
-      
-
-      
-    } else if (gameCanvas.style.display === "block") {
+    if (gameCanvas.style.display === "block") {
       if (e.type === "mousedown") {
         var mousePos = getMousePos(gameCanvas, e);
         Game.player.moveToward(convertMouseTouchToTile(mousePos));
@@ -270,18 +256,13 @@ var Object = function(x, y) {
 
         this.move(dir);
       }
+      gameCanvas.removeEventListener("mousedown", this);
+      gameCanvas.removeEventListener("touchstart", this);
+        window.removeEventListener("keydown", this);
 
-    gameCanvas.removeEventListener("mousedown", this);
-    gameCanvas.removeEventListener("touchstart", this);
-      window.removeEventListener("keydown", this);
-
-    setTimeout(function() { 
-      Game.engine.unlock(); 
-    }, 200);
-      
+      setTimeout(function() { 
+        Game.engine.unlock(); 
+      }, 200);
     }
-    
-
-
   }
 }
