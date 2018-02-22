@@ -16,10 +16,7 @@ var Menu = function(textStrings, spaces, fgColours) {
       for (var j = 0; j < numLines; j++) {
         this.textAtLines[currentLine + j] = this.textStrings[i];
       }
-
       currentLine += (numLines + this.spaces[i]);
-
-
     }
 
     for (var i = 0; i < Game.display._options.width; i++) {
@@ -31,11 +28,7 @@ var Menu = function(textStrings, spaces, fgColours) {
     }
     view.showMenu();
   }
-  
 }
-
-
-
 
 var Tile = function(x, y, char, wall) {
   this.x = x;

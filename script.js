@@ -16,7 +16,6 @@ var Game = {
 
   init: function() {
     
-    
     this.display = this.createCanvas("gameDisplay");
     this.display.getContainer().style.display = "block";
 
