@@ -70,9 +70,10 @@ var Object = function(x, y) {
   this.turnTaken = false,
     
   this.act = function() {
-    Game.engine.lock();
     
+
     if (this === Game.player) {
+
       this.handlePlayerTurn();
     } else{
       this.handleNpcTurn();
@@ -100,7 +101,6 @@ var Object = function(x, y) {
     let step = this.path.shift();
     
     this.path = [];
-    Game.engine.unlock();
     
     if(!step) {
       return false;
@@ -196,7 +196,13 @@ var Object = function(x, y) {
     var gameCanvas = Game.display.getContainer();
     var menuCanvas = Game.menu.getContainer();
     
+    
+    Game.engine.lock();
+    
     if (menuCanvas.style.display === "block") {
+      
+      
+      
       if (e.type === "mousedown") {
         var mousePos = getMousePos(gameCanvas, e);
       } else if (e.type === "touchstart") {
@@ -246,16 +252,10 @@ var Object = function(x, y) {
     gameCanvas.removeEventListener("touchstart", this);
       window.removeEventListener("keydown", this);
     }
-
-
-
     
-    
-    if (Game.player.turnTaken === true) {
-      setTimeout(function() { 
-        Game.player.turnTaken = false;
-        Game.engine.unlock(); 
-      }, 200);
-    }
+    setTimeout(function() { 
+      Game.engine.unlock(); 
+    }, 200);
+
   }
 }
