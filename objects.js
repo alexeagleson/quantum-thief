@@ -159,21 +159,14 @@ var Object = function(x, y) {
     
   this.talkTo = function(object) {
     
-    thisMenu = new Menu(
+    var textStrings = [this.name, "Hello what are you doing here?", "bimmyjo", "Oh I'm just looking for things.", "jimmyjo", "that is cool"]
+    var coords = [[2, 2], [2, 3], [2, 6], [2, 7], [2, 10], [2, 11]];
+    var fgColours = ["blue", "white", "red", "white", "blue", "white"];
+
+    var thisMenu = new Menu(textStrings, coords, fgColours);
     
-    
-    
-    createMenuAndDisplay
-    
-    
-    var Menu = function() {
-  this.textStrings = [];
-  this.coords = [];
-  this.fgColours = [];
-}
-    
-    
-    showDialogue(this.name, "While the films follow the book's general storyline, they do omit some of the novel's plot elements and include some additions to and deviations from the source material.");
+    createMenuAndDisplay(thisMenu);
+
   },
 
   this.handleEvent = function(e) {
