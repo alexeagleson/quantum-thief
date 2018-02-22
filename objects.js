@@ -13,6 +13,9 @@ var Menu = function(textStrings, spaces, fgColours, responseFunction) {
   this.textAtLines = {};
   
   this.display = function() {
+    
+    Game.engine.lock();
+    
     Game.menu.clear();
     Game.currentMenuDisplay = this;
     var menuCanvas = Game.menu.getContainer();
@@ -39,6 +42,31 @@ var Menu = function(textStrings, spaces, fgColours, responseFunction) {
     }
     view.showMenu();
   };
+  
+  this.handleMenuInput = function() {
+    var menuCanvas = Game.menu.getContainer();
+    menuCanvas.addEventListener("mousedown", this);
+    menuCanvas.addEventListener("touchstart", this);
+  },
+    
+  this.handleEvent = function(e) {
+    var menuCanvas = Game.menu.getContainer();
+    
+    if (menuCanvas.style.display === "block") {
+
+      if (e.type === "mousedown") {
+        var mousePos = getMousePos(gameCanvas, e);
+      } else if (e.type === "touchstart") {
+        var mousePos = getTouchPos(gameCanvas, e);
+      }
+
+      Game.currentMenuDisplay.responseFunction[Game.currentMenuDisplay.textAtLines[convertMouseTouchToTile(mousePos).y]]();
+      view.showGame();
+      
+    menuCanvas.removeEventListener("mousedown", this);
+    menuCanvas.removeEventListener("touchstart", this);
+  
+  
 }
 
 
@@ -67,13 +95,11 @@ var Object = function(x, y) {
   this.wall = true,
   this.path = [],
     
-  this.turnTaken = false,
-    
   this.act = function() {
     
 
     if (this === Game.player) {
-
+      Game.engine.lock();
       this.handlePlayerTurn();
     } else{
       this.handleNpcTurn();
@@ -82,15 +108,13 @@ var Object = function(x, y) {
     
   this.handlePlayerTurn = function() {
     var gameCanvas = Game.display.getContainer();
-    var menuCanvas = Game.menu.getContainer();
-    
     window.addEventListener("keydown", this);
     gameCanvas.addEventListener("mousedown", this);
     gameCanvas.addEventListener("touchstart", this);
-    menuCanvas.addEventListener("mousedown", this);
-    menuCanvas.addEventListener("touchstart", this);
     
   },
+    
+
     
   this.handleNpcTurn = function() {
     let astar = new ROT.Path.AStar(Game.player.x, Game.player.y, Game.checkIfWall, {topology: 4});
@@ -197,11 +221,9 @@ var Object = function(x, y) {
     var menuCanvas = Game.menu.getContainer();
     
     
-    Game.engine.lock();
+    
     
     if (menuCanvas.style.display === "block") {
-      
-      
       
       if (e.type === "mousedown") {
         var mousePos = getMousePos(gameCanvas, e);
@@ -214,6 +236,7 @@ var Object = function(x, y) {
       
     menuCanvas.removeEventListener("mousedown", this);
     menuCanvas.removeEventListener("touchstart", this);
+      
 
       
     } else if (gameCanvas.style.display === "block") {
@@ -247,15 +270,18 @@ var Object = function(x, y) {
 
         this.move(dir);
       }
-      Game.player.turnTaken = true;
+
     gameCanvas.removeEventListener("mousedown", this);
     gameCanvas.removeEventListener("touchstart", this);
       window.removeEventListener("keydown", this);
-    }
-    
+
     setTimeout(function() { 
       Game.engine.unlock(); 
     }, 200);
+      
+    }
+    
+
 
   }
 }
