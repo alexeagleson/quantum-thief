@@ -203,7 +203,7 @@ var Object = function(x, y) {
       
       //alert("hi");
       alert(Game.currentMenuDisplay.textAtLines[convertMouseTouchToTile(mousePos).y]);
-      
+      view.showGame();
       
     } else {
 
