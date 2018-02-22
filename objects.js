@@ -1,7 +1,17 @@
 var Menu = function(textStrings, coords, fgColours) {
   this.textStrings = textStrings;
-  this.coords = coords;
+  //this.spaces = spaces;
   this.fgColours = fgColours;
+  
+  linesStarts = [];
+  
+  currentY = 2;
+  for (var i = 0; i < this.textStrings; i++) {
+    
+  
+  
+  
+  
 }
 
 function createMenuAndDisplay(menuObject) {
