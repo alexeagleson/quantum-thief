@@ -1,5 +1,5 @@
 var tileSet = document.createElement("img");
-tileSet.src = "https://cdn.glitch.com/8d5360ec-82cb-4488-81d6-164fd5245bb1%2Fsssss.png?1519348622410";
+tileSet.src = "https://cdn.glitch.com/8d5360ec-82cb-4488-81d6-164fd5245bb1%2Fsssss.png?1519350658180";
 
 var Game = {
   display: null,
@@ -32,7 +32,7 @@ var Game = {
           "@": multiplyBy32([0, 0]),
           "#": multiplyBy32([0, 5]),
           "a": multiplyBy32([1, 0]),
-          "!": multiplyBy32([5, 15])
+          "!": multiplyBy32([2, 0])
         }
       });
     }
@@ -84,6 +84,8 @@ var Game = {
         freeCells.push(key);
     }
     digger.create(digCallback.bind(this));
+    
+    
 
     this.generateBoxes(freeCells);
     
@@ -95,7 +97,6 @@ var Game = {
     this.activeObjects.push(secondObject);
     
     this.drawWholeMap();
-    
   },
 
   createObject: function(freeCells) {

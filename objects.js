@@ -88,11 +88,13 @@ var Tile = function(x, y, char, wall) {
   this.objectsOnThisTile = [];
 
   this.draw = function() {
-    Game.display.draw(this.x, this.y, Game.map[this.x + "," + this.y].char);
     
+    Game.display.draw(this.x, this.y, Game.map[this.x + "," + this.y].char);
     this.objectsOnThisTile.forEach(function(object) {
       Game.display.draw(object.x, object.y, object.char);
     });
+    
+
   };
 }
 
