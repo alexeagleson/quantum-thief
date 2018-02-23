@@ -73,6 +73,21 @@ var Menu = function(textStrings, spaces, fgColours, responseFunction) {
 }
 
 var view = {
+  defineView: function() {
+    var metaTag = document.getElementById("metaTag");
+    metaTag.content = "user-scalable=no";
+    //metaTag.content = "initial-scale=0.25, maximum-scale=0.25, minimum-scale=0.25, user-scalable=yes";
+    
+    var w = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
+    var h = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
+    
+    if (w > h) {
+      // portraits on left
+    } else {
+      // portraits above
+    }
+  },
+  
   showGame: function() {
     var gameDisplayDOM = document.getElementsByClassName("gameDisplay")[0];
     var menuDisplayDOM = document.getElementsByClassName("menuDisplay")[0];
@@ -87,6 +102,7 @@ var view = {
     menuDisplayDOM.style.display = "block";
   },
 }
+
 
 var menuResponse = {
   done: function() {

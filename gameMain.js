@@ -2,6 +2,7 @@ var tileSet = document.createElement("img");
 tileSet.src = "https://cdn.glitch.com/8d5360ec-82cb-4488-81d6-164fd5245bb1%2Fsssss.png?1519350658180";
 
 var Game = {
+  mainDisplayDiv: null,
   display: null,
   menu: null,
   currentMenuDisplay: null,
@@ -9,18 +10,14 @@ var Game = {
   engine: null,
   player: null,
   activeObjects: [],
-  gameSpeed: 1000,
+  gameSpeed: 100,
+  width: 25,
+  height: 25,
 
   init: function() {
     
-    var metaTag = document.getElementById("metaTag");
-    console.log(metaTag);
-    metaTag.content = "initial-scale=0.5, maximum-scale=1.0, minimum-scale=0.5, user-scalable=yes";
-    
-    var w = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
-    var h = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
-    
-    alert(w + " " + h);
+    this.mainDisplayDiv = document.createElement("div");
+    view.defineView();
     
     this.display = this.createCanvas("gameDisplay");
     this.display.getContainer().style.display = "block";
@@ -57,14 +54,15 @@ var Game = {
   
   createCanvas: function(className) {
     var options = {
-      width: 25,
-      height: 25,
+      width: Game.width,
+      height: Game.height,
       fontSize: 32,
       forceSquareRatio:true
     }
     thisRotDisplay = new ROT.Display(options);
     var thisCanvas = thisRotDisplay.getContainer();
     thisCanvas.className = className;
+    this.mainDisplayDiv.appendChild(thisCanvas);
     document.body.appendChild(thisCanvas);
     thisCanvas.style.display = "none";
     return thisRotDisplay;
