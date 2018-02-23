@@ -1,5 +1,5 @@
 var tileSet = document.createElement("img");
-tileSet.src = "https://cdn.glitch.com/65d1c64a-f6b1-4419-b107-12f1a855a66a%2FPeopleSpriteSheet3.png?1518898106569";
+tileSet.src = "https://cdn.glitch.com/8d5360ec-82cb-4488-81d6-164fd5245bb1%2Fsssss.png?1519348622410";
 
 var Game = {
   display: null,
@@ -30,9 +30,9 @@ var Game = {
         tileSet: tileSet,
         tileMap: {
           "@": multiplyBy32([0, 0]),
-          "#": multiplyBy32([0, 1]),
+          "#": multiplyBy32([0, 5]),
           "a": multiplyBy32([1, 0]),
-          "!": multiplyBy32([2, 7])
+          "!": multiplyBy32([5, 15])
         }
       });
     }
