@@ -3,3 +3,5 @@ make click-to-talk
 sound effects
 
 organize and make simple create functions
+
+canvas up top with game info and character portraits?

@@ -49,6 +49,10 @@ var Game = {
     
     this.engine = new ROT.Engine(scheduler);
     this.engine.start();
+    
+    this.drawWholeMap();
+    this.drawAllObjects();
+
   },
   
   createCanvas: function(className) {
@@ -92,9 +96,6 @@ var Game = {
       anotherObject.char = "!";
       this.activeObjects.push(anotherObject);
     }
-    
-    this.drawWholeMap();
-    this.drawAllObjects();
   },
 
   createObject: function(freeCells) {

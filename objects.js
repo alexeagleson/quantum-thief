@@ -217,6 +217,7 @@ var Object = function(x, y) {
   },
     
   this.talkTo = function(object) {
+    /*
     var textStrings = [this.name, "Hello what are you doing here?", "bimmyjo", "Oh I'm just looking for things.", "jimmyjo", "that is cool"];
     var spaces = [0, 1, 0, 1, 0,];
     var fgColours = ["blue", "white", "red", "white", "blue", "white"];
@@ -224,6 +225,7 @@ var Object = function(x, y) {
     
     var thisMenu = new Menu(textStrings, spaces, fgColours, responseFunction);
     thisMenu.display();
+    */
   },
 
   this.handleEvent = function(e) {
@@ -266,7 +268,7 @@ var Object = function(x, y) {
 
       setTimeout(function() { 
         Game.engine.unlock(); 
-      }, 200);
+      }, 100);
     }
   }
 }
