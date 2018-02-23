@@ -50,6 +50,12 @@ var Game = {
     })
     this.engine = new ROT.Engine(scheduler);
     this.engine.start();
+    
+    var gameHUD = this.createCanvas("gameHUD");
+    butt.getContainer().style.display = "block";
+    
+    
+    document.body.appendChild(this.mainDisplayDiv);
   },
   
   createCanvas: function(className) {
@@ -62,9 +68,8 @@ var Game = {
     thisRotDisplay = new ROT.Display(options);
     var thisCanvas = thisRotDisplay.getContainer();
     thisCanvas.className = className;
-    this.mainDisplayDiv.appendChild(thisCanvas);
-    document.body.appendChild(thisCanvas);
     thisCanvas.style.display = "none";
+    this.mainDisplayDiv.appendChild(thisCanvas);
     return thisRotDisplay;
   },
   
