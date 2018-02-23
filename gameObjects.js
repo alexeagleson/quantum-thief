@@ -1,90 +1,8 @@
-var Menu = function(textStrings, spaces, fgColours, responseFunction) {
-  
-  this.textStrings = textStrings;
-  this.spaces = spaces;
-  this.fgColours = fgColours;
-  this.responseFunction = responseFunction;
-  
-  this.textStrings.push("{Continue}");
-  this.spaces.push(2);
-  this.fgColours.push("white");
-  this.responseFunction["{Continue}"] = response.done;
-    
-  this.textAtLines = {};
-  
-  this.display = function() {
-    
-    Game.menu.clear();
-    Game.currentMenuDisplay = this;
-    var menuCanvas = Game.menu.getContainer();
-    
-    var currentLine = 2;
-    var numLines = 0;
-    
-    for (var i = 0; i < this.textStrings.length; i++) {
-      Game.menu.drawText(2, currentLine, "%c{" + this.fgColours[i] + "}" + this.textStrings[i], (Game.display._options.width - 4));
-      numLines = Math.floor(this.textStrings[i].length / (Game.display._options.width - 4)) + 1;
-
-      for (var j = 0; j < numLines; j++) {
-        this.textAtLines[currentLine + j] = this.textStrings[i];
-      }
-      currentLine += (numLines + this.spaces[i]);
-    }
-
-    for (var i = 0; i < Game.display._options.width; i++) {
-      for (var j = 0; j < Game.display._options.height; j++) {
-        if (i === 0 || j === 0 || i === (Game.display._options.width - 1) || j === (Game.display._options.height - 1)) {
-          Game.menu.drawText(i, j, "#", (Game.display._options.width - 2));
-        }
-      }
-    }
-    view.showMenu();
-    this.handleMenuInput();
-  };
-  
-  this.handleMenuInput = function() {
-    Game.engine.lock();
-    var menuCanvas = Game.menu.getContainer();
-    menuCanvas.addEventListener("mousedown", this);
-    menuCanvas.addEventListener("touchstart", this);
-  },
-    
-  this.handleEvent = function(e) {
-    
-    var menuCanvas = Game.menu.getContainer();
-    
-    if (menuCanvas.style.display === "block") {
-      
-      if (e.type === "mousedown") {
-        var mousePos = getMousePos(menuCanvas, e);
-      } else if (e.type === "touchstart") {
-        var mousePos = getTouchPos(menuCanvas, e);
-      }
-
-      var check = Game.currentMenuDisplay.responseFunction[Game.currentMenuDisplay.textAtLines[convertMouseTouchToTile(mousePos).y]]();
-      
-      if (check) {
-        view.showGame();
-
-        menuCanvas.removeEventListener("mousedown", this);
-        menuCanvas.removeEventListener("touchstart", this);
-
-        setTimeout(function() { 
-          Game.engine.unlock(); 
-        }, 200);
-      }
-      
-    }
-  }
-}
-
-
 var Tile = function(x, y, char, wall) {
   this.x = x;
   this.y = y;
   this.wall = wall;
   this.char = char;
-
   this.objectsOnThisTile = [];
 
   this.drawTile = function() {
@@ -102,15 +20,12 @@ var Object = function(x, y) {
   this.x = x;
   this.y = y;
   this.char = "@";
-  this.name = "jimmyjo",
+  this.name = "default name",
   this.wall = true,
   this.path = [],
     
   this.act = function() {
-    
-
     if (this === Game.player) {
-      Game.engine.lock();
       this.handlePlayerTurn();
     } else{
       this.handleNpcTurn();
@@ -118,6 +33,7 @@ var Object = function(x, y) {
   },
     
   this.handlePlayerTurn = function() {
+    Game.engine.lock();
     var gameCanvas = Game.display.getContainer();
     window.addEventListener("keydown", this);
     gameCanvas.addEventListener("mousedown", this);
@@ -131,31 +47,22 @@ var Object = function(x, y) {
   
     this.path.shift();
     let step = this.path.shift();
-    
     this.path = [];
     
-    if(!step) {
-      return false;
-    }
+    if(!step) { return false; }
     
     return this.moveToward({x: step.x, y: step.y});
-    
   },
 
   this.move = function(directionArray) {
     var newX = this.x + directionArray[0];
     var newY = this.y + directionArray[1];
     var newKey = newX + "," + newY;
-    
-    if (!(newKey in Game.map)) {
-      return false; 
-    }
-    
-    if (Game.map[newX + "," + newY].wall) {
-      return false;
-    }
-    
     var tileOccupied = false;
+    
+    if (!(newKey in Game.map)) { return false; }
+    
+    if (Game.map[newX + "," + newY].wall) { return false; }
     
     Game.map[newX + "," + newY].objectsOnThisTile.forEach(function(object) {
       if (object.wall) {
@@ -164,21 +71,16 @@ var Object = function(x, y) {
       }
     });
     
-    if (tileOccupied) {
-      return false;
-    }
+    if (tileOccupied) { return false; }
     
     Game.map[this.x + "," + this.y].objectsOnThisTile = [];
     Game.map[this.x + "," + this.y].drawTile();
     Game.map[this.x + "," + this.y].drawObjects();
-
     this.x = newX;
     this.y = newY;
     Game.map[this.x + "," + this.y].objectsOnThisTile.push(this);
     Game.map[this.x + "," + this.y].drawTile();
     Game.map[this.x + "," + this.y].drawObjects();
-
-
     return true;
   }, 
     
@@ -211,7 +113,6 @@ var Object = function(x, y) {
     } else if (d4 === 4) {
       moveSuccess = this.move([0, -1]);
     }
-    
     return moveSuccess;
   },
     
@@ -220,7 +121,6 @@ var Object = function(x, y) {
     var spaces = [0, 1, 0, 1, 0,];
     var fgColours = ["blue", "white", "red", "white", "blue", "white"];
     var responseFunction = {};
-    
     var thisMenu = new Menu(textStrings, spaces, fgColours, responseFunction);
     thisMenu.display();
   },
@@ -255,9 +155,7 @@ var Object = function(x, y) {
 
         var code = e.keyCode;
         // one of numpad directions?
-        if (!(code in keyMap)) {
-          return;
-        }
+        if (!(code in keyMap)) { return; }
 
         // is there a free space?
         var dir = ROT.DIRS[8][keyMap[code]];
@@ -266,7 +164,7 @@ var Object = function(x, y) {
       }
       gameCanvas.removeEventListener("mousedown", this);
       gameCanvas.removeEventListener("touchstart", this);
-        window.removeEventListener("keydown", this);
+      window.removeEventListener("keydown", this);
 
       setTimeout(function() { 
         Game.engine.unlock(); 

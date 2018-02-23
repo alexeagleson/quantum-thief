@@ -5,17 +5,16 @@ var Game = {
   display: null,
   menu: null,
   currentMenuDisplay: null,
-  
   map: {},
   engine: null,
   player: null,
-  
   activeObjects: [],
 
   init: function() {
-    
     this.display = this.createCanvas("gameDisplay");
     this.display.getContainer().style.display = "block";
+    this.menu = this.createCanvas("menuDisplay");
+    this.menu.getContainer().style.display = "none";
 
     if (true) {
       this.display.setOptions({
@@ -35,8 +34,6 @@ var Game = {
       });
     }
 
-    this.menu = this.createCanvas("menuDisplay");
-    
     this.generateMap();
 
     var scheduler = new ROT.Scheduler.Simple();
@@ -47,10 +44,6 @@ var Game = {
     
     this.engine = new ROT.Engine(scheduler);
     this.engine.start();
-    
-    this.drawWholeMap();
-    this.drawAllObjects();
-
   },
   
   createCanvas: function(className) {
@@ -60,7 +53,6 @@ var Game = {
       fontSize: 32,
       forceSquareRatio:true
     }
-
     thisRotDisplay = new ROT.Display(options);
     var thisCanvas = thisRotDisplay.getContainer();
     thisCanvas.className = className;
@@ -94,6 +86,9 @@ var Game = {
       anotherObject.char = "!";
       this.activeObjects.push(anotherObject);
     }
+    
+    this.drawWholeMap();
+    this.drawAllObjects();
   },
 
   createObject: function(freeCells) {
@@ -129,35 +124,14 @@ var Game = {
       return false;
     }
     
-    if (Game.map[x + "," + y].wall) { 
-      return false; 
-    }
+    if (Game.map[x + "," + y].wall) { return false; }
     
     Game.map[x + "," + y].objectsOnThisTile.forEach(function(object) {
-      if (object.wall) {
-        return false;
-      }
+      if (object.wall) { return false; }
     });
+    
     return true;
   }
 };
-
-var view = {
-  showGame: function() {
-    var gameDisplayDOM = document.getElementsByClassName("gameDisplay")[0];
-    var menuDisplayDOM = document.getElementsByClassName("menuDisplay")[0];
-    
-    gameDisplayDOM.style.display = "block";
-    menuDisplayDOM.style.display = "none";
-  },
-  
-  showMenu: function() {
-    var gameDisplayDOM = document.getElementsByClassName("gameDisplay")[0];
-    var menuDisplayDOM = document.getElementsByClassName("menuDisplay")[0];
-
-    gameDisplayDOM.style.display = "none";
-    menuDisplayDOM.style.display = "block";
-  },
-}
 
 
