@@ -80,7 +80,6 @@ var view = {
     var w = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
     var h = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
 
-    
     if (w > h) {
       Game.hudWidth = Game.gameWidth / 2;
       Game.hudHeight = Game.gameHeight;
@@ -90,9 +89,12 @@ var view = {
     }
     
     var windowScaler = Math.min(w, h);
-    var gameScalar = Game.gameWidth * 32;
+    var gameScaler = Game.gameWidth * 32;
     
-    var finalScale = 
+    var finalScaler = (gameScaler / windowScaler);
+
+    
+    metaTag.content = "initial-scale=" + finalScaler + ", maximum-scale=" + finalScaler + ", minimum-scale=" + finalScaler + ", user-scalable=no";
     
     
     Game.totalDiv = document.createElement("div");
@@ -113,6 +115,8 @@ var view = {
     
     Game.gameHUD = Game.createCanvas("gameHUD", Game.hudWidth, Game.hudHeight);
     Game.gameHUD.getContainer().style.display = "block";
+    
+    Game.gameHUD.drawText(1, 1, "Game Info Here", Game.hudWidth - 2);
     
     Game.mainDisplayDiv.appendChild(Game.display.getContainer());
     Game.mainDisplayDiv.appendChild(Game.menu.getContainer());

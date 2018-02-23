@@ -6,6 +6,7 @@ h1 {
 
 .totalDiv {
   overflow: hidden;
+  margin: 5px;
 }
 
 .hudDiv {
