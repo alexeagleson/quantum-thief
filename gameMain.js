@@ -5,6 +5,7 @@ var Game = {
   mainDisplayDiv: null,
   display: null,
   menu: null,
+  gameHUD: null,
   currentMenuDisplay: null,
   map: {},
   engine: null,
@@ -16,15 +17,33 @@ var Game = {
 
   init: function() {
     
-    this.totalDiv = 
-    this.mainDisplayDiv = document.createElement("div");
-    this.hudDiv = document.createElement("div");
     view.defineView();
     
-    this.display = this.createCanvas("gameDisplay");
+    this.totalDiv = document.createElement("div");
+    this.mainDisplayDiv = document.createElement("div");
+    this.hudDiv = document.createElement("div");
+    
+    this.totalDiv.className = "totalDiv";
+    this.mainDisplayDiv.className = "mainDisplayDiv";
+    this.hudDiv.className = "hudDiv";
+    
+    this.display = this.createCanvas("gameDisplay", Game.width, Game.height);
     this.display.getContainer().style.display = "block";
-    this.menu = this.createCanvas("menuDisplay");
+    
+    this.menu = this.createCanvas("menuDisplay", Game.width, Game.height);
     this.menu.getContainer().style.display = "none";
+    
+    this.gameHUD = this.createCanvas("gameHUD", 10, 25);
+    this.gameHUD.getContainer().style.display = "block";
+    
+    this.mainDisplayDiv.appendChild(this.display.getContainer());
+    this.mainDisplayDiv.appendChild(this.menu.getContainer());
+    this.hudDiv.appendChild(this.gameHUD.getContainer());
+
+    this.totalDiv.appendChild(this.mainDisplayDiv);    
+    this.totalDiv.appendChild(this.hudDiv);
+
+    document.body.appendChild(this.totalDiv);
 
     if (true) {
       this.display.setOptions({
@@ -53,17 +72,14 @@ var Game = {
     this.engine = new ROT.Engine(scheduler);
     this.engine.start();
     
-    var gameHUD = this.createCanvas("gameHUD");
-    gameHUD.getContainer().style.display = "block";
     
     
-    document.body.appendChild(this.mainDisplayDiv);
   },
   
-  createCanvas: function(className) {
+  createCanvas: function(className, width, height) {
     var options = {
-      width: Game.width,
-      height: Game.height,
+      width: width,
+      height: height,
       fontSize: 32,
       forceSquareRatio:true
     }
@@ -71,7 +87,6 @@ var Game = {
     var thisCanvas = thisRotDisplay.getContainer();
     thisCanvas.className = className;
     thisCanvas.style.display = "none";
-    this.mainDisplayDiv.appendChild(thisCanvas);
     return thisRotDisplay;
   },
   

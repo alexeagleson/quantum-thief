@@ -3,3 +3,17 @@ h1 {
   margin: 2px;
   padding: 2px;
 }
+
+.totalDiv {
+  margin: 2px;
+}
+
+.mainDisplayDiv {
+  margin: 2px;
+  float: right;
+}
+
+.hudDiv {
+  margin: 2px;
+  float: none;
+}
