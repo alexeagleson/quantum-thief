@@ -36,8 +36,6 @@ var Game = {
     }
 
     this.menu = this.createCanvas("menuDisplay");
-
-    view.createMenuButton();
     
     this.generateMap();
 
@@ -124,8 +122,6 @@ var Game = {
     });
   },
   
-  
-  /* input callback informs about map structure */
   checkIfWall: function(x, y) {
     if (x < 0 || x > Game.display._options.width - 1) {
       return false;
@@ -142,28 +138,11 @@ var Game = {
         return false;
       }
     });
-    
     return true;
   }
-  
 };
 
 var view = {
-  
-  createMenuButton: function() {
-    var menuButtonsDiv = document.createElement("div");
-    menuButtonsDiv.className = "menuButtons";
-
-    var buttonMenu = document.createElement("button");
-    buttonMenu.className = "menuButton";
-    buttonMenu.innerText = "Menu";
-    buttonMenu.addEventListener("click", view.showMenu);
-
-    menuButtonsDiv.appendChild(buttonMenu);
-
-    document.body.appendChild(menuButtonsDiv);
-  },
-  
   showGame: function() {
     var gameDisplayDOM = document.getElementsByClassName("gameDisplay")[0];
     var menuDisplayDOM = document.getElementsByClassName("menuDisplay")[0];

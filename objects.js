@@ -229,21 +229,19 @@ var Object = function(x, y) {
     var gameCanvas = Game.display.getContainer();
 
     if (gameCanvas.style.display === "block") {
-      if (e.type === "mousedown" ) {
-        var mousePos = getMousePos(gameCanvas, e);
-        
+      if (e.type === "mousedown" || e.type === "touchstart") {
+        if (e.type === "mousedown") {
+          var mousePos = getMousePos(gameCanvas, e);
+        } else if (e.type === "touchstart") {
+          var mousePos = getTouchPos(gameCanvas, e);
+        }
         var tileLocation = convertMouseTouchToTile(mousePos);
-        
+
         if (objectAtTile(tileLocation)) {
           Game.player.talkTo(objectAtTile(convertMouseTouchToTile(mousePos)));
         } else {
           Game.player.moveToward(convertMouseTouchToTile(mousePos));
         }
-
-      } else if (e.type === "touchstart") {
-        var mousePos = getTouchPos(gameCanvas, e);
-        Game.player.moveToward(convertMouseTouchToTile(mousePos));
-
       } else if (e.type === "keydown") {
         var keyMap = {};
         keyMap[38] = 0;
