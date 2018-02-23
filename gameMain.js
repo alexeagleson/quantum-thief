@@ -12,8 +12,10 @@ var Game = {
   player: null,
   activeObjects: [],
   gameSpeed: 100,
-  width: 25,
-  height: 25,
+  gameWidth: 25,
+  gameHeight: 25,
+  hudWidth: 10,
+  hudHeight: 25,
 
   init: function() {
     
@@ -27,21 +29,22 @@ var Game = {
     this.mainDisplayDiv.className = "mainDisplayDiv";
     this.hudDiv.className = "hudDiv";
     
-    this.display = this.createCanvas("gameDisplay", Game.width, Game.height);
+    this.display = this.createCanvas("gameDisplay", Game.gameWidth, Game.gameHeight);
     this.display.getContainer().style.display = "block";
     
-    this.menu = this.createCanvas("menuDisplay", Game.width, Game.height);
+    this.menu = this.createCanvas("menuDisplay", Game.gameWidth, Game.gameHeight);
     this.menu.getContainer().style.display = "none";
     
-    this.gameHUD = this.createCanvas("gameHUD", 10, 25);
+    this.gameHUD = this.createCanvas("gameHUD", Game.hudWidth, Game.hudHeight);
     this.gameHUD.getContainer().style.display = "block";
     
     this.mainDisplayDiv.appendChild(this.display.getContainer());
     this.mainDisplayDiv.appendChild(this.menu.getContainer());
     this.hudDiv.appendChild(this.gameHUD.getContainer());
-
-    this.totalDiv.appendChild(this.mainDisplayDiv);    
+  
     this.totalDiv.appendChild(this.hudDiv);
+    this.totalDiv.appendChild(this.mainDisplayDiv);    
+    
 
     document.body.appendChild(this.totalDiv);
 
