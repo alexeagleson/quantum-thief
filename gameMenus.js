@@ -81,12 +81,49 @@ var view = {
     var h = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
     
     if (w > h) {
-      Game.hudWidth = 10;
-      Game.hudHeight = 20;
+      Game.hudWidth = Game.gameWidth / 2;
+      Game.hudHeight = Game.gameHeight;
     } else {
-      Game.hudWidth = 20;
-      Game.hudHeight = 10;
+      Game.hudWidth = Game.gameWidth;
+      Game.hudHeight = Game.gameHeight / 2;
     }
+    
+    Game.totalDiv = document.createElement("div");
+    Game.mainDisplayDiv = document.createElement("div");
+    Game.hudDiv = document.createElement("div");
+    
+    Game.totalDiv.className = "totalDiv";
+    Game.mainDisplayDiv.className = "mainDisplayDiv";
+    Game.hudDiv.className = "hudDiv";
+    
+    Game.display = Game.createCanvas("gameDisplay", Game.gameWidth, Game.gameHeight);
+    Game.display.getContainer().style.display = "block";
+    
+    Game.menu = Game.createCanvas("menuDisplay", Game.gameWidth, Game.gameHeight);
+    Game.menu.getContainer().style.display = "none";
+    
+    Game.gameHUD = Game.createCanvas("gameHUD", Game.hudWidth, Game.hudHeight);
+    Game.gameHUD.getContainer().style.display = "block";
+    
+    Game.mainDisplayDiv.appendChild(Game.display.getContainer());
+    Game.mainDisplayDiv.appendChild(Game.menu.getContainer());
+    Game.hudDiv.appendChild(Game.gameHUD.getContainer());
+  
+    Game.totalDiv.appendChild(Game.hudDiv);
+    Game.totalDiv.appendChild(Game.mainDisplayDiv);    
+    
+
+    document.body.appendChild(Game.totalDiv);
+    
+    
+    
+    
+    var canvas = Game.display.getContainer()
+    
+    
+    alert(canvas.width + "," + canvas.height);
+    
+    
   },
   
   showGame: function() {
@@ -110,3 +147,20 @@ var menuResponse = {
     return true;
   }
 }
+
+/*
+
+canvas {
+	background: blue;
+	//width: 600px;
+	//height: 800px;
+	
+	display: block;
+	margin: 0 auto;
+}
+
+
+
+
+
+*/
