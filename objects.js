@@ -165,7 +165,6 @@ var Object = function(x, y) {
     });
     
     if (tileOccupied) {
-      this.talkTo(tileOccupied);
       return false;
     }
     
@@ -217,7 +216,6 @@ var Object = function(x, y) {
   },
     
   this.talkTo = function(object) {
-    /*
     var textStrings = [this.name, "Hello what are you doing here?", "bimmyjo", "Oh I'm just looking for things.", "jimmyjo", "that is cool"];
     var spaces = [0, 1, 0, 1, 0,];
     var fgColours = ["blue", "white", "red", "white", "blue", "white"];
@@ -225,16 +223,22 @@ var Object = function(x, y) {
     
     var thisMenu = new Menu(textStrings, spaces, fgColours, responseFunction);
     thisMenu.display();
-    */
   },
 
   this.handleEvent = function(e) {
     var gameCanvas = Game.display.getContainer();
 
     if (gameCanvas.style.display === "block") {
-      if (e.type === "mousedown") {
+      if (e.type === "mousedown" ) {
         var mousePos = getMousePos(gameCanvas, e);
-        Game.player.moveToward(convertMouseTouchToTile(mousePos));
+        
+        var tileLocation = convertMouseTouchToTile(mousePos);
+        
+        if (objectAtTile(tileLocation)) {
+          Game.player.talkTo(objectAtTile(convertMouseTouchToTile(mousePos)));
+        } else {
+          Game.player.moveToward(convertMouseTouchToTile(mousePos));
+        }
 
       } else if (e.type === "touchstart") {
         var mousePos = getTouchPos(gameCanvas, e);

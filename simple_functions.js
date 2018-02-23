@@ -23,6 +23,14 @@ function convertMouseTouchToTile(mouseTouchCoords) {
   return ({x: tileX, y: tileY});
 }
 
+function objectAtTile(tileCoords) {
+  if (Game.map[tileCoords.x + "," + tileCoords.y].objectsOnThisTile) {
+    return Game.map[tileCoords.x + "," + tileCoords.y].objectsOnThisTile[0];
+  } else {
+    return null;
+  }
+}
+
 function rollDie(dieSize) {
   var value = Math.floor(ROT.RNG.getUniform() * (dieSize)) + 1;
   return value;
