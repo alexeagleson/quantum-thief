@@ -9,8 +9,19 @@ var Game = {
   engine: null,
   player: null,
   activeObjects: [],
+  gameSpeed: 1000,
 
   init: function() {
+    
+    var metaTag = document.getElementById("metaTag");
+    console.log(metaTag);
+    metaTag.content = "initial-scale=0.5, maximum-scale=1.0, minimum-scale=0.5, user-scalable=yes";
+    
+    var w = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
+    var h = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
+    
+    alert(w + " " + h);
+    
     this.display = this.createCanvas("gameDisplay");
     this.display.getContainer().style.display = "block";
     this.menu = this.createCanvas("menuDisplay");
@@ -37,11 +48,9 @@ var Game = {
     this.generateMap();
 
     var scheduler = new ROT.Scheduler.Simple();
-    
     this.activeObjects.forEach(function(object) {
       scheduler.add(object, true);
     })
-    
     this.engine = new ROT.Engine(scheduler);
     this.engine.start();
   },
@@ -133,5 +142,3 @@ var Game = {
     return true;
   }
 };
-
-

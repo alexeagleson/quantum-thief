@@ -66,7 +66,7 @@ var Menu = function(textStrings, spaces, fgColours, responseFunction) {
         menuCanvas.removeEventListener("touchstart", this);
         setTimeout(function() { 
           Game.engine.unlock(); 
-        }, 200);
+        }, Game.gameSpeed);
       }
     }
   }

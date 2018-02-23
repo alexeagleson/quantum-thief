@@ -168,7 +168,7 @@ var Object = function(x, y) {
 
       setTimeout(function() { 
         Game.engine.unlock(); 
-      }, 100);
+      }, Game.gameSpeed);
     }
   }
 }
