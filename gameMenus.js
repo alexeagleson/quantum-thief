@@ -88,6 +88,8 @@ var view = {
       Game.hudHeight = Game.gameHeight / 2;
     }
     
+    alert(w + " " + h);
+    
     Game.totalDiv = document.createElement("div");
     Game.mainDisplayDiv = document.createElement("div");
     Game.hudDiv = document.createElement("div");
@@ -121,7 +123,7 @@ var view = {
     var canvas = Game.display.getContainer()
     
     
-    alert(canvas.width + "," + canvas.height);
+    //alert(canvas.width + "," + canvas.height);
     
     
   },
