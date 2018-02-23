@@ -84,8 +84,6 @@ var Game = {
         freeCells.push(key);
     }
     digger.create(digCallback.bind(this));
-    
-    
 
     this.generateBoxes(freeCells);
     
