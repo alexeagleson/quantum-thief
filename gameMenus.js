@@ -79,6 +79,7 @@ var view = {
     
     var w = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
     var h = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
+
     
     if (w > h) {
       Game.hudWidth = Game.gameWidth / 2;
@@ -88,7 +89,11 @@ var view = {
       Game.hudHeight = Game.gameHeight / 2;
     }
     
-    alert(w + " " + h);
+    var windowScaler = Math.min(w, h);
+    var gameScalar = Game.gameWidth * 32;
+    
+    var finalScale = 
+    
     
     Game.totalDiv = document.createElement("div");
     Game.mainDisplayDiv = document.createElement("div");
@@ -100,6 +105,8 @@ var view = {
     
     Game.display = Game.createCanvas("gameDisplay", Game.gameWidth, Game.gameHeight);
     Game.display.getContainer().style.display = "block";
+    
+    
     
     Game.menu = Game.createCanvas("menuDisplay", Game.gameWidth, Game.gameHeight);
     Game.menu.getContainer().style.display = "none";
@@ -117,13 +124,7 @@ var view = {
 
     document.body.appendChild(Game.totalDiv);
     
-    
-    
-    
-    var canvas = Game.display.getContainer()
-    
-    
-    //alert(canvas.width + "," + canvas.height);
+
     
     
   },
