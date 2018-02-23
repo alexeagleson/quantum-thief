@@ -16,7 +16,9 @@ var Game = {
 
   init: function() {
     
+    this.totalDiv = 
     this.mainDisplayDiv = document.createElement("div");
+    this.hudDiv = document.createElement("div");
     view.defineView();
     
     this.display = this.createCanvas("gameDisplay");
@@ -52,7 +54,7 @@ var Game = {
     this.engine.start();
     
     var gameHUD = this.createCanvas("gameHUD");
-    butt.getContainer().style.display = "block";
+    gameHUD.getContainer().style.display = "block";
     
     
     document.body.appendChild(this.mainDisplayDiv);
