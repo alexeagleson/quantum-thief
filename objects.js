@@ -5,10 +5,10 @@ var Menu = function(textStrings, spaces, fgColours, responseFunction) {
   this.fgColours = fgColours;
   this.responseFunction = responseFunction;
   
-  this.textStrings.push("[Done]");
+  this.textStrings.push("{Continue}");
   this.spaces.push(2);
   this.fgColours.push("white");
-  this.responseFunction["[Done]"] = response.done;
+  this.responseFunction["{Continue}"] = response.done;
     
   this.textAtLines = {};
   
@@ -212,8 +212,10 @@ var Object = function(x, y) {
     
   this.talkTo = function(object) {
     var textStrings = [this.name, "Hello what are you doing here?", "bimmyjo", "Oh I'm just looking for things.", "jimmyjo", "that is cool"];
-    var spaces = [0, 1, 0, 5, 0, 1];
+    var spaces = [0, 1, 0, 1, 0,];
     var fgColours = ["blue", "white", "red", "white", "blue", "white"];
+    var responseFunction = {};
+    
     var thisMenu = new Menu(textStrings, spaces, fgColours, responseFunction);
     thisMenu.display();
   },
