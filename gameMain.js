@@ -12,10 +12,10 @@ var Game = {
   player: null,
   activeObjects: [],
   gameSpeed: 100,
-  gameWidth: 25,
-  gameHeight: 25,
+  gameWidth: 20,
+  gameHeight: 20,
   hudWidth: 10,
-  hudHeight: 25,
+  hudHeight: 20,
 
   init: function() {
     

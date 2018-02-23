@@ -74,8 +74,8 @@ var Menu = function(textStrings, spaces, fgColours, responseFunction) {
 var view = {
   defineView: function() {
     var metaTag = document.getElementById("metaTag");
-    metaTag.content = "user-scalable=no";
-    metaTag.content = "initial-scale=0.5, maximum-scale=0.5, minimum-scale=0.5, user-scalable=yes";
+    //metaTag.content = "user-scalable=no";
+    //metaTag.content = "initial-scale=0.5, maximum-scale=0.5, minimum-scale=0.5, user-scalable=yes";
     
     var w = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
     var h = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
