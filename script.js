@@ -10,8 +10,6 @@ var Game = {
   engine: null,
   player: null,
   
-  allObjects: [],
-  inactiveObjects: [],
   activeObjects: [],
 
   init: function() {
@@ -84,17 +82,19 @@ var Game = {
         freeCells.push(key);
     }
     digger.create(digCallback.bind(this));
-
-    this.generateBoxes(freeCells);
     
     this.player = this.createObject(freeCells);
     this.activeObjects.push(this.player);
     this.player.name = "bob";
     
-    var secondObject = this.createObject(freeCells);
-    this.activeObjects.push(secondObject);
+    for (var i = 0; i < 5; i ++) {
+      var anotherObject = this.createObject(freeCells);
+      anotherObject.char = "!";
+      this.activeObjects.push(anotherObject);
+    }
     
     this.drawWholeMap();
+    this.drawAllObjects();
   },
 
   createObject: function(freeCells) {
@@ -108,25 +108,21 @@ var Game = {
     return newObject;
   },
 
-  generateBoxes: function(freeCells) {
-    for (var i = 0; i < 10; i++) {
-      var index = Math.floor(ROT.RNG.getUniform() * freeCells.length);
-      var key = freeCells.splice(index, 1)[0];
-      var parts = key.split(",");
-      var x = parseInt(parts[0]);
-      var y = parseInt(parts[1]);
-      this.map[key] = new Tile(x, y, "!", false);
-    }
-  },
-
   drawWholeMap: function() {
     for (var key in this.map) {
       var parts = key.split(",");
       var x = parseInt(parts[0]);
       var y = parseInt(parts[1]);
-      this.map[key].draw();
+      this.map[key].drawTile();
     }
   },
+  
+  drawAllObjects: function() {
+    this.activeObjects.forEach(function(object) {
+      Game.display.draw(object.x, object.y, object.char);
+    });
+  },
+  
   
   /* input callback informs about map structure */
   checkIfWall: function(x, y) {

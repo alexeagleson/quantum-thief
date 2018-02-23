@@ -87,15 +87,14 @@ var Tile = function(x, y, char, wall) {
 
   this.objectsOnThisTile = [];
 
-  this.draw = function() {
-    
+  this.drawTile = function() {
     Game.display.draw(this.x, this.y, Game.map[this.x + "," + this.y].char);
-    
+  };
+  
+  this.drawObjects = function() {
     this.objectsOnThisTile.forEach(function(object) {
       Game.display.draw(object.x, object.y, object.char);
     });
-    
-
   };
 }
 
@@ -171,11 +170,15 @@ var Object = function(x, y) {
     }
     
     Game.map[this.x + "," + this.y].objectsOnThisTile = [];
-    Game.map[this.x + "," + this.y].draw();
+    Game.map[this.x + "," + this.y].drawTile();
+    Game.map[this.x + "," + this.y].drawObjects();
+
     this.x = newX;
     this.y = newY;
     Game.map[this.x + "," + this.y].objectsOnThisTile.push(this);
-    Game.map[this.x + "," + this.y].draw();
+    Game.map[this.x + "," + this.y].drawTile();
+    Game.map[this.x + "," + this.y].drawObjects();
+
 
     return true;
   }, 
