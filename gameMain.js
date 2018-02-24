@@ -30,6 +30,43 @@ var Game = {
     if (true) {
       this.display.setOptions(Game.CompleteMap.tileLegend);
     }
+    
+    
+    console.log();
+    
+    var tileLegend = {
+        width: Game.display._options.width,
+        height: Game.display._options.height,
+        layout: "tile",
+        bg: "transparent",
+        tileWidth: 32,
+        tileHeight: 32,
+        tileSet: Game.CompleteMap.tileLegend.tileSet,
+        tileMap
+      };
+    
+    this.gameHUD.setOptions(tileLegend);
+
+    Game.gameHUD.drawText(0, 0, "@", 100);
+    
+    
+    
+    
+    /*
+    
+    var tileLegend = {
+        width: Game.display._options.width,
+        height: Game.display._options.height,
+        layout: "tile",
+        bg: "transparent",
+        tileWidth: 32,
+        tileHeight: 32,
+        tileSet: tileElement,
+        tileMap
+      };
+    */
+    
+    
 
     var scheduler = new ROT.Scheduler.Simple();
     this.activeObjects.forEach(function(object) {

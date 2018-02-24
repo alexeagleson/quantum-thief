@@ -103,11 +103,11 @@ var view = {
     
     Game.totalDiv = document.createElement("div");
     Game.mainDisplayDiv = document.createElement("div");
-    //Game.hudDiv = document.createElement("div");
+    Game.hudDiv = document.createElement("div");
     
     Game.totalDiv.className = "totalDiv";
     Game.mainDisplayDiv.className = "mainDisplayDiv";
-    //Game.hudDiv.className = "hudDiv";
+    Game.hudDiv.className = "hudDiv";
     
     Game.display = Game.createCanvas("gameDisplay", Game.gameWidth, Game.gameHeight);
     Game.display.getContainer().style.display = "block";
@@ -122,9 +122,9 @@ var view = {
     
     Game.mainDisplayDiv.appendChild(Game.display.getContainer());
     Game.mainDisplayDiv.appendChild(Game.menu.getContainer());
-    //Game.hudDiv.appendChild(Game.gameHUD.getContainer());
+    Game.hudDiv.appendChild(Game.gameHUD.getContainer());
   
-    //Game.totalDiv.appendChild(Game.hudDiv);
+    Game.totalDiv.appendChild(Game.hudDiv);
     Game.totalDiv.appendChild(Game.mainDisplayDiv);    
 
     document.body.appendChild(Game.totalDiv);

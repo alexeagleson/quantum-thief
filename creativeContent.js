@@ -50,9 +50,9 @@ var creativeContent = {
   },
   
   throneDialogue2: {
-      textStrings: ["piasdasdasd", "Hsdsdsdre?", "bimsdddd", "Oh I'masdasdasdasdr things.", "jimmyjo", "that is cool"],
-      spaces: [0, 1, 0, 1, 0,],
-      fgColours: ["blue", "white", "red", "white", "blue", "white"],
+      textStrings: ["Throne", "there is not much more to tell"],
+      spaces: [0, 1],
+      fgColours: ["blue", "white"],
       responseFunction: {}
   }
   
