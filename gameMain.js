@@ -18,12 +18,6 @@ var Game = {
   gameHeight: 20,
 
   init: function() {
-    
-    var object1 = {x: 10, y: 15};
-    var object2 = {x: 15, y: 20};
-
-    functionToCall(object1, object2);  
-    
 
     view.defineView();
     
