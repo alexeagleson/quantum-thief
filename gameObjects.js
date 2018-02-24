@@ -1,4 +1,6 @@
-var Map = function() {
+var CompleteMap = function(map, tileset) {
+  this.map = map;
+  this.tileset = tileset;
 }
 
 
@@ -10,7 +12,7 @@ var Tile = function(x, y, char, wall) {
   this.objectsOnThisTile = [];
 
   this.drawTile = function() {
-    Game.display.draw(this.x, this.y, Game.map[this.x + "," + this.y].char);
+    Game.display.draw(this.x, this.y, Game.CompleteMap.map[this.x + "," + this.y].char);
   };
   
   this.drawObjects = function() {
@@ -64,11 +66,11 @@ var Object = function(x, y) {
     var newKey = newX + "," + newY;
     var tileOccupied = false;
     
-    if (!(newKey in Game.map)) { return false; }
+    if (!(newKey in Game.CompleteMap.map)) { return false; }
     
-    if (Game.map[newX + "," + newY].wall) { return false; }
+    if (Game.CompleteMap.map[newX + "," + newY].wall) { return false; }
     
-    Game.map[newX + "," + newY].objectsOnThisTile.forEach(function(object) {
+    Game.CompleteMap.map[newX + "," + newY].objectsOnThisTile.forEach(function(object) {
       if (object.wall) {
         tileOccupied = object;
         return false;
@@ -77,14 +79,14 @@ var Object = function(x, y) {
     
     if (tileOccupied) { return false; }
     
-    Game.map[this.x + "," + this.y].objectsOnThisTile = [];
-    Game.map[this.x + "," + this.y].drawTile();
-    Game.map[this.x + "," + this.y].drawObjects();
+    Game.CompleteMap.map[this.x + "," + this.y].objectsOnThisTile = [];
+    Game.CompleteMap.map[this.x + "," + this.y].drawTile();
+    Game.CompleteMap.map[this.x + "," + this.y].drawObjects();
     this.x = newX;
     this.y = newY;
-    Game.map[this.x + "," + this.y].objectsOnThisTile.push(this);
-    Game.map[this.x + "," + this.y].drawTile();
-    Game.map[this.x + "," + this.y].drawObjects();
+    Game.CompleteMap.map[this.x + "," + this.y].objectsOnThisTile.push(this);
+    Game.CompleteMap.map[this.x + "," + this.y].drawTile();
+    Game.CompleteMap.map[this.x + "," + this.y].drawObjects();
     return true;
   }, 
     

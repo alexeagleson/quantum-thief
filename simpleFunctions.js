@@ -19,13 +19,13 @@ function getMousePos(canvasDom, mouseEvent) {
 function convertMouseTouchToTile(mouseTouchCoords) {
   var tileX = Math.floor(mouseTouchCoords.x / 32);
   var tileY = Math.floor(mouseTouchCoords.y / 32);
-  console.log(Game.map[tileX + "," + tileY]);
+  console.log(Game.CompleteMap.map[tileX + "," + tileY]);
   return ({x: tileX, y: tileY});
 }
 
 function objectAtTile(tileCoords) {
-  if (Game.map[tileCoords.x + "," + tileCoords.y].objectsOnThisTile) {
-    return Game.map[tileCoords.x + "," + tileCoords.y].objectsOnThisTile[0];
+  if (Game.CompleteMap.map[tileCoords.x + "," + tileCoords.y].objectsOnThisTile) {
+    return Game.CompleteMap.map[tileCoords.x + "," + tileCoords.y].objectsOnThisTile[0];
   } else {
     return null;
   }

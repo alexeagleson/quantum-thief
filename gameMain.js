@@ -19,6 +19,14 @@ var Game = {
     
     view.defineView();
 
+
+
+    //this.generateMap();
+    Game.CompleteMap.map = staticMap();
+    
+    this.drawWholeMap();
+    this.drawAllObjects();
+    
     if (true) {
       this.display.setOptions({
         width: Game.display._options.width,
@@ -36,12 +44,6 @@ var Game = {
         }
       });
     }
-
-    //this.generateMap();
-    Game.map = staticMap();
-    
-    this.drawWholeMap();
-    this.drawAllObjects();
     
 
     var scheduler = new ROT.Scheduler.Simple();
@@ -73,11 +75,11 @@ var Game = {
     var digCallback = function(x, y, value) {
       var key = x + "," + y;  
       if (value) {
-          this.map[key] = new Tile(x, y, "#", true);
+          Game.CompleteMap.map[key] = new Tile(x, y, "#", true);
           return; 
         }
 
-        this.map[key] = new Tile(x, y, "a", false);
+        Game.CompleteMap.map[key] = new Tile(x, y, "a", false);
         freeCells.push(key);
     }
     digger.create(digCallback.bind(this));
@@ -108,11 +110,11 @@ var Game = {
   },
 
   drawWholeMap: function() {
-    for (var key in this.map) {
+    for (var key in Game.CompleteMap.map) {
       var parts = key.split(",");
       var x = parseInt(parts[0]);
       var y = parseInt(parts[1]);
-      this.map[key].drawTile();
+      Game.CompleteMap.map[key].drawTile();
     }
   },
   
@@ -129,9 +131,9 @@ var Game = {
       return false;
     }
     
-    if (Game.map[x + "," + y].wall) { return false; }
+    if (Game.CompleteMap.map[x + "," + y].wall) { return false; }
     
-    Game.map[x + "," + y].objectsOnThisTile.forEach(function(object) {
+    Game.CompleteMap.map[x + "," + y].objectsOnThisTile.forEach(function(object) {
       if (object.wall) { return false; }
     });
     
