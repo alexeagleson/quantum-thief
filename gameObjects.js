@@ -116,10 +116,11 @@ var Object = function(char, name, wall, alive, clickFunction) {
       Game.CompleteMap.map[this.x + "," + this.y].objectsOnThisTile.splice(spliceLocation, 1);
     }
     
+    Game.renderCoords(this.x, this.y, delay = 30);
     this.x = newX;
-    this.y = newY;    
+    this.y = newY;
     Game.CompleteMap.map[this.x + "," + this.y].objectsOnThisTile.push(this);
-    Game.renderGame();
+    Game.renderCoords(this.x, this.y, delay = 10);
     
     return true;
   }, 

@@ -13,7 +13,7 @@ var Game = {
   engine: null,
   player: null,
   activeObjects: [],
-  gameSpeed: 200,
+  gameSpeed: 300,
   gameWidth: 20,
   gameHeight: 20,
 
@@ -76,8 +76,19 @@ var Game = {
     Game.drawWholeMap();
     setTimeout(function() { 
       Game.drawAllObjects();
-    }, 25);
+      Game.display.draw(Game.player.x, Game.player.y, Game.player.char);
+    }, 25);    
   },
+  
+  renderCoords: function(x, y, delay) {
+    Game.CompleteMap.map[x + "," + y].drawTile();
+    setTimeout(function() { 
+      Game.CompleteMap.map[x + "," + y].drawObjects();
+      Game.display.draw(Game.player.x, Game.player.y, Game.player.char);
+    }, delay);    
+  },
+  
+
   
   createCanvas: function(className, width, height) {
     var options = {
