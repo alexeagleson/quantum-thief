@@ -123,6 +123,7 @@ var Object = function(char, name, wall, alive, clickFunction) {
     Game.CompleteMap.map[this.x + "," + this.y].objectsOnThisTile.push(this);
     Game.CompleteMap.map[this.x + "," + this.y].drawTile();
     Game.CompleteMap.map[this.x + "," + this.y].drawObjects();
+    Game.CompleteMap.map[this.x + "," + this.y].drawObjects();
     return true;
   }, 
     

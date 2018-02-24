@@ -28,8 +28,7 @@ var Game = {
     Game.player = creativeContent.scottDracula;
 
     
-    this.drawWholeMap();
-    this.drawAllObjects();
+    Game.renderGame();
 
     
     
@@ -56,9 +55,7 @@ var Game = {
         }
       });
     }
-    Game.display._options.bg = "#";
-    Game.drawWholeMap();
-    Game.drawAllObjects();
+    Game.renderGame();
   },
   
   floorDown: function() {
@@ -72,8 +69,14 @@ var Game = {
         }
       });
     }
+    Game.renderGame();
+  },
+  
+  renderGame: function() {
     Game.drawWholeMap();
-    Game.drawAllObjects();
+    setTimeout(function() { 
+      Game.drawAllObjects();
+    }, 10);
   },
   
   createCanvas: function(className, width, height) {
