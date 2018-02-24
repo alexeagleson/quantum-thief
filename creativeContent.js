@@ -20,8 +20,21 @@ var creativeContent = {
   },
   
   
-  iceWorld: function() {
-  
+  iceUniverse: function() {
+    var iceUniverse = [];
+    
+    for (var i = 0; i < 5; i++) {
+      iceUniverse[i] = Game.createMap(creativeContent.throneTile, creativeContent.throneLegend);
+      var emptyCell = iceUniverse[i].randomEmptyCellCoords();
+      iceUniverse[i].addObjectToMap(creativeContent.throne, emptyCell.x, emptyCell.y);
+    }
+    
+    var emptyCell = iceUniverse[0].randomEmptyCellCoords();
+    iceUniverse[0].addObjectToMap(creativeContent.scottDracula, emptyCell.x, emptyCell.y);
+    
+    
+    return iceUniverse;
+    
   
   }
   

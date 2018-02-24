@@ -8,6 +8,7 @@ var Game = {
   gameHUD: null,
   currentMenuDisplay: null,
   CompleteMap: null,
+  currentFloor: 0,
   engine: null,
   player: null,
   activeObjects: [],
@@ -19,7 +20,7 @@ var Game = {
 
     view.defineView();
     
-    Game.CompleteMap = creativeContent.throneRoom();
+    Game.CompleteMap = creativeContent.iceUniverse()[Game.currentFloor];
 
     
     Game.player = creativeContent.scottDracula;
@@ -27,6 +28,10 @@ var Game = {
     
     this.drawWholeMap();
     this.drawAllObjects();
+    
+    setTimeout(function() { 
+      Game.floorUp();
+    }, 4000);
     
     
     if (true) {
@@ -39,6 +44,12 @@ var Game = {
     })
     this.engine = new ROT.Engine(scheduler);
     this.engine.start();
+  },
+  
+  floorUp: function() {
+    Game.CompleteMap = creativeContent.iceUniverse()[Game.currentFloor + 1];
+    Game.drawWholeMap();
+    Game.drawAllObjects();
   },
   
   createCanvas: function(className, width, height) {
