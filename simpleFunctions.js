@@ -79,3 +79,11 @@ function playSound(filename) {
   sound.currentTime = 0;
   sound.play();
 }
+
+function distanceTo(object1, object2) {
+  var dx= Math.abs(object1.x - object2.x);
+  var dy= Math.abs(object1.y - object2.y);
+  // return dx;
+  // return dy;
+  return(Math.sqrt((dx * dx) + (dy * dy)));
+}

@@ -168,7 +168,8 @@ var Object = function(char, name, wall, alive, clickFunction) {
       thisMenu.display();
     } else if (this.clickFunction === "floor up") {
       
-      Game.player.distanceTo(this);
+      var distance = distanceTo(Game.player, this);
+      //alert(distance);
       
       Game.floorUp();
     } else if (this.clickFunction === "floor down") {
