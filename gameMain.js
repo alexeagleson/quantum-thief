@@ -7,7 +7,7 @@ var Game = {
   menu: null,
   gameHUD: null,
   currentMenuDisplay: null,
-  map: null,
+  CompleteMap: null,
   engine: null,
   player: null,
   activeObjects: [],
@@ -22,6 +22,7 @@ var Game = {
     //debugger;
 
     //this.generateMap();
+
     Game.CompleteMap = staticMap();
 
     this.drawWholeMap();
@@ -33,7 +34,7 @@ var Game = {
 
     var scheduler = new ROT.Scheduler.Simple();
     this.activeObjects.forEach(function(object) {
-      scheduler.add(object, true);
+      if (object.alive) { scheduler.add(object, true); }
     })
     this.engine = new ROT.Engine(scheduler);
     this.engine.start();

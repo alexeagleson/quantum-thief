@@ -38,12 +38,15 @@ var Tile = function(x, y, char, wall) {
   };
 }
 
-var Object = function(x, y, char, name, wall) {
+
+
+var Object = function(x, y, char, name, wall, alive) {
   this.x = x;
   this.y = y;
   this.char = char;
   this.name = name,
   this.wall = wall,
+  this.alive = alive,
   this.path = [],
     
   this.act = function() {

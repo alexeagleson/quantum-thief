@@ -21,7 +21,6 @@ var staticMap = function() {
       }
     };
   
-  
 
   var totalMap = new CompleteMap(thisMap, tileSet, tileLegend);
 
@@ -39,36 +38,14 @@ var staticMap = function() {
   digger.create(digCallback.bind(this));
   
   
+  var exampleGuy = new Object(10, 10, "!", "Scott Dracula", false);
+  totalMap.addObjectToMap(exampleGuy);
+  
   var emptyCell = totalMap.randomEmptyCellCoords();
-  var exampleGuy = new Object(emptyCell.x, emptyCell.y, "@", "default name", true);
+  var exampleGuy = new Object(x = emptyCell.x, y = emptyCell.y, char = "@", name = "default name", wall = false, alive = false);
   totalMap.addObjectToMap(exampleGuy);
   
   Game.player = exampleGuy;
   
   return totalMap;
 }
-
-var randomEmptyCell
-
-var makeAnObject = () {
-  var index = Math.floor(ROT.RNG.getUniform() * freeCells.length);
-  var key = freeCells.splice(index, 1)[0];
-  var parts = key.split(",");
-  var x = parseInt(parts[0]);
-  var y = parseInt(parts[1]);
-  var newObject = new Object(x, y);
-  thisMap[key].objectsOnThisTile.push(newObject);
-  return newObject;
-}
-
-
-createObject: function(freeCells, thisMap) {
-  var index = Math.floor(ROT.RNG.getUniform() * freeCells.length);
-  var key = freeCells.splice(index, 1)[0];
-  var parts = key.split(",");
-  var x = parseInt(parts[0]);
-  var y = parseInt(parts[1]);
-  var newObject = new Object(x, y);
-  thisMap[key].objectsOnThisTile.push(newObject);
-  return newObject;
-},
