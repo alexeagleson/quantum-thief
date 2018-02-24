@@ -39,9 +39,9 @@ var Tile = function(x, y, char, wall) {
 
 
 
-var Object = function(x, y, char, name, wall, alive) {
-  this.x = x;
-  this.y = y;
+var Object = function(char, name, wall, alive) {
+  this.x = null;
+  this.y = null;
   this.char = char;
   this.name = name,
   this.wall = wall,

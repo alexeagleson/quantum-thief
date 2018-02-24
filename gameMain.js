@@ -19,13 +19,8 @@ var Game = {
     
     view.defineView();
     
-    //debugger;
 
-    //this.generateMap();
-
-    Game.CompleteMap = Game.createMap(creativeContent.throneTile, creativeContent.throneLegend);
-    Game.CompleteMap.addObjectToMap(creativeContent.scottDracula);
-    Game.CompleteMap.addObjectToMap(creativeContent.throne);
+    Game.CompleteMap = creativeContent.throneRoom();
     
     
     Game.player = creativeContent.scottDracula;
