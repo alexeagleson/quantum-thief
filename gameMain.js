@@ -74,9 +74,9 @@ var Game = {
         Game.gameHUD.drawText(0, 1, "#", Game.hudWidth);
       } else {
         Game.gameHUD.drawText(0, 0, "@", Game.hudWidth);
-        Game.gameHUD.drawText(2, 0, "#", Game.hudWidth);
+        Game.gameHUD.drawText(1, 0, "#", Game.hudWidth);
       }
-          }, Game.gameSpeed);
+    }, 100);
 
   
   },
