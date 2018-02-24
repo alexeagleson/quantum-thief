@@ -37,7 +37,8 @@ var Game = {
       });
     }
 
-    this.generateMap();
+    //this.generateMap();
+    staticMap();
 
     var scheduler = new ROT.Scheduler.Simple();
     this.activeObjects.forEach(function(object) {
