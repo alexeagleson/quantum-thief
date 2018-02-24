@@ -97,9 +97,10 @@ var view = {
     var windowScaler = Math.min(w, h);
     var gameScaler = Game.gameWidth * 32;
     
-    var finalScaler = (gameScaler / windowScaler);
-
-    metaTag.content = "initial-scale=" + finalScaler + ", maximum-scale=" + finalScaler + ", minimum-scale=" + finalScaler + ", user-scalable=no";
+    var finalScaler = (gameScaler / windowScaler) * 0.6;
+    var finalScaler = 1;
+    
+    //metaTag.content = "initial-scale=" + finalScaler + ", maximum-scale=" + finalScaler + ", minimum-scale=" + finalScaler + ", user-scalable=yes";
     
     Game.totalDiv = document.createElement("div");
     Game.mainDisplayDiv = document.createElement("div");

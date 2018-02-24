@@ -10,7 +10,7 @@ var Game = {
   engine: null,
   player: null,
   activeObjects: [],
-  gameSpeed: 300,
+  gameSpeed: 400,
   gameWidth: 24,
   gameHeight: 24,
 
@@ -67,8 +67,16 @@ var Game = {
 
     this.gameHUD.setOptions(tileLegend);
     Game.gameHUD.clear();
-    Game.gameHUD.drawText(0, 0, "@", (Game.hudWidth - 2));
-    Game.gameHUD.drawText(0, 1, "#", (Game.hudWidth - 2));
+    
+    setTimeout(function() { 
+      if (Game.hudWidth < Game.hudHeight) {
+        Game.gameHUD.drawText(0, 0, "@", Game.hudWidth);
+        Game.gameHUD.drawText(0, 1, "#", Game.hudWidth);
+      } else {
+        Game.gameHUD.drawText(0, 0, "@", Game.hudWidth);
+        Game.gameHUD.drawText(2, 0, "#", Game.hudWidth);
+      }
+          }, Game.gameSpeed);
 
   
   },
