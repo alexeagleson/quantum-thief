@@ -2,7 +2,7 @@ var creativeContent = {
   
   jodieAlex:"https://i.imgur.com/cvdNPEA.png",
   
-  throneTile: "https://i.imgur.com/lSASTwO.png",
+  throneTile: "https://i.imgur.com/dXiMZ5C.png",
   
   faceLegend: {
     "#": multiplyBy12(multiplyBy32([1, 0])),

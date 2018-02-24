@@ -198,7 +198,7 @@ var Game = {
       if (floor === 0) {
         mapType = "Rogue";
       } else if (floor === 1) {
-        mapType = "Rogue Open";
+        mapType = "Rogue";
       } else if (floor === 2) {
         mapType = "Rogue Open";
       } else if (floor === 3) {
