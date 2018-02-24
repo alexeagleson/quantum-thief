@@ -234,6 +234,9 @@ var Game = {
     } else if (mapType === "IceyMaze") {
       digger = new ROT.Map.IceyMaze(Game.display._options.width, Game.display._options.height);
     }
+    
+    digger = new ROT.Map.Rogue(Game.display._options.width, Game.display._options.height);
+    console.log
    
     var digCallback = function(x, y, value) {
       var key = x + "," + y;  
