@@ -1,3 +1,7 @@
+var Map = function() {
+}
+
+
 var Tile = function(x, y, char, wall) {
   this.x = x;
   this.y = y;
