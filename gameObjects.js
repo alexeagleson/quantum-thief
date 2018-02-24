@@ -52,6 +52,7 @@ var Object = function(char, name, wall, alive, clickFunction) {
   this.path = [],
   this.clickFunction = clickFunction,
     
+    
   this.act = function() {
     if (this === Game.player) {
       this.handlePlayerTurn();
@@ -167,6 +168,9 @@ var Object = function(char, name, wall, alive, clickFunction) {
       var thisMenu = new Menu(textStrings, spaces, fgColours, responseFunction);
       thisMenu.display();
     } else if (this.clickFunction === "floor up") {
+      
+      Game.player.distanceTo(this);
+      
       Game.floorUp();
     } else if (this.clickFunction === "floor down") {
       Game.floorDown();

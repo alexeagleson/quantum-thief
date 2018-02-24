@@ -48,8 +48,13 @@ var Game = {
   floorUp: function() {
     Game.currentFloor += 1;
     Game.CompleteMap = Game.currentUniverse[Game.currentFloor];
-    Game.CompleteMap.map[key].forEach(tile) {
-      co
+    for (var key in Game.CompleteMap.map) {
+      Game.CompleteMap.map[key].objectsOnThisTile.forEach(function(object) {
+        if (object.char === "<") {
+          Game.player.x = object.x;
+          Game.player.y = object.y;
+        }
+      });
     }
     Game.drawWholeMap();
     Game.drawAllObjects();
