@@ -23,7 +23,7 @@ var Game = {
 
     //this.generateMap();
 
-    Game.CompleteMap = Game.createMap();
+    Game.CompleteMap = Game.createMap(cheeseTile, cheeseLegend);
 
     this.drawWholeMap();
     this.drawAllObjects();
@@ -85,12 +85,9 @@ var Game = {
     return true;
   },
   
-  createMap:function(tileMap) {
+  createMap:function(tileset, tileMap) {
 
     var thisMap = {};
-
-    var tileSet = document.createElement("img");
-    tileSet.src = "https://cdn.glitch.com/8d5360ec-82cb-4488-81d6-164fd5245bb1%2Fsssss.png?1519350658180";
 
     var tileLegend = {
         width: Game.display._options.width,
@@ -100,7 +97,7 @@ var Game = {
         tileWidth: 32,
         tileHeight: 32,
         tileSet: tileSet,
-        tile
+        tileMap
       };
 
 
@@ -119,15 +116,6 @@ var Game = {
     }
     digger.create(digCallback.bind(this));
 
-
-    var exampleGuy = new Object(x = 10, y = 10, char = "!", name = "Scott Dracula", wall = false, alive = false);
-    totalMap.addObjectToMap(exampleGuy);
-
-    var emptyCell = totalMap.randomEmptyCellCoords();
-    var exampleGuy = new Object(x = emptyCell.x, y = emptyCell.y, char = "@", name = "default name", wall = false, alive = true);
-    totalMap.addObjectToMap(exampleGuy);
-
-    Game.player = exampleGuy;
 
     return totalMap;
   }
