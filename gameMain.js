@@ -139,7 +139,7 @@ var Game = {
     return true;
   },
   
-  createMap:function(tileset, tileMap, floor) {
+  createMap:function(tileset, tileMap, floor, mapType) {
 
     var thisMap = {};
     var tileElement = document.createElement("img");
@@ -156,8 +156,13 @@ var Game = {
         tileMap
       };
 
+    if (!mapType) {
+      alert("EHHEHE");
+    }
+    
     var totalMap = new CompleteMap(thisMap, tileLegend, floor);
 
+    
     var digger = new ROT.Map.Rogue(Game.display._options.width, Game.display._options.height);
 
     var digCallback = function(x, y, value) {
