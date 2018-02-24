@@ -235,8 +235,12 @@ var Game = {
       digger = new ROT.Map.IceyMaze(Game.display._options.width, Game.display._options.height);
     }
     
-    digger = new ROT.Map.Rogue(Game.display._options.width, Game.display._options.height);
-    console.log
+    var digOptions = {cellWidth: 2, cellHeight: 2, roomWidth: [4, 10], roomHeight: [4, 9]};
+    digger = new ROT.Map.Rogue(Game.display._options.width, Game.display._options.height, digOptions);
+    
+    
+    
+    console.log(digger);
    
     var digCallback = function(x, y, value) {
       var key = x + "," + y;  
