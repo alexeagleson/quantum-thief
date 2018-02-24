@@ -12,7 +12,7 @@ var Game = {
   engine: null,
   player: null,
   activeObjects: [],
-  gameSpeed: 300,
+  gameSpeed: 100,
   gameWidth: 20,
   gameHeight: 20,
 
@@ -28,10 +28,7 @@ var Game = {
     
     this.drawWholeMap();
     this.drawAllObjects();
-    
-    setTimeout(function() { 
-      Game.floorUp();
-    }, 4000);
+
     
     
     if (true) {

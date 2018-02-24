@@ -41,7 +41,7 @@ var Tile = function(x, y, char, wall) {
 
 
 
-var Object = function(char, name, wall, alive) {
+var Object = function(char, name, wall, alive, clickFunction) {
   this.x = null;
   this.y = null;
   this.char = char;
@@ -49,6 +49,7 @@ var Object = function(char, name, wall, alive) {
   this.wall = wall,
   this.alive = alive,
   this.path = [],
+  this.clickFunction = clickFunction,
     
   this.act = function() {
     if (this === Game.player) {
@@ -99,6 +100,10 @@ var Object = function(char, name, wall, alive) {
     
     if (tileOccupied) { return false; }
     
+    this.moveTo(newX, newY);
+  },
+    
+  this.moveTo = function(newX, newY) {
     var spliceLocation = null;
     for (var i = 0; i < Game.CompleteMap.map[this.x + "," + this.y].objectsOnThisTile.length; i++) {
       if (this === Game.CompleteMap.map[this.x + "," + this.y].objectsOnThisTile[i]) {
@@ -152,13 +157,17 @@ var Object = function(char, name, wall, alive) {
     return moveSuccess;
   },
     
-  this.talkTo = function(object) {
-    var textStrings = [this.name, "Hello what are you doing here?", "bimmyjo", "Oh I'm just looking for things.", "jimmyjo", "that is cool"];
-    var spaces = [0, 1, 0, 1, 0,];
-    var fgColours = ["blue", "white", "red", "white", "blue", "white"];
-    var responseFunction = {};
-    var thisMenu = new Menu(textStrings, spaces, fgColours, responseFunction);
-    thisMenu.display();
+  this.clickedOn = function() {
+    if (this.clickFunction === "talk") {
+      var textStrings = [this.name, "Hello what are you doing here?", "bimmyjo", "Oh I'm just looking for things.", "jimmyjo", "that is cool"];
+      var spaces = [0, 1, 0, 1, 0,];
+      var fgColours = ["blue", "white", "red", "white", "blue", "white"];
+      var responseFunction = {};
+      var thisMenu = new Menu(textStrings, spaces, fgColours, responseFunction);
+      thisMenu.display();
+    } else if (this.clickFunction === "floor up") {
+      Game.floorUp();
+    }
   },
 
   this.handleEvent = function(e) {
@@ -174,7 +183,7 @@ var Object = function(char, name, wall, alive) {
         var tileLocation = convertMouseTouchToTile(mousePos);
 
         if (objectAtTile(tileLocation)) {
-          Game.player.talkTo(objectAtTile(convertMouseTouchToTile(mousePos)));
+          objectAtTile(tileLocation).clickedOn();
         } else {
           Game.player.moveToward(convertMouseTouchToTile(mousePos));
         }

@@ -6,8 +6,8 @@ var creativeContent = {
     ".": multiplyBy32([2, 0]),
     "@": multiplyBy32([0, 0]),
     "!": multiplyBy32([1, 2]),
-    "<": multiplyBy32([3, 0]),
-    ">": multiplyBy32([4, 0])
+    ">": multiplyBy32([3, 0]),
+    "<": multiplyBy32([4, 0])
   },
   
   scottDracula: new Object(char = "@", name = "Scott Dracula", wall = false, alive = true),
@@ -25,13 +25,13 @@ var creativeContent = {
     for (var i = 0; i < 5; i++) {
       iceUniverse[i] = Game.createMap(creativeContent.throneTile, creativeContent.throneLegend);
       var emptyCell = iceUniverse[i].randomEmptyCellCoords();
-      iceUniverse[i].addObjectToMap(new Object(char = "!", name = "Throne", wall = false, alive = false), emptyCell.x, emptyCell.y);
+      iceUniverse[i].addObjectToMap(new Object(char = "!", name = "Throne", wall = false, alive = false, clickFunction = "talk"), emptyCell.x, emptyCell.y);
       
       var emptyCell = iceUniverse[i].randomEmptyCellCoords();
-      iceUniverse[i].addObjectToMap(new Object(char = "<", name = "Upstairs", wall = false, alive = false), emptyCell.x, emptyCell.y);
+      iceUniverse[i].addObjectToMap(new Object(char = "<", name = "Downstairs", wall = false, alive = false, clickFunction = "talk"), emptyCell.x, emptyCell.y);
       
       var emptyCell = iceUniverse[i].randomEmptyCellCoords();
-      iceUniverse[i].addObjectToMap(new Object(char = ">", name = "Downstairs", wall = false, alive = false), emptyCell.x, emptyCell.y);
+      iceUniverse[i].addObjectToMap(new Object(char = ">", name = "Upstairs", wall = false, alive = false, clickFunction = "floor up"), emptyCell.x, emptyCell.y);
       
     }
     
