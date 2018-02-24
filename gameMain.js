@@ -76,9 +76,12 @@ var Game = {
   },
   
   drawAllObjects: function() {
-    this.activeObjects.forEach(function(object) {
-      Game.display.draw(object.x, object.y, object.char);
-    });
+    for (var key in Game.CompleteMap.map) {
+      var parts = key.split(",");
+      var x = parseInt(parts[0]);
+      var y = parseInt(parts[1]);
+      Game.CompleteMap.map[key].drawObjects();
+    }
   },
   
   checkIfWall: function(x, y) {

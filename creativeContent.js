@@ -1,11 +1,13 @@
 var creativeContent = {
-  throneTile: "https://i.imgur.com/nmvLMPB.png",
+  throneTile: "https://i.imgur.com/lSASTwO.png",
   
   throneLegend: {
-    "#": multiplyBy32([1, 1]),
-    ".": multiplyBy32([0, 1]),
+    "#": multiplyBy32([1, 0]),
+    ".": multiplyBy32([2, 0]),
     "@": multiplyBy32([0, 0]),
-    "!": multiplyBy32([1, 0])
+    "!": multiplyBy32([1, 2]),
+    "<": multiplyBy32([3, 0]),
+    ">": multiplyBy32([4, 0])
   },
   
   scottDracula: new Object(char = "@", name = "Scott Dracula", wall = false, alive = true),
@@ -17,30 +19,28 @@ var creativeContent = {
     return thisWorld;
   },
   
-  
   iceUniverse: function() {
     var iceUniverse = [];
     
     for (var i = 0; i < 5; i++) {
       iceUniverse[i] = Game.createMap(creativeContent.throneTile, creativeContent.throneLegend);
       var emptyCell = iceUniverse[i].randomEmptyCellCoords();
-      iceUniverse[i].addObjectToMap(new Object(char = "!", name = "Throne", wall = true, alive = false), emptyCell.x, emptyCell.y);
+      iceUniverse[i].addObjectToMap(new Object(char = "!", name = "Throne", wall = false, alive = false), emptyCell.x, emptyCell.y);
+      
+      var emptyCell = iceUniverse[i].randomEmptyCellCoords();
+      iceUniverse[i].addObjectToMap(new Object(char = "<", name = "Upstairs", wall = false, alive = false), emptyCell.x, emptyCell.y);
+      
+      var emptyCell = iceUniverse[i].randomEmptyCellCoords();
+      iceUniverse[i].addObjectToMap(new Object(char = ">", name = "Downstairs", wall = false, alive = false), emptyCell.x, emptyCell.y);
+      
     }
     
     var emptyCell = iceUniverse[0].randomEmptyCellCoords();
     iceUniverse[0].addObjectToMap(creativeContent.scottDracula, emptyCell.x, emptyCell.y);
     
-    
     return iceUniverse;
-    
   
   }
-  
-  
-  
-  
-  
-  
   
 }
 
