@@ -26,11 +26,9 @@ var Game = {
     Game.CompleteMap = Game.currentUniverse[Game.currentFloor];
     
     Game.player = creativeContent.scottDracula;
-
     
     Game.renderGame();
 
-    
     
     if (true) {
       this.display.setOptions(Game.CompleteMap.tileLegend);
@@ -42,6 +40,8 @@ var Game = {
     })
     this.engine = new ROT.Engine(scheduler);
     this.engine.start();
+    
+    Game.renderGame();
   },
   
   floorUp: function() {
@@ -157,13 +157,23 @@ var Game = {
       };
 
     if (!mapType) {
-      alert("EHHEHE");
+      var d4 = rollDie(4);
+
+      if (d4 === 1) {
+        mapType = "Arena";
+      } else if (d4 === 2) {
+        mapType = "Rogue";
+      } else if (d4 === 3) {
+        mapType = "Digger";
+      } else if (d4 === 4) {
+        mapType = "DividedMaze";
+      }
     }
     
     var totalMap = new CompleteMap(thisMap, tileLegend, floor);
 
     
-    var digger = new ROT.Map.Rogue(Game.display._options.width, Game.display._options.height);
+    var digger = new ROT.Map.Cellular(Game.display._options.width, Game.display._options.height);
 
     var digCallback = function(x, y, value) {
       var key = x + "," + y;  
