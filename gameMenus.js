@@ -118,8 +118,6 @@ var view = {
     Game.gameHUD = Game.createCanvas("gameHUD", Game.hudWidth, Game.hudHeight);
     Game.gameHUD.getContainer().style.display = "block";
     
-    Game.gameHUD.drawText(1, 1, "Game Info Here", Game.hudWidth - 2);
-    
     Game.mainDisplayDiv.appendChild(Game.display.getContainer());
     Game.mainDisplayDiv.appendChild(Game.menu.getContainer());
     Game.hudDiv.appendChild(Game.gameHUD.getContainer());

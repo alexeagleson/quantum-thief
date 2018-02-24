@@ -31,40 +31,20 @@ var Game = {
       this.display.setOptions(Game.CompleteMap.tileLegend);
     }
     
-    
-    console.log();
-    
     var tileLegend = {
-        width: Game.display._options.width,
-        height: Game.display._options.height,
+        width: Game.hudWidth / 6,
+        height: Game.hudHeight / 6,
         layout: "tile",
         bg: "transparent",
-        tileWidth: 32,
-        tileHeight: 32,
+        tileWidth: 192,
+        tileHeight: 192,
         tileSet: Game.CompleteMap.tileLegend.tileSet,
-        tileMap
+        tileMap: creativeContent.throneLegend
       };
-    
-    this.gameHUD.setOptions(tileLegend);
 
-    Game.gameHUD.drawText(0, 0, "@", 100);
-    
-    
-    
-    
-    /*
-    
-    var tileLegend = {
-        width: Game.display._options.width,
-        height: Game.display._options.height,
-        layout: "tile",
-        bg: "transparent",
-        tileWidth: 32,
-        tileHeight: 32,
-        tileSet: tileElement,
-        tileMap
-      };
-    */
+    this.gameHUD.setOptions(tileLegend);
+    Game.gameHUD.clear();
+    Game.gameHUD.drawText(1, 1, "@", (Game.hudWidth - 2));
     
     
 
@@ -189,7 +169,7 @@ var Game = {
         tileWidth: 32,
         tileHeight: 32,
         tileSet: tileElement,
-        tileMap
+        tileMap: tileMap
       };
 
     if (!mapType) {
