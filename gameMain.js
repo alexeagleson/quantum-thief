@@ -38,7 +38,7 @@ var Game = {
     }
 
     //this.generateMap();
-    staticMap();
+    Game.map = staticMap();
     
     this.drawWholeMap();
     this.drawAllObjects();
@@ -96,14 +96,14 @@ var Game = {
     this.drawAllObjects();
   },
 
-  createObject: function(freeCells) {
+  createObject: function(freeCells, thisMap) {
     var index = Math.floor(ROT.RNG.getUniform() * freeCells.length);
     var key = freeCells.splice(index, 1)[0];
     var parts = key.split(",");
     var x = parseInt(parts[0]);
     var y = parseInt(parts[1]);
     var newObject = new Object(x, y);
-    this.map[key].objectsOnThisTile.push(newObject);
+    thisMap[key].objectsOnThisTile.push(newObject);
     return newObject;
   },
 
