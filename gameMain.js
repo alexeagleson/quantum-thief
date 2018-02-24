@@ -10,7 +10,7 @@ var Game = {
   engine: null,
   player: null,
   activeObjects: [],
-  gameSpeed: 400,
+  gameSpeed: 200,
   gameWidth: 24,
   gameHeight: 24,
 
@@ -194,28 +194,17 @@ var Game = {
       };
 
     if (!mapType) {
-      var d10 = rollDie(10);
 
-      if (d10 === 1) {
-        mapType = "Arena";
-      } else if (d10 === 2) {
+      if (floor === 0) {
         mapType = "Rogue";
-      } else if (d10 === 3) {
-        mapType = "Rogue";
-      } else if (d10 === 4) {
-        mapType = "Rogue";
-      } else if (d10 === 5) {
-        mapType = "Rogue";
-      } else if (d10 === 6) {
-        mapType = "Rogue";
-      } else if (d10 === 7) {
-        mapType = "Digger";
-      } else if (d10 === 8) {
-        mapType = "Digger";
-      } else if (d10 === 9) {
+      } else if (floor === 1) {
+        mapType = "Rogue Open";
+      } else if (floor === 2) {
+        mapType = "Rogue Open";
+      } else if (floor === 3) {
         mapType = "DividedMaze";
-      } else if (d10 === 10) {
-        mapType = "IceyMaze";
+      } else if (floor === 4) {
+        mapType = "Arena";
       }
     }
     
@@ -227,16 +216,14 @@ var Game = {
       digger = new ROT.Map.Arena(Game.display._options.width, Game.display._options.height);
     } else if (mapType === "Rogue") {
       digger = new ROT.Map.Rogue(Game.display._options.width, Game.display._options.height);
-    } if (mapType === "Digger") {
-      digger = new ROT.Map.Digger(Game.display._options.width, Game.display._options.height);
+    } else if (mapType === "Rogue Open") {
+      var digOptions = {cellWidth: 2, cellHeight: 2, roomWidth: [5, 10], roomHeight: [5, 10]};
+      digger = new ROT.Map.Rogue(Game.display._options.width, Game.display._options.height, digOptions);
     } if (mapType === "DividedMaze") {
       digger = new ROT.Map.DividedMaze(Game.display._options.width, Game.display._options.height);
-    } else if (mapType === "IceyMaze") {
-      digger = new ROT.Map.IceyMaze(Game.display._options.width, Game.display._options.height);
     }
-    
-    var digOptions = {cellWidth: 2, cellHeight: 2, roomWidth: [4, 10], roomHeight: [4, 9]};
-    digger = new ROT.Map.Rogue(Game.display._options.width, Game.display._options.height, digOptions);
+
+
     
     
     
