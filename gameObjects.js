@@ -130,13 +130,13 @@ var Object = function(char, name, wall, alive, clickFunction) {
     var dx = targetTileCoords.x - this.x;
     var dy = targetTileCoords.y - this.y;
 
-    if (dx > 0 && (Math.abs(dx) > Math.abs(dy))) {
+    if (dx > 0 && (Math.abs(dx) >= Math.abs(dy))) {
       return this.move([1, 0]);
-    } else if (dx < 0 && (Math.abs(dx) > Math.abs(dy))) {
+    } else if (dx < 0 && (Math.abs(dx) >= Math.abs(dy))) {
       return this.move([-1, 0]);
-    } else if (dy < 0 && (Math.abs(dy) > Math.abs(dx))) {
+    } else if (dy < 0 && (Math.abs(dy) >= Math.abs(dx))) {
       return this.move([0, -1]);
-    } else if (dy > 0 && (Math.abs(dy) > Math.abs(dx))) {
+    } else if (dy > 0 && (Math.abs(dy) >= Math.abs(dx))) {
       return this.move([0, 1]);
     }
     return false;
@@ -167,10 +167,6 @@ var Object = function(char, name, wall, alive, clickFunction) {
       var thisMenu = new Menu(textStrings, spaces, fgColours, responseFunction);
       thisMenu.display();
     } else if (this.clickFunction === "floor up") {
-      
-      var distance = distanceTo(Game.player, this);
-      //alert(distance);
-      
       Game.floorUp();
     } else if (this.clickFunction === "floor down") {
       Game.floorDown();
@@ -190,7 +186,12 @@ var Object = function(char, name, wall, alive, clickFunction) {
         var tileLocation = convertMouseTouchToTile(mousePos);
 
         if (objectAtTile(tileLocation)) {
-          objectAtTile(tileLocation).clickedOn();
+          var distance = distanceTo(this, objectAtTile(tileLocation));
+          if (distance < 1.5) {
+            objectAtTile(tileLocation).clickedOn();
+          } else {
+            Game.player.moveToward(convertMouseTouchToTile(mousePos));
+          }
         } else {
           Game.player.moveToward(convertMouseTouchToTile(mousePos));
         }

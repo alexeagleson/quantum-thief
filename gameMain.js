@@ -13,7 +13,7 @@ var Game = {
   engine: null,
   player: null,
   activeObjects: [],
-  gameSpeed: 100,
+  gameSpeed: 200,
   gameWidth: 20,
   gameHeight: 20,
 
@@ -63,6 +63,14 @@ var Game = {
   floorDown: function() {
     Game.currentFloor -= 1;
     Game.CompleteMap = Game.currentUniverse[Game.currentFloor];
+    for (var key in Game.CompleteMap.map) {
+      Game.CompleteMap.map[key].objectsOnThisTile.forEach(function(object) {
+        if (object.char === ">") {
+          Game.player.x = object.x;
+          Game.player.y = object.y;
+        }
+      });
+    }
     Game.drawWholeMap();
     Game.drawAllObjects();
   },
@@ -134,7 +142,7 @@ var Game = {
 
     var totalMap = new CompleteMap(thisMap, tileLegend, floor);
 
-    var digger = new ROT.Map.Arena(Game.display._options.width, Game.display._options.height);
+    var digger = new ROT.Map.Rogue(Game.display._options.width, Game.display._options.height);
 
     var digCallback = function(x, y, value) {
       var key = x + "," + y;  

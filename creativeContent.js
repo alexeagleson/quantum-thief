@@ -21,22 +21,27 @@ var creativeContent = {
   
   iceUniverse: function() {
     var iceUniverse = [];
+    emptyCell = null;
     
     for (var i = 0; i < 5; i++) {
       iceUniverse[i] = Game.createMap(creativeContent.throneTile, creativeContent.throneLegend, i);
       
-      var emptyCell = iceUniverse[i].randomEmptyCellCoords();
+      emptyCell = iceUniverse[i].randomEmptyCellCoords();
       iceUniverse[i].addObjectToMap(new Object(char = "!", name = "Throne", wall = false, alive = false, clickFunction = "talk"), emptyCell.x, emptyCell.y);
       
-      var emptyCell = iceUniverse[i].randomEmptyCellCoords();
-      iceUniverse[i].addObjectToMap(new Object(char = "<", name = "Downstairs", wall = false, alive = false, clickFunction = "floor down"), emptyCell.x, emptyCell.y);
+      if (i != 0) {
+        emptyCell = iceUniverse[i].randomEmptyCellCoords();
+        iceUniverse[i].addObjectToMap(new Object(char = "<", name = "Downstairs", wall = false, alive = false, clickFunction = "floor down"), emptyCell.x, emptyCell.y);
+      }
       
-      var emptyCell = iceUniverse[i].randomEmptyCellCoords();
-      iceUniverse[i].addObjectToMap(new Object(char = ">", name = "Upstairs", wall = false, alive = false, clickFunction = "floor up"), emptyCell.x, emptyCell.y);
+      if (i != 4) {
+        emptyCell = iceUniverse[i].randomEmptyCellCoords();
+        iceUniverse[i].addObjectToMap(new Object(char = ">", name = "Upstairs", wall = false, alive = false, clickFunction = "floor up"), emptyCell.x, emptyCell.y);
+      }
       
     }
     
-    var emptyCell = iceUniverse[0].randomEmptyCellCoords();
+    emptyCell = iceUniverse[0].randomEmptyCellCoords();
     iceUniverse[0].addObjectToMap(creativeContent.scottDracula, emptyCell.x, emptyCell.y);
     
     return iceUniverse;
