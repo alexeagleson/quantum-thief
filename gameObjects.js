@@ -10,8 +10,12 @@ var CompleteMap = function(map, tileset, tileLegend) {
     var parts = key.split(",");
     var x = parseInt(parts[0]);
     var y = parseInt(parts[1]);
-    var newObject = new Object(x, y);
     return {x: x, y: y};
+  };
+  
+  this.addObjectToMap = function(object) {
+    this.map[object.x + "," + object.y].objectsOnThisTile.push(object);
+    Game.activeObjects.push(object);
   };
 }
 
@@ -34,12 +38,12 @@ var Tile = function(x, y, char, wall) {
   };
 }
 
-var Object = function(x, y) {
+var Object = function(x, y, char, name, wall) {
   this.x = x;
   this.y = y;
-  this.char = "@";
-  this.name = "default name",
-  this.wall = true,
+  this.char = char;
+  this.name = name,
+  this.wall = wall,
   this.path = [],
     
   this.act = function() {

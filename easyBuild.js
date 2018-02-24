@@ -20,6 +20,8 @@ var staticMap = function() {
         "!": multiplyBy32([2, 0])
       }
     };
+  
+  
 
   var totalMap = new CompleteMap(thisMap, tileSet, tileLegend);
 
@@ -37,17 +39,13 @@ var staticMap = function() {
   digger.create(digCallback.bind(this));
   
   
-  emptyCell = totalMap.randomEmptyCellCoords();
+  var emptyCell = totalMap.randomEmptyCellCoords();
+  var exampleGuy = new Object(emptyCell.x, emptyCell.y, "@", "default name", true);
+  totalMap.addObjectToMap(exampleGuy);
   
-  create object
-  put object at random location
-
-  Game.player = Game.createObject(totalMap.freeCells, totalMap.map);
-  Game.activeObjects.push(Game.player);
-  Game.player.name = "bob";
-
+  Game.player = exampleGuy;
+  
   return totalMap;
-  
 }
 
 var randomEmptyCell

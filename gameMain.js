@@ -18,10 +18,12 @@ var Game = {
   init: function() {
     
     view.defineView();
+    
+    //debugger;
 
     //this.generateMap();
     Game.CompleteMap = staticMap();
-    
+
     this.drawWholeMap();
     this.drawAllObjects();
     
