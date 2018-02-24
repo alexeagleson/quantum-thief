@@ -39,6 +39,10 @@ var Game = {
 
     //this.generateMap();
     staticMap();
+    
+    this.drawWholeMap();
+    this.drawAllObjects();
+    
 
     var scheduler = new ROT.Scheduler.Simple();
     this.activeObjects.forEach(function(object) {
