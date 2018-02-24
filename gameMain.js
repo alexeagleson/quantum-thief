@@ -25,12 +25,11 @@ var Game = {
 
     Game.CompleteMap = Game.createMap(creativeContent.throneTile, creativeContent.throneLegend);
     Game.CompleteMap.addObjectToMap(creativeContent.scottDracula);
+    Game.CompleteMap.addObjectToMap(creativeContent.throne);
+    
+    
     Game.player = creativeContent.scottDracula;
-    
-    
-    
-    
-    
+
     
     this.drawWholeMap();
     this.drawAllObjects();
@@ -97,7 +96,6 @@ var Game = {
     var thisMap = {};
     var tileElement = document.createElement("img");
     tileElement.src = tileset;
-    al
 
     var tileLegend = {
         width: Game.display._options.width,
@@ -110,8 +108,7 @@ var Game = {
         tileMap
       };
 
-
-    var totalMap = new CompleteMap(thisMap, tileSet, tileLegend);
+    var totalMap = new CompleteMap(thisMap, tileLegend);
 
     var digger = new ROT.Map.Arena(Game.display._options.width, Game.display._options.height);
 
@@ -121,7 +118,7 @@ var Game = {
           totalMap.map[key] = new Tile(x, y, "#", true);
           return; 
         }
-        totalMap.map[key] = new Tile(x, y, "a", false);
+        totalMap.map[key] = new Tile(x, y, ".", false);
         totalMap.freeCells.push(key);
     }
     digger.create(digCallback.bind(this));

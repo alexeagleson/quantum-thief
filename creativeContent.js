@@ -1,12 +1,16 @@
 var creativeContent = {
-  throneTile: "https://cdn.glitch.com/c154a03d-de0a-478f-84c1-d739d7ed36e6%2FThroneBeta64x64.png?1519490240607",
+  throneTile: "https://i.imgur.com/nmvLMPB.png",
+  
   throneLegend: {
+    "#": multiplyBy32([1, 1]),
+    ".": multiplyBy32([0, 1]),
     "@": multiplyBy32([0, 0]),
-    "#": multiplyBy32([0, 1]),
-    "a": multiplyBy32([1, 0]),
-    "!": multiplyBy32([1, 1])
+    "!": multiplyBy32([1, 0])
   },
-  scottDracula: new Object(x = 10, y = 10, char = "!", name = "Scott Dracula", wall = false, alive = true)
+  
+  scottDracula: new Object(x = 10, y = 10, char = "@", name = "Scott Dracula", wall = false, alive = true),
+  
+  throne: new Object(x = 10, y = 5, char = "!", name = "Throne", wall = true, alive = false)
 }
 
 

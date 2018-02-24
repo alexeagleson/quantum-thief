@@ -1,6 +1,5 @@
-var CompleteMap = function(map, tileset, tileLegend) {
+var CompleteMap = function(map, tileLegend) {
   this.map = map;
-  this.tileset = tileset;
   this.tileLegend = tileLegend;
   this.freeCells = [];
   
