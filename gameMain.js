@@ -1,5 +1,5 @@
-var tileSet = document.createElement("img");
-tileSet.src = "https://cdn.glitch.com/8d5360ec-82cb-4488-81d6-164fd5245bb1%2Fsssss.png?1519350658180";
+//var tileSet = document.createElement("img");
+//tileSet.src = "https://cdn.glitch.com/8d5360ec-82cb-4488-81d6-164fd5245bb1%2Fsssss.png?1519350658180";
 
 var Game = {
   mainDisplayDiv: null,
@@ -23,8 +23,15 @@ var Game = {
 
     //this.generateMap();
 
-    Game.CompleteMap = Game.createMap(cheeseTile, cheeseLegend);
-
+    Game.CompleteMap = Game.createMap(creativeContent.throneTile, creativeContent.throneLegend);
+    Game.CompleteMap.addObjectToMap(creativeContent.scottDracula);
+    Game.player = creativeContent.scottDracula;
+    
+    
+    
+    
+    
+    
     this.drawWholeMap();
     this.drawAllObjects();
     
@@ -88,6 +95,9 @@ var Game = {
   createMap:function(tileset, tileMap) {
 
     var thisMap = {};
+    var tileElement = document.createElement("img");
+    tileElement.src = tileset;
+    al
 
     var tileLegend = {
         width: Game.display._options.width,
@@ -96,7 +106,7 @@ var Game = {
         bg: "transparent",
         tileWidth: 32,
         tileHeight: 32,
-        tileSet: tileSet,
+        tileSet: tileElement,
         tileMap
       };
 
