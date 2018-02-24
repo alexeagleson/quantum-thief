@@ -51,8 +51,7 @@ var Object = function(char, name, wall, alive, clickFunction) {
   this.alive = alive,
   this.path = [],
   this.clickFunction = clickFunction,
-    
-    
+  
   this.act = function() {
     if (this === Game.player) {
       this.handlePlayerTurn();
