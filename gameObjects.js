@@ -1,9 +1,7 @@
-var CompleteMap = function(map, tileLegend, floor) {
+var CompleteMap = function(map, tileLegend) {
   this.map = map;
   this.tileLegend = tileLegend;
-  this.freeCells = [];
-  this.floor = floor;
-  
+  this.freeCells = [];  
   
   this.randomEmptyCellCoords = function() {
     var index = Math.floor(ROT.RNG.getUniform() * this.freeCells.length);
