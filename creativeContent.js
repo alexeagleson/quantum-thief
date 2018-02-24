@@ -12,13 +12,6 @@ var creativeContent = {
   
   scottDracula: new Object(char = "@", name = "Scott Dracula", wall = false, alive = true),
   
-  throneRoom: function() {
-    var thisWorld = Game.createMap(creativeContent.throneTile, creativeContent.throneLegend);
-    thisWorld.addObjectToMap(creativeContent.scottDracula, 10, 10);
-    thisWorld.addObjectToMap(creativeContent.throne, 10, 5);
-    return thisWorld;
-  },
-  
   iceUniverse: function() {
     var iceUniverse = [];
     emptyCell = null;
@@ -27,7 +20,7 @@ var creativeContent = {
       iceUniverse[i] = Game.createMap(creativeContent.throneTile, creativeContent.throneLegend, i);
       
       emptyCell = iceUniverse[i].randomEmptyCellCoords();
-      iceUniverse[i].addObjectToMap(new Object(char = "!", name = "Throne", wall = false, alive = false, clickFunction = "talk"), emptyCell.x, emptyCell.y);
+      iceUniverse[i].addObjectToMap(new Object(char = "!", name = "Throne", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.throneDialogue), emptyCell.x, emptyCell.y);
       
       if (i != 0) {
         emptyCell = iceUniverse[i].randomEmptyCellCoords();
@@ -45,10 +38,22 @@ var creativeContent = {
     iceUniverse[0].addObjectToMap(creativeContent.scottDracula, emptyCell.x, emptyCell.y);
     
     return iceUniverse;
+  },
   
+  
+  
+  throneDialogue: {
+      textStrings: ["pipp", "Hello what are you doing here?", "bimmyjo", "Oh I'm just looking for things.", "jimmyjo", "that is cool"],
+      spaces: [0, 1, 0, 1, 0,],
+      fgColours: ["blue", "white", "red", "white", "blue", "white"],
+      responseFunction: {}
   }
   
+  
+  
 }
+
+
 
 
 

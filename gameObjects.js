@@ -42,7 +42,7 @@ var Tile = function(x, y, char, wall) {
 
 
 
-var Object = function(char, name, wall, alive, clickFunction) {
+var Object = function(char, name, wall, alive, clickFunction, myDialogue) {
   this.x = null;
   this.y = null;
   this.char = char;
@@ -51,6 +51,7 @@ var Object = function(char, name, wall, alive, clickFunction) {
   this.alive = alive,
   this.path = [],
   this.clickFunction = clickFunction,
+  this.myDialogue = myDialogue,
   
   this.act = function() {
     if (this === Game.player) {
@@ -159,12 +160,12 @@ var Object = function(char, name, wall, alive, clickFunction) {
     
   this.clickedOn = function() {
     if (this.clickFunction === "talk") {
-      var textStrings = [this.name, "Hello what are you doing here?", "bimmyjo", "Oh I'm just looking for things.", "jimmyjo", "that is cool"];
-      var spaces = [0, 1, 0, 1, 0,];
-      var fgColours = ["blue", "white", "red", "white", "blue", "white"];
-      var responseFunction = {};
-      var thisMenu = new Menu(textStrings, spaces, fgColours, responseFunction);
-      thisMenu.display();
+      alert("HEHE");
+      if (this.myDialogue) {
+        alert("HEHE");
+        var thisMenu = new Menu(this.myDialogue.textStrings, this.myDialogue.spaces, this.myDialogue.fgColours, this.myDialogue.responseFunction);
+        thisMenu.display();
+      }
     } else if (this.clickFunction === "floor up") {
       Game.floorUp();
     } else if (this.clickFunction === "floor down") {

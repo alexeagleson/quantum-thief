@@ -1,6 +1,3 @@
-//var tileSet = document.createElement("img");
-//tileSet.src = "https://cdn.glitch.com/8d5360ec-82cb-4488-81d6-164fd5245bb1%2Fsssss.png?1519350658180";
-
 var Game = {
   mainDisplayDiv: null,
   display: null,
@@ -41,7 +38,9 @@ var Game = {
     this.engine = new ROT.Engine(scheduler);
     this.engine.start();
     
-    Game.renderGame();
+    setTimeout(function() { 
+      Game.renderGame();
+    }, Game.gameSpeed);
   },
   
   floorUp: function() {
