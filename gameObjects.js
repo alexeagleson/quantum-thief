@@ -1,6 +1,7 @@
-var CompleteMap = function(map, tileset) {
+var CompleteMap = function(map, tileset, tileLegend) {
   this.map = map;
   this.tileset = tileset;
+  this.tileLegend = tileLegend;
 }
 
 

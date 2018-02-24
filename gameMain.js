@@ -7,7 +7,7 @@ var Game = {
   menu: null,
   gameHUD: null,
   currentMenuDisplay: null,
-  map: {},
+  map: null,
   engine: null,
   player: null,
   activeObjects: [],
@@ -22,29 +22,18 @@ var Game = {
 
 
     //this.generateMap();
-    Game.CompleteMap.map = staticMap();
+    this.CompleteMap = staticMap();
+    
+    this.player = Game.createObject(freeCells, totalMap.map);
+    this.activeObjects.push(Game.player);
+    this.player.name = "bob";
     
     this.drawWholeMap();
     this.drawAllObjects();
     
     if (true) {
-      this.display.setOptions({
-        width: Game.display._options.width,
-        height: Game.display._options.height,
-        layout: "tile",
-        bg: "transparent",
-        tileWidth: 32,
-        tileHeight: 32,
-        tileSet: tileSet,
-        tileMap: {
-          "@": multiplyBy32([0, 0]),
-          "#": multiplyBy32([0, 5]),
-          "a": multiplyBy32([1, 0]),
-          "!": multiplyBy32([2, 0])
-        }
-      });
+      this.display.setOptions(Game.CompleteMap.tileLegend);
     }
-    
 
     var scheduler = new ROT.Scheduler.Simple();
     this.activeObjects.forEach(function(object) {
