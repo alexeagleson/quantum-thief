@@ -3,16 +3,18 @@ var Menu = function(textStrings, spaces, fgColours, responseFunction) {
   this.textStrings = textStrings;
   this.spaces = spaces;
   this.fgColours = fgColours;
-  this.responseFunction = responseFunction;
-  
-  this.textStrings.push("{Continue}");
-  this.spaces.push(2);
-  this.fgColours.push("white");
-  this.responseFunction["{Continue}"] = menuResponse.done;
-    
+  this.responseFunction = responseFunction;  
   this.textAtLines = {};
   
   this.display = function() {
+    
+    if (this.textStrings[this.textStrings.length - 1] != "{Continue}") {
+      this.textStrings.push("{Continue}");
+      this.spaces.push(2);
+      this.fgColours.push("white");
+      this.responseFunction["{Continue}"] = menuResponse.done;
+    }
+    
     Game.menu.clear();
     Game.currentMenuDisplay = this;
     var menuCanvas = Game.menu.getContainer();
@@ -68,7 +70,7 @@ var Menu = function(textStrings, spaces, fgColours, responseFunction) {
         }, Game.gameSpeed);
         
         if (typeof(check) === "object") {
-          
+          showMenu(check);
         }  
       }
     }
@@ -146,8 +148,10 @@ var view = {
 
 var menuResponse = {
   done: function() {
-    return creativeContent.throneDialogue2;
     return true;
+  },
+  throneDialogue2: function() {
+    return creativeContent.throneDialogue2;
   }
 }
 

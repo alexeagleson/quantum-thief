@@ -43,10 +43,10 @@ var creativeContent = {
   
   
   throneDialogue: {
-      textStrings: ["pipp", "Hello what are you doing here?", "bimmyjo", "Oh I'm just looking for things.", "jimmyjo", "that is cool"],
+      textStrings: ["pipp", "Hello what are you doing here?", "bimmyjo", "tell me more", "asdsadsad", "that is cool"],
       spaces: [0, 1, 0, 1, 0,],
-      fgColours: ["blue", "white", "red", "white", "blue", "white"],
-      responseFunction: {}
+      fgColours: ["blue", "white", "red", "white", "white", "white"],
+      responseFunction: {"tell me more": menuResponse.throneDialogue2}
   },
   
   throneDialogue2: {
