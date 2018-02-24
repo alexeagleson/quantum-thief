@@ -157,24 +157,47 @@ var Game = {
       };
 
     if (!mapType) {
-      var d4 = rollDie(4);
+      var d10 = rollDie(10);
 
-      if (d4 === 1) {
+      if (d10 === 1) {
         mapType = "Arena";
-      } else if (d4 === 2) {
+      } else if (d10 === 2) {
         mapType = "Rogue";
-      } else if (d4 === 3) {
+      } else if (d10 === 3) {
+        mapType = "Rogue";
+      } else if (d10 === 4) {
+        mapType = "Rogue";
+      } else if (d10 === 5) {
+        mapType = "Rogue";
+      } else if (d10 === 6) {
+        mapType = "Rogue";
+      } else if (d10 === 7) {
         mapType = "Digger";
-      } else if (d4 === 4) {
+      } else if (d10 === 8) {
+        mapType = "Digger";
+      } else if (d10 === 9) {
         mapType = "DividedMaze";
+      } else if (d10 === 10) {
+        mapType = "IceyMaze";
       }
     }
     
     var totalMap = new CompleteMap(thisMap, tileLegend, floor);
 
-    
-    var digger = new ROT.Map.Cellular(Game.display._options.width, Game.display._options.height);
+    var digger = null;
 
+    if (mapType === "Arena") {
+      digger = new ROT.Map.Arena(Game.display._options.width, Game.display._options.height);
+    } else if (mapType === "Rogue") {
+      digger = new ROT.Map.Rogue(Game.display._options.width, Game.display._options.height);
+    } if (mapType === "Digger") {
+      digger = new ROT.Map.Digger(Game.display._options.width, Game.display._options.height);
+    } if (mapType === "DividedMaze") {
+      digger = new ROT.Map.DividedMaze(Game.display._options.width, Game.display._options.height);
+    } else if (mapType === "IceyMaze") {
+      digger = new ROT.Map.IceyMaze(Game.display._options.width, Game.display._options.height);
+    }
+   
     var digCallback = function(x, y, value) {
       var key = x + "," + y;  
       if (value) {
