@@ -1,7 +1,8 @@
-var CompleteMap = function(map, tileLegend) {
+var CompleteMap = function(map, tileLegend, floor) {
   this.map = map;
   this.tileLegend = tileLegend;
-  this.freeCells = [];  
+  this.freeCells = [];
+  this.floor = floor;
   
   this.randomEmptyCellCoords = function() {
     var index = Math.floor(ROT.RNG.getUniform() * this.freeCells.length);
@@ -167,6 +168,8 @@ var Object = function(char, name, wall, alive, clickFunction) {
       thisMenu.display();
     } else if (this.clickFunction === "floor up") {
       Game.floorUp();
+    } else if (this.clickFunction === "floor down") {
+      Game.floorDown();
     }
   },
 

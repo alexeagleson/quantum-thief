@@ -23,12 +23,13 @@ var creativeContent = {
     var iceUniverse = [];
     
     for (var i = 0; i < 5; i++) {
-      iceUniverse[i] = Game.createMap(creativeContent.throneTile, creativeContent.throneLegend);
+      iceUniverse[i] = Game.createMap(creativeContent.throneTile, creativeContent.throneLegend, i);
+      
       var emptyCell = iceUniverse[i].randomEmptyCellCoords();
       iceUniverse[i].addObjectToMap(new Object(char = "!", name = "Throne", wall = false, alive = false, clickFunction = "talk"), emptyCell.x, emptyCell.y);
       
       var emptyCell = iceUniverse[i].randomEmptyCellCoords();
-      iceUniverse[i].addObjectToMap(new Object(char = "<", name = "Downstairs", wall = false, alive = false, clickFunction = "talk"), emptyCell.x, emptyCell.y);
+      iceUniverse[i].addObjectToMap(new Object(char = "<", name = "Downstairs", wall = false, alive = false, clickFunction = "floor down"), emptyCell.x, emptyCell.y);
       
       var emptyCell = iceUniverse[i].randomEmptyCellCoords();
       iceUniverse[i].addObjectToMap(new Object(char = ">", name = "Upstairs", wall = false, alive = false, clickFunction = "floor up"), emptyCell.x, emptyCell.y);
