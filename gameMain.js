@@ -76,7 +76,7 @@ var Game = {
     Game.drawWholeMap();
     setTimeout(function() { 
       Game.drawAllObjects();
-    }, 10);
+    }, 25);
   },
   
   createCanvas: function(className, width, height) {
