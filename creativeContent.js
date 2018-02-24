@@ -10,8 +10,6 @@ var creativeContent = {
   
   scottDracula: new Object(char = "@", name = "Scott Dracula", wall = false, alive = true),
   
-  throne: new Object(char = "!", name = "Throne", wall = true, alive = false),
-  
   throneRoom: function() {
     var thisWorld = Game.createMap(creativeContent.throneTile, creativeContent.throneLegend);
     thisWorld.addObjectToMap(creativeContent.scottDracula, 10, 10);
@@ -26,7 +24,7 @@ var creativeContent = {
     for (var i = 0; i < 5; i++) {
       iceUniverse[i] = Game.createMap(creativeContent.throneTile, creativeContent.throneLegend);
       var emptyCell = iceUniverse[i].randomEmptyCellCoords();
-      iceUniverse[i].addObjectToMap(creativeContent.throne, emptyCell.x, emptyCell.y);
+      iceUniverse[i].addObjectToMap(new Object(char = "!", name = "Throne", wall = true, alive = false), emptyCell.x, emptyCell.y);
     }
     
     var emptyCell = iceUniverse[0].randomEmptyCellCoords();

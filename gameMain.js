@@ -116,7 +116,7 @@ var Game = {
 
     var totalMap = new CompleteMap(thisMap, tileLegend);
 
-    var digger = new ROT.Map.Rogue(Game.display._options.width, Game.display._options.height);
+    var digger = new ROT.Map.Arena(Game.display._options.width, Game.display._options.height);
 
     var digCallback = function(x, y, value) {
       var key = x + "," + y;  
