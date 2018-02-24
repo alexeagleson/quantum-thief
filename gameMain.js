@@ -7,6 +7,7 @@ var Game = {
   menu: null,
   gameHUD: null,
   currentMenuDisplay: null,
+  CurrentUniverse: null,
   CompleteMap: null,
   engine: null,
   player: null,
@@ -16,11 +17,12 @@ var Game = {
   gameHeight: 20,
 
   init: function() {
-    
+
     view.defineView();
     
 
-    Game.CompleteMap = creativeContent.throneRoom();
+    Game.CurrentUniverse = creativeContent.throneRoom();
+    Game.CompleteMap = Game.CurrentUniverse[0];
     
     
     Game.player = creativeContent.scottDracula;
@@ -70,6 +72,10 @@ var Game = {
     });
   },
   
+  floorUp: function() {
+    Game.CompleteMap =
+  },
+  
   checkIfWall: function(x, y) {
     if (x < 0 || x > Game.display._options.width - 1) {
       return false;
@@ -86,7 +92,7 @@ var Game = {
     return true;
   },
   
-  createMap:function(tileset, tileMap) {
+  createMap:function(tileset, tileMap, floor) {
 
     var thisMap = {};
     var tileElement = document.createElement("img");
@@ -103,7 +109,7 @@ var Game = {
         tileMap
       };
 
-    var totalMap = new CompleteMap(thisMap, tileLegend);
+    var totalMap = new CompleteMap(thisMap, tileLegend, floor);
 
     var digger = new ROT.Map.Arena(Game.display._options.width, Game.display._options.height);
 
@@ -117,8 +123,7 @@ var Game = {
         totalMap.freeCells.push(key);
     }
     digger.create(digCallback.bind(this));
-
-
+    
     return totalMap;
   }
   

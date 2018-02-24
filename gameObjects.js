@@ -1,7 +1,9 @@
-var CompleteMap = function(map, tileLegend) {
+var CompleteMap = function(map, tileLegend, floor) {
   this.map = map;
   this.tileLegend = tileLegend;
   this.freeCells = [];
+  this.floor = floor;
+  
   
   this.randomEmptyCellCoords = function() {
     var index = Math.floor(ROT.RNG.getUniform() * this.freeCells.length);
@@ -12,8 +14,10 @@ var CompleteMap = function(map, tileLegend) {
     return {x: x, y: y};
   };
   
-  this.addObjectToMap = function(object) {
-    this.map[object.x + "," + object.y].objectsOnThisTile.push(object);
+  this.addObjectToMap = function(object, x, y) {
+    object.x = x;
+    object.y = y;
+    this.map[x + "," + y].objectsOnThisTile.push(object);
     Game.activeObjects.push(object);
   };
 }
