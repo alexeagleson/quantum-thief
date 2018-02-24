@@ -98,7 +98,17 @@ var Object = function(x, y, char, name, wall, alive) {
     
     if (tileOccupied) { return false; }
     
-    Game.CompleteMap.map[this.x + "," + this.y].objectsOnThisTile = [];
+    var spliceLocation = null;
+    for (var i = 0; i < Game.CompleteMap.map[this.x + "," + this.y].objectsOnThisTile.length; i++) {
+      if (this === Game.CompleteMap.map[this.x + "," + this.y].objectsOnThisTile[i]) {
+        spliceLocation = i;
+      }
+    }
+    
+    if (spliceLocation != null) {
+      Game.CompleteMap.map[this.x + "," + this.y].objectsOnThisTile.splice(spliceLocation, 1);
+    }
+    
     Game.CompleteMap.map[this.x + "," + this.y].drawTile();
     Game.CompleteMap.map[this.x + "," + this.y].drawObjects();
     this.x = newX;
