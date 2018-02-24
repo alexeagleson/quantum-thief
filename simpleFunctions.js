@@ -68,6 +68,15 @@ function multiplyBy32(valueArray) {
   return valueArray;
 }
 
+function multiplyBy12(valueArray) {
+  
+
+  valueArray[0] = valueArray[0] * 12;
+  valueArray[1] = valueArray[1] * 12;
+  
+  return valueArray;
+}
+
 
 function playSound(filename) {
   var sound = document.getElementById(filename);

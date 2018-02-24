@@ -1,8 +1,13 @@
 var creativeContent = {
   
-  jodieAlex:https://i.imgur.com/y4DOTmQ.png",
+  jodieAlex:"https://i.imgur.com/cvdNPEA.png",
   
   throneTile: "https://i.imgur.com/lSASTwO.png",
+  
+  faceLegend: {
+    "#": multiplyBy12(multiplyBy32([1, 0])),
+    "@": multiplyBy12(multiplyBy32([0, 0])),
+  },
   
   throneLegend: {
     "#": multiplyBy32([1, 0]),
