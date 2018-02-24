@@ -14,8 +14,8 @@ var Game = {
   player: null,
   activeObjects: [],
   gameSpeed: 300,
-  gameWidth: 20,
-  gameHeight: 20,
+  gameWidth: 24,
+  gameHeight: 24,
 
   init: function() {
 
