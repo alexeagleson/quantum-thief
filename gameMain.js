@@ -56,6 +56,7 @@ var Game = {
         }
       });
     }
+    Game.display._options.bg = "#";
     Game.drawWholeMap();
     Game.drawAllObjects();
   },
@@ -90,6 +91,7 @@ var Game = {
   },
 
   drawWholeMap: function() {
+    console.log(Game.display);
     for (var key in Game.CompleteMap.map) {
       var parts = key.split(",");
       var x = parseInt(parts[0]);
