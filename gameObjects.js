@@ -160,11 +160,8 @@ var Object = function(char, name, wall, alive, clickFunction, myDialogue) {
     
   this.clickedOn = function() {
     if (this.clickFunction === "talk") {
-      alert("HEHE");
       if (this.myDialogue) {
-        alert("HEHE");
-        var thisMenu = new Menu(this.myDialogue.textStrings, this.myDialogue.spaces, this.myDialogue.fgColours, this.myDialogue.responseFunction);
-        thisMenu.display();
+        showMenu(this.myDialogue);
       }
     } else if (this.clickFunction === "floor up") {
       Game.floorUp();
@@ -225,3 +222,4 @@ var Object = function(char, name, wall, alive, clickFunction, myDialogue) {
     }
   }
 }
+

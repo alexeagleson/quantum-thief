@@ -47,11 +47,20 @@ var creativeContent = {
       spaces: [0, 1, 0, 1, 0,],
       fgColours: ["blue", "white", "red", "white", "blue", "white"],
       responseFunction: {}
+  },
+  
+  throneDialogue2: {
+      textStrings: ["piasdasdasd", "Hsdsdsdre?", "bimsdddd", "Oh I'masdasdasdasdr things.", "jimmyjo", "that is cool"],
+      spaces: [0, 1, 0, 1, 0,],
+      fgColours: ["blue", "white", "red", "white", "blue", "white"],
+      responseFunction: {}
   }
   
-  
-  
 }
+
+
+
+
 
 
 

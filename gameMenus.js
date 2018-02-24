@@ -66,6 +66,10 @@ var Menu = function(textStrings, spaces, fgColours, responseFunction) {
         setTimeout(function() { 
           Game.engine.unlock(); 
         }, Game.gameSpeed);
+        
+        if (typeof(check) === "object") {
+          
+        }  
       }
     }
   }
@@ -142,23 +146,14 @@ var view = {
 
 var menuResponse = {
   done: function() {
+    return creativeContent.throneDialogue2;
     return true;
   }
 }
 
-/*
 
-canvas {
-	background: blue;
-	//width: 600px;
-	//height: 800px;
-	
-	display: block;
-	margin: 0 auto;
+
+var showMenu = function(dialogue) {
+  var thisMenu = new Menu(dialogue.textStrings, dialogue.spaces, dialogue.fgColours, dialogue.responseFunction);
+  thisMenu.display();
 }
-
-
-
-
-
-*/
