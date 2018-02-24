@@ -2,6 +2,17 @@ var CompleteMap = function(map, tileset, tileLegend) {
   this.map = map;
   this.tileset = tileset;
   this.tileLegend = tileLegend;
+  this.freeCells = [];
+  
+  this.randomEmptyCellCoords = function() {
+    var index = Math.floor(ROT.RNG.getUniform() * this.freeCells.length);
+    var key = this.freeCells.splice(index, 1)[0];
+    var parts = key.split(",");
+    var x = parseInt(parts[0]);
+    var y = parseInt(parts[1]);
+    var newObject = new Object(x, y);
+    return {x: x, y: y};
+  };
 }
 
 

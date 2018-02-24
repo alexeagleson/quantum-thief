@@ -19,14 +19,8 @@ var Game = {
     
     view.defineView();
 
-
-
     //this.generateMap();
-    this.CompleteMap = staticMap();
-    
-    this.player = Game.createObject(freeCells, totalMap.map);
-    this.activeObjects.push(Game.player);
-    this.player.name = "bob";
+    Game.CompleteMap = staticMap();
     
     this.drawWholeMap();
     this.drawAllObjects();
@@ -55,47 +49,6 @@ var Game = {
     thisCanvas.className = className;
     thisCanvas.style.display = "none";
     return thisRotDisplay;
-  },
-  
-  generateMap: function() {
-    var digger = new ROT.Map.Rogue(Game.display._options.width, Game.display._options.height);
-    var freeCells = [];
-
-    var digCallback = function(x, y, value) {
-      var key = x + "," + y;  
-      if (value) {
-          Game.CompleteMap.map[key] = new Tile(x, y, "#", true);
-          return; 
-        }
-
-        Game.CompleteMap.map[key] = new Tile(x, y, "a", false);
-        freeCells.push(key);
-    }
-    digger.create(digCallback.bind(this));
-    
-    this.player = this.createObject(freeCells);
-    this.activeObjects.push(this.player);
-    this.player.name = "bob";
-    
-    for (var i = 0; i < 5; i ++) {
-      var anotherObject = this.createObject(freeCells);
-      anotherObject.char = "!";
-      this.activeObjects.push(anotherObject);
-    }
-    
-    this.drawWholeMap();
-    this.drawAllObjects();
-  },
-
-  createObject: function(freeCells, thisMap) {
-    var index = Math.floor(ROT.RNG.getUniform() * freeCells.length);
-    var key = freeCells.splice(index, 1)[0];
-    var parts = key.split(",");
-    var x = parseInt(parts[0]);
-    var y = parseInt(parts[1]);
-    var newObject = new Object(x, y);
-    thisMap[key].objectsOnThisTile.push(newObject);
-    return newObject;
   },
 
   drawWholeMap: function() {
