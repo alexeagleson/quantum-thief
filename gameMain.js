@@ -16,14 +16,11 @@ var Game = {
 
   init: function() {
     
-    Game.player = new Object(char = "@", name = "Scarlic", wall = false, alive = true, clickFunction = null, myDialogue = null, portraitChar = "@");
+    Game.player = new Object(char = "@", name = "Scarlic", wall = true, alive = true, clickFunction = null, myDialogue = null, portraitChar = "@");
 
     view.defineView();
 
     Game.travelTo(creativeContent.draculaThrone);
-    
-    //Game.CompleteMap.addObjectToMap(new Object(char = "f", name = "Garbage Bag", wall = true, alive = false, clickFunction = "talk", myDialogue = creativeContent.garbageBagDialogue, portraitChar = "g"), 5, 5);
-    
     
     
     Game.computeFOV();
@@ -48,9 +45,8 @@ var Game = {
     fov.compute(Game.player.x, Game.player.y, 5, function(x, y, r, visibility) {
       console.log(x, y, r, visibility);
       Game.CompleteMap.addObjectToMap(new Object(char = "f", name = "Garbage Bag", wall = true, alive = false, clickFunction = "talk", myDialogue = creativeContent.garbageBagDialogue, portraitChar = "g"), x, y);
-      });
-    
-    console.log(fov);
+    });
+
   },
   
   
