@@ -8,11 +8,11 @@ var Menu = function(textStrings, spaces, fgColours, responseFunction) {
   
   this.display = function() {
     
-    if (this.textStrings[this.textStrings.length - 1] != "{Continue}") {
-      this.textStrings.push("{Continue}");
+    if (this.textStrings[this.textStrings.length - 1] != "{Goodbye}") {
+      this.textStrings.push("{Goodbye}");
       this.spaces.push(2);
       this.fgColours.push("white");
-      this.responseFunction["{Continue}"] = menuResponse.done;
+      this.responseFunction["{Goodbye}"] = menuResponse.done;
     }
     
     Game.menu.clear();
@@ -134,6 +134,7 @@ var view = {
     var menuDisplayDOM = document.getElementsByClassName("menuDisplay")[0];
     gameDisplayDOM.style.display = "block";
     menuDisplayDOM.style.display = "none";
+    setTimeout(function() { Game.faceHUD(null); }, 10);
   },
   
   showMenu: function() {
@@ -141,6 +142,7 @@ var view = {
     var menuDisplayDOM = document.getElementsByClassName("menuDisplay")[0];
     gameDisplayDOM.style.display = "none";
     menuDisplayDOM.style.display = "block";
+    setTimeout(function() { Game.faceHUD(creativeContent.allFacePortraits); }, 10);
   },
 }
 

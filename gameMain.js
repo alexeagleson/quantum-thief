@@ -20,14 +20,14 @@ var Game = {
 
     view.defineView();
     
-    Game.faceHUD(creativeContent.allFacePortraits);
+    
     
     Game.travelTo(creativeContent.draculaThrone);
     
     
     
 
-
+    
     
 
     var scheduler = new ROT.Scheduler.Simple();
@@ -50,11 +50,26 @@ var Game = {
     Game.CompleteMap.addObjectToMap(Game.player, emptyCell.x, emptyCell.y);
     setTimeout(function() { 
       Game.renderGame();
-    }, 200);
+    }, 500);
   },
 
   
   faceHUD: function(faceSet) {
+    
+    if (!faceSet) {
+      var options = {
+        width: Game.hudWidth,
+        height: Game.hudHeight,
+        fontSize: 32,
+        forceSquareRatio:true
+      }
+      
+
+      this.gameHUD.setOptions(tileLegend);
+      Game.gameHUD.clear();
+
+      return false;
+    }
 
     var tileElement = document.createElement("img");
     tileElement.src = faceSet;
@@ -76,7 +91,7 @@ var Game = {
     
     setTimeout(function() { 
       if (Game.hudWidth < Game.hudHeight) {
-        Game.gameHUD.drawText(0, 0, "a", Game.hudWidth);
+        Game.gameHUD.drawText(0, 0, "@", Game.hudWidth);
         Game.gameHUD.drawText(0, 1, "#", Game.hudWidth);
       } else {
         Game.gameHUD.drawText(0, 0, "@", Game.hudWidth);

@@ -11,7 +11,7 @@ var menuResponse = {
     return true;
   },
   gameBeginDialogue: function() {
-    Game.travelTo(creativeContent.iceUniverse);
+    Game.travelTo(creativeContent.fireUniverse);
     return true;
   }
 }
@@ -55,29 +55,29 @@ var creativeContent = {
   
   
   
-  iceUniverse: function() {
-    var iceUniverse = [];
+  fireUniverse: function() {
+    var fireUniverse = [];
     var emptyCell = null;
     
     for (var i = 0; i < 5; i++) {
-      iceUniverse[i] = Game.createMap(creativeContent.throneTile, creativeContent.throneLegend, i);
+      fireUniverse[i] = Game.createMap(creativeContent.fireTile, creativeContent.throneLegend, i);
       
-      emptyCell = iceUniverse[i].randomEmptyCellCoords();
-      iceUniverse[i].addObjectToMap(new Object(char = "!", name = "Throne", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.throneDialogue), emptyCell.x, emptyCell.y);
+      emptyCell = fireUniverse[i].randomEmptyCellCoords();
+      fireUniverse[i].addObjectToMap(new Object(char = "!", name = "Throne", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.throneDialogue), emptyCell.x, emptyCell.y);
       
       if (i != 0) {
-        emptyCell = iceUniverse[i].randomEmptyCellCoords();
-        iceUniverse[i].addObjectToMap(new Object(char = "<", name = "Downstairs", wall = false, alive = false, clickFunction = "floor down"), emptyCell.x, emptyCell.y);
+        emptyCell = fireUniverse[i].randomEmptyCellCoords();
+        fireUniverse[i].addObjectToMap(new Object(char = "<", name = "Downstairs", wall = false, alive = false, clickFunction = "floor down"), emptyCell.x, emptyCell.y);
       }
       
       if (i != 4) {
-        emptyCell = iceUniverse[i].randomEmptyCellCoords();
-        iceUniverse[i].addObjectToMap(new Object(char = ">", name = "Upstairs", wall = false, alive = false, clickFunction = "floor up"), emptyCell.x, emptyCell.y);
+        emptyCell = fireUniverse[i].randomEmptyCellCoords();
+        fireUniverse[i].addObjectToMap(new Object(char = ">", name = "Upstairs", wall = false, alive = false, clickFunction = "floor up"), emptyCell.x, emptyCell.y);
       }
       
     }
     
-    return iceUniverse;
+    return fireUniverse;
   },
   
   gameBeginDialogue: {
@@ -88,11 +88,11 @@ var creativeContent = {
   },
   
 
-  
+
   throneDialogue: {
-      textStrings: ["pipp", "Hello what are you doing here?", "bimmyjo", "tell me more", "asdsadsad", "that is cool"],
-      spaces: [0, 1, 0, 1, 0,],
-      fgColours: ["blue", "white", "red", "white", "white", "white"],
+      textStrings: ["pipp", "Hello what are you doing here?", "bimmyjo", "tell me more"],
+      spaces: [0, 1, 0],
+      fgColours: ["blue", "white", "red", "white"],
       responseFunction: {"tell me more": menuResponse.throneDialogue2}
   },
   
@@ -111,10 +111,7 @@ var creativeContent = {
   }
   
   
-  
-  
-  
-  
+
   
 }
 
