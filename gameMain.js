@@ -15,9 +15,9 @@ var Game = {
   gameSpeed: 200,
   gameWidth: 24,
   gameHeight: 24,
-  myTravelChecklist: ["Throne Universe"],
+  myTravelChecklist: [],
   gameDone: false,
-  stolenItems: 0,
+  stolenItems: 10,
 
   init: function() {
     
@@ -53,9 +53,14 @@ var Game = {
   },
   
   travelToRandomUnvisitedUniverse: function(universeName) {
+    var allUniverses = ["Fire Universe", "Old Person Universe", "Hot Dog Universe", "Ice Universe", "Robocop Universe"]
+    if (Game.myTravelChecklist.length > 2) {
+      allUniverses.push("Throne Universe");
+    }
+    
     
     while (!universeName) {
-      var allUniverses = ["Fire Universe", "Old Person Universe", "Throne Universe", "Hot Dog Universe", "Ice Universe", "Robocop Universe"]
+      
       var thisDie = (rollDie(allUniverses.length) - 1);
       var universeName = allUniverses[thisDie];
       
@@ -66,6 +71,8 @@ var Game = {
         }
       }
     }
+    
+    universeName = "Throne Universe";
     
     Game.myTravelChecklist.push(universeName);
     

@@ -78,7 +78,7 @@ var menuResponse = {
     return true;
   },
   gameBeginDialogue: function() {
-
+    // hd7fdhdf78
     Game.travelToRandomUnvisitedUniverse();
     return true;
   },
@@ -306,8 +306,13 @@ var creativeContent = {
     
     throneRoom[0] = Game.createMap(creativeContent.throneTile, creativeContent.masterPngLegend, 0, "Arena", visible = true);
     emptyCell = throneRoom[0].randomEmptyCellCoords();
-    throneRoom[0].addObjectToMap(new Object(char = "!", name = "Throne", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.throneDialogue, portraitChar = "-", moveType = "", allowSteal = true), 10, 10);
+    throneRoom[0].addObjectToMap(new Object(char = "!", name = "Throne", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.throneDialogue, portraitChar = "-", moveType = "", allowSteal = false), 10, 10);
     throneRoom[0].addObjectToMap(new Object(char = "*", name = "Scott Dracula", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.gameBeginDialogue, portraitChar = "#", moveType = "", allowSteal = false), 11, 10);
+    // hd7fdhdf78
+    for (var i = 0; i < Game.stolenItems; i++) {
+      emptyCell = throneRoom[0].randomEmptyCellCoords();
+      throneRoom[0].addObjectToMap(new Object(char = "o", name = "Interdimensional Booty", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.bootyDialogue, portraitChar = "-", moveType = "", allowSteal = false), emptyCell.x, emptyCell.y);
+    }
     return throneRoom;
   },
   
@@ -869,8 +874,14 @@ var creativeContent = {
       spaces: [1, 2, 1],
       fgColours: ["red", "lightyellow", "#b0ec62"],
       responseFunction: {"{Finish Game}": menuResponse.gameEnd}
-    }
-
+    },
+  // hd7fdhdf78
+  bootyDialogue: {
+      textStrings: ["Interdimensional Booty", "Just one piece of your sweet haul."],
+      spaces: [1, 2],
+      fgColours: ["red", "lightyellow", "#b0ec62"],
+      responseFunction: {}
+  }
 }
 
 
