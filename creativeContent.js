@@ -74,10 +74,9 @@ var creativeContent = {
     ".": multiplyBy32([2, 0]),
     ">": multiplyBy32([3, 0]),
     "<": multiplyBy32([4, 0]),
-    
-    
-    
-    "a": multiplyBy32([7, 0]),
+    "(": multiplyBy32([5, 0]),
+    ")": multiplyBy32([6, 0]),
+    "*": multiplyBy32([7, 0]),
     
     "+": multiplyBy32([0, 1]),
     "$": multiplyBy32([1, 1]),
@@ -124,7 +123,7 @@ var creativeContent = {
     throneRoom[0] = Game.createMap(creativeContent.throneTile, creativeContent.masterPngLegend, 0, "Arena");
     emptyCell = throneRoom[0].randomEmptyCellCoords();
     throneRoom[0].addObjectToMap(new Object(char = "!", name = "Throne", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.throneDialogue, portraitChar = "-"), 10, 10);
-    throneRoom[0].addObjectToMap(new Object(char = "a", name = "Scott Dracula", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.gameBeginDialogue, portraitChar = "#"), 11, 10);
+    throneRoom[0].addObjectToMap(new Object(char = "*", name = "Scott Dracula", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.gameBeginDialogue, portraitChar = "#"), 11, 10);
     return throneRoom;
   },
   
@@ -149,10 +148,8 @@ var creativeContent = {
       }
     }
     // put stuff on specific floors
-    //fireUniverse[0].addObjectToMap(new Object(char = "!", name = "Fire Plant", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.defaultDialogue, portraitChar = "-"), emptyCell.x, emptyCell.y);
-    
-    
-    
+    emptyCell = fireUniverse[0].randomEmptyCellCoords();
+    fireUniverse[0].addObjectToMap(new Object(char = "i", name = "Garbage Bag", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.defaultDialogue, portraitChar = "g"), emptyCell.x, emptyCell.y);
     
     return fireUniverse;
   },
@@ -182,6 +179,14 @@ var creativeContent = {
       responseFunction: {}
   },
   
+  garbageBagDialogue: {
+      textStrings: ["Garbage Bag", "I am so full of garbage.", "{I'm ready}"],
+      spaces: [0, 1, 1],
+      fgColours: ["red", "white", "white"],
+      responseFunction: {"{I'm ready}": menuResponse.gameBeginDialogue}
+  },  
+
+  
   gameBeginDialogue: {
       textStrings: ["Scott Dracula", "I'm sending you back in time.  Get ready.", "{I'm ready}"],
       spaces: [0, 1, 1],
@@ -209,6 +214,9 @@ var creativeContent = {
       fgColours: ["blue", "white"],
       responseFunction: {}
   }
+  
+
+  
 }
 
 
