@@ -31,9 +31,9 @@ var Game = {
 
     view.defineView();
 
-    Game.travelTo(creativeContent.draculaThrone);
-    Game.player.x = 11;
-    Game.player.y = 11;
+    Game.travelTo(creativeContent.iceUniverse);
+    //Game.player.x = 11;
+    //Game.player.y = 11;
     this.myTravelChecklist = [];
   },
   
@@ -74,6 +74,7 @@ var Game = {
     } else if (universeName === "Old Person Universe") {
       Game.travelTo(creativeContent.oldPersonUniverse);
     } else if (universeName === "Throne Universe") {
+      Game.gameDone = true;
       Game.travelTo(creativeContent.draculaThrone);
     } else if (universeName === "Hot Dog Universe") {
       Game.travelTo(creativeContent.hotdogUniverse);
