@@ -42,8 +42,6 @@ var creativeContent = {
   },
   
   
-  
-  
   draculaThrone: function() {
     var throneRoom = [];
     var emptyCell = null;
@@ -63,7 +61,7 @@ var creativeContent = {
       fireUniverse[i] = Game.createMap(creativeContent.fireTile, creativeContent.masterPngLegend, i);
       
       emptyCell = fireUniverse[i].randomEmptyCellCoords();
-      fireUniverse[i].addObjectToMap(new Object(char = "!", name = "Fire Plant", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.throneDialogue), emptyCell.x, emptyCell.y);
+      fireUniverse[i].addObjectToMap(new Object(char = "!", name = "Fire Plant", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.defaultDialogue, portraitChar = "-"), emptyCell.x, emptyCell.y);
       
       if (i != 0) {
         emptyCell = fireUniverse[i].randomEmptyCellCoords();
@@ -78,11 +76,18 @@ var creativeContent = {
     return fireUniverse;
   },
   
+  defaultDialogue: {
+      textStrings: ["What an odd thing this is."],
+      spaces: [0],
+      fgColours: ["white"],
+      responseFunction: {}
+  },
+  
   gameBeginDialogue: {
-      textStrings: ["Scott Dracula", "I'm sending you back in time.  Get ready.", "{I'm ready let's go.}"],
+      textStrings: ["Scott Dracula", "I'm sending you back in time.  Get ready.", "{I'm ready}"],
       spaces: [0, 1, 1],
       fgColours: ["red", "white", "white"],
-      responseFunction: {"{DDD}": menuResponse.gameBeginDialogue}
+      responseFunction: {"{I'm ready}": menuResponse.gameBeginDialogue}
   },
   
   throneDialogue: {

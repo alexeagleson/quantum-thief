@@ -29,6 +29,9 @@ var Game = {
     })
     this.engine = new ROT.Engine(scheduler);
     this.engine.start();
+    
+    this.renderGame();
+    
   },
   
   
@@ -41,6 +44,7 @@ var Game = {
     }
     emptyCell = Game.CompleteMap.randomEmptyCellCoords();
     Game.CompleteMap.addObjectToMap(Game.player, emptyCell.x, emptyCell.y);
+    
     setTimeout(function() { 
       Game.renderGame();
     }, Game.gameSpeed);

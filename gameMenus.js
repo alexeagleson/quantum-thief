@@ -6,14 +6,15 @@ var Menu = function(textStrings, spaces, fgColours, responseFunction) {
   this.responseFunction = responseFunction;  
   this.textAtLines = {};
   
-  this.display = function() {
-    
+  this.display = function() {  
     if (this.textStrings[this.textStrings.length - 1] != "{Goodbye}") {
       this.textStrings.push("{Goodbye}");
       this.spaces.push(2);
       this.fgColours.push("white");
       this.responseFunction["{Goodbye}"] = menuResponse.done;
     }
+    
+    
     
     Game.menu.clear();
     Game.currentMenuDisplay = this;
