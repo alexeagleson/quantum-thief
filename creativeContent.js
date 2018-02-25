@@ -195,8 +195,8 @@ var menuResponse = {
     return true;
   },
   gameEnd: function() {
-    var end = document.getElementsByClassName("totalDiv")[0];
-    alert(end);
+    var allDiv = document.getElementsByClassName("totalDiv")[0];
+    allDiv.style.display = "none";
     show_image("https://i.imgur.com/QrpX3Ps.png", 1728, 768, "A Wolfdog Studios production.  Alex Eagleson, Jodie Eagleson & Aaron Dagenais.");
     return true;
   }

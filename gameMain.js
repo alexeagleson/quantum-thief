@@ -16,7 +16,7 @@ var Game = {
   gameWidth: 24,
   gameHeight: 24,
   myTravelChecklist: ["Throne Universe"],
-  gameDone: true,
+  gameDone: false,
 
   init: function() {
     
