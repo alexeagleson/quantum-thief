@@ -301,6 +301,12 @@ var creativeContent = {
     emptyCell = oldPersonUniverse[0].randomEmptyCellCoords();
     oldPersonUniverse[0].addObjectToMap(new Object(char = "$", name = "Robocop - Finally Alive", wall = false, alive = true, clickFunction = "talk", myDialogue = creativeContent.retiredRobocop2Dialogue, portraitChar = "-", moveType = "follow"), emptyCell.x, emptyCell.y);
 
+    emptyCell = oldPersonUniverse[0].randomEmptyCellCoords();
+    oldPersonUniverse[0].addObjectToMap(new Object(char = "$", name = "Robocop - Still Kickin'", wall = false, alive = true, clickFunction = "talk", myDialogue = creativeContent.retiredRobocop3Dialogue, portraitChar = "-", moveType = "follow"), emptyCell.x, emptyCell.y);
+
+    emptyCell = oldPersonUniverse[0].randomEmptyCellCoords();
+    oldPersonUniverse[0].addObjectToMap(new Object(char = "$", name = "Robocop - Poppa Wheelie", wall = false, alive = true, clickFunction = "talk", myDialogue = creativeContent.retiredRobocop4Dialogue, portraitChar = "-", moveType = "follow"), emptyCell.x, emptyCell.y);
+
   return oldPersonUniverse;
   },
   
