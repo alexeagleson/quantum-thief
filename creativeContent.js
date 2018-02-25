@@ -187,10 +187,10 @@ var creativeContent = {
   },
   
   garbageBagDialogue: {
-      textStrings: ["Garbage Bag", "I am so full of garbage.", "{I'm so ready}"],
+      textStrings: ["Garbage Bag", "I am so full of garbage.", "{I'm so ready for your sweet sweet garbage}"],
       spaces: [0, 1, 1],
       fgColours: ["red", "yellow", "green"],
-      responseFunction: {"{I'm so ready}": menuResponse.garbageBagDialogue2}
+      responseFunction: {"{I'm so ready for your sweet sweet garbage}": menuResponse.garbageBagDialogue2}
   },  
   
   garbageBagDialogue2: {
