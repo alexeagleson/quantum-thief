@@ -67,6 +67,7 @@ var Object = function(char, name, wall, alive, clickFunction, myDialogue, portra
   this.portraitChar = portraitChar,
   this.moveType = moveType,
   this.allowSteal = allowSteal,
+  this.myCurrentChat = null,
   
   this.act = function() {
     
@@ -125,6 +126,10 @@ var Object = function(char, name, wall, alive, clickFunction, myDialogue, portra
     } else {
       return true;
     }
+  },
+    
+  this.steal = function(objectToSteal) {
+    
   },
 
   this.move = function(directionArray) {

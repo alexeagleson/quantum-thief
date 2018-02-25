@@ -18,10 +18,12 @@ var Menu = function(textStrings, spaces, fgColours, responseFunction, object) {
     if (this.object) {
       if (this.object.allowSteal) {
         if (this.textStrings[this.textStrings.length - 1] != "{Steal This}") {
+          Game.player.myCurrentChat = object;
+          
           this.textStrings.push("{Steal This}");
           this.spaces.push(2);
           this.fgColours.push("#b0ec62");
-          this.responseFunction["{Steal This}"] = menuResponse.done;
+          this.responseFunction["{Steal This}"] = menuResponse.steal;
         }
       }
     }
