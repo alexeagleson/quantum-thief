@@ -76,8 +76,14 @@ var menuResponse = {
   // Old Person Universe Dialogue/Descripts
   retiredRobocopDialogue: function() {
     Game.travelTo(creativeContent.retiredRobocopDialogue);
-    return true;
+    return false;
   },
+  retiredRobocopDialogue2: function() {
+    Game.travelTo(creativeContent.retiredRobocopDialogue2);
+    return true;
+  }
+  
+  
   
 }
 
@@ -279,7 +285,7 @@ var creativeContent = {
     // put stuff on specific floors
 
     emptyCell = oldPersonUniverse[0].randomEmptyCellCoords();
-    oldPersonUniverse[0].addObjectToMap(new Object(char = "*", name = "Robocop - Retired", wall = false, alive = true, clickFunction = "talk", myDialogue = creativeContent.retiredRobocopDialogue, portraitChar = "-", moveType = "random"), emptyCell.x, emptyCell.y);
+    oldPersonUniverse[0].addObjectToMap(new Object(char = "*", name = "Robocop - Retired", wall = false, alive = true, clickFunction = "talk", myDialogue = creativeContent.retiredRobocopDialogue, portraitChar = "-", moveType = "follow"), emptyCell.x, emptyCell.y);
 
   return oldPersonUniverse;
   },
@@ -415,14 +421,14 @@ var creativeContent = {
   throneDialogue: {
       textStrings: ["Throne", "Hello what are you doing here?", "Name Example", "{Tell me More}"],
       spaces: [0, 1, 0],
-      fgColours: ["blue", "white", "red", "white"],
+      fgColours: ["red", "white", "red", "white"],
       responseFunction: {"{Tell me More}": menuResponse.throneDialogue2}
   },
   
   throneDialogue2: {
       textStrings: ["Throne", "there is not much more to tell"],
       spaces: [0, 1],
-      fgColours: ["blue", "white"],
+      fgColours: ["red", "white"],
       responseFunction: {"there is not much more to tell": menuResponse.throneDialogue3}
   },
   
@@ -435,12 +441,18 @@ var creativeContent = {
   
   // OldPersonUniverse Dialogue
 
-retiredRobocopDialogue: {
-      textStrings: ["Robocop - Retired", "Hello there, Sonny. You look strong and... smart. Can you help out a Robo Pop in need?", "{Yar, what do you need?}", "Well sure, I'm just a retired cop looking for the Real Good Stuff?"],
+  retiredRobocopDialogue: {
+      textStrings: ["Robocop - Retired", "Hello there, Sonny. You look strong and... smart. Can you help out a Robo Pop in need?", "{Yar, another has-been looking for favours?}"],
       spaces: [0, 1],
       fgColours: ["blue", "lightyellow", "#b0ec62", "lightyellow"],
-      responseFunction: {"{Yar, what do you need?}"}: menuResponse.retiredRobocopDialogue2}
+      responseFunction: {"{Yar, another has-been looking for favours?}": menuResponse.retiredRobocopDialogue2}
   },
+  retiredRobocopDialogue2: {
+      textStrings: ["Robocop - Retired", "Well sure, I'm just a retired cop looking for the Real Good Stuff? Not the Regular Good Ones, if you know what I mean.", "Yarrr?", "Ah that sweet mess. Where have my robotic dentures got to now?"],
+      spaces: [0, 1],
+      fgColours: ["blue", "lightyellow", "#b0ec62", "blue", "lightyellow"],
+      responseFunction: {}
+  }
 }
 
 
