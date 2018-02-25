@@ -506,16 +506,16 @@ var creativeContent = {
     
     // put stuff on specific floors
     emptyCell = fireUniverse[2].randomEmptyCellCoords();
-    fireUniverse[2].addObjectToMap(new Object(char = "q", name = "Garbage Can", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.GarbageCanDialogue, portraitChar = "-"), emptyCell.x, emptyCell.y);
+    fireUniverse[2].addObjectToMap(new Object(char = "q", name = "Garbage Can", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.GarbageCanDialogue, portraitChar = "-", moveType = "", allowSteal = true), emptyCell.x, emptyCell.y);
     
     emptyCell = fireUniverse[2].randomEmptyCellCoords();
-    fireUniverse[2].addObjectToMap(new Object(char = "h", name = "Violet Crystal", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.VioletCrystalDialogue, portraitChar = "-"), emptyCell.x, emptyCell.y);
+    fireUniverse[2].addObjectToMap(new Object(char = "h", name = "Violet Crystal", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.VioletCrystalDialogue, portraitChar = "-", moveType = "", allowSteal = true), emptyCell.x, emptyCell.y);
 
     emptyCell = fireUniverse[0].randomEmptyCellCoords();
-    fireUniverse[0].addObjectToMap(new Object(char = "p", name = "Garbage Bag", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.garbageBagDialogue, portraitChar = "-"), emptyCell.x, emptyCell.y);
+    fireUniverse[0].addObjectToMap(new Object(char = "p", name = "Garbage Bag", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.garbageBagDialogue, portraitChar = "-", moveType = "", allowSteal = true), emptyCell.x, emptyCell.y);
 
     emptyCell = fireUniverse[1].randomEmptyCellCoords();
-    fireUniverse[1].addObjectToMap(new Object(char = "o", name = "Garbage Bag 2", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.garbageBag2Dialogue, portraitChar = "-"), emptyCell.x, emptyCell.y);
+    fireUniverse[1].addObjectToMap(new Object(char = "o", name = "Garbage Bag 2", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.garbageBag2Dialogue, portraitChar = "-", moveType = "", allowSteal = true), emptyCell.x, emptyCell.y);
     
     emptyCell = fireUniverse[0].randomEmptyCellCoords();
     fireUniverse[0].addObjectToMap(new Object(char = "*", name = "Lava Person1", wall = false, alive = true, clickFunction = "talk", myDialogue = creativeContent.LavaPerson1Dialogue, portraitChar = "l", moveType = "follow"), emptyCell.x, emptyCell.y);
@@ -527,7 +527,7 @@ var creativeContent = {
     fireUniverse[1].addObjectToMap(new Object(char = "$", name = "Lava Person3", wall = false, alive = true, clickFunction = "talk", myDialogue = creativeContent.LavaPerson3Dialogue, portraitChar = "n", moveType = "random"), emptyCell.x, emptyCell.y);
     
     emptyCell = fireUniverse[1].randomEmptyCellCoords();
-    fireUniverse[1].addObjectToMap(new Object(char = "k", name = "Soda Can", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.SodaCan1Dialogue, portraitChar = "-"), emptyCell.x, emptyCell.y);
+    fireUniverse[1].addObjectToMap(new Object(char = "k", name = "Soda Can", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.SodaCan1Dialogue, portraitChar = "-", moveType = "", allowSteal = true), emptyCell.x, emptyCell.y);
     
     emptyCell = fireUniverse[2].randomEmptyCellCoords();
     fireUniverse[2].addObjectToMap(new Object(char = "(", name = "Portal", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.portalDialogue, portraitChar = "y"), emptyCell.x, emptyCell.y);
@@ -589,25 +589,25 @@ var creativeContent = {
     oldPersonUniverse[1].addObjectToMap(new Object(char = "&", name = "Robocop - Poppa Wheelie", wall = false, alive = true, clickFunction = "talk", myDialogue = creativeContent.retiredRobocop4Dialogue, portraitChar = "v", moveType = "follow"), emptyCell.x, emptyCell.y);
     
     emptyCell = oldPersonUniverse[0].randomEmptyCellCoords();
-    oldPersonUniverse[0].addObjectToMap(new Object(char = ")", name = "Werther's Original", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.werthersDescript, portraitChar = "-"), emptyCell.x, emptyCell.y);
+    oldPersonUniverse[0].addObjectToMap(new Object(char = ")", name = "Werther's Original", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.werthersDescript, portraitChar = "-", moveType = "", allowSteal = true), emptyCell.x, emptyCell.y);
 
     emptyCell = oldPersonUniverse[0].randomEmptyCellCoords();
-    oldPersonUniverse[0].addObjectToMap(new Object(char = "!", name = "Wheelchair", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.wheelchairDescript, portraitChar = "-", moveType = "follow"), emptyCell.x, emptyCell.y);
+    oldPersonUniverse[0].addObjectToMap(new Object(char = "!", name = "Wheelchair", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.wheelchairDescript, portraitChar = "-", moveType = "", allowSteal = true), emptyCell.x, emptyCell.y);
 
     emptyCell = oldPersonUniverse[0].randomEmptyCellCoords();
-    oldPersonUniverse[0].addObjectToMap(new Object(char = "e", name = "Crossword", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.crosswordDescript, portraitChar = "-"), emptyCell.x, emptyCell.y);  
+    oldPersonUniverse[0].addObjectToMap(new Object(char = "e", name = "Crossword", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.crosswordDescript, portraitChar = "-", moveType = "", allowSteal = true), emptyCell.x, emptyCell.y);  
     
     emptyCell = oldPersonUniverse[2].randomEmptyCellCoords();
-    oldPersonUniverse[2].addObjectToMap(new Object(char = "f", name = "Mentos - the freshmaker", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.mentosDescript, portraitChar = "-"), emptyCell.x, emptyCell.y);
+    oldPersonUniverse[2].addObjectToMap(new Object(char = "f", name = "Mentos - the freshmaker", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.mentosDescript, portraitChar = "-", moveType = "", allowSteal = true), emptyCell.x, emptyCell.y);
   
     emptyCell = oldPersonUniverse[1].randomEmptyCellCoords();
-    oldPersonUniverse[1].addObjectToMap(new Object(char = "g", name = "The Bad Ones", wall = false, alive = true, clickFunction = "talk", myDialogue = creativeContent.badOnesDescript, portraitChar = "-", moveType = "follow"), emptyCell.x, emptyCell.y);
+    oldPersonUniverse[1].addObjectToMap(new Object(char = "g", name = "The Bad Ones", wall = false, alive = true, clickFunction = "talk", myDialogue = creativeContent.badOnesDescript, portraitChar = "-", moveType = "follow", allowSteal = true), emptyCell.x, emptyCell.y);
 
     emptyCell = oldPersonUniverse[1].randomEmptyCellCoords();
-    oldPersonUniverse[1].addObjectToMap(new Object(char = "h", name = "The Fun Ones", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.funOnesDescript, portraitChar = "-"), emptyCell.x, emptyCell.y);
+    oldPersonUniverse[1].addObjectToMap(new Object(char = "h", name = "The Fun Ones", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.funOnesDescript, portraitChar = "-", moveType = "", allowSteal = true), emptyCell.x, emptyCell.y);
 
     emptyCell = oldPersonUniverse[1].randomEmptyCellCoords();
-    oldPersonUniverse[1].addObjectToMap(new Object(char = "i", name = "The Good Ones", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.goodOnesDescript, portraitChar = "-"), emptyCell.x, emptyCell.y);
+    oldPersonUniverse[1].addObjectToMap(new Object(char = "i", name = "The Good Ones", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.goodOnesDescript, portraitChar = "-", moveType = "", allowSteal = true), emptyCell.x, emptyCell.y);
 
     emptyCell = oldPersonUniverse[2].randomEmptyCellCoords();
     oldPersonUniverse[2].addObjectToMap(new Object(char = "(", name = "Portal", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.portalDialogue, portraitChar = "y"), emptyCell.x, emptyCell.y);
@@ -672,13 +672,13 @@ emptyCell = iceUniverse[0].randomEmptyCellCoords();
 iceUniverse[0].addObjectToMap(new Object(char = "&", name = "Yollanda Ruud", wall = false, alive = true, clickFunction = "talk", myDialogue = creativeContent.YollandaDialogue1, portraitChar = "d", moveType = "follow"), emptyCell.x, emptyCell.y);
 
 emptyCell = iceUniverse[0].randomEmptyCellCoords();
-iceUniverse[0].addObjectToMap(new Object(char = "j", name = "A Well-Made Pickaxe", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.PickAxeDescript, portraitChar = "-", moveType = "follow"), emptyCell.x, emptyCell.y);
+iceUniverse[0].addObjectToMap(new Object(char = "j", name = "A Well-Made Pickaxe", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.PickAxeDescript, portraitChar = "-", moveType = "follow", allowSteal = true), emptyCell.x, emptyCell.y);
 
 emptyCell = iceUniverse[0].randomEmptyCellCoords();
 iceUniverse[0].addObjectToMap(new Object(char = "!", name = "ICE BUSH!", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.ICEBUSHDescript, portraitChar = "-", moveType = "follow"), emptyCell.x, emptyCell.y);
 
 emptyCell = iceUniverse[1].randomEmptyCellCoords();
-iceUniverse[1].addObjectToMap(new Object(char = "h", name = "Frozen Pizza", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.FrozenPizzaDescript, portraitChar = "-", moveType = "follow"), emptyCell.x, emptyCell.y);
+iceUniverse[1].addObjectToMap(new Object(char = "h", name = "Frozen Pizza", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.FrozenPizzaDescript, portraitChar = "-", moveType = "follow", allowSteal = true), emptyCell.x, emptyCell.y);
     
 emptyCell = iceUniverse[1].randomEmptyCellCoords();
 iceUniverse[1].addObjectToMap(new Object(char = "$", name = "Francis Bubblesmith", wall = false, alive = true, clickFunction = "talk", myDialogue = creativeContent.FrancisBubblesmithDescript, portraitChar = "c", moveType = "follow"), emptyCell.x, emptyCell.y);
@@ -687,10 +687,10 @@ emptyCell = iceUniverse[1].randomEmptyCellCoords();
 iceUniverse[1].addObjectToMap(new Object(char = "+", name = "Shira Balewa", wall = false, alive = true, clickFunction = "talk", myDialogue = creativeContent.ShiraBalewaDescript, portraitChar = "b", moveType = "follow"), emptyCell.x, emptyCell.y);
 
 emptyCell = iceUniverse[1].randomEmptyCellCoords();
-iceUniverse[1].addObjectToMap(new Object(char = "e", name = "Green Fish", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.GreenFishDescription, portraitChar = "-", moveType = "follow"), emptyCell.x, emptyCell.y);
+iceUniverse[1].addObjectToMap(new Object(char = "e", name = "Green Fish", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.GreenFishDescription, portraitChar = "-", moveType = "follow", allowSteal = true), emptyCell.x, emptyCell.y);
 
 emptyCell = iceUniverse[2].randomEmptyCellCoords();
-iceUniverse[2].addObjectToMap(new Object(char = "*", name = "Yippers The Huskydog", wall = false, alive = true, clickFunction = "talk", myDialogue = creativeContent.YippersDescription, portraitChar = "e", moveType = "follow"), emptyCell.x, emptyCell.y);
+iceUniverse[2].addObjectToMap(new Object(char = "*", name = "Yippers The Huskydog", wall = false, alive = true, clickFunction = "talk", myDialogue = creativeContent.YippersDescription, portraitChar = "e", moveType = "follow", allowSteal = true), emptyCell.x, emptyCell.y);
   
 emptyCell = iceUniverse[2].randomEmptyCellCoords();
 iceUniverse[2].addObjectToMap(new Object(char = "?", name = "MacReady", wall = false, alive = true, clickFunction = "talk", myDialogue = creativeContent.MacReadyDescription, portraitChar = "k", moveType = "follow"), emptyCell.x, emptyCell.y);
@@ -699,10 +699,10 @@ emptyCell = iceUniverse[2].randomEmptyCellCoords();
 iceUniverse[2].addObjectToMap(new Object(char = "i", name = "The Thing", wall = false, alive = true, clickFunction = "talk", myDialogue = creativeContent.TheThingDescription, portraitChar = "-", moveType = "follow"), emptyCell.x, emptyCell.y);
 
 emptyCell = iceUniverse[0].randomEmptyCellCoords();
-iceUniverse[0].addObjectToMap(new Object(char = "f", name = "Blue Fish", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.BlueFishDescription, portraitChar = "-", moveType = "follow"), emptyCell.x, emptyCell.y);
+iceUniverse[0].addObjectToMap(new Object(char = "f", name = "Blue Fish", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.BlueFishDescription, portraitChar = "-", moveType = "follow", allowSteal = true), emptyCell.x, emptyCell.y);
     
 emptyCell = iceUniverse[2].randomEmptyCellCoords();
-iceUniverse[2].addObjectToMap(new Object(char = "g", name = "Ice Fishing Rod", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.IceFishingRodDescription, portraitChar = "-", moveType = "follow"), emptyCell.x, emptyCell.y);
+iceUniverse[2].addObjectToMap(new Object(char = "g", name = "Ice Fishing Rod", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.IceFishingRodDescription, portraitChar = "-", moveType = "follow", allowSteal = true), emptyCell.x, emptyCell.y);
   
 emptyCell = iceUniverse[1].randomEmptyCellCoords();
 iceUniverse[1].addObjectToMap(new Object(char = ")", name = "Sweetheart Octopuss", wall = false, alive = true, clickFunction = "talk", myDialogue = creativeContent.SweetheartOctopussDescription, portraitChar = "-", moveType = "follow"), emptyCell.x, emptyCell.y);
