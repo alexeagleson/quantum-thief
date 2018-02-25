@@ -306,7 +306,7 @@ var Game = {
       } else if (floor === 1) {
         mapType = "Rogue";
       } else if (floor === 2) {
-        mapType = "DividedMaze";
+        mapType = "Rogue";
       }
     }
     

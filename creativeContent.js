@@ -353,13 +353,9 @@ var creativeContent = {
     
     throneRoom[0] = Game.createMap(creativeContent.throneTile, creativeContent.masterPngLegend, 0, "Arena", visible = true);
     emptyCell = throneRoom[0].randomEmptyCellCoords();
-    throneRoom[0].addObjectToMap(new Object(char = "!", name = "Throne", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.throneDialogue, portraitChar = "-", moveType = "", allowSteal = false), 10, 10);
-    throneRoom[0].addObjectToMap(new Object(char = "*", name = "Scott Dracula", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.gameBeginDialogue, portraitChar = "#", moveType = "", allowSteal = false), 11, 10);
+    throneRoom[0].addObjectToMap(new Object(char = "!", name = "Throne", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.throneDialogue, portraitChar = "-", moveType = "", allowSteal = false), 10, 5);
+    throneRoom[0].addObjectToMap(new Object(char = "*", name = "Scott Dracula", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.gameBeginDialogue, portraitChar = "#", moveType = "", allowSteal = false), 11, 5);
     
-    
-    
-    //chickenbuddy
-    throneRoom[0].addObjectToMap(new Object(char = "e", name = "Pile of Booty", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.bootyDescript, portraitChar = "-"), 12, 12);
     
 
     for (var i = 1; i < Game.gameHeight - 1; i++) { 
@@ -367,28 +363,35 @@ var creativeContent = {
       throneRoom[0].addObjectToMap(new Object(char = "f", name = "Healthy Fern", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.fernDescript, portraitChar = "-"), 22, i);
     }
     
-    throneRoom[0].addObjectToMap(new Object(char = "g", name = "Vision Tree", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.visionTreeDescript, portraitChar = "-"), emptyCell.x, emptyCell.y);
+    throneRoom[0].addObjectToMap(new Object(char = "e", name = "Pile of Booty", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.bootyDescript, portraitChar = "-"), 9, 4);
+    throneRoom[0].addObjectToMap(new Object(char = "e", name = "Pile of Booty", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.bootyDescript, portraitChar = "-"), 10, 4);
+    throneRoom[0].addObjectToMap(new Object(char = "e", name = "Pile of Booty", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.bootyDescript, portraitChar = "-"), 8, 4);
+    throneRoom[0].addObjectToMap(new Object(char = "e", name = "Pile of Booty", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.bootyDescript, portraitChar = "-"), 14, 1);
+    throneRoom[0].addObjectToMap(new Object(char = "e", name = "Pile of Booty", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.bootyDescript, portraitChar = "-"), 13, 1);
+  
+    
+    throneRoom[0].addObjectToMap(new Object(char = "g", name = "Vision Tree", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.visionTreeDescript, portraitChar = "-"), 6, 5);
   
     emptyCell = throneRoom[0].randomEmptyCellCoords();
-    throneRoom[0].addObjectToMap(new Object(char = "h", name = "Fig Tree of Foresight", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.figTreeDescript, portraitChar = "-"), emptyCell.x, emptyCell.y);
+    throneRoom[0].addObjectToMap(new Object(char = "h", name = "Fig Tree of Foresight", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.figTreeDescript, portraitChar = "-"), 3, 2);
 
     emptyCell = throneRoom[0].randomEmptyCellCoords();
-    throneRoom[0].addObjectToMap(new Object(char = "i", name = "Mystical Blood Magic Chrysanthemum", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.bloodMagicDescript, portraitChar = "-"), emptyCell.x, emptyCell.y);
+    throneRoom[0].addObjectToMap(new Object(char = "i", name = "Mystical Blood Magic Chrysanthemum", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.bloodMagicDescript, portraitChar = "-"), 14, 2);
 
     emptyCell = throneRoom[0].randomEmptyCellCoords();
-    throneRoom[0].addObjectToMap(new Object(char = "j", name = "Ornate Chest", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.ornateChestDescript, portraitChar = "-"), emptyCell.x, emptyCell.y);
+    throneRoom[0].addObjectToMap(new Object(char = "j", name = "Ornate Chest", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.ornateChestDescript, portraitChar = "-"), 9, 5);
 
     emptyCell = throneRoom[0].randomEmptyCellCoords();
-    throneRoom[0].addObjectToMap(new Object(char = "k", name = "Enhanced Ornate Chest", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.enhancedChestDescript, portraitChar = "-"), emptyCell.x, emptyCell.y);
+    throneRoom[0].addObjectToMap(new Object(char = "k", name = "Enhanced Ornate Chest", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.enhancedChestDescript, portraitChar = "-"), 8, 5);
 
     emptyCell = throneRoom[0].randomEmptyCellCoords();
-    throneRoom[0].addObjectToMap(new Object(char = "l", name = "Sparkling Rubies", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.rubiesDescript, portraitChar = "-"), emptyCell.x, emptyCell.y);
+    throneRoom[0].addObjectToMap(new Object(char = "l", name = "Sparkling Rubies", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.rubiesDescript, portraitChar = "-"), 16, 3);
 
     emptyCell = throneRoom[0].randomEmptyCellCoords();
-    throneRoom[0].addObjectToMap(new Object(char = "m", name = "Emerald Shards", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.emeraldsDescript, portraitChar = "-"), emptyCell.x, emptyCell.y);
+    throneRoom[0].addObjectToMap(new Object(char = "m", name = "Emerald Shards", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.emeraldsDescript, portraitChar = "-"), 3, 5);
     
     emptyCell = throneRoom[0].randomEmptyCellCoords();
-    throneRoom[0].addObjectToMap(new Object(char = "n", name = "Rotdog", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.rotdogDescript, portraitChar = "-"), emptyCell.x, emptyCell.y);
+    throneRoom[0].addObjectToMap(new Object(char = "n", name = "Rotdog", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.rotdogDescript, portraitChar = "-"), 4, 5);
     
     
     
@@ -655,6 +658,66 @@ var creativeContent = {
   
   // FireWorld Dialogue
   
+
+    bootyDescript: {
+      textStrings: ["Pile of Booty","A big pile o' booty. Your piratey bones are aquiver with motivation!"],
+      spaces: [1, 2, 1],
+      fgColours: ["red", "lightyellow", "#b0ec62"],
+      responseFunction: {}
+  },   
+
+    fernDescript: {
+      textStrings: ["A Healthy Fern","It is bright green and has no bugs on it. You have never seen anything like this before."],
+      spaces: [1, 2, 1],
+      fgColours: ["red", "lightyellow", "#b0ec62"],
+      responseFunction: {}
+  },   
+
+    visionTreeDescript: {
+      textStrings: ["Vision Tree","Are those eyeballs?"],
+      spaces: [1, 2, 1],
+      fgColours: ["red", "lightyellow", "#b0ec62"],
+      responseFunction: {}
+  },   
+
+    figTreeDescript: {
+      textStrings: ["Fig Tree of Foresight","This stout tree gives me the creeps. But you rather like it."],
+      spaces: [1, 2, 1],
+      fgColours: ["red", "lightyellow", "#b0ec62"],
+      responseFunction: {}
+  },   
+    bloodMagicDescript: {
+      textStrings: ["Blood Magic Chysanthemum","Tiny pink blossoms on dark leaves that ooze some kind of liquid back onto its roots. This is probably not the same kind of flower you would give to your mom on Mother's Day. Probably."],
+      spaces: [1, 2, 1],
+      fgColours: ["red", "lightyellow", "#b0ec62"],
+      responseFunction: {}
+  },   
+
+ ornateChestDescript: {
+      textStrings: ["Ornate Chest","Guilded metal seals this deftly crafted chest. There's a big scary lock at the front, in the shape of a skull."],
+      spaces: [1, 2, 1],
+      fgColours: ["red", "lightyellow", "#b0ec62"],
+      responseFunction: {}
+  },
+  enchantedChestDescript: {
+      textStrings: ["Enchanted Ornate Chest","This silver chest emits a gentle hum when you put your hand near it. You probably shouldn't touch this."],
+      spaces: [1, 2, 1],
+      fgColours: ["red", "lightyellow", "#b0ec62"],
+      responseFunction: {}
+  },
+  rubiesDescript: {
+      textStrings: ["Sparkling Rubies","Sweet, sweet bullion. Where can else can you find such treasure?"],
+      spaces: [1, 2, 1],
+      fgColours: ["red", "lightyellow", "#b0ec62"],
+      responseFunction: {}
+  },  
+  emeraldsDescript: {
+      textStrings: ["Emerald Shards","A remarkable stack of pure emerald. There is a little horse inside, and some tiny people dancing around a yellow brick road that leads straight to the red velvet carpet. Nobody is leaving that place anytime soon."],
+      spaces: [1, 2, 1],
+      fgColours: ["red", "lightyellow", "#b0ec62"],
+      responseFunction: {}
+  },     
+  
   defaultDialogue: {
       textStrings: ["I don't know what this is!"],
       spaces: [1],
@@ -752,7 +815,7 @@ var creativeContent = {
       responseFunction: {"{But I'm a pirate so *FART* YEAAAARRRR!}": menuResponse.VioletCrystalDialogue1}
   },
   gameBeginDialogue: {
-      textStrings: ["Scott Dracula", "SCARLIC! I am feeling bored and lazy... Prepare your pirate body to be sent far into the depths of Space and Time for my amusement.", "{YAARR!}"],
+      textStrings: ["Scott Dracula", "SCARLIC! SCARLIC! Where are you? Scarlic, I am bored. Prepare an overnight bag. What's that? You do not have a bag? I thought you were a pirate, not a peasant. Anyway, I am sending you back through Space and Time! You aren't to come back until you steal the most valuable treasure. Alley-oop! *POOF*", "{YAARR!}"],
       spaces: [1, 2, 1],
       fgColours: ["red", "lightyellow", "#b0ec62"],
       responseFunction: {"{YAARR!}": menuResponse.gameBeginDialogue}
