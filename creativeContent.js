@@ -696,7 +696,7 @@ var creativeContent = {
   
   // Robocop Universe Dialogue
   
-  // Hotdog Universei Dialogue
+  // Hotdog Universe Dialogue
 }
 
 
