@@ -1,4 +1,10 @@
 var menuResponse = {
+  
+  // return true if there are no more text menus to display
+  // return false if there are
+  
+  // your dialogue at the bottom should link back up here, then back down to the bottom again to start a new dialogue
+  
   done: function() {
     return true;
   },
@@ -40,10 +46,8 @@ var creativeContent = {
   allFacePortraits:"https://i.imgur.com/nKkmYRG.png",
   defaultBlackHUD:"https://i.imgur.com/VQ2sSG2.png",
   
-  throneTile: "https://i.imgur.com/C2pOPKO.png",
-  fireTile: "https://i.imgur.com/M4rxuYB.png",
-  
-  textColour: "#b0ec62",
+  throneTile: "https://i.imgur.com/cnFUoqC.png",
+  fireTile: "https://i.imgur.com/P9IXmPt.png",
   
   
   
@@ -138,6 +142,7 @@ var creativeContent = {
     return throneRoom;
   },
   
+  
   fireUniverse: function() {
     var fireUniverse = [];
     var emptyCell = null;
@@ -145,6 +150,7 @@ var creativeContent = {
     for (var i = 0; i < 5; i++) {
       fireUniverse[i] = Game.createMap(creativeContent.fireTile, creativeContent.masterPngLegend, i);
       
+       // stuff here will appear on every floor
       emptyCell = fireUniverse[i].randomEmptyCellCoords();
       fireUniverse[i].addObjectToMap(new Object(char = "!", name = "Fire Plant", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.defaultDialogue, portraitChar = "-"), emptyCell.x, emptyCell.y);
       
@@ -158,6 +164,7 @@ var creativeContent = {
         fireUniverse[i].addObjectToMap(new Object(char = ">", name = "Upstairs", wall = false, alive = false, clickFunction = "floor up"), emptyCell.x, emptyCell.y);
       }
     }
+    
     // put stuff on specific floors
     emptyCell = fireUniverse[0].randomEmptyCellCoords();
     fireUniverse[0].addObjectToMap(new Object(char = "i", name = "Garbage Bag", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.garbageBagDialogue, portraitChar = "g"), emptyCell.x, emptyCell.y);
@@ -172,16 +179,9 @@ var creativeContent = {
   
   
   
-  
+  // object name colour: "red"
+  // text colour: "lightyellow"
   // Response colour: "#b0ec62"
-  
-  
-  
-  
-  
-  
-  
-  
   
   defaultDialogue: {
       textStrings: ["I don't know what this is!"],
@@ -208,7 +208,7 @@ var creativeContent = {
   gameBeginDialogue: {
       textStrings: ["Scott Dracula", "I'm sending you back in time.  Get ready.", "{I'm ready}"],
       spaces: [0, 1, 1],
-      fgColours: ["red", "light yellow", "#b0ec62"],
+      fgColours: ["red", "lightyellow", "#b0ec62"],
       responseFunction: {"{I'm ready}": menuResponse.gameBeginDialogue}
   },
     

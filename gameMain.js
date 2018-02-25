@@ -34,6 +34,24 @@ var Game = {
     
   },
   
+  computeFOV: function() {
+    
+
+    var fov = new ROT.FOV.PreciseShadowcasting(checkIfWall);
+
+    /* output callback */
+    fov.compute(50, 22, 10, function(x, y, r, visibility) {
+        var ch = (r ? "" : "@");
+        var color = (data[x+","+y] ? "#aa0": "#660");
+        //display.draw(x, y, ch, "#fff", color);
+    });
+    
+    console.log(fov);
+    
+    
+    
+  };
+  
   
   
   travelTo: function(worldFunction, ascii) {
