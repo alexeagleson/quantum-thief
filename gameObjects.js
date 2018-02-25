@@ -28,12 +28,21 @@ var Tile = function(x, y, char, wall) {
   this.wall = wall;
   this.char = char;
   this.objectsOnThisTile = [];
+  this.visible = false;
 
   this.drawTile = function() {
+    if (!this.visible) { 
+      Game.display.draw(this.x, this.y, "~");
+      return;
+    }
     Game.display.draw(this.x, this.y, Game.CompleteMap.map[this.x + "," + this.y].char);
   };
   
   this.drawObjects = function() {
+    if (!this.visible) { 
+      Game.display.draw(this.x, this.y, "~");
+      return;
+    }
     this.objectsOnThisTile.forEach(function(object) {
       Game.display.draw(object.x, object.y, object.char);
     });
@@ -123,6 +132,9 @@ var Object = function(char, name, wall, alive, clickFunction, myDialogue, portra
     this.y = newY;
     Game.CompleteMap.map[this.x + "," + this.y].objectsOnThisTile.push(this);
     Game.renderCoords(this.x, this.y, delay = 10);
+    
+    Game.computeFOV();
+    Game.renderGame();
     
     return true;
   }, 

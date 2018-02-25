@@ -41,11 +41,11 @@ var Game = {
     var fov = new ROT.FOV.PreciseShadowcasting(Game.checkIfWall);
 
     /* output callback */
-    fov.compute(Game.player.x, Game.player.y, 10, function(x, y, r, visibility) {
-      if (visibility < 1) {
-        Game.CompleteMap.map[x + "," + y].visible = false;
+    fov.compute(Game.player.x, Game.player.y, 4, function(x, y, r, visibility) {
+      if (visibility < 0.75) {
+        // nada
       } else {
-        Game.CompleteMap.map[x + "," + y].visible = false;
+        Game.CompleteMap.map[x + "," + y].visible = true;
       }
     });
 
