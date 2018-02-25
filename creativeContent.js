@@ -41,7 +41,7 @@ var creativeContent = {
     "a": multiplyBy32([7, 0])
   },
   
-  mainPlayer: new Object(char = "@", name = "Scarlic", wall = false, alive = true, clickFunction = null, myDialogue = null, portraitChar = "@"),
+  
   
   
   draculaThrone: function() {
@@ -54,8 +54,6 @@ var creativeContent = {
     throneRoom[0].addObjectToMap(new Object(char = "a", name = "Scott Dracula", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.gameBeginDialogue, portraitChar = "#"), 11, 10);
     return throneRoom;
   },
-  
-  
   
   fireUniverse: function() {
     var fireUniverse = [];
@@ -76,9 +74,7 @@ var creativeContent = {
         emptyCell = fireUniverse[i].randomEmptyCellCoords();
         fireUniverse[i].addObjectToMap(new Object(char = ">", name = "Upstairs", wall = false, alive = false, clickFunction = "floor up"), emptyCell.x, emptyCell.y);
       }
-      
     }
-    
     return fireUniverse;
   },
   
@@ -89,8 +85,6 @@ var creativeContent = {
       responseFunction: {"I'm sending you back in time.  Get ready.": menuResponse.gameBeginDialogue}
   },
   
-
-
   throneDialogue: {
       textStrings: ["pipp", "Hello what are you doing here?", "bimmyjo", "tell me more"],
       spaces: [0, 1, 0],
@@ -111,10 +105,6 @@ var creativeContent = {
       fgColours: ["blue", "white"],
       responseFunction: {}
   }
-  
-  
-
-  
 }
 
 

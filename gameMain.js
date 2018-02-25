@@ -16,7 +16,7 @@ var Game = {
 
   init: function() {
     
-    Game.player = creativeContent.mainPlayer;
+    Game.player = new Object(char = "@", name = "Scarlic", wall = false, alive = true, clickFunction = null, myDialogue = null, portraitChar = "@");
 
     view.defineView();
 
