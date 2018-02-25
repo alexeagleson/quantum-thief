@@ -23,6 +23,50 @@ var menuResponse = {
     return false;
   },
   
+bootyDescript: function() {
+    setTimeout(function() { showMenu(creativeContent.bootyDescript); }, 10);
+    return false;
+  },
+  fernDescript: function() {
+    setTimeout(function() { showMenu(creativeContent.fernDescript); }, 10);
+    return false;
+  },
+  fernDescript: function() {
+    setTimeout(function() { showMenu(creativeContent.fernDescript); }, 10);
+    return false;
+  },
+  visionTreeDescript: function() {
+    setTimeout(function() { showMenu(creativeContent.visionTreeDescript); }, 10);
+    return false;
+  },
+  figTreeDescript: function() {
+    setTimeout(function() { showMenu(creativeContent.figTreeDescript); }, 10);
+    return false;
+  },
+  bloodMagicDescript: function() {
+    setTimeout(function() { showMenu(creativeContent.bloodMagicDescript); }, 10);
+    return false;
+  },
+  ornateChestDescript: function() {
+    setTimeout(function() { showMenu(creativeContent.ornateChestDescript); }, 10);
+    return false;
+  },
+  enchantedChestDescript: function() {
+    setTimeout(function() { showMenu(creativeContent.enchantedChestDescript); }, 10);
+    return false;
+  },
+  rubiesDescript: function() {
+    setTimeout(function() { showMenu(creativeContent.rubiesDescript); }, 10);
+    return false;
+  },
+  emeraldsDescript: function() {
+    setTimeout(function() { showMenu(creativeContent.emeraldsDescript); }, 10);
+    return false;
+  },
+  
+
+  
+  
   // fire Universe Dialogue/Descripts
   
   LavaPersonDialogue2: function() {
@@ -311,6 +355,46 @@ var creativeContent = {
     emptyCell = throneRoom[0].randomEmptyCellCoords();
     throneRoom[0].addObjectToMap(new Object(char = "!", name = "Throne", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.throneDialogue, portraitChar = "-", moveType = "", allowSteal = false), 10, 10);
     throneRoom[0].addObjectToMap(new Object(char = "*", name = "Scott Dracula", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.gameBeginDialogue, portraitChar = "#", moveType = "", allowSteal = false), 11, 10);
+    
+    
+    
+    //chickenbuddy
+    throneRoom[0].addObjectToMap(new Object(char = "e", name = "Pile of Booty", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.bootyDescript, portraitChar = "-"), 12, 12);
+    
+
+    for (var i = 1; i < Game.gameHeight - 1; i++) { 
+      throneRoom[0].addObjectToMap(new Object(char = "f", name = "Healthy Fern", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.fernDescript, portraitChar = "-"), 1, i);
+      throneRoom[0].addObjectToMap(new Object(char = "f", name = "Healthy Fern", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.fernDescript, portraitChar = "-"), 22, i);
+    }
+    
+    throneRoom[0].addObjectToMap(new Object(char = "g", name = "Vision Tree", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.visionTreeDescript, portraitChar = "-"), emptyCell.x, emptyCell.y);
+  
+    emptyCell = throneRoom[0].randomEmptyCellCoords();
+    throneRoom[0].addObjectToMap(new Object(char = "h", name = "Fig Tree of Foresight", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.figTreeDescript, portraitChar = "-"), emptyCell.x, emptyCell.y);
+
+    emptyCell = throneRoom[0].randomEmptyCellCoords();
+    throneRoom[0].addObjectToMap(new Object(char = "i", name = "Mystical Blood Magic Chrysanthemum", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.bloodMagicDescript, portraitChar = "-"), emptyCell.x, emptyCell.y);
+
+    emptyCell = throneRoom[0].randomEmptyCellCoords();
+    throneRoom[0].addObjectToMap(new Object(char = "j", name = "Ornate Chest", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.ornateChestDescript, portraitChar = "-"), emptyCell.x, emptyCell.y);
+
+    emptyCell = throneRoom[0].randomEmptyCellCoords();
+    throneRoom[0].addObjectToMap(new Object(char = "k", name = "Enhanced Ornate Chest", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.enhancedChestDescript, portraitChar = "-"), emptyCell.x, emptyCell.y);
+
+    emptyCell = throneRoom[0].randomEmptyCellCoords();
+    throneRoom[0].addObjectToMap(new Object(char = "l", name = "Sparkling Rubies", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.rubiesDescript, portraitChar = "-"), emptyCell.x, emptyCell.y);
+
+    emptyCell = throneRoom[0].randomEmptyCellCoords();
+    throneRoom[0].addObjectToMap(new Object(char = "m", name = "Emerald Shards", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.emeraldsDescript, portraitChar = "-"), emptyCell.x, emptyCell.y);
+    
+    emptyCell = throneRoom[0].randomEmptyCellCoords();
+    throneRoom[0].addObjectToMap(new Object(char = "n", name = "Rotdog", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.rotdogDescript, portraitChar = "-"), emptyCell.x, emptyCell.y);
+    
+    
+    
+    
+    
+    
     // hd7fdhdf78
     if (Game.gameDone) {
       var die = null;
@@ -402,7 +486,7 @@ var creativeContent = {
     // put stuff on specific floors
 
     emptyCell = oldPersonUniverse[0].randomEmptyCellCoords();
-    oldPersonUniverse[0].addObjectToMap(new Object(char = "?", name = "Nurse Rachet", wall = false, alive = true, clickFunction = "talk", myDialogue = creativeContent.retiredRobocopDialogue, portraitChar = "w", moveType = "random"), emptyCell.x, emptyCell.y);
+    oldPersonUniverse[0].addObjectToMap(new Object(char = "?", name = "Nurse Rachet", wall = false, alive = true, clickFunction = "talk", myDialogue = creativeContent.nurseRachetDialogue, portraitChar = "w", moveType = "random"), emptyCell.x, emptyCell.y);
 
     emptyCell = oldPersonUniverse[0].randomEmptyCellCoords();
     oldPersonUniverse[0].addObjectToMap(new Object(char = "*", name = "Robocop - Retired", wall = false, alive = true, clickFunction = "talk", myDialogue = creativeContent.retiredRobocopDialogue, portraitChar = "s", moveType = "follow"), emptyCell.x, emptyCell.y);
