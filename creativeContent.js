@@ -75,7 +75,7 @@ var menuResponse = {
     return true;
   },
   gameBeginDialogue: function() {
-    Game.travelToRandomUnvisitedUniverse("Hot Dog Universe");
+    Game.travelToRandomUnvisitedUniverse();
     return true;
   },
   
@@ -149,7 +149,7 @@ var creativeContent = {
   
 //CTRL+F - 8:29AM - Tilesets added
   
-  hotDogTile: "https://i.imgur.com/ifkx7br.png",
+  hotDogTile: "https://i.imgur.com/Ai7caH4.png",
   iceTile: "https://i.imgur.com/qQ1lgrF.png",
   robocopTile: "https://i.imgur.com/qWTXTHZ.png",
   
