@@ -32,7 +32,7 @@ var Game = {
 
     view.defineView();
 
-    Game.travelTo(creativeContent.oldPersonUniverse);
+    Game.travelTo(creativeContent.draculaThrone);
     Game.player.x = 11;
     Game.player.y = 6;
   },
@@ -53,20 +53,13 @@ var Game = {
   },
   
   travelToRandomUnvisitedUniverse: function(universeName) {
-    var allUniverses = ["Fire Universe", "Old Person Universe", "Hot Dog Universe", "Ice Universe", "Robocop Universe"]
+    var allUniverses = ["Fire Universe", "Old Person Universe", "Hot Dog Universe", "Ice Universe", "Robocop Universe", "Throne Universe"]
     
-    
-    if (Game.myTravelChecklist.length > 2) {
-      allUniverses.push("Throne Universe");
-    }
-    
-    alert(Game.myTravelChecklist);
-    
-    
+
     
     while (!universeName) {
       
-      var thisDie = (rollDie(allUniverses.length) - 1);
+      var thisDie = rollDie(allUniverses.length) - 1;
       var universeName = allUniverses[thisDie];
       
       for (var i = 0; i < Game.myTravelChecklist.length; i++) {
@@ -77,9 +70,9 @@ var Game = {
       }
     }
     
-    //universeName = "Hot Dog Universe";
     
-    alert(allUniverses);
+    
+    if (myTravelChecklistuniverseName = "Hot Dog Universe";
     
     Game.myTravelChecklist.push(universeName);
     
