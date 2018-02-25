@@ -16,6 +16,18 @@ var menuResponse = {
   }
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
 var creativeContent = {
 
   allFacePortraits:"https://i.imgur.com/nKkmYRG.png",
@@ -75,6 +87,14 @@ var creativeContent = {
   },
   
   
+  
+  
+  
+  
+  
+  
+  
+  
   draculaThrone: function() {
     var throneRoom = [];
     var emptyCell = null;
@@ -108,6 +128,24 @@ var creativeContent = {
     }
     return fireUniverse;
   },
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
   
   defaultDialogue: {
       textStrings: ["I don't know what this is!"],
