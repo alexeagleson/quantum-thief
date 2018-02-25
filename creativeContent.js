@@ -133,8 +133,56 @@ var menuResponse = {
   // Robocop Universe Dialogue/Descripts
   
   // Hotdog Universei Dialogue/Descripts
-  
-  // 
+//Description Functions
+  fryGuyDescript: function() {
+    setTimeout(function() { showMenu(creativeContent.fryGuyDescript); }, 10);
+    return false; 
+  },
+  fryGuyDescript2: function() {
+    setTimeout(function() { showMenu(creativeContent.fryGuyDescript2); }, 10);
+    return true;
+  },
+  relishDescript: function() {
+    setTimeout(function() { showMenu(creativeContent.relishDescript); }, 10);
+    return true;
+  },
+  ketchupDescript: function() {
+    setTimeout(function() { showMenu(creativeContent.ketchupDescript); }, 10);
+    return true;
+  },
+  allDressedDescript: function() {
+    setTimeout(function() { showMenu(creativeContent.allDressedDescript); }, 10);
+    return true;
+  },
+  fineMustardDescript: function() {
+    setTimeout(function() { showMenu(creativeContent.fineMustardDescript); }, 10);
+    return true;
+  },
+  hotgodDescript: function() {
+    setTimeout(function() { showMenu(creativeContent.hotgodDescript); }, 10);
+    return true;
+  },
+  hdPlantDescript: function() {
+    return true;
+  },  
+  hdKetchupDescript: function() {
+    return true;
+  },  
+  hdRelishDescript: function() {
+    return true;
+  },  
+  rotdogDescript: function() {
+    return true;
+  },  
+  fineYellowDescript: function() {
+    return true;
+  },  
+  realTomatoDescript: function() {
+    return true;
+  },  
+  bigOneDescript: function() {
+    return true;
+  },   
 }
 
 
@@ -433,37 +481,37 @@ var creativeContent = {
  emptyCell = hotdogUniverse[0].randomEmptyCellCoords();
     hotdogUniverse[0].addObjectToMap(new Object(char = "!", name = "Ketchup Dog", wall = false, alive = true, clickFunction = "talk", myDialogue = creativeContent.ketchupDescript, portraitChar = "-"), moveType = "follow", emptyCell.x, emptyCell.y);
 
- emptyCell = hotdogUniverse[0].randomEmptyCellCoords();
-    hotdogUniverse[0].addObjectToMap(new Object(char = "!", name = "All Dressed Dog", wall = false, alive = true, clickFunction = "talk", myDialogue = creativeContent.allDressedDescript, portraitChar = "-"), moveType = "follow", emptyCell.x, emptyCell.y);
+ emptyCell = hotdogUniverse[0 , 1].randomEmptyCellCoords();
+    hotdogUniverse[0 , 1].addObjectToMap(new Object(char = "!", name = "All Dressed Dog", wall = false, alive = true, clickFunction = "talk", myDialogue = creativeContent.allDressedDescript, portraitChar = "-"), moveType = "follow", emptyCell.x, emptyCell.y);
 
  emptyCell = hotdogUniverse[0].randomEmptyCellCoords();
     hotdogUniverse[0].addObjectToMap(new Object(char = "!", name = "Finest Mustard Dog", wall = false, alive = true, clickFunction = "talk", myDialogue = creativeContent.fineMustardDescript, portraitChar = "-"), moveType = "follow", emptyCell.x, emptyCell.y);
 
  emptyCell = hotdogUniverse[2].randomEmptyCellCoords();
     hotdogUniverse[2].addObjectToMap(new Object(char = "!", name = "Hotgod", wall = false, alive = true, clickFunction = "talk", myDialogue = creativeContent.hotgodDescript, portraitChar = "-"), moveType = "random", emptyCell.x, emptyCell.y);
-
+   
     
 //Curios
     emptyCell = hotdogUniverse[0].randomEmptyCellCoords();
-    hotdogUniverse[0].addObjectToMap(new Object(char = "!", name = "Potted Hot Dog Plant", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.goodOnesDescript, portraitChar = "-"), emptyCell.x, emptyCell.y);
+    hotdogUniverse[0].addObjectToMap(new Object(char = "!", name = "Potted Hotdog Plant", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.hdPlantDescript, portraitChar = "-"), emptyCell.x, emptyCell.y);
 
     emptyCell = hotdogUniverse[0].randomEmptyCellCoords();
-    hotdogUniverse[0].addObjectToMap(new Object(char = "e", name = "Hotdog With Ketchup", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.goodOnesDescript, portraitChar = "-"), emptyCell.x, emptyCell.y);
+    hotdogUniverse[0].addObjectToMap(new Object(char = "e", name = "Hotdog With Ketchup", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.hdKetchupDescript, portraitChar = "-"), emptyCell.x, emptyCell.y);
 
     emptyCell = hotdogUniverse[0].randomEmptyCellCoords();
-    hotdogUniverse[0].addObjectToMap(new Object(char = "f", name = "Hotdog With Relish", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.goodOnesDescript, portraitChar = "-"), emptyCell.x, emptyCell.y);
+    hotdogUniverse[0].addObjectToMap(new Object(char = "f", name = "Hotdog With Relish", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.hdRelishDescript, portraitChar = "-"), emptyCell.x, emptyCell.y);
 
     emptyCell = hotdogUniverse[2].randomEmptyCellCoords();
-    hotdogUniverse[2].addObjectToMap(new Object(char = "g", name = "Rotdog", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.goodOnesDescript, portraitChar = "-"), emptyCell.x, emptyCell.y);
+    hotdogUniverse[2].addObjectToMap(new Object(char = "g", name = "Rotdog", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.rotdogDescript, portraitChar = "-"), emptyCell.x, emptyCell.y);
 
     emptyCell = hotdogUniverse[0].randomEmptyCellCoords();
-    hotdogUniverse[0].addObjectToMap(new Object(char = "i", name = "Finest Yellow Mustard", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.goodOnesDescript, portraitChar = "-"), emptyCell.x, emptyCell.y);
+    hotdogUniverse[0].addObjectToMap(new Object(char = "i", name = "Finest Yellow Mustard", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.fineYellowDescript, portraitChar = "-"), emptyCell.x, emptyCell.y);
 
     emptyCell = hotdogUniverse[0].randomEmptyCellCoords();
-    hotdogUniverse[0].addObjectToMap(new Object(char = "j", name = "Real Tomato Ketchup", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.goodOnesDescript, portraitChar = "-"), emptyCell.x, emptyCell.y);
+    hotdogUniverse[0].addObjectToMap(new Object(char = "j", name = "Real Tomato Ketchup", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.realTomatoDescript, portraitChar = "-"), emptyCell.x, emptyCell.y);
 
     emptyCell = hotdogUniverse[0].randomEmptyCellCoords();
-    hotdogUniverse[0].addObjectToMap(new Object(char = "k", name = "The Big One", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.goodOnesDescript, portraitChar = "-"), emptyCell.x, emptyCell.y);
+    hotdogUniverse[0].addObjectToMap(new Object(char = "k", name = "The Big One", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.bigOneDescript, portraitChar = "-"), emptyCell.x, emptyCell.y);
 
 
   return hotdogUniverse;
@@ -697,6 +745,94 @@ var creativeContent = {
   // Robocop Universe Dialogue
   
   // Hotdog Universe Dialogue
+  hdPlantDescript: {
+      textStrings: ["Potted Hotdog Plant", "A plant that srpouts hotdogs! A little thorn here, a little relish there. It's making you hungry, but also embarassed. You're not 100% sure this isn't someone's kid. 5 minutes ago, you didn't even know that Hotdogs were a fruit, did you?"],
+      spaces: [0, 1],
+      fgColours: ["red", "lightyellow", "#b0ec62", "lightyellow"],
+      responseFunction: {}
+  },
+    hdKetchupDescript: {
+      textStrings: ["Classic Hotdog with Ketchup", "Hot off the grills of Fire World, this timeless treat is found in abundance here."],
+      spaces: [0, 1],
+      fgColours: ["red", "lightyellow", "#b0ec62", "lightyellow"],
+      responseFunction: {}
+  },
+    hdRelishDescript: {
+      textStrings: ["Hotdog with Relish", "Not to be confused with Relish Dog, who almost certainly isn't nearly so sweet."],
+      spaces: [0, 1],
+      fgColours: ["red", "lightyellow", "#b0ec62", "lightyellow"],
+      responseFunction: {}
+  },
+    rotdogDescript: {
+      textStrings: ["Rotdog", "It is what it is."],
+      spaces: [0, 1],
+      fgColours: ["red", "lightyellow", "#b0ec62", "lightyellow"],
+      responseFunction: {}
+  },
+    fineYellowDescript: {
+      textStrings: ["Fine German Mustard", "A delicacy beyond the knowledge of your caste. Thinking it's that regular stinky yellow mustard, you kick it away."],
+      spaces: [0, 1],
+      fgColours: ["red", "lightyellow", "#b0ec62", "lightyellow"],
+      responseFunction: {}
+  },
+    realTomatoDescript: {
+      textStrings: ["Fancy Ketchup", "Only the fanciest Dijon ketchup. Excitedly, you squeeze some on your hand and give it a lick. Ketchupy."],
+      spaces: [0, 1],
+      fgColours: ["red", "lightyellow", "#b0ec62", "lightyellow"],
+      responseFunction: {}
+  },
+    bigOneDescript: {
+      textStrings: ["The Big One", "A big, fat, juicy weiner in a soft, hot bun. Too bad you had lunch before you got explorted here."],
+      spaces: [0, 1],
+      fgColours: ["red", "lightyellow", "#b0ec62", "lightyellow"],
+      responseFunction: {}
+  },
+  //Character Interactions
+
+  fryGuyDescript: {
+      textStrings: ["Fry Guy", "You have to be sure you get the Good Ones, before the Bad Ones get you. Trust me, it's nooooooooo Fun.", "{Are you feeling, okay?}"],
+      spaces: [1, 2, 1],
+      fgColours: ["red", "lightyellow", "#b0ec62"],
+      responseFunction: {"{Are you feeling, okay?}": menuResponse.fryGuyDescript2}
+  }, 
+  fryGuyDescript2: {
+      textStrings: ["Fry Guy", "GAH! Who are you? How did you get here? What's that you got in your hand?? IS THAT A HOTDOG PLANT?", "{Nyarrr, this be my lunch... Goodbye.}"],
+      spaces: [1, 2, 1],
+      fgColours: ["red", "lightyellow", "#b0ec62"],
+      responseFunction: {}
+    },
+  relishDescript: {
+      textStrings: ["Relish Dog", "Have you seen the new and improved Potted Hotdog Plant? You can grow them in the ground! In pots! Astounding."],
+      spaces: [1, 2, 1],
+      fgColours: ["red", "lightyellow", "#b0ec62"],
+      responseFunction: {}
+    },
+  ketchupDescript: {
+      textStrings: ["Ketchup Dog", "Don't listen to Relish Dog. He's just trying to sell you some fake garbage.", "Ketchup Hotdog Thinks", "Heh heh... those Pot Dogs are mine!"],
+      spaces: [1, 2, 1, 1],
+      fgColours: ["red", "lightyellow", "red", "lightyellow"],
+      responseFunction: {}
+    },
+  allDressedDescript: {
+      textStrings: ["All Dressed", "Don't listen to Ketchup Dog. He does things for the wrong reasons. Some day, Hotdoggod will come and he'll get his comeuppance.", "{Thanks for the advice}"],
+      spaces: [1, 2, 1, 1],
+      fgColours: ["red", "lightyellow", "#b0ec62"],
+      responseFunction: {}
+    },
+  fineMustardDescript: {
+      textStrings: ["Finest Mustard Dog", "Hotdog Planters are so tired and passé. I have my eyes set on 'The Big One'. But, of course, you've never heard of it."],
+      spaces: [1, 2],
+      fgColours: ["red", "lightyellow"],
+      responseFunction: {}
+    },
+  hotgodDescript: {
+      textStrings: ["Hot God", "... Something happened."],
+      spaces: [1, 2],
+      fgColours: ["red", "lightyellow"],
+      responseFunction: {}
+    }
+
+
 }
 
 
