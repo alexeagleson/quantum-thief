@@ -20,6 +20,8 @@ var Game = {
     view.defineView();
 
     Game.travelTo(creativeContent.draculaThrone);
+    Game.player.x = 11;
+    Game.player.y = 11;
     
   },
   
@@ -121,6 +123,7 @@ var Game = {
   },
   
   floorUp: function() {
+    removeObjectFromTile(Game.player);
     Game.currentFloor += 1;
     Game.CompleteMap = Game.currentUniverse[Game.currentFloor];
     for (var key in Game.CompleteMap.map) {
@@ -132,10 +135,14 @@ var Game = {
       });
     }
     Game.resetEngine();
-    Game.renderGame();
+    Game.computeFOV();
+    setTimeout(function() { 
+      Game.renderGame();
+    }, 500);
   },
   
   floorDown: function() {
+    removeObjectFromTile(Game.player);
     Game.currentFloor -= 1;
     Game.CompleteMap = Game.currentUniverse[Game.currentFloor];
     for (var key in Game.CompleteMap.map) {
@@ -147,7 +154,10 @@ var Game = {
       });
     }
     Game.resetEngine();
-    Game.renderGame();
+    Game.computeFOV();
+    setTimeout(function() { 
+      Game.renderGame();
+    }, 500);
   },
   
   renderGame: function() {

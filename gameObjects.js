@@ -134,17 +134,8 @@ var Object = function(char, name, wall, alive, clickFunction, myDialogue, portra
   },
     
   this.moveTo = function(newX, newY) {
-    var spliceLocation = null;
     
-    for (var i = 0; i < Game.CompleteMap.map[this.x + "," + this.y].objectsOnThisTile.length; i++) {
-      if (this === Game.CompleteMap.map[this.x + "," + this.y].objectsOnThisTile[i]) {
-        spliceLocation = i;
-      }
-    }
-    
-    if (spliceLocation != null) {
-      Game.CompleteMap.map[this.x + "," + this.y].objectsOnThisTile.splice(spliceLocation, 1);
-    }
+    removeObjectFromTile(this);
     
     Game.renderCoords(this.x, this.y, delay = 30);
     this.x = newX;

@@ -98,3 +98,19 @@ function distanceTo(object1, object2) {
   // return dy;
   return(Math.sqrt((dx * dx) + (dy * dy)));
 }
+
+function removeObjectFromTile(object) {
+  var spliceLocation = null;
+
+  for (var i = 0; i < Game.CompleteMap.map[object.x + "," + object.y].objectsOnThisTile.length; i++) {
+    if (object === Game.CompleteMap.map[object.x + "," + object.y].objectsOnThisTile[i]) {
+      spliceLocation = i;
+    }
+  }
+
+  if (spliceLocation != null) {
+    Game.CompleteMap.map[object.x + "," + object.y].objectsOnThisTile.splice(spliceLocation, 1);
+    return true;
+  }
+  return false;
+}
