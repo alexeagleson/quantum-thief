@@ -69,7 +69,7 @@ var menuResponse = {
     return true;
   },
   gameBeginDialogue: function() {
-    Game.travelTo(creativeContent.oldPersonUniverse);
+    Game.travelToRandomUniverse()
     return true;
   },
   
@@ -218,6 +218,7 @@ var creativeContent = {
     throneRoom[0].addObjectToMap(new Object(char = "*", name = "Scott Dracula", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.gameBeginDialogue, portraitChar = "#"), 11, 10);
     return throneRoom;
   },
+  
   fireUniverse: function() {
     var fireUniverse = [];
     var emptyCell = null;
@@ -267,6 +268,7 @@ var creativeContent = {
     
     return fireUniverse;
   },   
+  
   oldPersonUniverse: function() {
     var oldPersonUniverse = [];
     var emptyCell = null;

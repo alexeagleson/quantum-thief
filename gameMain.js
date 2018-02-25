@@ -12,6 +12,7 @@ var Game = {
   gameSpeed: 200,
   gameWidth: 24,
   gameHeight: 24,
+  myTravelChecklist = [],
 
   init: function() {
     
@@ -40,6 +41,23 @@ var Game = {
     });
   },
   
+  travelToRandomUniverse: function(universeName) {
+    
+    if (!universeName) {
+      var allUniverses = ["Fire Universe", "Old Person Universe", "Throne Universe"]
+      var thisDie = (rollDie(allUniverses.length) - 1);
+      var randomUniverse = allUniverses[thisDie];
+    }
+    
+    if (universeName === "Fire Universe") {
+      Game.travelTo(creativeContent.fireUniverse);
+    } else if (universeName === "Old Person Universe") {
+      Game.travelTo(creativeContent.oldPersonUniverse);
+    } else if (universeName === "Throne Universe") {
+      Game.travelTo(creativeContent.draculaThrone);
+    }
+    
+  }
   
   travelTo: function(worldFunction, ascii) {
 
