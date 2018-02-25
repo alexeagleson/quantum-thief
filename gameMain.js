@@ -118,7 +118,7 @@ var Game = {
     Game.CompleteMap = Game.currentUniverse[Game.currentFloor];
     for (var key in Game.CompleteMap.map) {
       Game.CompleteMap.map[key].objectsOnThisTile.forEach(function(object) {
-        if (object.char === "<") {
+        if (object.char === ">") {
           Game.player.x = object.x;
           Game.player.y = object.y;
         }
@@ -132,7 +132,7 @@ var Game = {
     Game.CompleteMap = Game.currentUniverse[Game.currentFloor];
     for (var key in Game.CompleteMap.map) {
       Game.CompleteMap.map[key].objectsOnThisTile.forEach(function(object) {
-        if (object.char === ">") {
+        if (object.char === "<") {
           Game.player.x = object.x;
           Game.player.y = object.y;
         }

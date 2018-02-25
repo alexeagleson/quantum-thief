@@ -3,6 +3,7 @@ var CompleteMap = function(map, tileLegend, floor) {
   this.tileLegend = tileLegend;
   this.freeCells = [];
   this.floor = floor;
+  this.currentFloor = 0;
   
   this.randomEmptyCellCoords = function() {
     var index = Math.floor(ROT.RNG.getUniform() * this.freeCells.length);
