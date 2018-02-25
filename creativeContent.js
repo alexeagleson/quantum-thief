@@ -139,6 +139,7 @@ var creativeContent = {
     emptyCell = throneRoom[0].randomEmptyCellCoords();
     throneRoom[0].addObjectToMap(new Object(char = "!", name = "Throne", wall = true, alive = false, clickFunction = "talk", myDialogue = creativeContent.throneDialogue, portraitChar = "-"), 10, 10);
     throneRoom[0].addObjectToMap(new Object(char = "*", name = "Scott Dracula", wall = true, alive = true, clickFunction = "talk", myDialogue = creativeContent.gameBeginDialogue, portraitChar = "#"), 11, 10);
+
     return throneRoom;
   },
   
