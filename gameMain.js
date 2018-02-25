@@ -20,7 +20,7 @@ var Game = {
 
     view.defineView();
 
-    Game.travelTo(creativeContent.hotDogUniverse);
+    Game.travelTo(creativeContent.hotdogUniverse);
     //Game.player.x = 11;
     //Game.player.y = 11;
     
