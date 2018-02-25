@@ -1165,7 +1165,7 @@ iceUniverse[1].addObjectToMap(new Object(char = ")", name = "Sweetheart Octopuss
   
   
   gameBeginDialogue: {
-      textStrings: ["Scott Dracula", "SCARLIC! SCARLIC! Where are you? Scarlic, I am bored. Prepare an overnight bag. What's that? You do not have a bag? I thought you were a pirate, not a peasant. Anyway, I am sending you back through Space and Time! You aren't to come back until you steal the most valuable treasure. Alley-oop! *POOF*", "{YAARR!}"],
+      textStrings: ["Scott Dracula", "Where are you? Scarlic, I am bored. Prepare an overnight bag. What's that? You do not have a bag? I thought you were a pirate, not a peasant. Anyway, I am sending you back through Space and Time! You aren't to come back until you steal the most valuable treasure. Alley-oop! *POOF*", "{YAARR!}"],
       spaces: [1, 2, 1],
       fgColours: ["red", "lightyellow", "#b0ec62"],
       responseFunction: {"{YAARR!}": menuResponse.gameBeginDialogue}
