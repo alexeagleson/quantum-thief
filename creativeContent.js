@@ -106,24 +106,21 @@ var menuResponse = {
   wheelchairDescript: function() {
     return true;
   },  
-  : function() {
+  crosswordDescript: function() {
     return true;
   },  
-  : function() {
+  mentosDescript: function() {
     return true;
   },  
-  : function() {
+  badOnesDescript: function() {
     return true;
   },  
-  : function() {
+  funOnesDescript: function() {
     return true;
   },  
-  : function() {
+  goodOnesDescript: function() {
     return true;
-  },  
-  : function() {
-    return true;
-  },  
+  } 
 }
 
 
@@ -211,7 +208,8 @@ var creativeContent = {
   
   
 
- //UPDATED TO SCOTT FOLLOWS YOU - SPEED UP THRONE ROOM FOR TESTING. WHY AM I YE
+ //UPDATED TO SCOTT FOLLOWS YOU - SPEED UP THRONE ROOM FOR TESTING. WHY AM I YELLING
+  
   draculaThrone: function() {
     var throneRoom = [];
     var emptyCell = null;
@@ -315,7 +313,7 @@ var creativeContent = {
     oldPersonUniverse[0].addObjectToMap(new Object(char = "!", name = "Wheelchair", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.wheelchairDescript, portraitChar = "-", moveType = "follow"), emptyCell.x, emptyCell.y);
 
           emptyCell = oldPersonUniverse[0].randomEmptyCellCoords();
-    oldPersonUniverse[0].addObjectToMap(new Object(char = "e", name = "Crosswords", wall = false, alive = true, clickFunction = "talk", myDialogue = creativeContent.crosswordDescript, portraitChar = "-"), emptyCell.x, emptyCell.y);
+    oldPersonUniverse[0].addObjectToMap(new Object(char = "e", name = "Crossword", wall = false, alive = true, clickFunction = "talk", myDialogue = creativeContent.crosswordDescript, portraitChar = "-"), emptyCell.x, emptyCell.y);
 
           emptyCell = oldPersonUniverse[0].randomEmptyCellCoords();
     oldPersonUniverse[0].addObjectToMap(new Object(char = "f", name = "Mentos - the freshmaker", wall = false, alive = true, clickFunction = "talk", myDialogue = creativeContent.mentosDescript, portraitChar = "-"), emptyCell.x, emptyCell.y);
@@ -536,32 +534,32 @@ var creativeContent = {
       fgColours: ["red", "lightyellow", "#b0ec62", "lightyellow"],
       responseFunction: {}
   },
-      retiredRobocop4Dialogue: {
-      textStrings: ["Robocop - Poppa Wheelie", "Alex Murphy! I haven't seen you since the bank heist of 2044. Come here and check out this sick grind."],
+      crosswordDescript: {
+      textStrings: ["Crossword", "A whole book of them! You could spend hours crossing words and doing puzzles... if you weren't an illiterate pirate."],
       spaces: [0, 1],
       fgColours: ["red", "lightyellow", "#b0ec62", "lightyellow"],
       responseFunction: {}
   },
-      retiredRobocop4Dialogue: {
-      textStrings: ["Robocop - Poppa Wheelie", "Alex Murphy! I haven't seen you since the bank heist of 2044. Come here and check out this sick grind."],
+      mentosDescript: {
+      textStrings: ["Mentos- The Freshmaker (from the game the Witcher 3)", "Almost a whole roll of them! Oh, what's this? Bonus lint from Gramma Cop's purse."],
       spaces: [0, 1],
       fgColours: ["red", "lightyellow", "#b0ec62", "lightyellow"],
       responseFunction: {}
   },
-      retiredRobocop4Dialogue: {
-      textStrings: ["Robocop - Poppa Wheelie", "Alex Murphy! I haven't seen you since the bank heist of 2044. Come here and check out this sick grind."],
+      badOnesDescript: {
+      textStrings: ["A Prescription", "Instructions: Take one with a meal. A real meal. I said no more pizza pockets!"],
       spaces: [0, 1],
       fgColours: ["red", "lightyellow", "#b0ec62", "lightyellow"],
       responseFunction: {}
   },
-      retiredRobocop4Dialogue: {
-      textStrings: ["Robocop - Poppa Wheelie", "Alex Murphy! I haven't seen you since the bank heist of 2044. Come here and check out this sick grind."],
+      funOnesDescript: {
+      textStrings: ["A Prescription", "Do not exceed daily recommended dose of flowers. Call your philanthropist if you experience side effects for more than 35 hamsters."],
       spaces: [0, 1],
       fgColours: ["red", "lightyellow", "#b0ec62", "lightyellow"],
       responseFunction: {}
   },
-      retiredRobocop4Dialogue: {
-      textStrings: ["Robocop - Poppa Wheelie", "Alex Murphy! I haven't seen you since the bank heist of 2044. Come here and check out this sick grind."],
+      goodOnesDescript: {
+      textStrings: ["A Prescription", "These are real good."],
       spaces: [0, 1],
       fgColours: ["red", "lightyellow", "#b0ec62", "lightyellow"],
       responseFunction: {}
