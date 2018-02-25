@@ -127,6 +127,14 @@ var Object = function(char, name, wall, alive, clickFunction, myDialogue, portra
   },
 
   this.move = function(directionArray) {
+    
+    if (this === Game.player) {
+      hitSound.currentTime = 0;
+      hitSound.play();
+    }
+    
+    
+    
     var newX = this.x + directionArray[0];
     var newY = this.y + directionArray[1];
     var newKey = newX + "," + newY;

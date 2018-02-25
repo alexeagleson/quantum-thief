@@ -1,3 +1,6 @@
+  var hitSound = new Audio();
+  hitSound = document.getElementById('effects'); 
+
 var Game = {
   mainDisplayDiv: null,
   display: null,
