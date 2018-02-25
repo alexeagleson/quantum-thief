@@ -69,7 +69,7 @@ var menuResponse = {
     return true;
   },
   gameBeginDialogue: function() {
-    Game.travelTo(creativeContent.fireUniverse);
+    Game.travelTo(creativeContent.oldPersonUniverse);
     return true;
   }
 }
@@ -93,6 +93,8 @@ var creativeContent = {
   
   throneTile: "https://i.imgur.com/cnFUoqC.png",
   fireTile: "https://i.imgur.com/P9IXmPt.png",
+  oldPersonTile: "https://i.imgur.com/cnFUoqC.png",
+
   
   
   
@@ -232,7 +234,7 @@ var creativeContent = {
     fireUniverse[0].addObjectToMap(new Object(char = "+", name = "Lava Person2", wall = false, alive = true, clickFunction = "talk", myDialogue = creativeContent.LavaPerson2Dialogue, portraitChar = "m", moveType = "follow"), emptyCell.x, emptyCell.y);
     
     emptyCell = fireUniverse[1].randomEmptyCellCoords();
-    fireUniverse[1].addObjectToMap(new Object(char = "$", name = "Lava Person3", wall = false, alive = true, clickFunction = "talk", myDialogue = creativeContent.LavaPerson3Dialogue, portraitChar = "n", moveType = "follow"), emptyCell.x, emptyCell.y);
+    fireUniverse[1].addObjectToMap(new Object(char = "$", name = "Lava Person3", wall = false, alive = true, clickFunction = "talk", myDialogue = creativeContent.LavaPerson3Dialogue, portraitChar = "n", moveType = "random"), emptyCell.x, emptyCell.y);
     
     emptyCell = fireUniverse[1].randomEmptyCellCoords();
     fireUniverse[1].addObjectToMap(new Object(char = "k", name = "Soda Can", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.SodaCan1Dialogue, portraitChar = "-"), emptyCell.x, emptyCell.y);
@@ -241,6 +243,35 @@ var creativeContent = {
   },
   
   
+  
+  
+  
+  
+  oldPersonUniverse: function() {
+    var oldPersonUniverse = [];
+    var emptyCell = null;
+    
+    for (var i = 0; i < 3; i++) {
+      oldPersonUniverse[i] = Game.createMap(creativeContent.oldPersonTile, creativeContent.masterPngLegend, i);
+      
+       // stuff here will appear on every floor
+
+      
+      if (i != 0) {
+        emptyCell = oldPersonUniverse[i].randomEmptyCellCoords();
+        oldPersonUniverse[i].addObjectToMap(new Object(char = ">", name = "Downstairs", wall = false, alive = false, clickFunction = "floor down"), emptyCell.x, emptyCell.y);
+      }
+      
+      if (i != 2) {
+        emptyCell = oldPersonUniverse[i].randomEmptyCellCoords();
+        oldPersonUniverse[i].addObjectToMap(new Object(char = "<", name = "Upstairs", wall = false, alive = false, clickFunction = "floor up"), emptyCell.x, emptyCell.y);
+      }
+    }
+    
+    // put stuff on specific floors
+    
+    return oldPersonUniverse;
+  },
   
   
   
