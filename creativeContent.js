@@ -78,6 +78,7 @@ var menuResponse = {
     return true;
   },
   gameBeginDialogue: function() {
+
     Game.travelToRandomUnvisitedUniverse();
     return true;
   },
@@ -197,6 +198,8 @@ var menuResponse = {
   bigOneDescript: function() {
     return true;
   },
+  
+  // hd7fdhdf78
   gameEnd: function() {
     var allDiv = document.getElementsByClassName("totalDiv")[0];
     allDiv.style.display = "none";
@@ -215,7 +218,8 @@ var creativeContent = {
   allFacePortraits:"https://i.imgur.com/AkKteAh.png",
   defaultBlackHUD:"https://i.imgur.com/VQ2sSG2.png",
   
-  throneTile: "https://i.imgur.com/cnFUoqC.png",
+  // hd7fdhdf78
+  throneTile: "https://i.imgur.com/Xq8Wkqa.png",
   fireTile: "https://i.imgur.com/P9IXmPt.png",
   oldPersonTile: "https://i.imgur.com/R21tfHE.png",  
   hotDogTile: "https://i.imgur.com/Ai7caH4.png",
