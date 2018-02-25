@@ -4,11 +4,11 @@ var menuResponse = {
   },
   throneDialogue2: function() {
     setTimeout(function() { showMenu(creativeContent.throneDialogue2); }, 10);
-    return true;
+    return false;
   },
   throneDialogue3: function() {
     setTimeout(function() { showMenu(creativeContent.throneDialogue3); }, 10);
-    return true;
+    return false;
   },
   gameBeginDialogue: function() {
     Game.travelTo(creativeContent.fireUniverse);
@@ -25,9 +25,9 @@ var creativeContent = {
   fireTile: "https://i.imgur.com/M4rxuYB.png",
   
   faceLegend: {
-    "#": multiplyBy12(multiplyBy32([0, 0])),
-    "@": multiplyBy12(multiplyBy32([1, 0])),
-    ".": multiplyBy12(multiplyBy32([2, 0])),
+    "-": multiplyBy12(multiplyBy32([0, 0])),
+    "#": multiplyBy12(multiplyBy32([1, 0])),
+    "@": multiplyBy12(multiplyBy32([2, 0])),
     "a": multiplyBy12(multiplyBy32([3, 0])),
   },
   
@@ -50,8 +50,8 @@ var creativeContent = {
     
     throneRoom[0] = Game.createMap(creativeContent.throneTile, creativeContent.masterPngLegend, 0, "Arena");
     emptyCell = throneRoom[0].randomEmptyCellCoords();
-    throneRoom[0].addObjectToMap(new Object(char = "!", name = "Throne", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.throneDialogue, portraitChar = "a"), 10, 10);
-    throneRoom[0].addObjectToMap(new Object(char = "a", name = "Scott Dracula", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.gameBeginDialogue, portraitChar = "@"), 11, 10);
+    throneRoom[0].addObjectToMap(new Object(char = "!", name = "Throne", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.throneDialogue, portraitChar = "-"), 10, 10);
+    throneRoom[0].addObjectToMap(new Object(char = "a", name = "Scott Dracula", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.gameBeginDialogue, portraitChar = "#"), 11, 10);
     return throneRoom;
   },
   
@@ -65,7 +65,7 @@ var creativeContent = {
       fireUniverse[i] = Game.createMap(creativeContent.fireTile, creativeContent.masterPngLegend, i);
       
       emptyCell = fireUniverse[i].randomEmptyCellCoords();
-      fireUniverse[i].addObjectToMap(new Object(char = "!", name = "Throne", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.throneDialogue), emptyCell.x, emptyCell.y);
+      fireUniverse[i].addObjectToMap(new Object(char = "!", name = "Fire Plant", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.throneDialogue), emptyCell.x, emptyCell.y);
       
       if (i != 0) {
         emptyCell = fireUniverse[i].randomEmptyCellCoords();

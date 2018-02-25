@@ -72,7 +72,7 @@ var Game = {
     this.gameHUD.setOptions(tileLegend);
     Game.gameHUD.clear();
     
-    var displayChar = "@";
+    var displayChar = "-";
     
     if (talkingObject) {
       if (talkingObject.portraitChar) {

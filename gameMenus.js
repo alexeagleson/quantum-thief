@@ -65,10 +65,10 @@ var Menu = function(textStrings, spaces, fgColours, responseFunction) {
         view.showGame();
         menuCanvas.removeEventListener("mousedown", this);
         menuCanvas.removeEventListener("touchstart", this);
-        setTimeout(function() { 
-          Game.engine.unlock(); 
-        }, Game.gameSpeed);
       }
+      setTimeout(function() { 
+        Game.engine.unlock(); 
+      }, Game.gameSpeed);
     }
   }
 }
