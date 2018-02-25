@@ -32,7 +32,7 @@ var Game = {
 
     view.defineView();
 
-    Game.travelTo(creativeContent.draculaThrone);
+    Game.travelTo(creativeContent.oldPersonUniverse);
     Game.player.x = 11;
     Game.player.y = 6;
   },
@@ -54,9 +54,14 @@ var Game = {
   
   travelToRandomUnvisitedUniverse: function(universeName) {
     var allUniverses = ["Fire Universe", "Old Person Universe", "Hot Dog Universe", "Ice Universe", "Robocop Universe"]
+    
+    
     if (Game.myTravelChecklist.length > 2) {
       allUniverses.push("Throne Universe");
     }
+    
+    alert(Game.myTravelChecklist);
+    
     
     
     while (!universeName) {
@@ -73,6 +78,8 @@ var Game = {
     }
     
     //universeName = "Hot Dog Universe";
+    
+    alert(allUniverses);
     
     Game.myTravelChecklist.push(universeName);
     

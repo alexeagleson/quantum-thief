@@ -322,7 +322,7 @@ YollandaDialogue1: function() {
 
 var creativeContent = {
 // snorkelbutt - tile sets updated (all)
-  allFacePortraits:"https://i.imgur.com/AkKteAh.png",
+  allFacePortraits:"https://i.imgur.com/c0pRORi.png",
   defaultBlackHUD:"https://i.imgur.com/VQ2sSG2.png",
   
   // hd7fdhdf78
@@ -525,7 +525,7 @@ var creativeContent = {
     fireUniverse[1].addObjectToMap(new Object(char = "k", name = "Soda Can", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.SodaCan1Dialogue, portraitChar = "-"), emptyCell.x, emptyCell.y);
     
     emptyCell = fireUniverse[2].randomEmptyCellCoords();
-    fireUniverse[2].addObjectToMap(new Object(char = "(", name = "Portal", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.portalDialogue, portraitChar = "-"), emptyCell.x, emptyCell.y);
+    fireUniverse[2].addObjectToMap(new Object(char = "(", name = "Portal", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.portalDialogue, portraitChar = "y"), emptyCell.x, emptyCell.y);
 
     
     return fireUniverse;
@@ -605,7 +605,7 @@ var creativeContent = {
     oldPersonUniverse[1].addObjectToMap(new Object(char = "i", name = "The Good Ones", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.goodOnesDescript, portraitChar = "-"), emptyCell.x, emptyCell.y);
 
     emptyCell = oldPersonUniverse[2].randomEmptyCellCoords();
-    oldPersonUniverse[2].addObjectToMap(new Object(char = "(", name = "Portal", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.portalDialogue, portraitChar = "-"), emptyCell.x, emptyCell.y);
+    oldPersonUniverse[2].addObjectToMap(new Object(char = "(", name = "Portal", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.portalDialogue, portraitChar = "y"), emptyCell.x, emptyCell.y);
 
     
   return oldPersonUniverse;
@@ -634,7 +634,7 @@ var creativeContent = {
     // put stuff on specific floors
     
     emptyCell = robocopUniverse[2].randomEmptyCellCoords();
-    robocopUniverse[2].addObjectToMap(new Object(char = "(", name = "Portal", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.portalDialogue, portraitChar = "-"), emptyCell.x, emptyCell.y);
+    robocopUniverse[2].addObjectToMap(new Object(char = "(", name = "Portal", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.portalDialogue, portraitChar = "y"), emptyCell.x, emptyCell.y);
 
   
   return robocopUniverse;
@@ -703,7 +703,7 @@ emptyCell = iceUniverse[1].randomEmptyCellCoords();
 iceUniverse[1].addObjectToMap(new Object(char = ")", name = "Sweetheart Octopuss", wall = false, alive = true, clickFunction = "talk", myDialogue = creativeContent.SweetheartOctopussDescription, portraitChar = "-", moveType = "follow"), emptyCell.x, emptyCell.y);
    
     emptyCell = iceUniverse[2].randomEmptyCellCoords();
-    iceUniverse[2].addObjectToMap(new Object(char = "(", name = "Portal", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.portalDialogue, portraitChar = "-"), emptyCell.x, emptyCell.y);
+    iceUniverse[2].addObjectToMap(new Object(char = "(", name = "Portal", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.portalDialogue, portraitChar = "y"), emptyCell.x, emptyCell.y);
 
     
   return iceUniverse;
@@ -776,7 +776,7 @@ iceUniverse[1].addObjectToMap(new Object(char = ")", name = "Sweetheart Octopuss
     hotdogUniverse[1].addObjectToMap(new Object(char = "k", name = "The Big One", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.bigOneDescript, portraitChar = "-", moveType = "", allowSteal = true), emptyCell.x, emptyCell.y);
 
     emptyCell = hotdogUniverse[2].randomEmptyCellCoords();
-    hotdogUniverse[2].addObjectToMap(new Object(char = "(", name = "Portal", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.portalDialogue, portraitChar = "-"), emptyCell.x, emptyCell.y);
+    hotdogUniverse[2].addObjectToMap(new Object(char = "(", name = "Portal", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.portalDialogue, portraitChar = "y"), emptyCell.x, emptyCell.y);
 
     
 
