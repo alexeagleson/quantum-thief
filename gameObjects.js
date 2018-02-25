@@ -17,7 +17,9 @@ var CompleteMap = function(map, tileLegend, floor) {
     object.x = x;
     object.y = y;
     this.map[x + "," + y].objectsOnThisTile.push(object);
-    Game.activeObjects.push(object);
+    if (object.alive) {
+      Game.activeObjects.push(object);
+    }
   };
 }
 

@@ -22,14 +22,7 @@ var Game = {
 
     Game.travelTo(creativeContent.draculaThrone);
 
-    var scheduler = new ROT.Scheduler.Simple();
-    
-    this.activeObjects.forEach(function(object) {
-      if (object.alive) { scheduler.add(object, true); }
-    })
-    
-    this.engine = new ROT.Engine(scheduler);
-    this.engine.start();
+
     
     this.renderGame();
     
@@ -55,6 +48,10 @@ var Game = {
   
   
   travelTo: function(worldFunction, ascii) {
+
+    scheduler = new ROT.Scheduler.Simple();
+    this.activeObjects = [];
+
     Game.currentUniverse = worldFunction();
     Game.CompleteMap = Game.currentUniverse[Game.currentFloor];
     if (!ascii) {
@@ -62,6 +59,13 @@ var Game = {
     }
     emptyCell = Game.CompleteMap.randomEmptyCellCoords();
     Game.CompleteMap.addObjectToMap(Game.player, emptyCell.x, emptyCell.y);
+    
+    this.activeObjects.forEach(function(object) {
+      if (object.alive) { scheduler.add(object, true); }
+    })
+    
+    this.engine = new ROT.Engine(scheduler);
+    this.engine.start();
     
     setTimeout(function() { 
       Game.renderGame();

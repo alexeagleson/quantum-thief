@@ -173,7 +173,7 @@ var creativeContent = {
     
     // put stuff on specific floors
     emptyCell = fireUniverse[0].randomEmptyCellCoords();
-    fireUniverse[0].addObjectToMap(new Object(char = "i", name = "Garbage Bag", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.garbageBagDialogue, portraitChar = "g"), emptyCell.x, emptyCell.y);
+    fireUniverse[0].addObjectToMap(new Object(char = "i", name = "Garbage Bag", wall = false, alive = true, clickFunction = "talk", myDialogue = creativeContent.garbageBagDialogue, portraitChar = "g"), emptyCell.x, emptyCell.y);
     
     return fireUniverse;
   },
