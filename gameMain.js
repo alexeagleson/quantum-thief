@@ -23,9 +23,11 @@ var Game = {
     Game.travelTo(creativeContent.draculaThrone);
 
     var scheduler = new ROT.Scheduler.Simple();
+    
     this.activeObjects.forEach(function(object) {
       if (object.alive) { scheduler.add(object, true); }
     })
+    
     this.engine = new ROT.Engine(scheduler);
     this.engine.start();
     
@@ -37,11 +39,10 @@ var Game = {
   
   computeFOV: function() {
     
-
     var fov = new ROT.FOV.PreciseShadowcasting(Game.checkIfWall);
 
     /* output callback */
-    fov.compute(Game.player.x, Game.player.y, 4, function(x, y, r, visibility) {
+    fov.compute(Game.player.x, Game.player.y, 10, function(x, y, r, visibility) {
       if (visibility < 0.75) {
         // nada
       } else {
