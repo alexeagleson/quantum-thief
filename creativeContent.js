@@ -194,7 +194,7 @@ var creativeContent = {
     var fireUniverse = [];
     var emptyCell = null;
     
-    for (var i = 0; i < 5; i++) {
+    for (var i = 0; i < 3; i++) {
       fireUniverse[i] = Game.createMap(creativeContent.fireTile, creativeContent.masterPngLegend, i);
       
        // stuff here will appear on every floor
@@ -203,12 +203,12 @@ var creativeContent = {
       
       if (i != 0) {
         emptyCell = fireUniverse[i].randomEmptyCellCoords();
-        fireUniverse[i].addObjectToMap(new Object(char = "<", name = "Downstairs", wall = false, alive = false, clickFunction = "floor down"), emptyCell.x, emptyCell.y);
+        fireUniverse[i].addObjectToMap(new Object(char = ">", name = "Downstairs", wall = false, alive = false, clickFunction = "floor down"), emptyCell.x, emptyCell.y);
       }
       
-      if (i != 4) {
+      if (i != 2) {
         emptyCell = fireUniverse[i].randomEmptyCellCoords();
-        fireUniverse[i].addObjectToMap(new Object(char = ">", name = "Upstairs", wall = false, alive = false, clickFunction = "floor up"), emptyCell.x, emptyCell.y);
+        fireUniverse[i].addObjectToMap(new Object(char = "<", name = "Upstairs", wall = false, alive = false, clickFunction = "floor up"), emptyCell.x, emptyCell.y);
       }
     }
     

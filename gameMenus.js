@@ -7,7 +7,7 @@ var Menu = function(textStrings, spaces, fgColours, responseFunction) {
   this.textAtLines = {};
   
   this.display = function() {  
-    if (this.textStrings[this.textStrings.length - 1] != "{Goodbye}") {
+    if (this.textStrings[this.textStrings.length - 1][0] != "{") {
       this.textStrings.push("{Goodbye}");
       this.spaces.push(2);
       this.fgColours.push("#b0ec62");

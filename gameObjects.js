@@ -98,7 +98,11 @@ var Object = function(char, name, wall, alive, clickFunction, myDialogue, portra
 
       if(!step) { return false; }
 
+      if (Game.CompleteMap.map[step.x + "," + step.y].objectsOnThisTile.length > 0) {
+        return this.moveRandom();
+      }
       return this.moveToward({x: step.x, y: step.y});
+      
     } else if (this.moveType === "random") {
       return this.moveRandom();
     } else {
