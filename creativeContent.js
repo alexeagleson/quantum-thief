@@ -71,7 +71,14 @@ var menuResponse = {
   gameBeginDialogue: function() {
     Game.travelTo(creativeContent.oldPersonUniverse);
     return true;
-  }
+  },
+  
+  // Old Person Universe Dialogue/Descripts
+  retiredRobocopDialogue: function() {
+    Game.travelTo(creativeContent.retiredRobocopDialogue);
+    return true;
+  },
+  
 }
 
 
@@ -269,8 +276,11 @@ var creativeContent = {
     }
     
     // put stuff on specific floors
-    
-    return oldPersonUniverse;
+
+    emptyCell = oldPersonUniverse[0].randomEmptyCellCoords();
+    oldPersonUniverse[0].addObjectToMap(new Object(char = "*", name = "Retired Robocop", wall = false, alive = true, clickFunction = "talk", myDialogue = creativeContent.retiredRobocopDialogue, portraitChar = "l", moveType = "random"), emptyCell.x, emptyCell.y);
+
+  return oldPersonUniverse;
   },
   
   
