@@ -51,10 +51,10 @@ var creativeContent = {
   },
   
   gameBeginDialogue: {
-      textStrings: ["Scott Dracula", "Hello what are you doing here?", "bimmyjo", "tell me more", "asdsadsad", "that is cool"],
+      textStrings: ["Scott Dracula", "I'm sending you back in time.  Get ready."],
       spaces: [0, 1],
-      fgColours: ["red", "white", "red", "white", "white", "white"],
-      responseFunction: {"tell me more": menuResponse.throneDialogue2}
+      fgColours: ["red", "white"],
+      responseFunction: {}
   },
   
   

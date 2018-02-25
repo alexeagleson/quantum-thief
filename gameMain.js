@@ -18,6 +18,11 @@ var Game = {
 
     view.defineView();
     
+    
+    
+    
+    
+    
     Game.currentUniverse = creativeContent.iceUniverse();
   
     Game.CompleteMap = Game.currentUniverse[Game.currentFloor];
@@ -42,6 +47,8 @@ var Game = {
     })
     this.engine = new ROT.Engine(scheduler);
     this.engine.start();
+    
+    showMenu(creativeContent.gameBeginDialogue);
     
     setTimeout(function() { 
       Game.renderGame();
