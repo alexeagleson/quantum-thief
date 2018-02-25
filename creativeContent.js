@@ -266,6 +266,38 @@ YollandaDialogue1: function() {
   },
   
   // Robocop Universe Dialogue/Descripts
+  
+  robocopDialogue: function () {
+  return true;
+  },
+  robocop2Dialogue: function () {
+    return true;
+  },
+  robocop3Dialogue: function () {
+    return true;
+  },
+  popCopDialogue: function () {
+    return true;
+  },
+
+ rickDogDialogue: function () {
+    return true;
+  },
+ trashCanDialogue: function () {
+    return true;
+    },
+ cheeseburgerpDialogue: function () {
+    return true;
+  },
+  wiresDialogue: function () {
+    return true;
+  },
+  handDialogue: function () {
+    return true;
+  },
+  legDialogue: function () {
+    return true;
+  },
 
   // Hotdog Universei Dialogue/Descripts
 //Description Functions
@@ -459,16 +491,16 @@ var creativeContent = {
     }
     
     throneRoom[0].addObjectToMap(new Object(char = "e", name = "Pile of Booty", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.bootyDescript, portraitChar = "-"), 9, 4);
-    throneRoom[0].addObjectToMap(new Object(char = "e", name = "Pile of Booty", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.bootyDescript, portraitChar = "-"), 10, 4);
+    throneRoom[0].addObjectToMap(new Object(char = "e", name = "Pile of Booty", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.bootyDescript, portraitChar = "-"), 7, 3);
     throneRoom[0].addObjectToMap(new Object(char = "e", name = "Pile of Booty", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.bootyDescript, portraitChar = "-"), 8, 4);
-    throneRoom[0].addObjectToMap(new Object(char = "e", name = "Pile of Booty", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.bootyDescript, portraitChar = "-"), 14, 1);
-    throneRoom[0].addObjectToMap(new Object(char = "e", name = "Pile of Booty", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.bootyDescript, portraitChar = "-"), 13, 1);
+    throneRoom[0].addObjectToMap(new Object(char = "e", name = "Pile of Booty", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.bootyDescript, portraitChar = "-"), 11, 1);
+    throneRoom[0].addObjectToMap(new Object(char = "e", name = "Pile of Booty", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.bootyDescript, portraitChar = "-"), 12, 1);
   
     
-    throneRoom[0].addObjectToMap(new Object(char = "g", name = "Vision Tree", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.visionTreeDescript, portraitChar = "-"), 21, 1);
+    throneRoom[0].addObjectToMap(new Object(char = "g", name = "Vision Tree", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.visionTreeDescript, portraitChar = "-"), 2, 1);
   
     emptyCell = throneRoom[0].randomEmptyCellCoords();
-    throneRoom[0].addObjectToMap(new Object(char = "h", name = "Fig Tree of Foresight", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.figTreeDescript, portraitChar = "-"), 2, 1);
+    throneRoom[0].addObjectToMap(new Object(char = "h", name = "Fig Tree of Foresight", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.figTreeDescript, portraitChar = "-"), 21, 1);
 
     emptyCell = throneRoom[0].randomEmptyCellCoords();
     throneRoom[0].addObjectToMap(new Object(char = "i", name = "Mystical Blood Magic Chrysanthemum", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.bloodMagicDescript, portraitChar = "-"), 21, 22);
@@ -482,9 +514,15 @@ var creativeContent = {
 
     emptyCell = throneRoom[0].randomEmptyCellCoords();
     throneRoom[0].addObjectToMap(new Object(char = "l", name = "Sparkling Rubies", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.rubiesDescript, portraitChar = "-"), 16, 3);
-
+    throneRoom[0].addObjectToMap(new Object(char = "l", name = "Sparkling Rubies", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.rubiesDescript, portraitChar = "-"), 9, 4);
+    throneRoom[0].addObjectToMap(new Object(char = "l", name = "Sparkling Rubies", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.rubiesDescript, portraitChar = "-"), 13, 3);
     emptyCell = throneRoom[0].randomEmptyCellCoords();
-    throneRoom[0].addObjectToMap(new Object(char = "m", name = "Emerald Shards", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.emeraldsDescript, portraitChar = "-"), 3, 5);
+    throneRoom[0].addObjectToMap(new Object(char = "m", name = "Emerald Shards", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.emeraldsDescript, portraitChar = "-"), 6, 3);
+    throneRoom[0].addObjectToMap(new Object(char = "m", name = "Emerald Shards", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.emeraldsDescript, portraitChar = "-"), 4, 7);
+    throneRoom[0].addObjectToMap(new Object(char = "m", name = "Emerald Shards", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.emeraldsDescript, portraitChar = "-"), 7, 5);
+    throneRoom[0].addObjectToMap(new Object(char = "m", name = "Emerald Shards", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.emeraldsDescript, portraitChar = "-"), 6, 5);
+    
+    
     
     emptyCell = throneRoom[0].randomEmptyCellCoords();
     throneRoom[0].addObjectToMap(new Object(char = "n", name = "Rotdog", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.rotdogDescript, portraitChar = "-"), 4, 5);
@@ -566,7 +604,7 @@ var creativeContent = {
     fireUniverse[0].addObjectToMap(new Object(char = "?", name = "Lava Person5", wall = false, alive = true, clickFunction = "talk", myDialogue = creativeContent.LavaPerson5Dialogue, portraitChar = "p", moveType = "random"), emptyCell.x, emptyCell.y);
   
     emptyCell = fireUniverse[1].randomEmptyCellCoords();
-    fireUniverse[1].addObjectToMap(new Object(char = "%", name = "Lava Person6", wall = false, alive = true, clickFunction = "talk", myDialogue = creativeContent.LavaPerson6Dialogue, portraitChar = "q", moveType = "random"), emptyCell.x, emptyCell.y);
+    fireUniverse[1].addObjectToMap(new Object(char = "{", name = "Lava Person6", wall = false, alive = true, clickFunction = "talk", myDialogue = creativeContent.LavaPerson6Dialogue, portraitChar = "q", moveType = "random"), emptyCell.x, emptyCell.y);
   
     emptyCell = fireUniverse[1].randomEmptyCellCoords();
     fireUniverse[1].addObjectToMap(new Object(char = "k", name = "Soda Can", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.SodaCan1Dialogue, portraitChar = "-"), emptyCell.x, emptyCell.y);
@@ -698,6 +736,51 @@ var creativeContent = {
     }
     
     // put stuff on specific floors
+    
+
+
+    emptyCell = robocopUniverse[0].randomEmptyCellCoords();
+    robocopUniverse[0].addObjectToMap(new Object(char = "*", name = "Robo Cop", wall = false, alive = true, clickFunction = "talk", myDialogue = creativeContent.robocopDialogue, portraitChar = "g", moveType = "follow"), emptyCell.x, emptyCell.y);
+
+    emptyCell = robocopUniverse[1].randomEmptyCellCoords();
+    robocopUniverse[1].addObjectToMap(new Object(char = "#", name = "Robo Cop 2", wall = false, alive = true, clickFunction = "talk", myDialogue = creativeContent.robocop2Dialogue, portraitChar = "h", moveType = "follow"), emptyCell.x, emptyCell.y);
+
+    emptyCell = robocopUniverse[1].randomEmptyCellCoords();
+    robocopUniverse[1].addObjectToMap(new Object(char = "&", name = "Robo Cop 3", wall = false, alive = true, clickFunction = "talk", myDialogue = creativeContent.robocop3Dialogue, portraitChar = "i", moveType = "follow"), emptyCell.x, emptyCell.y);
+
+    emptyCell = robocopUniverse[0].randomEmptyCellCoords();
+    robocopUniverse[0].addObjectToMap(new Object(char = "?", name = "Pop Cop", wall = false, alive = true, clickFunction = "talk", myDialogue = creativeContent.popCopDialogue, portraitChar = "j", moveType = "random"), emptyCell.x, emptyCell.y);
+
+    emptyCell = robocopUniverse[0].randomEmptyCellCoords();
+    robocopUniverse[0].addObjectToMap(new Object(char = "{", name = "Rick Robo Cop", wall = false, alive = true, clickFunction = "talk", myDialogue = creativeContent.rickDogDialogue, portraitChar = "r", moveType = "follow"), emptyCell.x, emptyCell.y);
+
+    emptyCell = robocopUniverse[0].randomEmptyCellCoords();
+    robocopUniverse[0].addObjectToMap(new Object(char = "!", name = "Trash", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.trashCanDialogue, portraitChar = "-"), emptyCell.x, emptyCell.y);
+
+    emptyCell = robocopUniverse[1].randomEmptyCellCoords();
+    robocopUniverse[1].addObjectToMap(new Object(char = "!", name = "Trash", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.trashCanDialogue, portraitChar = "-"), emptyCell.x, emptyCell.y);
+
+    emptyCell = robocopUniverse[2].randomEmptyCellCoords();
+    robocopUniverse[2].addObjectToMap(new Object(char = "!", name = "Trash", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.trashCanDialogue, portraitChar = "-"), emptyCell.x, emptyCell.y);
+
+    emptyCell = robocopUniverse[0].randomEmptyCellCoords();
+    robocopUniverse[0].addObjectToMap(new Object(char = "e", name = "Cheeseburger", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.cheeseburgerpDialogue, portraitChar = "-"), emptyCell.x, emptyCell.y);
+
+    emptyCell = robocopUniverse[1].randomEmptyCellCoords();
+    robocopUniverse[1].addObjectToMap(new Object(char = "e", name = "Cheeseburger", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.cheeseburgerpDialogue, portraitChar = "-"), emptyCell.x, emptyCell.y);
+
+    emptyCell = robocopUniverse[1].randomEmptyCellCoords();
+    robocopUniverse[1].addObjectToMap(new Object(char = "e", name = "Cheeseburger", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.cheeseburgerpDialogue, portraitChar = "-"), emptyCell.x, emptyCell.y);
+
+    emptyCell = robocopUniverse[1].randomEmptyCellCoords();
+    robocopUniverse[1].addObjectToMap(new Object(char = "f", name = "Tangle of Wires", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.wiresDialogue, portraitChar = "-"), emptyCell.x, emptyCell.y);
+
+    emptyCell = robocopUniverse[1].randomEmptyCellCoords();
+    robocopUniverse[1].addObjectToMap(new Object(char = "g", name = "Dismembered Hand", wall = false, alive = true, clickFunction = "talk", myDialogue = creativeContent.handDialogue, portraitChar = "-", moveType = "random"), emptyCell.x, emptyCell.y);
+
+    emptyCell = robocopUniverse[1].randomEmptyCellCoords();
+    robocopUniverse[1].addObjectToMap(new Object(char = "h", name = "Dismembered Leg", wall = false, alive = true, clickFunction = "talk", myDialogue = creativeContent.legDialogue, portraitChar = "-", moveType = "random"), emptyCell.x, emptyCell.y);
+// brownbag ends
     
     emptyCell = robocopUniverse[2].randomEmptyCellCoords();
     robocopUniverse[2].addObjectToMap(new Object(char = "(", name = "Portal", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.portalDialogue, portraitChar = "y"), emptyCell.x, emptyCell.y);
@@ -1303,6 +1386,66 @@ iceUniverse[1].addObjectToMap(new Object(char = ")", name = "Sweetheart Octopuss
   
   
   // Robocop Universe Dialogue
+ //brownbag starts
+    robocopDialogue: {
+      textStrings: ["Alex Murphy - The Original Robo Cop","A mechanical man who is currently struggling with his humanity while also saving the world all the time and every day. Scarlic doesn't deserve to talk to the likes of him."],
+      spaces: [1, 2, 1],
+      fgColours: ["red", "lightyellow", "#b0ec62"],
+      responseFunction: {}
+  },   
+   robocop2Dialogue: {
+      textStrings: ["Robo Cop 2","Stay alert, citizen! Systems detect a thief in our midst. We have orders to blastenate on sight!"],
+      spaces: [1, 2, 1],
+      fgColours: ["red", "lightyellow", "#b0ec62"],
+      responseFunction: {}
+  },  
+    robocop3Dialogue: {
+      textStrings: ["Robo Cop 3","Scarlic can see that they have a small scanner of some sort. He peers over their shoulder and see the words 'HAMBURGER WITHIN 20M'. Scarlic mouth begins to water as he scampers off to check out the trashcan."],
+      spaces: [1, 2, 1],
+      fgColours: ["red", "lightyellow", "#b0ec62"],
+      responseFunction: {}
+  },  
+    popCopDialogue: {
+      textStrings: ["Poppa of the Coppas","This gentlebot is actually on a skateboard, scouting the roof tops while doing sick tricks on the metal railings. Schhhrrrwooo, clank! Wrreeeeeeee, krrrrrr, bonk!"],
+      spaces: [1, 2, 1],
+      fgColours: ["red", "lightyellow", "#b0ec62"],
+      responseFunction: {}
+  },  
+   rickDogDialogue: {
+      textStrings: ["Rick Robo Cop", "The dog cop is running around smelling trash and wires. He finds a hotdog and, lucky for Scarlic, he dismisses it and tosses it aside.", "Bark, bark! Justice! Bark!"],
+      spaces: [1, 2, 1],
+      fgColours: ["red", "lightyellow", "#b0ec62"],
+      responseFunction: {}
+  },   
+   trashCanDialogue: {
+      textStrings: ["Heaping Trash Bin", "So full of trash... there's a hotdog in me. Help!"],
+      spaces: [1, 2, 1],
+      fgColours: ["red", "lightyellow", "#b0ec62"],
+      responseFunction: {}
+  },  
+    cheeseburgerpDialogue: {
+      textStrings: ["Cheeseburger", "Not a hamburger; a cheeseburger. With avocado. And bacon. Glory be! This must be what they are looking for!"],
+      spaces: [1, 2, 1],
+      fgColours: ["red", "lightyellow", "#b0ec62"],
+      responseFunction: {}
+  },  
+    wiresDialogue: {
+      textStrings: ["Pile o' wires","These might be useful, if you knew anything about what wires do"],
+      fgColours: ["red", "lightyellow", "#b0ec62"],
+      responseFunction: {}
+  },  
+     handDialogue: {
+      textStrings: ["Dismembered Hand","Long wires extend from the wrist of this armored hand. It's givin' me the spooks."],
+      spaces: [1, 2, 1],
+      fgColours: ["red", "lightyellow", "#b0ec62"],
+      responseFunction: {}
+  },  
+    legDialogue: {
+      textStrings: ["Just a Leg","It looks like it was blasted right off someone. You smell the acrid odoor of butane or kerosene and see the remains of a large rocket and some NYE glasses lying on the ground. Strange."],
+      spaces: [1, 2, 1],
+      fgColours: ["red", "lightyellow", "#b0ec62"],
+      responseFunction: {}
+  },  
   
   // snorkelbutt - Hotdog Universe Dialogue created
   hdPlantDescript: {

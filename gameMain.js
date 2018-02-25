@@ -29,7 +29,7 @@ var Game = {
 
     view.defineView();
 
-    Game.travelTo(creativeContent.fireUniverse);
+    Game.travelTo(creativeContent.robocopUniverse);
     //Game.player.x = 11;
     //Game.player.y = 6;
   },
