@@ -53,10 +53,10 @@ var Game = {
   },
   
   travelToRandomUnvisitedUniverse: function(universeName) {
+    Game.currentFloor = 0;
+    
     var allUniverses = ["Fire Universe", "Old Person Universe", "Hot Dog Universe", "Ice Universe", "Robocop Universe", "Throne Universe"]
-    
 
-    
     while (!universeName) {
       
       var thisDie = rollDie(allUniverses.length) - 1;
@@ -69,10 +69,10 @@ var Game = {
         }
       }
     }
-    
-    
-    
-    if (myTravelChecklistuniverseName = "Hot Dog Universe";
+
+    if (Game.myTravelChecklist.length === 0 && universeName === "Throne Universe") {
+      universeName = "Hot Dog Universe";
+    }
     
     Game.myTravelChecklist.push(universeName);
     
@@ -95,7 +95,6 @@ var Game = {
   },
   
   travelTo: function(worldFunction, ascii) {
-
     Game.currentUniverse = worldFunction();
     Game.CompleteMap = Game.currentUniverse[Game.currentFloor];
     if (!ascii) {
@@ -165,12 +164,22 @@ var Game = {
     }
     
     setTimeout(function() { 
-      if (Game.hudWidth < Game.hudHeight) {
-        Game.gameHUD.drawText(0, 0, displayChar, Game.hudWidth);
-        Game.gameHUD.drawText(0, 1, Game.player.portraitChar, Game.hudWidth);
+      if (!faceSet) {
+        if (Game.hudWidth < Game.hudHeight) {
+          Game.gameHUD.drawText(0, 0, ")", Game.hudWidth);
+          Game.gameHUD.drawText(0, 1, "(", Game.hudWidth);
+        } else {
+          Game.gameHUD.drawText(0, 0, "-", Game.hudWidth);
+          Game.gameHUD.drawText(1, 0, "-", Game.hudWidth);
+        }
       } else {
-        Game.gameHUD.drawText(0, 0, displayChar, Game.hudWidth);
-        Game.gameHUD.drawText(1, 0, Game.player.portraitChar, Game.hudWidth);
+        if (Game.hudWidth < Game.hudHeight) {
+          Game.gameHUD.drawText(0, 0, displayChar, Game.hudWidth);
+          Game.gameHUD.drawText(0, 1, Game.player.portraitChar, Game.hudWidth);
+        } else {
+          Game.gameHUD.drawText(0, 0, displayChar, Game.hudWidth);
+          Game.gameHUD.drawText(1, 0, Game.player.portraitChar, Game.hudWidth);
+        }
       }
     }, 50);
   },

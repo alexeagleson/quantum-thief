@@ -364,6 +364,11 @@ var creativeContent = {
     "x": multiplyBy12(multiplyBy32([10, 1])),
     "y": multiplyBy12(multiplyBy32([11, 1])),
     "z": multiplyBy12(multiplyBy32([12, 1])),
+    
+    ")": multiplyBy12(multiplyBy32([0, 2])),
+    "(": multiplyBy12(multiplyBy32([0, 3]))
+    
+    
   },
   masterPngLegend: {
     "@": multiplyBy32([0, 0]),
