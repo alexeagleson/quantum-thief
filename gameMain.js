@@ -19,15 +19,8 @@ var Game = {
     Game.player = creativeContent.scottDracula;
 
     view.defineView();
-    
-    
-    
-    Game.travelTo(creativeContent.draculaThrone);
-    
-    
-    
 
-    
+    Game.travelTo(creativeContent.draculaThrone);
     
 
     var scheduler = new ROT.Scheduler.Simple();
@@ -54,7 +47,7 @@ var Game = {
   },
 
   
-  faceHUD: function(faceSet) {
+  faceHUD: function(faceSet, talkingObject) {
     var tileElement = document.createElement("img");
     
     if (!faceSet) {
@@ -87,8 +80,6 @@ var Game = {
         Game.gameHUD.drawText(1, 0, "#", Game.hudWidth);
       }
     }, 100);
-
-  
   },
   
   floorUp: function() {
@@ -134,8 +125,6 @@ var Game = {
       Game.display.draw(Game.player.x, Game.player.y, Game.player.char);
     }, delay);    
   },
-  
-
   
   createCanvas: function(className, width, height) {
     var options = {
@@ -232,12 +221,6 @@ var Game = {
     } if (mapType === "DividedMaze") {
       digger = new ROT.Map.DividedMaze(Game.display._options.width, Game.display._options.height);
     }
-
-
-    
-    
-    
-    console.log(digger);
    
     var digCallback = function(x, y, value) {
       var key = x + "," + y;  

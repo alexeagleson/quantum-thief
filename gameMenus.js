@@ -68,10 +68,6 @@ var Menu = function(textStrings, spaces, fgColours, responseFunction) {
         setTimeout(function() { 
           Game.engine.unlock(); 
         }, Game.gameSpeed);
-        
-        //if (typeof(check) === "object") {
-        //  showMenu(check);
-        //}  
       }
     }
   }
@@ -142,7 +138,6 @@ var view = {
     var menuDisplayDOM = document.getElementsByClassName("menuDisplay")[0];
     gameDisplayDOM.style.display = "none";
     menuDisplayDOM.style.display = "block";
-    setTimeout(function() { Game.faceHUD(creativeContent.allFacePortraits); }, 10);
   },
 }
 
