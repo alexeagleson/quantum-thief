@@ -82,8 +82,15 @@ var menuResponse = {
   retiredRobocopDialogue2: function() {
      //setTimeout(function() { showMenu(creativeContent.retiredRobocopDialogue2); }, 10);
     return false;
-  }
-  
+  },
+  retiredRobocop2Dialogue2: function() {
+    setTimeout(function() { showMenu(creativeContent.retiredRobocop2Dialogue2); }, 10);
+    return false;
+  },
+  throneDialogue3: function() {
+    setTimeout(function() { showMenu(creativeContent.throneDialogue3); }, 10);
+    return false;
+  },
   
   
 }
@@ -450,9 +457,21 @@ var creativeContent = {
   },
   retiredRobocopDialogue2: {
       textStrings: ["Robocop - Retired", "Well sure, I'm just a retired cop looking for the REAL Good Stuff. Not the Regular Good Ones. You know the ones I mean.", "...", "Ah that sweet mess. Where have my robotic dentures got to now?"],
-      spaces: [0, 1, 1, 1],
+      spaces: [0, 1, 0, 1],
       fgColours: ["red", "lightyellow", "#b0ec62", "lightyellow"],
       responseFunction: {}
+  },
+  retiredRobocop2Dialogue: {
+      textStrings: ["Robocop - Finally Alive", "Hello what are you doing here?", "{I'm looking for booty. Do you know where I can find something to impress my boss?}"],
+      spaces: [0, 1, 0],
+      fgColours: ["red", "lightyellow", "b0ec62", "lightyellow"],
+      responseFunction: {"{I'm looking for booty. Do you know where I can find something to impress my boss?}": menuResponse.retiredRobocop2Dialogue2}
+  },
+  retiredRobocop2Dialogue2: {
+      textStrings: ["Robocop - Finally Alive", "Get your hands on a crinkly brown bag and you'll always be impressive to me."],
+      spaces: [0, 1],
+      fgColours: ["red", "lightyellow"],
+      responseFunction: {"there is not much more to tell": menuResponse.throneDialogue3}
   }
 }
 
