@@ -15,20 +15,18 @@ var Game = {
   gameHeight: 24,
 
   init: function() {
+    
+    Game.player = creativeContent.scottDracula;
 
     view.defineView();
     
     Game.faceHUD(creativeContent.allFacePortraits);
     
-
     Game.travelTo(creativeContent.draculaThrone);
     
-    emptyCell = Game.CompleteMap.randomEmptyCellCoords();
-    Game.player = creativeContent.scottDracula;
-    Game.CompleteMap.addObjectToMap(Game.player, emptyCell.x, emptyCell.y);
+    
+    
 
-
-    //Game.travelTo(creativeContent.iceUniverse);
 
     
 
@@ -48,9 +46,11 @@ var Game = {
     if (!ascii) {
       this.display.setOptions(Game.CompleteMap.tileLegend);
     }
+    emptyCell = Game.CompleteMap.randomEmptyCellCoords();
+    Game.CompleteMap.addObjectToMap(Game.player, emptyCell.x, emptyCell.y);
     setTimeout(function() { 
       Game.renderGame();
-    }, 500);
+    }, 200);
   },
 
   

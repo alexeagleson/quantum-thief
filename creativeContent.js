@@ -3,7 +3,11 @@ var menuResponse = {
     return true;
   },
   throneDialogue2: function() {
-    showMenu(creativeContent.throneDialogue2);
+    setTimeout(function() { showMenu(creativeContent.throneDialogue2); }, 10);
+    return true;
+  },
+  throneDialogue3: function() {
+    setTimeout(function() { showMenu(creativeContent.throneDialogue3); }, 10);
     return true;
   },
   gameBeginDialogue: function() {
@@ -44,7 +48,7 @@ var creativeContent = {
     
     throneRoom[0] = Game.createMap(creativeContent.throneTile, creativeContent.throneLegend, 0, "Arena");
     emptyCell = throneRoom[0].randomEmptyCellCoords();
-    throneRoom[0].addObjectToMap(new Object(char = "!", name = "Throne", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.gameBeginDialogue), 10, 10);
+    throneRoom[0].addObjectToMap(new Object(char = "!", name = "Throne", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.throneDialogue), 10, 10);
     throneRoom[0].addObjectToMap(new Object(char = "a", name = "Scott Dracula", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.gameBeginDialogue), 11, 10);
     return throneRoom;
   },
@@ -94,6 +98,13 @@ var creativeContent = {
   
   throneDialogue2: {
       textStrings: ["Throne", "there is not much more to tell"],
+      spaces: [0, 1],
+      fgColours: ["blue", "white"],
+      responseFunction: {"there is not much more to tell": menuResponse.throneDialogue3}
+  },
+  
+  throneDialogue3: {
+      textStrings: ["Throne", "stop asking"],
       spaces: [0, 1],
       fgColours: ["blue", "white"],
       responseFunction: {}
