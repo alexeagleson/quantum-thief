@@ -23,6 +23,8 @@ function convertMouseTouchToTile(mouseTouchCoords) {
   return ({x: tileX, y: tileY});
 }
 
+
+
 function objectAtTile(tileCoords) {
   if (Game.CompleteMap.map[tileCoords.x + "," + tileCoords.y].objectsOnThisTile) {
     return Game.CompleteMap.map[tileCoords.x + "," + tileCoords.y].objectsOnThisTile[0];

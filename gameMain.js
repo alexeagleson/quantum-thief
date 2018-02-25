@@ -116,6 +116,10 @@ var Game = {
   floorUp: function() {
     Game.currentFloor += 1;
     Game.CompleteMap = Game.currentUniverse[Game.currentFloor];
+    this.activeObjects.forEach(function(object) {
+      object.x = rollDie(24);
+      object.y = rollDie(24);
+    });
     for (var key in Game.CompleteMap.map) {
       Game.CompleteMap.map[key].objectsOnThisTile.forEach(function(object) {
         if (object.char === ">") {
@@ -130,6 +134,10 @@ var Game = {
   floorDown: function() {
     Game.currentFloor -= 1;
     Game.CompleteMap = Game.currentUniverse[Game.currentFloor];
+    this.activeObjects.forEach(function(object) {
+      object.x = rollDie(24);
+      object.y = rollDie(24);
+    });
     for (var key in Game.CompleteMap.map) {
       Game.CompleteMap.map[key].objectsOnThisTile.forEach(function(object) {
         if (object.char === "<") {
