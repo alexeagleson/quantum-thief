@@ -1,6 +1,7 @@
 var creativeContent = {
   
   jodieAlex:"https://i.imgur.com/cvdNPEA.png",
+  scottDrac:"https://i.imgur.com/vhXIEtE.png",
   
   throneTile: "https://i.imgur.com/M4rxuYB.png",
   
@@ -19,6 +20,15 @@ var creativeContent = {
   },
   
   scottDracula: new Object(char = "@", name = "Scott Dracula", wall = false, alive = true),
+  
+  
+  draculaThrone: function() {
+    var throneRoom = [];
+    throneRoom[0] = Game.createMap(creativeContent.throneTile, creativeContent.throneLegend, i, "Arena");
+    emptyCell = throneRoom[0].randomEmptyCellCoords();
+    throneRoom[0].addObjectToMap(new Object(char = "!", name = "Throne", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.throneDialogue), emptyCell.x, emptyCell.y);
+    return throneRoom;
+  },
   
   
   
@@ -43,9 +53,6 @@ var creativeContent = {
       }
       
     }
-    
-    emptyCell = iceUniverse[0].randomEmptyCellCoords();
-    iceUniverse[0].addObjectToMap(creativeContent.scottDracula, emptyCell.x, emptyCell.y);
     
     return iceUniverse;
   },

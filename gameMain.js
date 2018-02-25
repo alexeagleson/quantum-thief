@@ -19,11 +19,12 @@ var Game = {
     view.defineView();
     
     
+    //Game.currentUniverse = creativeContent.iceUniverse();
+    emptyCell = iceUniverse[0].randomEmptyCellCoords();
+    iceUniverse[0].addObjectToMap(creativeContent.scottDracula, emptyCell.x, emptyCell.y);
     
     
-    
-    
-    Game.currentUniverse = creativeContent.iceUniverse();
+    //Game.currentUniverse = creativeContent.iceUniverse();
   
     Game.CompleteMap = Game.currentUniverse[Game.currentFloor];
     
@@ -48,6 +49,7 @@ var Game = {
     this.engine = new ROT.Engine(scheduler);
     this.engine.start();
     
+    Game.faceHUD(creativeContent.scottDrac);
     showMenu(creativeContent.gameBeginDialogue);
     
     setTimeout(function() { 
@@ -55,10 +57,10 @@ var Game = {
     }, Game.gameSpeed);
   },
   
-  faceHUD: function() {
+  faceHUD: function(faceSet) {
 
     var tileElement = document.createElement("img");
-    tileElement.src = creativeContent.jodieAlex;
+    tileElement.src = faceSet;
     
     
     var tileLegend = {

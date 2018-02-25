@@ -160,7 +160,7 @@ var Object = function(char, name, wall, alive, clickFunction, myDialogue) {
     
   this.clickedOn = function() {
     if (this.clickFunction === "talk") {
-      Game.faceHUD();
+      Game.faceHUD(creativeContent.jodieAlex);
       if (this.myDialogue) {
         showMenu(this.myDialogue);
       }
