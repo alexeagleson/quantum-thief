@@ -21,7 +21,6 @@ var Game = {
     
     //Game.currentUniverse = creativeContent.iceUniverse();
     Game.currentUniverse = creativeContent.draculaThrone();
-
     Game.CompleteMap = Game.currentUniverse[Game.currentFloor];
     
   

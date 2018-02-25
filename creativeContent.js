@@ -1,9 +1,10 @@
 var creativeContent = {
   
   jodieAlex:"https://i.imgur.com/cvdNPEA.png",
-  scottDrac:"https://i.imgur.com/um3EcHw.png",
+  scottDrac:"https://i.imgur.com/JmvL0KK.png",
   
-  throneTile: "https://i.imgur.com/M4rxuYB.png",
+  throneTile: "https://cdn.glitch.com/c154a03d-de0a-478f-84c1-d739d7ed36e6%2FThroneBeta64x64.png?1519490240607",
+  fireTile: "https://i.imgur.com/M4rxuYB.png",
   
   faceLegend: {
     "#": multiplyBy12(multiplyBy32([1, 0])),
@@ -28,7 +29,8 @@ var creativeContent = {
     
     throneRoom[0] = Game.createMap(creativeContent.throneTile, creativeContent.throneLegend, 0, "Arena");
     emptyCell = throneRoom[0].randomEmptyCellCoords();
-    throneRoom[0].addObjectToMap(new Object(char = "!", name = "Throne", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.throneDialogue), emptyCell.x, emptyCell.y);
+    throneRoom[0].addObjectToMap(new Object(char = "!", name = "Throne", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.throneDialogue), 10, 10);
+    throneRoom[0].addObjectToMap(new Object(char = "!", name = "Throne", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.throneDialogue), 11, 10);
     return throneRoom;
   },
   
