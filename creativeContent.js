@@ -296,6 +296,13 @@ YollandaDialogue1: function() {
     return true;
   },
   
+  portalPass: function() {
+    Game.travelToRandomUnvisitedUniverse();
+    return true;
+  },
+  
+  
+  
   // hd7fdhdf78
   gameEnd: function() {
     var allDiv = document.getElementsByClassName("totalDiv")[0];
@@ -517,6 +524,10 @@ var creativeContent = {
     emptyCell = fireUniverse[1].randomEmptyCellCoords();
     fireUniverse[1].addObjectToMap(new Object(char = "k", name = "Soda Can", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.SodaCan1Dialogue, portraitChar = "-"), emptyCell.x, emptyCell.y);
     
+    emptyCell = fireUniverse[0].randomEmptyCellCoords();
+    fireUniverse[0].addObjectToMap(new Object(char = "(", name = "Portal", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.portalDialogue, portraitChar = "-"), emptyCell.x, emptyCell.y);
+
+    
     return fireUniverse;
   },
   
@@ -559,9 +570,6 @@ var creativeContent = {
 
     emptyCell = oldPersonUniverse[0].randomEmptyCellCoords();
     oldPersonUniverse[0].addObjectToMap(new Object(char = ")", name = "Werther's Original", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.werthersDescript, portraitChar = "-"), emptyCell.x, emptyCell.y);
-
-    emptyCell = oldPersonUniverse[0].randomEmptyCellCoords();
-    oldPersonUniverse[0].addObjectToMap(new Object(char = "(", name = "portalOld", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.retiredRobocopDialogue, portraitChar = "-"), emptyCell.x, emptyCell.y);
 
     emptyCell = oldPersonUniverse[0].randomEmptyCellCoords();
     oldPersonUniverse[0].addObjectToMap(new Object(char = "!", name = "Wheelchair", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.wheelchairDescript, portraitChar = "-", moveType = "follow"), emptyCell.x, emptyCell.y);
@@ -1218,6 +1226,14 @@ iceUniverse[1].addObjectToMap(new Object(char = ")", name = "Sweetheart Octopuss
       fgColours: ["red", "lightyellow"],
       responseFunction: {}
   },
+  portalDialogue: {
+      textStrings: ["Portal", "...looks like a portal to another universe.", "{Step through}"],
+      spaces: [1, 2, 2],
+      fgColours: ["red", "lightyellow", "#b0ec62"],
+      responseFunction: {"{Step through}": menuResponse.portalPass}
+  },
+  
+  
   
   // hd7fdhdf78
   gameOver: {

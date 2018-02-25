@@ -32,9 +32,9 @@ var Game = {
 
     view.defineView();
 
-    Game.travelTo(creativeContent.draculaThrone);
-    Game.player.x = 11;
-    Game.player.y = 6;
+    Game.travelTo(creativeContent.fireUniverse);
+    //Game.player.x = 11;
+    //Game.player.y = 6;
   },
   
   computeFOV: function() {
