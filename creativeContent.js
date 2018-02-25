@@ -66,6 +66,7 @@ bootyDescript: function() {
   
 
   
+  //LAVAWORLD
   
   // fire Universe Dialogue/Descripts
   
@@ -121,6 +122,36 @@ bootyDescript: function() {
   garbageBag2Dialogue2: function() {
     return true;
   },
+  SodaBlue1Dialogue: function() {
+    return true;
+  },
+  SodaBlue1Dialogue: function() {
+    return true;
+  },
+  LavaPerson4Dialogue: function() {
+    return true;
+  },
+  VolcanoDescription: function() {
+    return true;
+  },
+  SPIZDescription: function() {
+    return true;
+  },
+  BlueCrystalDescription: function() {
+    return true;
+  },
+  YumBarDescription: function() {
+    return true;
+  },
+  LavaPerson5Dialogue: function() {
+    return true;
+  },
+  LavaPerson6Dialogue: function() {
+    return true;
+  },
+  //LAVAWORLD ends
+  
+  
   gameBeginDialogue: function() {
     // hd7fdhdf78
     Game.travelToRandomUnvisitedUniverse();
@@ -383,7 +414,6 @@ var creativeContent = {
     "+": multiplyBy32([0, 1]),
     "$": multiplyBy32([1, 1]),
     "&": multiplyBy32([2, 1]),
-    "^": multiplyBy32([1, 1]),
     "?": multiplyBy32([3, 1]),
     "{": multiplyBy32([4, 1]),
     "}": multiplyBy32([5, 1]),
@@ -504,18 +534,21 @@ var creativeContent = {
       }
     }
     
+    //LAVAWORLD starts
+    
+    
     // put stuff on specific floors
     emptyCell = fireUniverse[2].randomEmptyCellCoords();
-    fireUniverse[2].addObjectToMap(new Object(char = "q", name = "Garbage Can", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.GarbageCanDialogue, portraitChar = "-", moveType = "", allowSteal = true), emptyCell.x, emptyCell.y);
+    fireUniverse[2].addObjectToMap(new Object(char = "q", name = "Garbage Can", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.GarbageCanDialogue, portraitChar = "-"), emptyCell.x, emptyCell.y);
     
     emptyCell = fireUniverse[2].randomEmptyCellCoords();
-    fireUniverse[2].addObjectToMap(new Object(char = "h", name = "Violet Crystal", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.VioletCrystalDialogue, portraitChar = "-", moveType = "", allowSteal = true), emptyCell.x, emptyCell.y);
+    fireUniverse[2].addObjectToMap(new Object(char = "h", name = "Violet Crystal", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.VioletCrystalDialogue, portraitChar = "-"), emptyCell.x, emptyCell.y);
 
     emptyCell = fireUniverse[0].randomEmptyCellCoords();
-    fireUniverse[0].addObjectToMap(new Object(char = "p", name = "Garbage Bag", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.garbageBagDialogue, portraitChar = "-", moveType = "", allowSteal = true), emptyCell.x, emptyCell.y);
+    fireUniverse[0].addObjectToMap(new Object(char = "p", name = "Garbage Bag", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.garbageBagDialogue, portraitChar = "-"), emptyCell.x, emptyCell.y);
 
     emptyCell = fireUniverse[1].randomEmptyCellCoords();
-    fireUniverse[1].addObjectToMap(new Object(char = "o", name = "Garbage Bag 2", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.garbageBag2Dialogue, portraitChar = "-", moveType = "", allowSteal = true), emptyCell.x, emptyCell.y);
+    fireUniverse[1].addObjectToMap(new Object(char = "o", name = "Garbage Bag 2", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.garbageBag2Dialogue, portraitChar = "-"), emptyCell.x, emptyCell.y);
     
     emptyCell = fireUniverse[0].randomEmptyCellCoords();
     fireUniverse[0].addObjectToMap(new Object(char = "*", name = "Lava Person1", wall = false, alive = true, clickFunction = "talk", myDialogue = creativeContent.LavaPerson1Dialogue, portraitChar = "l", moveType = "follow"), emptyCell.x, emptyCell.y);
@@ -526,8 +559,36 @@ var creativeContent = {
     emptyCell = fireUniverse[1].randomEmptyCellCoords();
     fireUniverse[1].addObjectToMap(new Object(char = "$", name = "Lava Person3", wall = false, alive = true, clickFunction = "talk", myDialogue = creativeContent.LavaPerson3Dialogue, portraitChar = "n", moveType = "random"), emptyCell.x, emptyCell.y);
     
+    emptyCell = fireUniverse[2].randomEmptyCellCoords();
+    fireUniverse[2].addObjectToMap(new Object(char = "&", name = "Lava Person4", wall = false, alive = true, clickFunction = "talk", myDialogue = creativeContent.LavaPerson4Dialogue, portraitChar = "o", moveType = "random"), emptyCell.x, emptyCell.y);
+  
+    emptyCell = fireUniverse[0].randomEmptyCellCoords();
+    fireUniverse[0].addObjectToMap(new Object(char = "?", name = "Lava Person5", wall = false, alive = true, clickFunction = "talk", myDialogue = creativeContent.LavaPerson5Dialogue, portraitChar = "p", moveType = "random"), emptyCell.x, emptyCell.y);
+  
     emptyCell = fireUniverse[1].randomEmptyCellCoords();
-    fireUniverse[1].addObjectToMap(new Object(char = "k", name = "Soda Can", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.SodaCan1Dialogue, portraitChar = "-", moveType = "", allowSteal = true), emptyCell.x, emptyCell.y);
+    fireUniverse[1].addObjectToMap(new Object(char = "%", name = "Lava Person6", wall = false, alive = true, clickFunction = "talk", myDialogue = creativeContent.LavaPerson6Dialogue, portraitChar = "q", moveType = "random"), emptyCell.x, emptyCell.y);
+  
+    emptyCell = fireUniverse[1].randomEmptyCellCoords();
+    fireUniverse[1].addObjectToMap(new Object(char = "k", name = "Soda Can", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.SodaCan1Dialogue, portraitChar = "-"), emptyCell.x, emptyCell.y);
+    
+    emptyCell = fireUniverse[0].randomEmptyCellCoords();
+    fireUniverse[0].addObjectToMap(new Object(char = "m", name = "Soda Blue", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.SodaBlue1Dialogue, portraitChar = "-"), emptyCell.x, emptyCell.y);
+    
+    emptyCell = fireUniverse[2].randomEmptyCellCoords();
+    fireUniverse[2].addObjectToMap(new Object(char = "n", name = "Soda Red", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.SodaRed1Dialogue, portraitChar = "-"), emptyCell.x, emptyCell.y);
+    
+    emptyCell = fireUniverse[1].randomEmptyCellCoords();
+    fireUniverse[1].addObjectToMap(new Object(char = "f", name = "Classic Volcano", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.VolcanoDescription, portraitChar = "-"), emptyCell.x, emptyCell.y);
+    
+    emptyCell = fireUniverse[2].randomEmptyCellCoords();
+    fireUniverse[2].addObjectToMap(new Object(char = ")", name = "SPIZ", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.SPIZDescription, portraitChar = "-"), emptyCell.x, emptyCell.y);
+    
+    emptyCell = fireUniverse[0].randomEmptyCellCoords();
+    fireUniverse[0].addObjectToMap(new Object(char = "i", name = "BlueCrystal", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.BlueCrystalDescription, portraitChar = "-"), emptyCell.x, emptyCell.y);
+    
+    emptyCell = fireUniverse[2].randomEmptyCellCoords();
+    fireUniverse[2].addObjectToMap(new Object(char = "j", name = "Yum Bar", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.YumBarDescription, portraitChar = "-"), emptyCell.x, emptyCell.y);
+    
     
     emptyCell = fireUniverse[2].randomEmptyCellCoords();
     fireUniverse[2].addObjectToMap(new Object(char = "(", name = "Portal", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.portalDialogue, portraitChar = "y"), emptyCell.x, emptyCell.y);
@@ -863,6 +924,12 @@ iceUniverse[1].addObjectToMap(new Object(char = ")", name = "Sweetheart Octopuss
       fgColours: ["white"],
       responseFunction: {}
   }, 
+  
+  
+  
+  
+  //LAVAWORLD STARTS
+  
   GarbageCanDialogue: {
       textStrings: ["Trash Can", "The sides of this tin warrior bulge with the infinite elbows of a wasteful society. You've been around the block a few times but you've never seen a cram like this before.", "{Can you tell me how to get to--}"],
       spaces: [1, 2, 1],
@@ -941,6 +1008,13 @@ iceUniverse[1].addObjectToMap(new Object(char = ")", name = "Sweetheart Octopuss
       fgColours: ["red", "lightyellow", "#b0ec62"],
       responseFunction: {"{Yeah no. Seems like everyone down here is addicted to sugar.}": menuResponse.LavaPerson3Dialogue3}
   },
+  LavaPerson4Dialogue: {
+      textStrings: ["Hobbles the Contemplator", "Sometimes I wonder if it was worth trading the beauty of our world for the sweet taste of sugar.", "{Probably not, but you have to make the best of what you get.}"],
+      spaces: [1, 2, 1],
+      fgColours: ["red", "lightyellow", "#b0ec62"],
+      responseFunction: {"{Probably not, but you have to make the best of what you get.}": menuResponse.LavaPerson4Dialogue}
+  },
+  
   SodaCan1Dialogue: {
       textStrings: ["A Fast Looking Soda Can", "This can isn't alive and can't speak, but you get the impression that if WAS speaking you couldn't keep up with it.", "{RIP, Recycle.}"],
       spaces: [1, 2, 1],
@@ -953,6 +1027,60 @@ iceUniverse[1].addObjectToMap(new Object(char = ")", name = "Sweetheart Octopuss
       fgColours: ["red", "lightyellow", "#b0ec62"],
       responseFunction: {"{But I'm a pirate so *FART* YEAAAARRRR!}": menuResponse.VioletCrystalDialogue1}
   },
+  
+  SodaBlue1Dialogue: {
+      textStrings: ["A Blue Soda Can", "It must have been a berry or grape flavor. Why else make it blue!?", "{STEP ON IT!}"],
+      spaces: [1, 2, 1],
+      fgColours: ["red", "lightyellow", "#b0ec62"],
+      responseFunction: {"{STEP ON IT!}": menuResponse.SodaBlue1Dialogue}
+  },
+
+  SodaRed1Dialogue: {
+      textStrings: ["A Red Soda Can", "Awwww maaaaan... this was definitely a strawberry kiwi, Lord of the Drink Flavors...", "{Try and fail to forget that sweet taste.}"],
+      spaces: [1, 2, 1],
+      fgColours: ["red", "lightyellow", "#b0ec62"],
+      responseFunction: {"{Try and fail to forget that sweet taste.}": menuResponse.SodaBlue1Dialogue}
+  },
+  VolcanoDescription: {
+      textStrings: ["A Classic Volcano", "It looks just like the big burning mountains in the south you once saw from your days on the high seas..", "{Cute! But very very hot.}"],
+      spaces: [1, 2, 1],
+      fgColours: ["red", "lightyellow", "#b0ec62"],
+      responseFunction: {"{Cute! But very very hot.}": menuResponse.VolcanoDescription}
+  },
+  SPIZDescription: {
+      textStrings: ["SPIZ! The Breath Taker", "Hey, that's the candy bar everyone around here is crazy for. Should I take it with me? Maybe I can trade it to one of these loonies for something actually valuable..", "{Is it worth risking addiction tho?}"],
+      spaces: [1, 2, 1],
+      fgColours: ["red", "lightyellow", "#b0ec62"],
+      responseFunction: {"{Is it worth risking addiction tho?}": menuResponse.SPIZDescription}
+  },
+  BlueCrystalDescription: {
+      textStrings: ["Tangy Blue Crystal", "It is a chunk of candy someone dropped on the ground, getting it all dirty. Looks like they made it to resemble the minerals around here.", "{Not gonna break my teeth on it.}"],
+      spaces: [1, 2, 1],
+      fgColours: ["red", "lightyellow", "#b0ec62"],
+      responseFunction: {"{Not gonna break my teeth on it.}": menuResponse.BlueCrystalDescription}
+  },
+  YumBarDescription: {
+      textStrings: ["Yum Bar", "The wrapper says that it 'Tastes Just Like Dirt!'", "{Haha.. at least it is honest.}"],
+      spaces: [1, 2, 1],
+      fgColours: ["red", "lightyellow", "#b0ec62"],
+      responseFunction: {"{Haha.. at least it is honest.}": menuResponse.YumBarDescription}
+  },
+  LavaPerson5Dialogue: {
+      textStrings: ["Pharb The Gobbler", "They call me the Gobbler, but my real passion is puking! BBLEEARRGHH!", "{Nasty, goodbye!}"],
+      spaces: [1, 2, 1],
+      fgColours: ["red", "lightyellow", "#b0ec62"],
+      responseFunction: {"{Nasty, goodbye!}": menuResponse.LavaPerson5Dialogue}
+  },
+  LavaPerson6Dialogue: {
+      textStrings: ["Shybro The Student", "I'm studying the effects of sugar on Lava people in school but no one seems very interested..", "{Keep at it and maybe someday you can be the servant of a capricious tyrant, like me!}"],
+      spaces: [1, 2, 1],
+      fgColours: ["red", "lightyellow", "#b0ec62"],
+      responseFunction: {"{Keep at it and maybe someday you can be the servant of a capricious tyrant, like me!}": menuResponse.LavaPerson6Dialogue}
+  },
+  //LAVAWORLD ENDS
+  
+  
+  
   gameBeginDialogue: {
       textStrings: ["Scott Dracula", "SCARLIC! SCARLIC! Where are you? Scarlic, I am bored. Prepare an overnight bag. What's that? You do not have a bag? I thought you were a pirate, not a peasant. Anyway, I am sending you back through Space and Time! You aren't to come back until you steal the most valuable treasure. Alley-oop! *POOF*", "{YAARR!}"],
       spaces: [1, 2, 1],
