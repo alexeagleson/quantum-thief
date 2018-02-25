@@ -15,7 +15,8 @@ var Game = {
   gameSpeed: 200,
   gameWidth: 24,
   gameHeight: 24,
-  myTravelChecklist: [],
+  myTravelChecklist: ["Throne Universe"],
+  gameDone: false,
 
   init: function() {
     
@@ -23,10 +24,10 @@ var Game = {
 
     view.defineView();
 
-    Game.travelTo(creativeContent.hotdogUniverse);
-    //Game.player.x = 11;
-    //Game.player.y = 11;
-    
+    Game.travelTo(creativeContent.draculaThrone);
+    Game.player.x = 11;
+    Game.player.y = 11;
+    this.myTravelChecklist = [];
   },
   
   computeFOV: function() {
