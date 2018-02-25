@@ -76,12 +76,15 @@ var menuResponse = {
   // Old Person Universe Dialogue/Descripts
   retiredRobocopDialogue: function() {
     setTimeout(function() { showMenu(creativeContent.retiredRobocopDialogue); }, 10);
-    return false;
-    
+    return false; 
   },
   retiredRobocopDialogue2: function() {
-     //setTimeout(function() { showMenu(creativeContent.retiredRobocopDialogue2); }, 10);
+    setTimeout(function() { showMenu(creativeContent.retiredRobocopDialogue2); }, 10);
     return false;
+  },
+  retiredRobocopDialogue3: function() {
+    setTimeout(function() { showMenu(creativeContent.retiredRobocopDialogue3); }, 10);
+    return true;
   },
   retiredRobocop2Dialogue2: function() {
     setTimeout(function() { showMenu(creativeContent.retiredRobocop2Dialogue2); }, 10);
@@ -454,16 +457,24 @@ var creativeContent = {
 
   retiredRobocopDialogue: {
       textStrings: ["Robocop - Retired", "Hello there, Sonny. You look strong and... er, smart. Can you help out a Robo Pop in need?", "{Yar, not another has-been looking for favours!}"],
-      spaces: [0, 1],
+      spaces: [0, 1, 0],
       fgColours: ["red", "lightyellow", "#b0ec62", "lightyellow"],
-      responseFunction: {"{Yar, another has-been looking for favours?}": menuResponse.retiredRobocopDialogue2}
+      responseFunction: {"{Yar, not another has-been looking for favours!}": menuResponse.retiredRobocopDialogue2}
   },
   retiredRobocopDialogue2: {
-      textStrings: ["Robocop - Retired", "Well sure, I'm just a retired cop looking for the REAL Good Stuff. Not the Regular Good Ones. You know the ones I mean.", "...", "Ah that sweet mess. Where have my robotic dentures got to now?"],
+      textStrings: ["Robocop - Retired", "Well sure, I'm just a retired cop looking for the REAL good stuff. Not the usual Good Ones...  You know the ones I mean.", "{ahhh...}" ],
+      spaces: [0, 1, 2],
+      fgColours: ["red", "lightyellow", "#b0ec62", "lightyellow"],
+      responseFunction: {"{ahhh...}": menuResponse.retiredRobocopDialogue3}
+  },
+  
+  retiredRobocopDialogue3: {
+      textStrings: ["Robocop - Retired", "Ah that sweet mess. Where have my robotic dentures got to now?"],
       spaces: [0, 1, 0],
       fgColours: ["red", "lightyellow", "#b0ec62", "lightyellow"],
       responseFunction: {}
   },
+  
   retiredRobocop2Dialogue: {
       textStrings: ["Robocop - Finally Alive", "Hello what are you doing here?", "{I'm looking for booty. Do you know where I can find something to impress my boss?}"],
       spaces: [0, 1, 0],
@@ -472,9 +483,9 @@ var creativeContent = {
   },
   retiredRobocop2Dialogue2: {
       textStrings: ["Robocop - Finally Alive", "Get your hands on a crinkly brown bag and you'll always be impressive to me."],
-      spaces: [0, 1],
-      fgColours: ["red", "lightyellow"],
-      responseFunction: {"there is not much more to tell": menuResponse.retiredRobocop2Dialogue3}
+      spaces: [0, 1, 0],
+      fgColours: ["red", "lightyellow","#b0ec62", "lightyellow"],
+      responseFunction: {}
   }
 }
 
