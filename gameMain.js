@@ -31,7 +31,7 @@ var Game = {
 
     Game.travelTo(creativeContent.draculaThrone);
     Game.player.x = 11;
-    Game.player.y = 10;
+    Game.player.y = 15;
   },
   
   computeFOV: function() {
