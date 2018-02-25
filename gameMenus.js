@@ -10,7 +10,7 @@ var Menu = function(textStrings, spaces, fgColours, responseFunction) {
     if (this.textStrings[this.textStrings.length - 1] != "{Goodbye}") {
       this.textStrings.push("{Goodbye}");
       this.spaces.push(2);
-      this.fgColours.push("white");
+      this.fgColours.push("#b0ec62");
       this.responseFunction["{Goodbye}"] = menuResponse.done;
     }
     

@@ -43,6 +43,10 @@ var creativeContent = {
   throneTile: "https://i.imgur.com/C2pOPKO.png",
   fireTile: "https://i.imgur.com/M4rxuYB.png",
   
+  textColour: "#b0ec62",
+  
+  
+  
   faceLegend: {
     "-": multiplyBy12(multiplyBy32([0, 0])),
     "#": multiplyBy12(multiplyBy32([1, 0])),
@@ -169,7 +173,7 @@ var creativeContent = {
   
   
   
-  
+  // Response colour: "#b0ec62"
   
   
   
@@ -204,7 +208,7 @@ var creativeContent = {
   gameBeginDialogue: {
       textStrings: ["Scott Dracula", "I'm sending you back in time.  Get ready.", "{I'm ready}"],
       spaces: [0, 1, 1],
-      fgColours: ["red", "white", "white"],
+      fgColours: ["red", "light yellow", "#b0ec62"],
       responseFunction: {"{I'm ready}": menuResponse.gameBeginDialogue}
   },
     
