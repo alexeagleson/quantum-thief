@@ -179,7 +179,60 @@ bootyDescript: function() {
     return true;
   },
   
+  
   // Ice Universe Dialogue/Descripts
+  
+YollandaDialogue1: function() { 
+    return true;
+  },
+  
+  PickAxeDescript: function() {
+    return true;
+  },
+  
+  ICEBUSHDescript: function() {
+    return true;
+  },
+  
+  FrozenPizzaDescript: function() {
+    return true;
+  },
+  
+  FrancisBubblesmithDescript: function() {
+    return true;
+  },
+  
+  ShiraBalewaDescript: function () {
+    return true;
+  },
+  
+  GreenFishDescription: function () {
+    return true;
+  },
+  
+  YippersDescription: function () {
+    return true;
+  },
+  
+  MacReadyDescription: function () {
+    return true;
+  },
+  
+  TheThingDescription: function () {
+    return true;
+  },
+  
+  BlueFishDescription: function () {
+    return true;
+  },
+  
+  IceFishingRodDescription: function () {
+    return true;
+  },
+  
+  SweetheartOctopussDescription: function () {
+    return true;
+  },
   
   // Robocop Universe Dialogue/Descripts
 
@@ -370,13 +423,14 @@ var creativeContent = {
     throneRoom[0].addObjectToMap(new Object(char = "e", name = "Pile of Booty", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.bootyDescript, portraitChar = "-"), 13, 1);
   
     
-    throneRoom[0].addObjectToMap(new Object(char = "g", name = "Vision Tree", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.visionTreeDescript, portraitChar = "-"), 6, 5);
+    throneRoom[0].addObjectToMap(new Object(char = "g", name = "Vision Tree", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.visionTreeDescript, portraitChar = "-"), 21, 1);
   
     emptyCell = throneRoom[0].randomEmptyCellCoords();
-    throneRoom[0].addObjectToMap(new Object(char = "h", name = "Fig Tree of Foresight", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.figTreeDescript, portraitChar = "-"), 3, 2);
+    throneRoom[0].addObjectToMap(new Object(char = "h", name = "Fig Tree of Foresight", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.figTreeDescript, portraitChar = "-"), 2, 1);
 
     emptyCell = throneRoom[0].randomEmptyCellCoords();
-    throneRoom[0].addObjectToMap(new Object(char = "i", name = "Mystical Blood Magic Chrysanthemum", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.bloodMagicDescript, portraitChar = "-"), 14, 2);
+    throneRoom[0].addObjectToMap(new Object(char = "i", name = "Mystical Blood Magic Chrysanthemum", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.bloodMagicDescript, portraitChar = "-"), 21, 22);
+    throneRoom[0].addObjectToMap(new Object(char = "i", name = "Mystical Blood Magic Chrysanthemum", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.bloodMagicDescript, portraitChar = "-"), 2, 22);
 
     emptyCell = throneRoom[0].randomEmptyCellCoords();
     throneRoom[0].addObjectToMap(new Object(char = "j", name = "Ornate Chest", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.ornateChestDescript, portraitChar = "-"), 9, 5);
@@ -575,6 +629,46 @@ var creativeContent = {
     }
     
     // put stuff on specific floors
+    
+emptyCell = iceUniverse[0].randomEmptyCellCoords();
+iceUniverse[0].addObjectToMap(new Object(char = "&", name = "Yollanda Ruud", wall = false, alive = true, clickFunction = "talk", myDialogue = creativeContent.YollandaDialogue1, portraitChar = "d", moveType = "follow"), emptyCell.x, emptyCell.y);
+
+emptyCell = iceUniverse[0].randomEmptyCellCoords();
+iceUniverse[0].addObjectToMap(new Object(char = "j", name = "A Well-Made Pickaxe", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.PickAxeDescript, portraitChar = "-", moveType = "follow"), emptyCell.x, emptyCell.y);
+
+emptyCell = iceUniverse[0].randomEmptyCellCoords();
+iceUniverse[0].addObjectToMap(new Object(char = "!", name = "ICE BUSH!", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.ICEBUSHDescript, portraitChar = "-", moveType = "follow"), emptyCell.x, emptyCell.y);
+
+emptyCell = iceUniverse[1].randomEmptyCellCoords();
+iceUniverse[1].addObjectToMap(new Object(char = "h", name = "Frozen Pizza", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.FrozenPizzaDescript, portraitChar = "-", moveType = "follow"), emptyCell.x, emptyCell.y);
+    
+emptyCell = iceUniverse[1].randomEmptyCellCoords();
+iceUniverse[1].addObjectToMap(new Object(char = "$", name = "Francis Bubblesmith", wall = false, alive = true, clickFunction = "talk", myDialogue = creativeContent.FrancisBubblesmithDescript, portraitChar = "c", moveType = "follow"), emptyCell.x, emptyCell.y);
+
+emptyCell = iceUniverse[1].randomEmptyCellCoords();
+iceUniverse[1].addObjectToMap(new Object(char = "+", name = "Shira Balewa", wall = false, alive = true, clickFunction = "talk", myDialogue = creativeContent.ShiraBalewaDescript, portraitChar = "b", moveType = "follow"), emptyCell.x, emptyCell.y);
+
+emptyCell = iceUniverse[1].randomEmptyCellCoords();
+iceUniverse[1].addObjectToMap(new Object(char = "e", name = "Green Fish", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.GreenFishDescription, portraitChar = "-", moveType = "follow"), emptyCell.x, emptyCell.y);
+
+emptyCell = iceUniverse[2].randomEmptyCellCoords();
+iceUniverse[2].addObjectToMap(new Object(char = "*", name = "Yippers The Huskydog", wall = false, alive = true, clickFunction = "talk", myDialogue = creativeContent.YippersDescription, portraitChar = "e", moveType = "follow"), emptyCell.x, emptyCell.y);
+  
+emptyCell = iceUniverse[2].randomEmptyCellCoords();
+iceUniverse[2].addObjectToMap(new Object(char = "?", name = "MacReady", wall = false, alive = true, clickFunction = "talk", myDialogue = creativeContent.MacReadyDescription, portraitChar = "k", moveType = "follow"), emptyCell.x, emptyCell.y);
+
+emptyCell = iceUniverse[2].randomEmptyCellCoords();
+iceUniverse[2].addObjectToMap(new Object(char = "i", name = "The Thing", wall = false, alive = true, clickFunction = "talk", myDialogue = creativeContent.TheThingDescription, portraitChar = "-", moveType = "follow"), emptyCell.x, emptyCell.y);
+
+emptyCell = iceUniverse[0].randomEmptyCellCoords();
+iceUniverse[0].addObjectToMap(new Object(char = "f", name = "Blue Fish", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.BlueFishDescription, portraitChar = "-", moveType = "follow"), emptyCell.x, emptyCell.y);
+    
+emptyCell = iceUniverse[2].randomEmptyCellCoords();
+iceUniverse[2].addObjectToMap(new Object(char = "g", name = "Ice Fishing Rod", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.IceFishingRodDescription, portraitChar = "-", moveType = "follow"), emptyCell.x, emptyCell.y);
+  
+emptyCell = iceUniverse[1].randomEmptyCellCoords();
+iceUniverse[1].addObjectToMap(new Object(char = ")", name = "Sweetheart Octopuss", wall = false, alive = true, clickFunction = "talk", myDialogue = creativeContent.SweetheartOctopussDescription, portraitChar = "-", moveType = "follow"), emptyCell.x, emptyCell.y);
+   
   
   return iceUniverse;
   },   
@@ -939,6 +1033,101 @@ var creativeContent = {
   },
   
   // Ice Universe Dialogue
+  
+
+  
+  YollandaDialogue1: {
+      textStrings: ["Yollanda Ruud", "Have you ever had a frozen pickled egg for dinner? What a tasty treat!", "{What, no, that doesn't sound good at all.}"],
+      spaces: [0, 2, 1],
+      fgColours: ["red", "lightyellow", "#b0ec62", "lightyellow"],
+      responseFunction: {"{What, no, that doesn't sound good at all.}": menuResponse.YollandaDialogue1}
+  },
+  
+  PickAxeDescript: {
+      textStrings: ["A Well-Made Pickaxe", "This kind of tool has many uses in a frozen world like this one, but it still looks brand new. ", "{Not like SOME pirates I know.}"],
+      spaces: [0, 2, 1],
+      fgColours: ["red", "lightyellow", "#b0ec62", "lightyellow"],
+      responseFunction: {"{Not like SOME pirates I know.}": menuResponse.PickAxeDescript}
+  },
+  
+  ICEBUSHDescript: {
+      textStrings: ["ICE BUSH!", "The frozen branches of this chilly plant clink like chimes in the soft breeze yet they refuse to break.", "{Pretty cool, but there is no way I could get this back to my boss without getting frostbite.}"],
+      spaces: [0, 2, 1],
+      fgColours: ["red", "lightyellow", "#b0ec62", "lightyellow"],
+      responseFunction: {"{Pretty cool, but there is no way I could get this back to my boss without getting frostbite.}": menuResponse.ICEBUSHDescript}
+  },
+  
+  FrozenPizzaDescript: {
+      textStrings: ["Frozen Pizza", "It is actually made (baked?) out of ice and snow. How are you supposed to eat this?", "{I wasn't hungry anyway..}"],
+      spaces: [0, 2, 1],
+      fgColours: ["red", "lightyellow", "#b0ec62", "lightyellow"],
+      responseFunction: {"{I wasn't hungry anyway..}": menuResponse.ICEBUSHDescript}
+  },
+  
+  FrancisBubblesmithDescript: {
+      textStrings: ["Francis Bubblesmith", "Hey guy! I'm a bit busy right now but maybe some day you'd want to get together for chess or something?", "{Yyyyyynnnnnnoo. No.}"],
+      spaces: [0, 2, 1],
+      fgColours: ["red", "lightyellow", "#b0ec62", "lightyellow"],
+      responseFunction: {"{Yyyyyynnnnnnoo. No.}": menuResponse.FrancisBubblesmithDescript}
+  },
+  
+  ShiraBalewaDescript: {
+      textStrings: ["Shira Balewa", "Have you seen that hot guy wandering around downstairs? If he ever stops mumbling about his cheating b*tch ex maybe he'll take me out for a snow cone.", "{I mean, I guess anyone has a chance with anyone so long as they're not a shapeshifting alien.}"],
+      spaces: [0, 2, 1],
+      fgColours: ["red", "lightyellow", "#b0ec62", "lightyellow"],
+      responseFunction: {"{I mean, I guess anyone has a chance with anyone so long as they're not a shapeshifting alien.}": menuResponse.ShiraBalewaDescript}
+  },
+  
+  GreenFishDescription: {
+      textStrings: ["Green Fish", "There is no way that this fish is going to split open and attack me with tentacles.. is there?", "{Probaly not tho, right?}"],
+      spaces: [0, 2, 1],
+      fgColours: ["red", "lightyellow", "#b0ec62", "lightyellow"],
+      responseFunction: {"{Probaly not tho, right?}": menuResponse.GreenFishDescription}
+  },
+  
+  YippersDescription: {
+      textStrings: ["Yippers The Huskydog", "I would totally avoid going near that bearded dude and his gross pet if I were you. There is something reeeeaaaally strange about those two. ....... I mean.. BARK BARK!", "{Loud and clear little buddy.}"],
+      spaces: [0, 2, 1],
+      fgColours: ["red", "lightyellow", "#b0ec62", "lightyellow"],
+      responseFunction: {"{Loud and clear little buddy.}": menuResponse.YippersDescription}
+  },
+    
+    MacReadyDescription: {
+      textStrings: ["MacReady", "Me and that godawful abomination used to tussle all over this snowy wasteland, but we've recently come to an understanding: She stays away from my whisky, and I don't try an' burn her with a flamethrower.", "{.....she?}"],
+      spaces: [0, 2, 1],
+      fgColours: ["red", "lightyellow", "#b0ec62", "lightyellow"],
+      responseFunction: {"{.....she?}": menuResponse.MacReadyDescription}
+  },
+  
+    TheThingDescription: {
+      textStrings: ["The Thing", "Here's the Thing.... SKRREEEEEEAAEAEEEEAAEEAE!", "{You have GOT to be kidding me!}"],
+      spaces: [0, 2, 1],
+      fgColours: ["red", "lightyellow", "#b0ec62", "lightyellow"],
+      responseFunction: {"{You have GOT to be kidding me!}": menuResponse.TheThingDescription}
+  },
+  
+    BlueFishDescription: {
+      textStrings: ["Blue Fish", "I ain't got nothing to say to you, Mr. Two-Legs One-Eye.", "{I know I'm a pirate but that's just rude.}"],
+      spaces: [0, 2, 1],
+      fgColours: ["red", "lightyellow", "#b0ec62", "lightyellow"],
+      responseFunction: {"{I know I'm a pirate but that's just rude.}": menuResponse.BlueFishDescription}
+  },
+  
+    IceFishingRodDescription: {
+      textStrings: ["An Ice Fishing Rod", "This rod has been patched and repaired several times and is beginning to show it's age. There are initials on the handle that are all but worn away.", "{Fishing is really just a few steps away from the awesome life of a pirate.}"],
+      spaces: [0, 2, 1],
+      fgColours: ["red", "lightyellow", "#b0ec62", "lightyellow"],
+      responseFunction: {"{Fishing is really just a few steps away from the awesome life of a pirate.}": menuResponse.IceFishingRodDescription}
+  },
+  
+    SweetheartOctopussDescription: {
+      textStrings: ["Sweetheart Octupuss", "This cute little thing isn't a stuffed animal, but you SURE want to give it a squeeze!.", "{Don't tho.}"],
+      spaces: [0, 2, 1],
+      fgColours: ["red", "lightyellow", "#b0ec62", "lightyellow"],
+      responseFunction: {"{Don't tho.}": menuResponse.SweetheartOctopussDescription}
+  },
+  
+  
   
   // Robocop Universe Dialogue
   
