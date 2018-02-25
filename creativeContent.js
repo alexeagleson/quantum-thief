@@ -1,3 +1,17 @@
+var menuResponse = {
+  done: function() {
+    return true;
+  },
+  throneDialogue2: function() {
+    showMenu(creativeContent.throneDialogue2);
+    return true;
+  },
+  gameBeginDialogue: function() {
+    Game.travelTo(creativeContent.iceUniverse);
+    return true;
+  }
+}
+
 var creativeContent = {
 
   allFacePortraits:"https://i.imgur.com/wb3gFai.png",
@@ -30,7 +44,7 @@ var creativeContent = {
     
     throneRoom[0] = Game.createMap(creativeContent.throneTile, creativeContent.throneLegend, 0, "Arena");
     emptyCell = throneRoom[0].randomEmptyCellCoords();
-    throneRoom[0].addObjectToMap(new Object(char = "!", name = "Throne", wall = false, alive = false, clickFunction = ""), 10, 10);
+    throneRoom[0].addObjectToMap(new Object(char = "!", name = "Throne", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.gameBeginDialogue), 10, 10);
     throneRoom[0].addObjectToMap(new Object(char = "a", name = "Scott Dracula", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.gameBeginDialogue), 11, 10);
     return throneRoom;
   },
@@ -84,6 +98,8 @@ var creativeContent = {
       fgColours: ["blue", "white"],
       responseFunction: {}
   }
+  
+  
   
   
   

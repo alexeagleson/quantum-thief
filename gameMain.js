@@ -22,6 +22,7 @@ var Game = {
     
 
     Game.travelTo(creativeContent.draculaThrone);
+    
     emptyCell = Game.CompleteMap.randomEmptyCellCoords();
     Game.player = creativeContent.scottDracula;
     Game.CompleteMap.addObjectToMap(Game.player, emptyCell.x, emptyCell.y);

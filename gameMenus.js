@@ -69,9 +69,9 @@ var Menu = function(textStrings, spaces, fgColours, responseFunction) {
           Game.engine.unlock(); 
         }, Game.gameSpeed);
         
-        if (typeof(check) === "object") {
-          showMenu(check);
-        }  
+        //if (typeof(check) === "object") {
+        //  showMenu(check);
+        //}  
       }
     }
   }
@@ -145,17 +145,7 @@ var view = {
 }
 
 
-var menuResponse = {
-  done: function() {
-    return true;
-  },
-  throneDialogue2: function() {
-    return creativeContent.throneDialogue2;
-  },
-  gameBeginDialogue: function() {
-    return true;
-  }
-}
+
 
 
 
