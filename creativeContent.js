@@ -5,7 +5,7 @@ var menuResponse = {
   
   // your dialogue at the bottom should link back up here, then back down to the bottom again to start a new dialogue
   
-// CTRL+F - 8:29AM - Universe sections added
+// CTRL+F - hds76sd76 - Universe sections added
   // Throne room Dialogue/Descripts
   
   done: function() {

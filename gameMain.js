@@ -20,9 +20,9 @@ var Game = {
 
     view.defineView();
 
-    Game.travelTo(creativeContent.draculaThrone);
-    Game.player.x = 11;
-    Game.player.y = 11;
+    Game.travelTo(creativeContent.hotdogUniverse);
+    //Game.player.x = 11;
+    //Game.player.y = 11;
     
   },
   
