@@ -75,7 +75,7 @@ var menuResponse = {
     return true;
   },
   gameBeginDialogue: function() {
-    Game.travelToRandomUnvisitedUniverse();
+    Game.travelToRandomUnvisitedUniverse("Hot Dog Universe");
     return true;
   },
   
@@ -407,7 +407,7 @@ var creativeContent = {
     var emptyCell = null;
     
     for (var i = 0; i < 3; i++) {
-      hotdogUniverse[i] = Game.createMap(creativeContent.hotdogTile, creativeContent.masterPngLegend, i);
+      hotdogUniverse[i] = Game.createMap(creativeContent.hotDogTile, creativeContent.masterPngLegend, i);
       
        // stuff here will appear on every floor  
       if (i != 0) {

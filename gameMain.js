@@ -44,7 +44,7 @@ var Game = {
   travelToRandomUnvisitedUniverse: function(universeName) {
     
     while (!universeName) {
-      var allUniverses = ["Fire Universe", "Old Person Universe", "Throne Universe"]
+      var allUniverses = ["Fire Universe", "Old Person Universe", "Throne Universe", "Hot Dog Universe", "Ice Universe", "Robocop Universe"]
       var thisDie = (rollDie(allUniverses.length) - 1);
       var universeName = allUniverses[thisDie];
       
@@ -64,6 +64,13 @@ var Game = {
       Game.travelTo(creativeContent.oldPersonUniverse);
     } else if (universeName === "Throne Universe") {
       Game.travelTo(creativeContent.draculaThrone);
+    } else if (universeName === "Hot Dog Universe") {
+      Game.travelTo(creativeContent.hotdogUniverse);
+    } else if (universeName === "Ice Universe") {
+      Game.travelTo(creativeContent.iceUniverse);
+    } else if (universeName === "Robocop Universe") {
+      Game.travelTo(creativeContent.robocopUniverse);
+
     }
     
   },
