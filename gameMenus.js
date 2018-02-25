@@ -1,10 +1,11 @@
-var Menu = function(textStrings, spaces, fgColours, responseFunction) {
+var Menu = function(textStrings, spaces, fgColours, responseFunction, object) {
   
   this.textStrings = textStrings;
   this.spaces = spaces;
   this.fgColours = fgColours;
   this.responseFunction = responseFunction;  
   this.textAtLines = {};
+  this.object = object;
   
   this.display = function() {  
     if (this.textStrings[this.textStrings.length - 1][0] != "{") {
@@ -14,6 +15,16 @@ var Menu = function(textStrings, spaces, fgColours, responseFunction) {
       this.responseFunction["{Goodbye}"] = menuResponse.done;
     }
     
+    if (this.object) {
+      if (this.object.allowSteal) {
+        if (this.textStrings[this.textStrings.length - 1] != "{Steal This}") {
+          this.textStrings.push("{Steal This}");
+          this.spaces.push(2);
+          this.fgColours.push("#b0ec62");
+          this.responseFunction["{Steal This}"] = menuResponse.done;
+        }
+      }
+    }
     
     
     Game.menu.clear();
@@ -147,7 +158,7 @@ var view = {
 
 
 
-var showMenu = function(dialogue) {
-  var thisMenu = new Menu(dialogue.textStrings, dialogue.spaces, dialogue.fgColours, dialogue.responseFunction);
+var showMenu = function(dialogue, object) {
+  var thisMenu = new Menu(dialogue.textStrings, dialogue.spaces, dialogue.fgColours, dialogue.responseFunction, object);
   thisMenu.display();
 }

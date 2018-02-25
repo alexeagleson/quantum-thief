@@ -54,7 +54,7 @@ var Tile = function(x, y, char, wall, visible) {
 
 
 
-var Object = function(char, name, wall, alive, clickFunction, myDialogue, portraitChar, moveType) {
+var Object = function(char, name, wall, alive, clickFunction, myDialogue, portraitChar, moveType, allowSteal) {
   this.x = null;
   this.y = null;
   this.char = char;
@@ -66,6 +66,7 @@ var Object = function(char, name, wall, alive, clickFunction, myDialogue, portra
   this.myDialogue = myDialogue,
   this.portraitChar = portraitChar,
   this.moveType = moveType,
+  this.allowSteal = allowSteal,
   
   this.act = function() {
     
@@ -231,7 +232,7 @@ var Object = function(char, name, wall, alive, clickFunction, myDialogue, portra
         
         
         
-        showMenu(this.myDialogue);
+        showMenu(this.myDialogue, this);
       }
     } else if (this.clickFunction === "floor up") {
       Game.floorUp();

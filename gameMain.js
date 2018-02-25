@@ -31,9 +31,9 @@ var Game = {
 
     view.defineView();
 
-    Game.travelTo(creativeContent.iceUniverse);
-    //Game.player.x = 11;
-    //Game.player.y = 11;
+    Game.travelTo(creativeContent.draculaThrone);
+    Game.player.x = 11;
+    Game.player.y = 11;
     this.myTravelChecklist = [];
   },
   
