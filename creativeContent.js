@@ -29,6 +29,36 @@ var creativeContent = {
     "#": multiplyBy12(multiplyBy32([1, 0])),
     "@": multiplyBy12(multiplyBy32([2, 0])),
     "a": multiplyBy12(multiplyBy32([3, 0])),
+    "a": multiplyBy12(multiplyBy32([4, 0])),
+    "a": multiplyBy12(multiplyBy32([5, 0])),
+    "a": multiplyBy12(multiplyBy32([6, 0])),
+    "a": multiplyBy12(multiplyBy32([7, 0])),
+    "a": multiplyBy12(multiplyBy32([0, 1])),
+    "a": multiplyBy12(multiplyBy32([1, 1])),
+    "a": multiplyBy12(multiplyBy32([2, 1])),
+    "a": multiplyBy12(multiplyBy32([3, 1])),
+    "a": multiplyBy12(multiplyBy32([4, 1])),
+    "a": multiplyBy12(multiplyBy32([5, 1])),
+    "a": multiplyBy12(multiplyBy32([6, 1])),
+    "a": multiplyBy12(multiplyBy32([7, 1])),
+    "a": multiplyBy12(multiplyBy32([0, 2])),
+    "a": multiplyBy12(multiplyBy32([1, 2])),
+    "a": multiplyBy12(multiplyBy32([2, 2])),
+    "a": multiplyBy12(multiplyBy32([3, 2])),
+    "a": multiplyBy12(multiplyBy32([4, 2])),
+    "a": multiplyBy12(multiplyBy32([5, 2])),
+    "a": multiplyBy12(multiplyBy32([6, 2])),
+    "a": multiplyBy12(multiplyBy32([7, 2])),
+    "a": multiplyBy12(multiplyBy32([0, 3])),
+    "a": multiplyBy12(multiplyBy32([1, 3])),
+    "a": multiplyBy12(multiplyBy32([2, 3])),
+    "a": multiplyBy12(multiplyBy32([3, 3])),
+    "a": multiplyBy12(multiplyBy32([4, 3])),
+    "a": multiplyBy12(multiplyBy32([5, 3])),
+    "a": multiplyBy12(multiplyBy32([6, 3])),
+    "a": multiplyBy12(multiplyBy32([7, 3])),
+
+
   },
   
   masterPngLegend: {
@@ -77,8 +107,8 @@ var creativeContent = {
   },
   
   defaultDialogue: {
-      textStrings: ["What an odd thing this is."],
-      spaces: [0],
+      textStrings: ["I don't know what this is!"],
+      spaces: [1],
       fgColours: ["white"],
       responseFunction: {}
   },
@@ -91,10 +121,10 @@ var creativeContent = {
   },
   
   throneDialogue: {
-      textStrings: ["pipp", "Hello what are you doing here?", "bimmyjo", "tell me more"],
+      textStrings: ["Throne", "Hello what are you doing here?", "Name Example", "{Tell me More}"],
       spaces: [0, 1, 0],
       fgColours: ["blue", "white", "red", "white"],
-      responseFunction: {"tell me more": menuResponse.throneDialogue2}
+      responseFunction: {"{Tell me More}": menuResponse.throneDialogue2}
   },
   
   throneDialogue2: {
