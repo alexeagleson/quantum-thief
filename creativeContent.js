@@ -204,6 +204,9 @@ var menuResponse = {
     var allDiv = document.getElementsByClassName("totalDiv")[0];
     allDiv.style.display = "none";
     show_image("https://i.imgur.com/QrpX3Ps.png", 1728, 768, "A Wolfdog Studios production.  Alex Eagleson, Jodie Eagleson & Aaron Dagenais.");
+    var score = document.createElement("h1");
+    score.innerHTML = "Congratulations, you collected " + Game.stolenItems + " pieces of space loot!";
+    document.body.appendChild(score);
     return true;
   },
   steal: function() {
@@ -309,9 +312,11 @@ var creativeContent = {
     throneRoom[0].addObjectToMap(new Object(char = "!", name = "Throne", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.throneDialogue, portraitChar = "-", moveType = "", allowSteal = false), 10, 10);
     throneRoom[0].addObjectToMap(new Object(char = "*", name = "Scott Dracula", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.gameBeginDialogue, portraitChar = "#", moveType = "", allowSteal = false), 11, 10);
     // hd7fdhdf78
-    for (var i = 0; i < Game.stolenItems; i++) {
-      emptyCell = throneRoom[0].randomEmptyCellCoords();
-      throneRoom[0].addObjectToMap(new Object(char = "o", name = "Interdimensional Booty", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.bootyDialogue, portraitChar = "-", moveType = "", allowSteal = false), emptyCell.x, emptyCell.y);
+    if (Game.gameDone) {
+      for (var i = 0; i < Game.stolenItems; i++) {
+        emptyCell = throneRoom[0].randomEmptyCellCoords();
+        throneRoom[0].addObjectToMap(new Object(char = "o", name = "Interdimensional Booty", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.bootyDialogue, portraitChar = "-", moveType = "", allowSteal = false), emptyCell.x, emptyCell.y);
+      }
     }
     return throneRoom;
   },
@@ -869,13 +874,15 @@ var creativeContent = {
       fgColours: ["red", "lightyellow"],
       responseFunction: {}
   },
+  
+  // hd7fdhdf78
   gameOver: {
-      textStrings: ["Scott Dracula", "So it seems you have found your way back through my evil time portals.  Congratulations", "{Finish Game}"],
-      spaces: [1, 2, 1],
-      fgColours: ["red", "lightyellow", "#b0ec62"],
+      textStrings: ["Scott Dracula", "So it seems you have found your way back through my evil time portals.", "And you brought lots of interdimensional space booty back with you!", "Great work!", "{Finish Game}"],
+      spaces: [1, 2, 2, 2, 2],
+      fgColours: ["red", "lightyellow", "lightyellow", "lightyellow", "#b0ec62"],
       responseFunction: {"{Finish Game}": menuResponse.gameEnd}
     },
-  // hd7fdhdf78
+  
   bootyDialogue: {
       textStrings: ["Interdimensional Booty", "Just one piece of your sweet haul."],
       spaces: [1, 2],
