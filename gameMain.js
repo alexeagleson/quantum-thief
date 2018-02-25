@@ -18,18 +18,18 @@ var Game = {
 
     view.defineView();
     
-    Game.faceHUD(creativeContent.scottDrac);
+    Game.faceHUD(creativeContent.allFacePortraits);
     
-    //Game.currentUniverse = creativeContent.iceUniverse();
+
     Game.travelTo(creativeContent.draculaThrone);
-    
-  
     emptyCell = Game.CompleteMap.randomEmptyCellCoords();
     Game.player = creativeContent.scottDracula;
     Game.CompleteMap.addObjectToMap(Game.player, emptyCell.x, emptyCell.y);
 
+
+    //Game.travelTo(creativeContent.iceUniverse);
+
     
-    var x = 1;
 
     var scheduler = new ROT.Scheduler.Simple();
     this.activeObjects.forEach(function(object) {
@@ -37,14 +37,12 @@ var Game = {
     })
     this.engine = new ROT.Engine(scheduler);
     this.engine.start();
-    
-
   },
   
   
   
   travelTo: function(worldFunction, ascii) {
-    Game.currentUniverse = creativeContent.draculaThrone();
+    Game.currentUniverse = worldFunction();
     Game.CompleteMap = Game.currentUniverse[Game.currentFloor];
     if (!ascii) {
       this.display.setOptions(Game.CompleteMap.tileLegend);
