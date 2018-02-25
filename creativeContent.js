@@ -20,6 +20,8 @@ var creativeContent = {
   
   scottDracula: new Object(char = "@", name = "Scott Dracula", wall = false, alive = true),
   
+  
+  
   iceUniverse: function() {
     var iceUniverse = [];
     emptyCell = null;
@@ -48,6 +50,18 @@ var creativeContent = {
     return iceUniverse;
   },
   
+  gameBeginDialogue: {
+      textStrings: ["Scott Dracula", "Hello what are you doing here?", "bimmyjo", "tell me more", "asdsadsad", "that is cool"],
+      spaces: [0, 1],
+      fgColours: ["red", "white", "red", "white", "white", "white"],
+      responseFunction: {"tell me more": menuResponse.throneDialogue2}
+  },
+  
+  
+  
+  
+  
+  
   
   
   throneDialogue: {
@@ -63,6 +77,10 @@ var creativeContent = {
       fgColours: ["blue", "white"],
       responseFunction: {}
   }
+  
+  
+  
+  
   
 }
 
