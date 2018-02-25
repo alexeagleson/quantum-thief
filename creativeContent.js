@@ -10,6 +10,13 @@ var menuResponse = {
     setTimeout(function() { showMenu(creativeContent.throneDialogue3); }, 10);
     return false;
   },
+  garbageBagDialogue2: function() {
+    setTimeout(function() { showMenu(creativeContent.garbageBagDialogue2); }, 10);
+    return false;
+  },
+  garbageBagDialogue3: function() {
+    return true;
+  },
   gameBeginDialogue: function() {
     Game.travelTo(creativeContent.fireUniverse);
     return true;
@@ -149,7 +156,7 @@ var creativeContent = {
     }
     // put stuff on specific floors
     emptyCell = fireUniverse[0].randomEmptyCellCoords();
-    fireUniverse[0].addObjectToMap(new Object(char = "i", name = "Garbage Bag", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.defaultDialogue, portraitChar = "g"), emptyCell.x, emptyCell.y);
+    fireUniverse[0].addObjectToMap(new Object(char = "i", name = "Garbage Bag", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.garbageBagDialogue, portraitChar = "g"), emptyCell.x, emptyCell.y);
     
     return fireUniverse;
   },
@@ -180,10 +187,17 @@ var creativeContent = {
   },
   
   garbageBagDialogue: {
-      textStrings: ["Garbage Bag", "I am so full of garbage.", "{I'm ready}"],
+      textStrings: ["Garbage Bag", "I am so full of garbage.", "{I'm so ready}"],
       spaces: [0, 1, 1],
-      fgColours: ["red", "white", "white"],
-      responseFunction: {"{I'm ready}": menuResponse.gameBeginDialogue}
+      fgColours: ["red", "yellow", "green"],
+      responseFunction: {"{I'm so ready}": menuResponse.garbageBagDialogue2}
+  },  
+  
+  garbageBagDialogue2: {
+      textStrings: ["Garbage Bag", "GROSS!? FOR WHAT!?.", "{I'm so sorry}"],
+      spaces: [0, 1, 1],
+      fgColours: ["red", "yellow", "green"],
+      responseFunction: {"{I'm so sorry}": menuResponse.garbageBagDialogue3}
   },  
 
   
@@ -193,7 +207,7 @@ var creativeContent = {
       fgColours: ["red", "white", "white"],
       responseFunction: {"{I'm ready}": menuResponse.gameBeginDialogue}
   },
-  
+    
   throneDialogue: {
       textStrings: ["Throne", "Hello what are you doing here?", "Name Example", "{Tell me More}"],
       spaces: [0, 1, 0],
@@ -214,9 +228,6 @@ var creativeContent = {
       fgColours: ["blue", "white"],
       responseFunction: {}
   }
-  
-
-  
 }
 
 
