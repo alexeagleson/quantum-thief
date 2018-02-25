@@ -83,6 +83,10 @@ var Object = function(char, name, wall, alive, clickFunction, myDialogue, portra
   },
     
   this.handleNpcTurn = function() {
+    if (!this.moveType) {
+      return true;
+    }
+    
     if (this.moveType === "follow") {
       let astar = new ROT.Path.AStar(Game.player.x, Game.player.y, Game.checkIfWall, {topology: 4});
       let addPath = (x, y) => this.path.push({x, y});
@@ -95,8 +99,10 @@ var Object = function(char, name, wall, alive, clickFunction, myDialogue, portra
       if(!step) { return false; }
 
       return this.moveToward({x: step.x, y: step.y});
-    } else {
+    } else if (this.moveType === "random") {
       return this.moveRandom();
+    } else {
+      return true;
     }
   },
 
@@ -162,17 +168,29 @@ var Object = function(char, name, wall, alive, clickFunction, myDialogue, portra
   },
     
   this.moveRandom = function() {
-    var d4 = rollDie(4);
+    var d10 = rollDie(10);
     var moveSuccess = false;
     
-    if (d4 === 1) {
+    if (d10 === 1) {
       moveSuccess = this.move([1, 0]);
-    } else if (d4 === 2) {
+    } else if (d10 === 2) {
       moveSuccess = this.move([-1, 0]);
-    } else if (d4 === 3) {
+    } else if (d10 === 3) {
       moveSuccess = this.move([0, 1]);
-    } else if (d4 === 4) {
+    } else if (d10 === 4) {
       moveSuccess = this.move([0, -1]);
+    } else if (d10 === 5) {
+      moveSuccess = true;
+    } else if (d10 === 6) {
+      moveSuccess = true;
+    } else if (d10 === 7) {
+      moveSuccess = true;
+    } else if (d10 === 8) {
+      moveSuccess = true;
+    } else if (d10 === 9) {
+      moveSuccess = true;
+    } else if (d10 === 10) {
+      moveSuccess = true;
     }
     return moveSuccess;
   },

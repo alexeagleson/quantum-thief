@@ -260,8 +260,10 @@ var Game = {
       var key = x + "," + y;  
       if (value) {
           totalMap.map[key] = new Tile(x, y, "#", true);
+          if (floor === 0 || floor === 4) { totalMap.map[key].visible = true; }
           return; 
         }
+        if (floor === 0 || floor === 4) { totalMap.map[key].visible = true; }
         totalMap.map[key] = new Tile(x, y, ".", false);
         totalMap.freeCells.push(key);
     }
