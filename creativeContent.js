@@ -5,6 +5,9 @@ var menuResponse = {
   
   // your dialogue at the bottom should link back up here, then back down to the bottom again to start a new dialogue
   
+// CTRL+F - 8:29AM - Universe sections added
+  // Throne room Dialogue/Descripts
+  
   done: function() {
     return true;
   },
@@ -16,6 +19,9 @@ var menuResponse = {
     setTimeout(function() { showMenu(creativeContent.throneDialogue3); }, 10);
     return false;
   },
+  
+  // fire Universe Dialogue/Descripts
+  
   LavaPersonDialogue2: function() {
     setTimeout(function() { showMenu(creativeContent.LavaPersonDialogue2); }, 10);
     return false;
@@ -28,7 +34,7 @@ var menuResponse = {
     setTimeout(function() { showMenu(creativeContent.LavaPerson2Dialogue2); }, 10);
     return false;
   },
-   LavaPerson2Dialogue3: function() {
+  LavaPerson2Dialogue3: function() {
     return true;
   },
   LavaPerson3Dialogue1: function() {
@@ -84,7 +90,7 @@ var menuResponse = {
   },
   retiredRobocopDialogue3: function() {
     setTimeout(function() { showMenu(creativeContent.retiredRobocopDialogue3); }, 10);
-    return true;
+    return false;
   },
   retiredRobocop2Dialogue2: function() {
     setTimeout(function() { showMenu(creativeContent.retiredRobocop2Dialogue2); }, 10);
@@ -121,17 +127,31 @@ var menuResponse = {
   goodOnesDescript: function() {
     return true;
   } 
+  
+  // Ice Universe Dialogue/Descripts
+  
+  // Robocop Universe Dialogue/Descripts
+  
+  // Hotdog Universei Dialogue/Descripts
+  
+  // 
 }
 
 
 var creativeContent = {
 
-  allFacePortraits:"https://i.imgur.com/SMQFIia.png",
+  allFacePortraits:"https://i.imgur.com/wVpO2rU.png",
   defaultBlackHUD:"https://i.imgur.com/VQ2sSG2.png",
   
   throneTile: "https://i.imgur.com/cnFUoqC.png",
   fireTile: "https://i.imgur.com/P9IXmPt.png",
-  oldPersonTile: "https://i.imgur.com/S535JYS.png",
+  oldPersonTile: "https://i.imgur.com/R21tfHE.png",
+  
+//CTRL+F - 8:29AM - Tilesets added
+  
+  hotDogTile: "https://i.imgur.com/ifkx7br.png",
+  iceTile: "https://i.imgur.com/qQ1lgrF.png",
+  robocopTile: "https://i.imgur.com/qWTXTHZ.png",
   
   faceLegend: {
     "-": multiplyBy12(multiplyBy32([0, 0])),
@@ -205,8 +225,7 @@ var creativeContent = {
     
     "~": multiplyBy32([7, 7])
   },
-  
-  
+
   
   draculaThrone: function() {
     var throneRoom = [];
@@ -267,8 +286,9 @@ var creativeContent = {
     fireUniverse[1].addObjectToMap(new Object(char = "k", name = "Soda Can", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.SodaCan1Dialogue, portraitChar = "-"), emptyCell.x, emptyCell.y);
     
     return fireUniverse;
-  },   
+  },
   
+// CRTL+F --- updated Universe w/ new character - NO DIALOGUE! Toggle alive = true on curios. Portrait file updated.
   oldPersonUniverse: function() {
     var oldPersonUniverse = [];
     var emptyCell = null;
@@ -291,49 +311,129 @@ var creativeContent = {
     // put stuff on specific floors
 
     emptyCell = oldPersonUniverse[0].randomEmptyCellCoords();
-    oldPersonUniverse[0].addObjectToMap(new Object(char = "*", name = "Robocop - Retired", wall = false, alive = true, clickFunction = "talk", myDialogue = creativeContent.retiredRobocopDialogue, portraitChar = "-", moveType = "follow"), emptyCell.x, emptyCell.y);
+    oldPersonUniverse[0].addObjectToMap(new Object(char = "?", name = "Nurse Rachet", wall = false, alive = true, clickFunction = "talk", myDialogue = creativeContent.retiredRobocopDialogue, portraitChar = "w", moveType = "random"), emptyCell.x, emptyCell.y);
 
     emptyCell = oldPersonUniverse[0].randomEmptyCellCoords();
-    oldPersonUniverse[0].addObjectToMap(new Object(char = "$", name = "Robocop - Finally Alive", wall = false, alive = true, clickFunction = "talk", myDialogue = creativeContent.retiredRobocop2Dialogue, portraitChar = "-", moveType = "follow"), emptyCell.x, emptyCell.y);
+    oldPersonUniverse[0].addObjectToMap(new Object(char = "*", name = "Robocop - Retired", wall = false, alive = true, clickFunction = "talk", myDialogue = creativeContent.retiredRobocopDialogue, portraitChar = "s", moveType = "follow"), emptyCell.x, emptyCell.y);
 
     emptyCell = oldPersonUniverse[0].randomEmptyCellCoords();
-    oldPersonUniverse[0].addObjectToMap(new Object(char = "+", name = "Robocop - Still Kickin'", wall = false, alive = true, clickFunction = "talk", myDialogue = creativeContent.retiredRobocop3Dialogue, portraitChar = "-", moveType = "follow"), emptyCell.x, emptyCell.y);
+    oldPersonUniverse[0].addObjectToMap(new Object(char = "$", name = "Robocop - Finally Alive", wall = false, alive = true, clickFunction = "talk", myDialogue = creativeContent.retiredRobocop2Dialogue, portraitChar = "u", moveType = "follow"), emptyCell.x, emptyCell.y);
 
     emptyCell = oldPersonUniverse[0].randomEmptyCellCoords();
-    oldPersonUniverse[0].addObjectToMap(new Object(char = "&", name = "Robocop - Poppa Wheelie", wall = false, alive = true, clickFunction = "talk", myDialogue = creativeContent.retiredRobocop4Dialogue, portraitChar = "-", moveType = "follow"), emptyCell.x, emptyCell.y);
+    oldPersonUniverse[0].addObjectToMap(new Object(char = "+", name = "Robocop - Still Kickin'", wall = false, alive = true, clickFunction = "talk", myDialogue = creativeContent.retiredRobocop3Dialogue, portraitChar = "t", moveType = "follow"), emptyCell.x, emptyCell.y);
 
-    // Incomplete Curios - No dialgoue
-        emptyCell = oldPersonUniverse[0].randomEmptyCellCoords();
+    emptyCell = oldPersonUniverse[0].randomEmptyCellCoords();
+    oldPersonUniverse[0].addObjectToMap(new Object(char = "&", name = "Robocop - Poppa Wheelie", wall = false, alive = true, clickFunction = "talk", myDialogue = creativeContent.retiredRobocop4Dialogue, portraitChar = "v", moveType = "follow"), emptyCell.x, emptyCell.y);
+
+    emptyCell = oldPersonUniverse[0].randomEmptyCellCoords();
     oldPersonUniverse[0].addObjectToMap(new Object(char = ")", name = "Werther's Original", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.werthersDescript, portraitChar = "-"), emptyCell.x, emptyCell.y);
 
-        emptyCell = oldPersonUniverse[0].randomEmptyCellCoords();
+    emptyCell = oldPersonUniverse[0].randomEmptyCellCoords();
     oldPersonUniverse[0].addObjectToMap(new Object(char = "(", name = "portalOld", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.retiredRobocopDialogue, portraitChar = "-"), emptyCell.x, emptyCell.y);
 
-        emptyCell = oldPersonUniverse[0].randomEmptyCellCoords();
+    emptyCell = oldPersonUniverse[0].randomEmptyCellCoords();
     oldPersonUniverse[0].addObjectToMap(new Object(char = "!", name = "Wheelchair", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.wheelchairDescript, portraitChar = "-", moveType = "follow"), emptyCell.x, emptyCell.y);
 
-          emptyCell = oldPersonUniverse[0].randomEmptyCellCoords();
-    oldPersonUniverse[0].addObjectToMap(new Object(char = "e", name = "Crossword", wall = false, alive = true, clickFunction = "talk", myDialogue = creativeContent.crosswordDescript, portraitChar = "-"), emptyCell.x, emptyCell.y);
+    emptyCell = oldPersonUniverse[0].randomEmptyCellCoords();
+    oldPersonUniverse[0].addObjectToMap(new Object(char = "e", name = "Crossword", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.crosswordDescript, portraitChar = "-"), emptyCell.x, emptyCell.y);
 
-          emptyCell = oldPersonUniverse[0].randomEmptyCellCoords();
-    oldPersonUniverse[0].addObjectToMap(new Object(char = "f", name = "Mentos - the freshmaker", wall = false, alive = true, clickFunction = "talk", myDialogue = creativeContent.mentosDescript, portraitChar = "-"), emptyCell.x, emptyCell.y);
+    emptyCell = oldPersonUniverse[0].randomEmptyCellCoords();
+    oldPersonUniverse[0].addObjectToMap(new Object(char = "f", name = "Mentos - the freshmaker", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.mentosDescript, portraitChar = "-"), emptyCell.x, emptyCell.y);
   
-        emptyCell = oldPersonUniverse[0].randomEmptyCellCoords();
-    oldPersonUniverse[0].addObjectToMap(new Object(char = "g", name = "The Bad Ones", wall = false, alive = true, clickFunction = "talk", myDialogue = creativeContent.badOnesDescript, portraitChar = "-"), emptyCell.x, emptyCell.y);
+    emptyCell = oldPersonUniverse[0].randomEmptyCellCoords();
+    oldPersonUniverse[0].addObjectToMap(new Object(char = "g", name = "The Bad Ones", wall = false, alive = true, clickFunction = "talk", myDialogue = creativeContent.badOnesDescript, portraitChar = "-", moveType = "follow"), emptyCell.x, emptyCell.y);
 
-        emptyCell = oldPersonUniverse[0].randomEmptyCellCoords();
-    oldPersonUniverse[0].addObjectToMap(new Object(char = "h", name = "The Fun Ones", wall = false, alive = true, clickFunction = "talk", myDialogue = creativeContent.funOnesDescript, portraitChar = "-"), emptyCell.x, emptyCell.y);
+    emptyCell = oldPersonUniverse[0].randomEmptyCellCoords();
+    oldPersonUniverse[0].addObjectToMap(new Object(char = "h", name = "The Fun Ones", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.funOnesDescript, portraitChar = "-"), emptyCell.x, emptyCell.y);
 
-            emptyCell = oldPersonUniverse[0].randomEmptyCellCoords();
-    oldPersonUniverse[0].addObjectToMap(new Object(char = "i", name = "The Good Ones", wall = false, alive = true, clickFunction = "talk", myDialogue = creativeContent.goodOnesDescript, portraitChar = "-"), emptyCell.x, emptyCell.y);
+    emptyCell = oldPersonUniverse[0].randomEmptyCellCoords();
+    oldPersonUniverse[0].addObjectToMap(new Object(char = "i", name = "The Good Ones", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.goodOnesDescript, portraitChar = "-"), emptyCell.x, emptyCell.y);
 
   return oldPersonUniverse;
   },
+  
+//CTRL+F - 8:47AM - Universes added. Values for name, dialogue are for Old Person Universe 
+  robocopUniverse: function() {
+    var robocopUniverse = [];
+    var emptyCell = null;
     
+    for (var i = 0; i < 3; i++) {
+      robocopUniverse[i] = Game.createMap(creativeContent.robocopTile, creativeContent.masterPngLegend, i);
+      
+       // stuff here will appear on every floor  
+      if (i != 0) {
+        emptyCell = robocopUniverse[i].randomEmptyCellCoords();
+        robocopUniverse[i].addObjectToMap(new Object(char = ">", name = "Downstairs", wall = false, alive = false, clickFunction = "floor down"), emptyCell.x, emptyCell.y);
+      }
+      
+      if (i != 2) {
+        emptyCell = robocopUniverse[i].randomEmptyCellCoords();
+        robocopUniverse[i].addObjectToMap(new Object(char = "<", name = "Upstairs", wall = false, alive = false, clickFunction = "floor up"), emptyCell.x, emptyCell.y);
+      }
+    }
+    
+    // put stuff on specific floors
+  
+  return robocopUniverse;
+  }, 
+  
+  iceUniverse: function() {
+    var iceUniverse = [];
+    var emptyCell = null;
+    
+    for (var i = 0; i < 3; i++) {
+      iceUniverse[i] = Game.createMap(creativeContent.iceTile, creativeContent.masterPngLegend, i);
+      
+       // stuff here will appear on every floor  
+      if (i != 0) {
+        emptyCell = iceUniverse[i].randomEmptyCellCoords();
+        iceUniverse[i].addObjectToMap(new Object(char = ">", name = "Downstairs", wall = false, alive = false, clickFunction = "floor down"), emptyCell.x, emptyCell.y);
+      }
+      
+      if (i != 2) {
+        emptyCell = iceUniverse[i].randomEmptyCellCoords();
+        iceUniverse[i].addObjectToMap(new Object(char = "<", name = "Upstairs", wall = false, alive = false, clickFunction = "floor up"), emptyCell.x, emptyCell.y);
+      }
+    }
+    
+    // put stuff on specific floors
+  
+  return iceUniverse;
+  },   
+  
+  
+  hotdogUniverse: function() {
+    var hotdogUniverse = [];
+    var emptyCell = null;
+    
+    for (var i = 0; i < 3; i++) {
+      hotdogUniverse[i] = Game.createMap(creativeContent.hotdogTile, creativeContent.masterPngLegend, i);
+      
+       // stuff here will appear on every floor  
+      if (i != 0) {
+        emptyCell = hotdogUniverse[i].randomEmptyCellCoords();
+        hotdogUniverse[i].addObjectToMap(new Object(char = ">", name = "Downstairs", wall = false, alive = false, clickFunction = "floor down"), emptyCell.x, emptyCell.y);
+      }
+      
+      if (i != 2) {
+        emptyCell = hotdogUniverse[i].randomEmptyCellCoords();
+        hotdogUniverse[i].addObjectToMap(new Object(char = "<", name = "Upstairs", wall = false, alive = false, clickFunction = "floor up"), emptyCell.x, emptyCell.y);
+      }
+    }
+    
+    // put stuff on specific floors
+
+  return hotdogUniverse;
+  },  
+  
+  
   
   // object name colour: "red"
   // text colour: "lightyellow"
   // Response colour: "#b0ec62"
+  
+  
+  // FireWorld Dialogue
   
   defaultDialogue: {
       textStrings: ["I don't know what this is!"],
@@ -547,7 +647,13 @@ var creativeContent = {
       spaces: [0, 1],
       fgColours: ["red", "lightyellow", "#b0ec62", "lightyellow"],
       responseFunction: {}
-  }
+  },
+  
+  // Ice Universe Dialogue
+  
+  // Robocop Universe Dialogue
+  
+  // Hotdog Universei Dialogue
 }
 
 
