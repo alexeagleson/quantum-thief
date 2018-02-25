@@ -24,13 +24,13 @@ var CompleteMap = function(map, tileLegend, floor) {
 }
 
 
-var Tile = function(x, y, char, wall) {
+var Tile = function(x, y, char, wall, visible) {
   this.x = x;
   this.y = y;
   this.wall = wall;
   this.char = char;
   this.objectsOnThisTile = [];
-  this.visible = false;
+  this.visible = visible;
 
   this.drawTile = function() {
     if (!this.visible) { 

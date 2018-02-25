@@ -21,10 +21,6 @@ var Game = {
     view.defineView();
 
     Game.travelTo(creativeContent.draculaThrone);
-
-    this.renderGame();
-    
-    Game.computeFOV();
     
   },
   
@@ -41,9 +37,7 @@ var Game = {
         Game.renderCoords(x, y, delay = 20);
       }
     });
-
   },
-  
   
   
   travelTo: function(worldFunction, ascii) {
@@ -66,9 +60,12 @@ var Game = {
     this.engine = new ROT.Engine(scheduler);
     this.engine.start();
     
+    Game.computeFOV();
+    Game.renderGame();
+    
     setTimeout(function() { 
       Game.renderGame();
-    }, Game.gameSpeed);
+    }, 500);
   },
 
   
@@ -209,11 +206,15 @@ var Game = {
     return true;
   },
   
-  createMap:function(tileset, tileMap, floor, mapType) {
+  createMap:function(tileset, tileMap, floor, mapType, visible) {
 
     var thisMap = {};
     var tileElement = document.createElement("img");
     tileElement.src = tileset;
+    
+    if (!visible) {
+      var visible = false;
+    }
 
     var tileLegend = {
         width: Game.display._options.width,
@@ -259,12 +260,10 @@ var Game = {
     var digCallback = function(x, y, value) {
       var key = x + "," + y;  
       if (value) {
-          totalMap.map[key] = new Tile(x, y, "#", true);
-          if (floor === 0 || floor === 4) { totalMap.map[key].visible = true; }
+          totalMap.map[key] = new Tile(x, y, "#", true, visible);
           return; 
-        }
-        if (floor === 0 || floor === 4) { totalMap.map[key].visible = true; }
-        totalMap.map[key] = new Tile(x, y, ".", false);
+        }        
+        totalMap.map[key] = new Tile(x, y, ".", false, visible);
         totalMap.freeCells.push(key);
     }
     digger.create(digCallback.bind(this));
