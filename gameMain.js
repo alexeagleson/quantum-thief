@@ -16,14 +16,12 @@ var Game = {
 
   init: function() {
     
-    Game.player = new Object(char = "@", name = "Scarlic", wall = true, alive = true, clickFunction = null, myDialogue = null, portraitChar = "@");
+    Game.player = new Object(char = "@", name = "Scarlic", wall = true, alive = true, clickFunction = null, myDialogue = null, portraitChar = "@", moveType = null);
 
     view.defineView();
 
     Game.travelTo(creativeContent.draculaThrone);
 
-
-    
     this.renderGame();
     
     Game.computeFOV();
@@ -35,11 +33,12 @@ var Game = {
     var fov = new ROT.FOV.PreciseShadowcasting(Game.checkIfWall);
 
     /* output callback */
-    fov.compute(Game.player.x, Game.player.y, 10, function(x, y, r, visibility) {
+    fov.compute(Game.player.x, Game.player.y, 4, function(x, y, r, visibility) {
       if (visibility < 0.75) {
         // nada
-      } else {
+      } else if (Game.CompleteMap.map[x + "," + y].visible === false) {
         Game.CompleteMap.map[x + "," + y].visible = true;
+        Game.renderCoords(x, y, delay = 20);
       }
     });
 

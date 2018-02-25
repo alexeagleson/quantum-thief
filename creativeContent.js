@@ -121,7 +121,6 @@ var creativeContent = {
     "j": multiplyBy32([6, 3]),
     "k": multiplyBy32([7, 3]),
     
-
     "~": multiplyBy32([7, 7])
     
 

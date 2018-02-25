@@ -53,7 +53,7 @@ var Tile = function(x, y, char, wall) {
 
 
 
-var Object = function(char, name, wall, alive, clickFunction, myDialogue, portraitChar) {
+var Object = function(char, name, wall, alive, clickFunction, myDialogue, portraitChar, moveType) {
   this.x = null;
   this.y = null;
   this.char = char;
@@ -64,6 +64,7 @@ var Object = function(char, name, wall, alive, clickFunction, myDialogue, portra
   this.clickFunction = clickFunction,
   this.myDialogue = myDialogue,
   this.portraitChar = portraitChar,
+  this.moveType = moveType,
   
   this.act = function() {
     if (this === Game.player) {
@@ -82,17 +83,21 @@ var Object = function(char, name, wall, alive, clickFunction, myDialogue, portra
   },
     
   this.handleNpcTurn = function() {
-    let astar = new ROT.Path.AStar(Game.player.x, Game.player.y, Game.checkIfWall, {topology: 4});
-    let addPath = (x, y) => this.path.push({x, y});
-    astar.compute(this.x, this.y, addPath);
-  
-    this.path.shift();
-    let step = this.path.shift();
-    this.path = [];
-    
-    if(!step) { return false; }
-    
-    return this.moveToward({x: step.x, y: step.y});
+    if (this.moveType === "follow") {
+      let astar = new ROT.Path.AStar(Game.player.x, Game.player.y, Game.checkIfWall, {topology: 4});
+      let addPath = (x, y) => this.path.push({x, y});
+      astar.compute(this.x, this.y, addPath);
+
+      this.path.shift();
+      let step = this.path.shift();
+      this.path = [];
+
+      if(!step) { return false; }
+
+      return this.moveToward({x: step.x, y: step.y});
+    } else {
+      return this.moveRandom();
+    }
   },
 
   this.move = function(directionArray) {
@@ -136,7 +141,6 @@ var Object = function(char, name, wall, alive, clickFunction, myDialogue, portra
     Game.renderCoords(this.x, this.y, delay = 10);
     
     Game.computeFOV();
-    Game.renderGame();
     
     return true;
   }, 
