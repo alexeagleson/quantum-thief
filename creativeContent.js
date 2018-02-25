@@ -93,7 +93,7 @@ var creativeContent = {
   
   throneTile: "https://i.imgur.com/cnFUoqC.png",
   fireTile: "https://i.imgur.com/P9IXmPt.png",
-  oldPersonTile: "https://i.imgur.com/cnFUoqC.png",
+  oldPersonTile: "https://i.imgur.com/S535JYS.png",
 
   
   
