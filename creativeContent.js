@@ -79,10 +79,10 @@ var creativeContent = {
   },
   
   gameBeginDialogue: {
-      textStrings: ["Scott Dracula", "I'm sending you back in time.  Get ready."],
-      spaces: [0, 1],
-      fgColours: ["red", "white"],
-      responseFunction: {"I'm sending you back in time.  Get ready.": menuResponse.gameBeginDialogue}
+      textStrings: ["Scott Dracula", "I'm sending you back in time.  Get ready.", "{I'm ready let's go.}"],
+      spaces: [0, 1, 1],
+      fgColours: ["red", "white", "white"],
+      responseFunction: {"{DDD}": menuResponse.gameBeginDialogue}
   },
   
   throneDialogue: {
