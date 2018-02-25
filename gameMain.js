@@ -9,7 +9,6 @@ var Game = {
   currentFloor: 0,
   engine: null,
   player: null,
-  activeObjects: [],
   gameSpeed: 200,
   gameWidth: 24,
   gameHeight: 24,
@@ -43,7 +42,6 @@ var Game = {
   travelTo: function(worldFunction, ascii) {
 
     scheduler = new ROT.Scheduler.Simple();
-    this.activeObjects = [];
 
     Game.currentUniverse = worldFunction();
     Game.CompleteMap = Game.currentUniverse[Game.currentFloor];
@@ -53,9 +51,14 @@ var Game = {
     emptyCell = Game.CompleteMap.randomEmptyCellCoords();
     Game.CompleteMap.addObjectToMap(Game.player, emptyCell.x, emptyCell.y);
     
-    this.activeObjects.forEach(function(object) {
-      if (object.alive) { scheduler.add(object, true); }
+    Game.CompleteMap.activeObjects.forEach(function(object) {
+      if (object.alive) { 
+        if (object != Game.player) {
+          scheduler.add(object, true); 
+        }
+      }
     })
+    scheduler.add(Game.player, true); 
     
     this.engine = new ROT.Engine(scheduler);
     this.engine.start();
@@ -116,7 +119,7 @@ var Game = {
   floorUp: function() {
     Game.currentFloor += 1;
     Game.CompleteMap = Game.currentUniverse[Game.currentFloor];
-    this.activeObjects.forEach(function(object) {
+    Game.CompleteMap.activeObjects.forEach(function(object) {
       object.x = rollDie(24);
       object.y = rollDie(24);
     });
