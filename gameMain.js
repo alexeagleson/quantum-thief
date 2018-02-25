@@ -18,24 +18,18 @@ var Game = {
 
     view.defineView();
     
+    Game.faceHUD(creativeContent.scottDrac);
     
     //Game.currentUniverse = creativeContent.iceUniverse();
-    Game.currentUniverse = creativeContent.draculaThrone();
-    Game.CompleteMap = Game.currentUniverse[Game.currentFloor];
+    Game.travelTo(creativeContent.draculaThrone);
     
   
     emptyCell = Game.CompleteMap.randomEmptyCellCoords();
     Game.player = creativeContent.scottDracula;
     Game.CompleteMap.addObjectToMap(Game.player, emptyCell.x, emptyCell.y);
-    
-    if (true) {
-      this.display.setOptions(Game.CompleteMap.tileLegend);
-    }
-    
-    Game.renderGame();
 
     
-    
+    var x = 1;
 
     var scheduler = new ROT.Scheduler.Simple();
     this.activeObjects.forEach(function(object) {
@@ -44,13 +38,22 @@ var Game = {
     this.engine = new ROT.Engine(scheduler);
     this.engine.start();
     
-    Game.faceHUD(creativeContent.scottDrac);
-    showMenu(creativeContent.gameBeginDialogue);
-    
+
+  },
+  
+  
+  
+  travelTo: function(worldFunction, ascii) {
+    Game.currentUniverse = creativeContent.draculaThrone();
+    Game.CompleteMap = Game.currentUniverse[Game.currentFloor];
+    if (!ascii) {
+      this.display.setOptions(Game.CompleteMap.tileLegend);
+    }
     setTimeout(function() { 
       Game.renderGame();
-    }, Game.gameSpeed);
+    }, 500);
   },
+
   
   faceHUD: function(faceSet) {
 
@@ -74,7 +77,7 @@ var Game = {
     
     setTimeout(function() { 
       if (Game.hudWidth < Game.hudHeight) {
-        Game.gameHUD.drawText(0, 0, "@", Game.hudWidth);
+        Game.gameHUD.drawText(0, 0, "a", Game.hudWidth);
         Game.gameHUD.drawText(0, 1, "#", Game.hudWidth);
       } else {
         Game.gameHUD.drawText(0, 0, "@", Game.hudWidth);
