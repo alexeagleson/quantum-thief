@@ -151,6 +151,9 @@ var menuResponse = {
   },
   throneDialogue2: function() {
     return creativeContent.throneDialogue2;
+  },
+  gameBeginDialogue: function() {
+    return true;
   }
 }
 

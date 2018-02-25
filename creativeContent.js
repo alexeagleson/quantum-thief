@@ -66,15 +66,10 @@ var creativeContent = {
       textStrings: ["Scott Dracula", "I'm sending you back in time.  Get ready."],
       spaces: [0, 1],
       fgColours: ["red", "white"],
-      responseFunction: {}
+      responseFunction: {"I'm sending you back in time.  Get ready.": menuResponse.gameBeginDialogue}
   },
   
-  
-  
-  
-  
-  
-  
+
   
   throneDialogue: {
       textStrings: ["pipp", "Hello what are you doing here?", "bimmyjo", "tell me more", "asdsadsad", "that is cool"],
@@ -95,12 +90,6 @@ var creativeContent = {
   
   
 }
-
-
-
-
-
-
 
 
 
