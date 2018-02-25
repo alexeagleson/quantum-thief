@@ -316,16 +316,31 @@ var creativeContent = {
     oldPersonUniverse[0].addObjectToMap(new Object(char = ")", name = "Werther's Original", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.werthers, portraitChar = "-"), emptyCell.x, emptyCell.y);
 
         emptyCell = oldPersonUniverse[0].randomEmptyCellCoords();
-    oldPersonUniverse[0].addObjectToMap(new Object(char = "*", name = "Upstairs", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.retiredRobocopDialogue, portraitChar = "-", moveType = "follow"), emptyCell.x, emptyCell.y);
+    oldPersonUniverse[0].addObjectToMap(new Object(char = ">", name = "Upstairs", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.retiredRobocopDialogue, portraitChar = "-"), emptyCell.x, emptyCell.y);
 
         emptyCell = oldPersonUniverse[0].randomEmptyCellCoords();
-    oldPersonUniverse[0].addObjectToMap(new Object(char = "*", name = "Robocop - Retired", wall = false, alive = true, clickFunction = "talk", myDialogue = creativeContent.retiredRobocopDialogue, portraitChar = "-", moveType = "follow"), emptyCell.x, emptyCell.y);
+    oldPersonUniverse[0].addObjectToMap(new Object(char = "<", name = "Downstairs", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.retiredRobocopDialogue, portraitChar = "-"), emptyCell.x, emptyCell.y);
 
         emptyCell = oldPersonUniverse[0].randomEmptyCellCoords();
-    oldPersonUniverse[0].addObjectToMap(new Object(char = "*", name = "Robocop - Retired", wall = false, alive = true, clickFunction = "talk", myDialogue = creativeContent.retiredRobocopDialogue, portraitChar = "-", moveType = "follow"), emptyCell.x, emptyCell.y);
+    oldPersonUniverse[0].addObjectToMap(new Object(char = "(", name = "portalOld", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.retiredRobocopDialogue, portraitChar = "-"), emptyCell.x, emptyCell.y);
 
         emptyCell = oldPersonUniverse[0].randomEmptyCellCoords();
-    oldPersonUniverse[0].addObjectToMap(new Object(char = "*", name = "Robocop - Retired", wall = false, alive = true, clickFunction = "talk", myDialogue = creativeContent.retiredRobocopDialogue, portraitChar = "-", moveType = "follow"), emptyCell.x, emptyCell.y);
+    oldPersonUniverse[0].addObjectToMap(new Object(char = "!", name = "Wheelchair", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.retiredRobocopDialogue, portraitChar = "-", moveType = "follow"), emptyCell.x, emptyCell.y);
+
+          emptyCell = oldPersonUniverse[0].randomEmptyCellCoords();
+    oldPersonUniverse[0].addObjectToMap(new Object(char = "e", name = "Crosswords", wall = false, alive = true, clickFunction = "talk", myDialogue = creativeContent.retiredRobocopDialogue, portraitChar = "-"), emptyCell.x, emptyCell.y);
+
+          emptyCell = oldPersonUniverse[0].randomEmptyCellCoords();
+    oldPersonUniverse[0].addObjectToMap(new Object(char = "f", name = "Mentos - the freshmaker", wall = false, alive = true, clickFunction = "talk", myDialogue = creativeContent.retiredRobocopDialogue, portraitChar = "-"), emptyCell.x, emptyCell.y);
+  
+        emptyCell = oldPersonUniverse[0].randomEmptyCellCoords();
+    oldPersonUniverse[0].addObjectToMap(new Object(char = "g", name = "The Bad Ones", wall = false, alive = true, clickFunction = "talk", myDialogue = creativeContent.retiredRobocopDialogue, portraitChar = "-"), emptyCell.x, emptyCell.y);
+
+        emptyCell = oldPersonUniverse[0].randomEmptyCellCoords();
+    oldPersonUniverse[0].addObjectToMap(new Object(char = "g", name = "The Fun Ones", wall = false, alive = true, clickFunction = "talk", myDialogue = creativeContent.retiredRobocopDialogue, portraitChar = "-"), emptyCell.x, emptyCell.y);
+
+            emptyCell = oldPersonUniverse[0].randomEmptyCellCoords();
+    oldPersonUniverse[0].addObjectToMap(new Object(char = "h", name = "The Good Ones", wall = false, alive = true, clickFunction = "talk", myDialogue = creativeContent.retiredRobocopDialogue, portraitChar = "-"), emptyCell.x, emptyCell.y);
 
   return oldPersonUniverse;
   },
