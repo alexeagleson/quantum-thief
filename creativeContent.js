@@ -19,6 +19,7 @@ var menuResponse = {
 var creativeContent = {
 
   allFacePortraits:"https://i.imgur.com/wb3gFai.png",
+  defaultBlackHUD:"https://i.imgur.com/VQ2sSG2.png",
   
   throneTile: "https://i.imgur.com/C2pOPKO.png",
   fireTile: "https://i.imgur.com/M4rxuYB.png",

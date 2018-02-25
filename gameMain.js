@@ -50,29 +50,18 @@ var Game = {
     Game.CompleteMap.addObjectToMap(Game.player, emptyCell.x, emptyCell.y);
     setTimeout(function() { 
       Game.renderGame();
-    }, 500);
+    }, Game.gameSpeed);
   },
 
   
   faceHUD: function(faceSet) {
+    var tileElement = document.createElement("img");
     
     if (!faceSet) {
-      var options = {
-        width: Game.hudWidth,
-        height: Game.hudHeight,
-        fontSize: 32,
-        forceSquareRatio:true
-      }
-      
-
-      this.gameHUD.setOptions(tileLegend);
-      Game.gameHUD.clear();
-
-      return false;
+      tileElement.src = creativeContent.defaultBlackHUD;
+    } else {
+      tileElement.src = faceSet;
     }
-
-    var tileElement = document.createElement("img");
-    tileElement.src = faceSet;
     
     
     var tileLegend = {
