@@ -68,6 +68,17 @@ var Object = function(char, name, wall, alive, clickFunction, myDialogue, portra
   this.moveType = moveType,
   
   this.act = function() {
+    
+    var d40 = rollDie(40);
+    
+    if (d40 === 38) {
+      this.moveType = "random";
+    } else if (d40 === 39) {
+      this.moveType = "random";
+    } else if (d40 === 40) {
+      this.moveType = "follow";
+    }
+    
     if (this === Game.player) {
       this.handlePlayerTurn();
     } else{
@@ -84,6 +95,10 @@ var Object = function(char, name, wall, alive, clickFunction, myDialogue, portra
   },
     
   this.handleNpcTurn = function() {
+    if (!this.alive) {
+      return true;
+    }
+    
     if (!this.moveType) {
       return true;
     }

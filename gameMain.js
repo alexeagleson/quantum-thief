@@ -58,7 +58,7 @@ var Game = {
     
     setTimeout(function() { 
       Game.renderGame();
-    }, 500);
+    }, 200);
   },
   
   resetEngine: function() {
@@ -138,7 +138,7 @@ var Game = {
     Game.computeFOV();
     setTimeout(function() { 
       Game.renderGame();
-    }, 500);
+    }, 50);
   },
   
   floorDown: function() {
@@ -157,7 +157,7 @@ var Game = {
     Game.computeFOV();
     setTimeout(function() { 
       Game.renderGame();
-    }, 500);
+    }, 50);
   },
   
   renderGame: function() {
