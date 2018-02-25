@@ -94,8 +94,12 @@ var menuResponse = {
     setTimeout(function() { showMenu(creativeContent.retiredRobocop2Dialogue3); }, 10);
     return false;
   },
-  
-  
+  retiredRobocop3Dialogue: function() {
+    return true;
+  },  
+  retiredRobocop4Dialogue: function() {
+    return true;
+  },  
 }
 
 
@@ -302,10 +306,10 @@ var creativeContent = {
     oldPersonUniverse[0].addObjectToMap(new Object(char = "$", name = "Robocop - Finally Alive", wall = false, alive = true, clickFunction = "talk", myDialogue = creativeContent.retiredRobocop2Dialogue, portraitChar = "-", moveType = "follow"), emptyCell.x, emptyCell.y);
 
     emptyCell = oldPersonUniverse[0].randomEmptyCellCoords();
-    oldPersonUniverse[0].addObjectToMap(new Object(char = "$", name = "Robocop - Still Kickin'", wall = false, alive = true, clickFunction = "talk", myDialogue = creativeContent.retiredRobocop3Dialogue, portraitChar = "-", moveType = "follow"), emptyCell.x, emptyCell.y);
+    oldPersonUniverse[0].addObjectToMap(new Object(char = "#", name = "Robocop - Still Kickin'", wall = false, alive = true, clickFunction = "talk", myDialogue = creativeContent.retiredRobocop3Dialogue, portraitChar = "-", moveType = "follow"), emptyCell.x, emptyCell.y);
 
     emptyCell = oldPersonUniverse[0].randomEmptyCellCoords();
-    oldPersonUniverse[0].addObjectToMap(new Object(char = "$", name = "Robocop - Poppa Wheelie", wall = false, alive = true, clickFunction = "talk", myDialogue = creativeContent.retiredRobocop4Dialogue, portraitChar = "-", moveType = "follow"), emptyCell.x, emptyCell.y);
+    oldPersonUniverse[0].addObjectToMap(new Object(char = "!", name = "Robocop - Poppa Wheelie", wall = false, alive = true, clickFunction = "talk", myDialogue = creativeContent.retiredRobocop4Dialogue, portraitChar = "-", moveType = "follow"), emptyCell.x, emptyCell.y);
 
   return oldPersonUniverse;
   },
@@ -492,7 +496,19 @@ var creativeContent = {
       spaces: [0, 1, 0],
       fgColours: ["red", "lightyellow","#b0ec62", "lightyellow"],
       responseFunction: {}
-  }
+  },
+    retiredRobocop3Dialogue: {
+      textStrings: ["Robocop - Still Kickin'", "Hello, dearie. Please help yourself to some mentos."],
+      spaces: [0, 1],
+      fgColours: ["red", "lightyellow", "#b0ec62", "lightyellow"],
+      responseFunction: {}
+  },
+    retiredRobocop4Dialogue: {
+      textStrings: ["Robocop - Poppa Wheelie", "Alex Murphy! I haven't seen you since the bank heist of 2044. Check out this sick grind."],
+      spaces: [0, 1],
+      fgColours: ["red", "lightyellow", "#b0ec62", "lightyellow"],
+      responseFunction: {}
+  },
 }
 
 
