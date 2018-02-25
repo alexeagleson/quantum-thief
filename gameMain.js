@@ -17,6 +17,7 @@ var Game = {
   gameHeight: 24,
   myTravelChecklist: ["Throne Universe"],
   gameDone: false,
+  stolenItems: 0,
 
   init: function() {
     

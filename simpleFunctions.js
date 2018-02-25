@@ -115,6 +115,22 @@ function removeObjectFromTile(object) {
   return false;
 }
 
+function removeObjectFromActive(object) {
+  var spliceLocation = null;
+
+  for (var i = 0; i < Game.CompleteMap.activeObjects.length; i++) {
+    if (object === Game.CompleteMap.activeObjects[i]) {
+      spliceLocation = i;
+    }
+  }
+
+  if (spliceLocation != null) {
+    Game.CompleteMap.activeObjects.splice(spliceLocation, 1);
+    return true;
+  }
+  return false;
+}
+
 
 function show_image(src, width, height, alt) {
   var img = document.createElement("img");

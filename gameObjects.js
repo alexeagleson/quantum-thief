@@ -129,14 +129,18 @@ var Object = function(char, name, wall, alive, clickFunction, myDialogue, portra
   },
     
   this.steal = function(objectToSteal) {
-    
+    removeObjectFromTile(objectToSteal);
+    removeObjectFromActive(objectToSteal);
+    Game.resetEngine();
+    Game.renderCoords(objectToSteal.x, objectToSteal.y, delay = 30);
+    Game.stolenItems++;
   },
 
   this.move = function(directionArray) {
     
     if (this === Game.player) {
       hitSound.currentTime = 0;
-      hitSound.play();
+      //hitSound.play();
     }
     
     
