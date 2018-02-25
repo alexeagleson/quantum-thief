@@ -75,12 +75,13 @@ var menuResponse = {
   
   // Old Person Universe Dialogue/Descripts
   retiredRobocopDialogue: function() {
-    Game.travelTo(creativeContent.retiredRobocopDialogue);
+    setTimeout(function() { showMenu(creativeContent.retiredRobocopDialogue); }, 10);
     return false;
+    
   },
   retiredRobocopDialogue2: function() {
-    Game.travelTo(creativeContent.retiredRobocopDialogue2);
-    return true;
+     //setTimeout(function() { showMenu(creativeContent.retiredRobocopDialogue2); }, 10);
+    return false;
   }
   
   
@@ -435,22 +436,22 @@ var creativeContent = {
   throneDialogue3: {
       textStrings: ["Throne", "stop asking"],
       spaces: [0, 1],
-      fgColours: ["blue", "white"],
+      fgColours: ["red", "white"],
       responseFunction: {}
   },
   
   // OldPersonUniverse Dialogue
 
   retiredRobocopDialogue: {
-      textStrings: ["Robocop - Retired", "Hello there, Sonny. You look strong and... smart. Can you help out a Robo Pop in need?", "{Yar, another has-been looking for favours?}"],
+      textStrings: ["Robocop - Retired", "Hello there, Sonny. You look strong and... er, smart. Can you help out a Robo Pop in need?", "{Yar, not another has-been looking for favours!}"],
       spaces: [0, 1],
-      fgColours: ["blue", "lightyellow", "#b0ec62", "lightyellow"],
+      fgColours: ["red", "lightyellow", "#b0ec62", "lightyellow"],
       responseFunction: {"{Yar, another has-been looking for favours?}": menuResponse.retiredRobocopDialogue2}
   },
   retiredRobocopDialogue2: {
-      textStrings: ["Robocop - Retired", "Well sure, I'm just a retired cop looking for the Real Good Stuff? Not the Regular Good Ones, if you know what I mean.", "Yarrr?", "Ah that sweet mess. Where have my robotic dentures got to now?"],
-      spaces: [0, 1],
-      fgColours: ["blue", "lightyellow", "#b0ec62", "blue", "lightyellow"],
+      textStrings: ["Robocop - Retired", "Well sure, I'm just a retired cop looking for the REAL Good Stuff. Not the Regular Good Ones. You know the ones I mean.", "...", "Ah that sweet mess. Where have my robotic dentures got to now?"],
+      spaces: [0, 1, 1, 1],
+      fgColours: ["red", "lightyellow", "#b0ec62", "lightyellow"],
       responseFunction: {}
   }
 }
