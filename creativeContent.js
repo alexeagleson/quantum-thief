@@ -69,7 +69,7 @@ var menuResponse = {
     return true;
   },
   gameBeginDialogue: function() {
-    Game.travelToRandomUniverse()
+    Game.travelToRandomUnvisitedUniverse();
     return true;
   },
   
