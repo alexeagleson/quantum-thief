@@ -22,6 +22,11 @@ var Game = {
 
     Game.travelTo(creativeContent.draculaThrone);
     
+    Game.CompleteMap.addObjectToMap(new Object(char = "i", name = "Garbage Bag", wall = true, alive = false, clickFunction = "talk", myDialogue = creativeContent.garbageBagDialogue, portraitChar = "g"), 5, 5);
+    
+    
+    
+    //Game.computeFOV();
 
     var scheduler = new ROT.Scheduler.Simple();
     this.activeObjects.forEach(function(object) {
@@ -37,20 +42,15 @@ var Game = {
   computeFOV: function() {
     
 
-    var fov = new ROT.FOV.PreciseShadowcasting(checkIfWall);
+    var fov = new ROT.FOV.PreciseShadowcasting(Game.checkIfWall);
 
     /* output callback */
     fov.compute(50, 22, 10, function(x, y, r, visibility) {
-        var ch = (r ? "" : "@");
-        var color = (data[x+","+y] ? "#aa0": "#660");
-        //display.draw(x, y, ch, "#fff", color);
+        Game.CompleteMap.addObjectToMap(new Object(char = "i", name = "Garbage Bag", wall = true, alive = false, clickFunction = "talk", myDialogue = creativeContent.garbageBagDialogue, portraitChar = "g"), x, y);
     });
     
     console.log(fov);
-    
-    
-    
-  };
+  },
   
   
   
