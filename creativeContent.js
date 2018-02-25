@@ -577,16 +577,16 @@ var creativeContent = {
     
     // put stuff on specific floors
     emptyCell = fireUniverse[2].randomEmptyCellCoords();
-    fireUniverse[2].addObjectToMap(new Object(char = "q", name = "Garbage Can", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.GarbageCanDialogue, portraitChar = "-"), emptyCell.x, emptyCell.y);
+    fireUniverse[2].addObjectToMap(new Object(char = "q", name = "Garbage Can", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.GarbageCanDialogue, portraitChar = "-", moveType = "", allowSteal = true), emptyCell.x, emptyCell.y);
     
     emptyCell = fireUniverse[2].randomEmptyCellCoords();
-    fireUniverse[2].addObjectToMap(new Object(char = "h", name = "Violet Crystal", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.VioletCrystalDialogue, portraitChar = "-"), emptyCell.x, emptyCell.y);
+    fireUniverse[2].addObjectToMap(new Object(char = "h", name = "Violet Crystal", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.VioletCrystalDialogue, portraitChar = "-", moveType = "", allowSteal = true), emptyCell.x, emptyCell.y);
 
     emptyCell = fireUniverse[0].randomEmptyCellCoords();
-    fireUniverse[0].addObjectToMap(new Object(char = "p", name = "Garbage Bag", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.garbageBagDialogue, portraitChar = "-"), emptyCell.x, emptyCell.y);
+    fireUniverse[0].addObjectToMap(new Object(char = "p", name = "Garbage Bag", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.garbageBagDialogue, portraitChar = "-", moveType = "", allowSteal = true), emptyCell.x, emptyCell.y);
 
     emptyCell = fireUniverse[1].randomEmptyCellCoords();
-    fireUniverse[1].addObjectToMap(new Object(char = "o", name = "Garbage Bag 2", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.garbageBag2Dialogue, portraitChar = "-"), emptyCell.x, emptyCell.y);
+    fireUniverse[1].addObjectToMap(new Object(char = "o", name = "Garbage Bag 2", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.garbageBag2Dialogue, portraitChar = "-", moveType = "", allowSteal = true), emptyCell.x, emptyCell.y);
     
     emptyCell = fireUniverse[0].randomEmptyCellCoords();
     fireUniverse[0].addObjectToMap(new Object(char = "*", name = "Lava Person1", wall = false, alive = true, clickFunction = "talk", myDialogue = creativeContent.LavaPerson1Dialogue, portraitChar = "l", moveType = "follow"), emptyCell.x, emptyCell.y);
@@ -607,25 +607,25 @@ var creativeContent = {
     fireUniverse[1].addObjectToMap(new Object(char = "{", name = "Lava Person6", wall = false, alive = true, clickFunction = "talk", myDialogue = creativeContent.LavaPerson6Dialogue, portraitChar = "q", moveType = "random"), emptyCell.x, emptyCell.y);
   
     emptyCell = fireUniverse[1].randomEmptyCellCoords();
-    fireUniverse[1].addObjectToMap(new Object(char = "k", name = "Soda Can", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.SodaCan1Dialogue, portraitChar = "-"), emptyCell.x, emptyCell.y);
+    fireUniverse[1].addObjectToMap(new Object(char = "k", name = "Soda Can", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.SodaCan1Dialogue, portraitChar = "-", moveType = "", allowSteal = true), emptyCell.x, emptyCell.y);
     
     emptyCell = fireUniverse[0].randomEmptyCellCoords();
-    fireUniverse[0].addObjectToMap(new Object(char = "m", name = "Soda Blue", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.SodaBlue1Dialogue, portraitChar = "-"), emptyCell.x, emptyCell.y);
+    fireUniverse[0].addObjectToMap(new Object(char = "m", name = "Soda Blue", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.SodaBlue1Dialogue, portraitChar = "-", moveType = "", allowSteal = true), emptyCell.x, emptyCell.y);
     
     emptyCell = fireUniverse[2].randomEmptyCellCoords();
-    fireUniverse[2].addObjectToMap(new Object(char = "n", name = "Soda Red", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.SodaRed1Dialogue, portraitChar = "-"), emptyCell.x, emptyCell.y);
+    fireUniverse[2].addObjectToMap(new Object(char = "n", name = "Soda Red", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.SodaRed1Dialogue, portraitChar = "-", moveType = "", allowSteal = true), emptyCell.x, emptyCell.y);
     
     emptyCell = fireUniverse[1].randomEmptyCellCoords();
-    fireUniverse[1].addObjectToMap(new Object(char = "f", name = "Classic Volcano", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.VolcanoDescription, portraitChar = "-"), emptyCell.x, emptyCell.y);
+    fireUniverse[1].addObjectToMap(new Object(char = "f", name = "Classic Volcano", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.VolcanoDescription, portraitChar = "-", moveType = "", allowSteal = true), emptyCell.x, emptyCell.y);
     
     emptyCell = fireUniverse[2].randomEmptyCellCoords();
-    fireUniverse[2].addObjectToMap(new Object(char = ")", name = "SPIZ", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.SPIZDescription, portraitChar = "-"), emptyCell.x, emptyCell.y);
+    fireUniverse[2].addObjectToMap(new Object(char = ")", name = "SPIZ", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.SPIZDescription, portraitChar = "-", moveType = "", allowSteal = true), emptyCell.x, emptyCell.y);
     
     emptyCell = fireUniverse[0].randomEmptyCellCoords();
-    fireUniverse[0].addObjectToMap(new Object(char = "i", name = "BlueCrystal", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.BlueCrystalDescription, portraitChar = "-"), emptyCell.x, emptyCell.y);
+    fireUniverse[0].addObjectToMap(new Object(char = "i", name = "BlueCrystal", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.BlueCrystalDescription, portraitChar = "-", moveType = "", allowSteal = true), emptyCell.x, emptyCell.y);
     
     emptyCell = fireUniverse[2].randomEmptyCellCoords();
-    fireUniverse[2].addObjectToMap(new Object(char = "j", name = "Yum Bar", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.YumBarDescription, portraitChar = "-"), emptyCell.x, emptyCell.y);
+    fireUniverse[2].addObjectToMap(new Object(char = "j", name = "Yum Bar", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.YumBarDescription, portraitChar = "-", moveType = "", allowSteal = true), emptyCell.x, emptyCell.y);
     
     
     emptyCell = fireUniverse[2].randomEmptyCellCoords();
@@ -743,43 +743,43 @@ var creativeContent = {
     robocopUniverse[0].addObjectToMap(new Object(char = "*", name = "Robo Cop", wall = false, alive = true, clickFunction = "talk", myDialogue = creativeContent.robocopDialogue, portraitChar = "g", moveType = "follow"), emptyCell.x, emptyCell.y);
 
     emptyCell = robocopUniverse[1].randomEmptyCellCoords();
-    robocopUniverse[1].addObjectToMap(new Object(char = "#", name = "Robo Cop 2", wall = false, alive = true, clickFunction = "talk", myDialogue = creativeContent.robocop2Dialogue, portraitChar = "h", moveType = "follow"), emptyCell.x, emptyCell.y);
+    robocopUniverse[1].addObjectToMap(new Object(char = "+", name = "Robo Cop 2", wall = false, alive = true, clickFunction = "talk", myDialogue = creativeContent.robocop2Dialogue, portraitChar = "h", moveType = "follow"), emptyCell.x, emptyCell.y);
 
     emptyCell = robocopUniverse[1].randomEmptyCellCoords();
     robocopUniverse[1].addObjectToMap(new Object(char = "&", name = "Robo Cop 3", wall = false, alive = true, clickFunction = "talk", myDialogue = creativeContent.robocop3Dialogue, portraitChar = "i", moveType = "follow"), emptyCell.x, emptyCell.y);
 
     emptyCell = robocopUniverse[0].randomEmptyCellCoords();
-    robocopUniverse[0].addObjectToMap(new Object(char = "?", name = "Pop Cop", wall = false, alive = true, clickFunction = "talk", myDialogue = creativeContent.popCopDialogue, portraitChar = "j", moveType = "random"), emptyCell.x, emptyCell.y);
+    robocopUniverse[0].addObjectToMap(new Object(char = "&", name = "Pop Cop", wall = false, alive = true, clickFunction = "talk", myDialogue = creativeContent.popCopDialogue, portraitChar = "j", moveType = "random"), emptyCell.x, emptyCell.y);
 
     emptyCell = robocopUniverse[0].randomEmptyCellCoords();
-    robocopUniverse[0].addObjectToMap(new Object(char = "{", name = "Rick Robo Cop", wall = false, alive = true, clickFunction = "talk", myDialogue = creativeContent.rickDogDialogue, portraitChar = "r", moveType = "follow"), emptyCell.x, emptyCell.y);
+    robocopUniverse[0].addObjectToMap(new Object(char = "?", name = "Rick Robo Cop", wall = false, alive = true, clickFunction = "talk", myDialogue = creativeContent.rickDogDialogue, portraitChar = "r", moveType = "follow"), emptyCell.x, emptyCell.y);
 
     emptyCell = robocopUniverse[0].randomEmptyCellCoords();
-    robocopUniverse[0].addObjectToMap(new Object(char = "!", name = "Trash", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.trashCanDialogue, portraitChar = "-"), emptyCell.x, emptyCell.y);
+    robocopUniverse[0].addObjectToMap(new Object(char = "!", name = "Trash", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.trashCanDialogue, portraitChar = "-", moveType = "", allowSteal = true), emptyCell.x, emptyCell.y);
 
     emptyCell = robocopUniverse[1].randomEmptyCellCoords();
-    robocopUniverse[1].addObjectToMap(new Object(char = "!", name = "Trash", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.trashCanDialogue, portraitChar = "-"), emptyCell.x, emptyCell.y);
+    robocopUniverse[1].addObjectToMap(new Object(char = "!", name = "Trash", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.trashCanDialogue, portraitChar = "-", moveType = "", allowSteal = true), emptyCell.x, emptyCell.y);
 
     emptyCell = robocopUniverse[2].randomEmptyCellCoords();
-    robocopUniverse[2].addObjectToMap(new Object(char = "!", name = "Trash", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.trashCanDialogue, portraitChar = "-"), emptyCell.x, emptyCell.y);
+    robocopUniverse[2].addObjectToMap(new Object(char = "!", name = "Trash", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.trashCanDialogue, portraitChar = "-", moveType = "", allowSteal = true), emptyCell.x, emptyCell.y);
 
     emptyCell = robocopUniverse[0].randomEmptyCellCoords();
-    robocopUniverse[0].addObjectToMap(new Object(char = "e", name = "Cheeseburger", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.cheeseburgerpDialogue, portraitChar = "-"), emptyCell.x, emptyCell.y);
+    robocopUniverse[0].addObjectToMap(new Object(char = "e", name = "Cheeseburger", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.cheeseburgerpDialogue, portraitChar = "-", moveType = "", allowSteal = true), emptyCell.x, emptyCell.y);
 
     emptyCell = robocopUniverse[1].randomEmptyCellCoords();
-    robocopUniverse[1].addObjectToMap(new Object(char = "e", name = "Cheeseburger", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.cheeseburgerpDialogue, portraitChar = "-"), emptyCell.x, emptyCell.y);
+    robocopUniverse[1].addObjectToMap(new Object(char = "e", name = "Cheeseburger", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.cheeseburgerpDialogue, portraitChar = "-", moveType = "", allowSteal = true), emptyCell.x, emptyCell.y);
 
     emptyCell = robocopUniverse[1].randomEmptyCellCoords();
-    robocopUniverse[1].addObjectToMap(new Object(char = "e", name = "Cheeseburger", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.cheeseburgerpDialogue, portraitChar = "-"), emptyCell.x, emptyCell.y);
+    robocopUniverse[1].addObjectToMap(new Object(char = "e", name = "Cheeseburger", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.cheeseburgerpDialogue, portraitChar = "-", moveType = "", allowSteal = true), emptyCell.x, emptyCell.y);
 
     emptyCell = robocopUniverse[1].randomEmptyCellCoords();
-    robocopUniverse[1].addObjectToMap(new Object(char = "f", name = "Tangle of Wires", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.wiresDialogue, portraitChar = "-"), emptyCell.x, emptyCell.y);
+    robocopUniverse[1].addObjectToMap(new Object(char = "f", name = "Tangle of Wires", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.wiresDialogue, portraitChar = "-", moveType = "", allowSteal = true), emptyCell.x, emptyCell.y);
 
     emptyCell = robocopUniverse[1].randomEmptyCellCoords();
-    robocopUniverse[1].addObjectToMap(new Object(char = "g", name = "Dismembered Hand", wall = false, alive = true, clickFunction = "talk", myDialogue = creativeContent.handDialogue, portraitChar = "-", moveType = "random"), emptyCell.x, emptyCell.y);
+    robocopUniverse[1].addObjectToMap(new Object(char = "g", name = "Dismembered Hand", wall = false, alive = true, clickFunction = "talk", myDialogue = creativeContent.handDialogue, portraitChar = "-", moveType = "random", allowSteal = true), emptyCell.x, emptyCell.y);
 
     emptyCell = robocopUniverse[1].randomEmptyCellCoords();
-    robocopUniverse[1].addObjectToMap(new Object(char = "h", name = "Dismembered Leg", wall = false, alive = true, clickFunction = "talk", myDialogue = creativeContent.legDialogue, portraitChar = "-", moveType = "random"), emptyCell.x, emptyCell.y);
+    robocopUniverse[1].addObjectToMap(new Object(char = "h", name = "Dismembered Leg", wall = false, alive = true, clickFunction = "talk", myDialogue = creativeContent.legDialogue, portraitChar = "-", moveType = "random", allowSteal = true), emptyCell.x, emptyCell.y);
 // brownbag ends
     
     emptyCell = robocopUniverse[2].randomEmptyCellCoords();
@@ -1431,6 +1431,7 @@ iceUniverse[1].addObjectToMap(new Object(char = ")", name = "Sweetheart Octopuss
   },  
     wiresDialogue: {
       textStrings: ["Pile o' wires","These might be useful, if you knew anything about what wires do"],
+      spaces: [1, 2, 1],
       fgColours: ["red", "lightyellow", "#b0ec62"],
       responseFunction: {}
   },  
