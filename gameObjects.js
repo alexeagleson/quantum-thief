@@ -139,8 +139,8 @@ var Object = function(char, name, wall, alive, clickFunction, myDialogue, portra
   this.move = function(directionArray) {
     
     if (this === Game.player) {
-      hitSound.currentTime = 0;
-      //hitSound.play();
+      bounce.currentTime = 0;
+      bounce.play();
     }
     
     

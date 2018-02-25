@@ -1,5 +1,10 @@
-  var hitSound = new Audio();
-  hitSound = document.getElementById('effects'); 
+  var bounce = new Audio();
+  bounce = document.getElementById('effects'); 
+
+  var foot1sound = new Audio();
+  foot1sound = document.getElementById('foot1sound'); 
+
+
 
 var Game = {
   mainDisplayDiv: null,
