@@ -423,6 +423,49 @@ var creativeContent = {
     
     // put stuff on specific floors
 
+    //Characters
+ emptyCell = hotdogUniverse[0].randomEmptyCellCoords();
+    hotdogUniverse[0].addObjectToMap(new Object(char = "!", name = "Fry Guy", wall = false, alive = true, clickFunction = "talk", myDialogue = creativeContent.fryGuyDescript, portraitChar = "-"), moveType = "follow", emptyCell.x, emptyCell.y);
+
+ emptyCell = hotdogUniverse[0].randomEmptyCellCoords();
+    hotdogUniverse[0].addObjectToMap(new Object(char = "!", name = "Relish Dog", wall = false, alive = true, clickFunction = "talk", myDialogue = creativeContent.relishDescript, portraitChar = "-"), moveType = "follow", emptyCell.x, emptyCell.y);
+
+ emptyCell = hotdogUniverse[0].randomEmptyCellCoords();
+    hotdogUniverse[0].addObjectToMap(new Object(char = "!", name = "Ketchup Dog", wall = false, alive = true, clickFunction = "talk", myDialogue = creativeContent.ketchupDescript, portraitChar = "-"), moveType = "follow", emptyCell.x, emptyCell.y);
+
+ emptyCell = hotdogUniverse[0].randomEmptyCellCoords();
+    hotdogUniverse[0].addObjectToMap(new Object(char = "!", name = "All Dressed Dog", wall = false, alive = true, clickFunction = "talk", myDialogue = creativeContent.allDressedDescript, portraitChar = "-"), moveType = "follow", emptyCell.x, emptyCell.y);
+
+ emptyCell = hotdogUniverse[0].randomEmptyCellCoords();
+    hotdogUniverse[0].addObjectToMap(new Object(char = "!", name = "Finest Mustard Dog", wall = false, alive = true, clickFunction = "talk", myDialogue = creativeContent.fineMustardDescript, portraitChar = "-"), moveType = "follow", emptyCell.x, emptyCell.y);
+
+ emptyCell = hotdogUniverse[2].randomEmptyCellCoords();
+    hotdogUniverse[2].addObjectToMap(new Object(char = "!", name = "Hotgod", wall = false, alive = true, clickFunction = "talk", myDialogue = creativeContent.hotgodDescript, portraitChar = "-"), moveType = "random", emptyCell.x, emptyCell.y);
+
+    
+//Curios
+    emptyCell = hotdogUniverse[0].randomEmptyCellCoords();
+    hotdogUniverse[0].addObjectToMap(new Object(char = "!", name = "Potted Hot Dog Plant", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.goodOnesDescript, portraitChar = "-"), emptyCell.x, emptyCell.y);
+
+    emptyCell = hotdogUniverse[0].randomEmptyCellCoords();
+    hotdogUniverse[0].addObjectToMap(new Object(char = "e", name = "Hotdog With Ketchup", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.goodOnesDescript, portraitChar = "-"), emptyCell.x, emptyCell.y);
+
+    emptyCell = hotdogUniverse[0].randomEmptyCellCoords();
+    hotdogUniverse[0].addObjectToMap(new Object(char = "f", name = "Hotdog With Relish", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.goodOnesDescript, portraitChar = "-"), emptyCell.x, emptyCell.y);
+
+    emptyCell = hotdogUniverse[2].randomEmptyCellCoords();
+    hotdogUniverse[2].addObjectToMap(new Object(char = "g", name = "Rotdog", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.goodOnesDescript, portraitChar = "-"), emptyCell.x, emptyCell.y);
+
+    emptyCell = hotdogUniverse[0].randomEmptyCellCoords();
+    hotdogUniverse[0].addObjectToMap(new Object(char = "i", name = "Finest Yellow Mustard", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.goodOnesDescript, portraitChar = "-"), emptyCell.x, emptyCell.y);
+
+    emptyCell = hotdogUniverse[0].randomEmptyCellCoords();
+    hotdogUniverse[0].addObjectToMap(new Object(char = "j", name = "Real Tomato Ketchup", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.goodOnesDescript, portraitChar = "-"), emptyCell.x, emptyCell.y);
+
+    emptyCell = hotdogUniverse[0].randomEmptyCellCoords();
+    hotdogUniverse[0].addObjectToMap(new Object(char = "k", name = "The Big One", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.goodOnesDescript, portraitChar = "-"), emptyCell.x, emptyCell.y);
+
+
   return hotdogUniverse;
   },  
   
