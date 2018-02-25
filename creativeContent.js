@@ -72,18 +72,40 @@ var creativeContent = {
     "@": multiplyBy32([0, 0]),
     "#": multiplyBy32([1, 0]),
     ".": multiplyBy32([2, 0]),
-    "!": multiplyBy32([1, 2]),
     ">": multiplyBy32([3, 0]),
     "<": multiplyBy32([4, 0]),
+    
+    
+    
     "a": multiplyBy32([7, 0]),
+    
     "+": multiplyBy32([0, 1]),
     "$": multiplyBy32([1, 1]),
     "&": multiplyBy32([2, 1]),
     "^": multiplyBy32([1, 1]),
     "?": multiplyBy32([3, 1]),
     "{": multiplyBy32([4, 1]),
-    "}": multiplyBy32([7, 1])
-
+    "}": multiplyBy32([5, 1]),
+    "a": multiplyBy32([6, 1]),
+    "b": multiplyBy32([7, 1]),
+    
+    "c": multiplyBy32([0, 2]),
+    "!": multiplyBy32([1, 2]),
+    "e": multiplyBy32([2, 2]),
+    "f": multiplyBy32([3, 2]),
+    "g": multiplyBy32([4, 2]),
+    "h": multiplyBy32([5, 2]),
+    "i": multiplyBy32([6, 2]),
+    "j": multiplyBy32([7, 2]),
+    
+    "k": multiplyBy32([0, 3]),
+    "l": multiplyBy32([1, 3]),
+    "m": multiplyBy32([2, 3]),
+    "n": multiplyBy32([3, 3]),
+    "h": multiplyBy32([4, 3]),
+    "i": multiplyBy32([5, 3]),
+    "j": multiplyBy32([6, 3]),
+    "k": multiplyBy32([7, 3])
   },
   
   
@@ -126,6 +148,12 @@ var creativeContent = {
         fireUniverse[i].addObjectToMap(new Object(char = ">", name = "Upstairs", wall = false, alive = false, clickFunction = "floor up"), emptyCell.x, emptyCell.y);
       }
     }
+    // put stuff on specific floors
+    //fireUniverse[0].addObjectToMap(new Object(char = "!", name = "Fire Plant", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.defaultDialogue, portraitChar = "-"), emptyCell.x, emptyCell.y);
+    
+    
+    
+    
     return fireUniverse;
   },
   
