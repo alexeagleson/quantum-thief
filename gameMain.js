@@ -17,7 +17,7 @@ var Game = {
   gameHeight: 24,
   myTravelChecklist: [],
   gameDone: false,
-  stolenItems: 10,
+  stolenItems: 0,
 
   init: function() {
     
@@ -72,7 +72,7 @@ var Game = {
       }
     }
     
-    universeName = "Hot Dog Universe";
+    //universeName = "Hot Dog Universe";
     
     Game.myTravelChecklist.push(universeName);
     
