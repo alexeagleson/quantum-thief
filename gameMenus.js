@@ -130,7 +130,7 @@ var view = {
     var menuDisplayDOM = document.getElementsByClassName("menuDisplay")[0];
     gameDisplayDOM.style.display = "block";
     menuDisplayDOM.style.display = "none";
-    setTimeout(function() { Game.faceHUD(null); }, 10);
+    setTimeout(function() { Game.faceHUD(null, null); }, 10);
   },
   
   showMenu: function() {

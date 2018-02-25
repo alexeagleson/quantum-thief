@@ -16,7 +16,7 @@ var Game = {
 
   init: function() {
     
-    Game.player = creativeContent.scottDracula;
+    Game.player = creativeContent.mainPlayer;
 
     view.defineView();
 
@@ -49,6 +49,7 @@ var Game = {
   
   faceHUD: function(faceSet, talkingObject) {
     var tileElement = document.createElement("img");
+
     
     if (!faceSet) {
       tileElement.src = creativeContent.defaultBlackHUD;
@@ -72,7 +73,6 @@ var Game = {
     Game.gameHUD.clear();
     
     var displayChar = "@";
-    alert(talkingObject);
     
     if (talkingObject) {
       if (talkingObject.portraitChar) {
@@ -80,16 +80,15 @@ var Game = {
       }
     }
     
-    
     setTimeout(function() { 
       if (Game.hudWidth < Game.hudHeight) {
         Game.gameHUD.drawText(0, 0, displayChar, Game.hudWidth);
-        Game.gameHUD.drawText(0, 1, "#", Game.hudWidth);
+        Game.gameHUD.drawText(0, 1, Game.player.portraitChar, Game.hudWidth);
       } else {
         Game.gameHUD.drawText(0, 0, displayChar, Game.hudWidth);
-        Game.gameHUD.drawText(1, 0, "#", Game.hudWidth);
+        Game.gameHUD.drawText(1, 0, Game.player.portraitChar, Game.hudWidth);
       }
-    }, 100);
+    }, 50);
   },
   
   floorUp: function() {

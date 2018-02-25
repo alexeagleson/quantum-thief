@@ -25,22 +25,23 @@ var creativeContent = {
   fireTile: "https://i.imgur.com/M4rxuYB.png",
   
   faceLegend: {
-    "#": multiplyBy12(multiplyBy32([1, 0])),
-    "@": multiplyBy12(multiplyBy32([0, 0])),
-    "a": multiplyBy12(multiplyBy32([2, 0])),
+    "#": multiplyBy12(multiplyBy32([0, 0])),
+    "@": multiplyBy12(multiplyBy32([1, 0])),
+    ".": multiplyBy12(multiplyBy32([2, 0])),
+    "a": multiplyBy12(multiplyBy32([3, 0])),
   },
   
   masterPngLegend: {
+    "@": multiplyBy32([0, 0]),
     "#": multiplyBy32([1, 0]),
     ".": multiplyBy32([2, 0]),
-    "@": multiplyBy32([0, 0]),
     "!": multiplyBy32([1, 2]),
     ">": multiplyBy32([3, 0]),
     "<": multiplyBy32([4, 0]),
     "a": multiplyBy32([7, 0])
   },
   
-  scottDracula: new Object(char = "@", name = "Scott Dracula", wall = false, alive = true),
+  mainPlayer: new Object(char = "@", name = "Scarlic", wall = false, alive = true, clickFunction = null, myDialogue = null, portraitChar = "@"),
   
   
   draculaThrone: function() {
@@ -50,7 +51,7 @@ var creativeContent = {
     throneRoom[0] = Game.createMap(creativeContent.throneTile, creativeContent.masterPngLegend, 0, "Arena");
     emptyCell = throneRoom[0].randomEmptyCellCoords();
     throneRoom[0].addObjectToMap(new Object(char = "!", name = "Throne", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.throneDialogue, portraitChar = "a"), 10, 10);
-    throneRoom[0].addObjectToMap(new Object(char = "a", name = "Scott Dracula", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.gameBeginDialogue), 11, 10);
+    throneRoom[0].addObjectToMap(new Object(char = "a", name = "Scott Dracula", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.gameBeginDialogue, portraitChar = "@"), 11, 10);
     return throneRoom;
   },
   

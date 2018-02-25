@@ -52,7 +52,7 @@ var Object = function(char, name, wall, alive, clickFunction, myDialogue, portra
   this.path = [],
   this.clickFunction = clickFunction,
   this.myDialogue = myDialogue,
-  this.portraitCoords = portraitChar,
+  this.portraitChar = portraitChar,
   
   this.act = function() {
     if (this === Game.player) {
@@ -162,7 +162,8 @@ var Object = function(char, name, wall, alive, clickFunction, myDialogue, portra
   this.clickedOn = function() {
     if (this.clickFunction === "talk") {
       if (this.myDialogue) {
-        setTimeout(function() { Game.faceHUD(creativeContent.allFacePortraits, this); }, 10);
+        var currentObject = this;
+        setTimeout(function() { Game.faceHUD(creativeContent.allFacePortraits, currentObject); }, 10);
         showMenu(this.myDialogue);
       }
     } else if (this.clickFunction === "floor up") {
