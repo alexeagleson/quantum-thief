@@ -220,6 +220,17 @@ var Object = function(char, name, wall, alive, clickFunction, myDialogue, portra
       if (this.myDialogue) {
         var currentObject = this;
         setTimeout(function() { Game.faceHUD(creativeContent.allFacePortraits, currentObject); }, 10);
+        
+        
+        
+        if (this.name === "Scott Dracula" && Game.gameDone) {
+          this.myDialogue = creativeContent.gameOver;
+        }
+        
+        
+        
+        
+        
         showMenu(this.myDialogue);
       }
     } else if (this.clickFunction === "floor up") {

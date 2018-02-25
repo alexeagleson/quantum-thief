@@ -833,9 +833,13 @@ var creativeContent = {
       spaces: [1, 2],
       fgColours: ["red", "lightyellow"],
       responseFunction: {}
+  },
+  gameOver: {
+      textStrings: ["Scott Dracula", "So it seems you have found your way back through my evil time portals.  Congratulations"],
+      spaces: [1, 2],
+      fgColours: ["red", "lightyellow"],
+      responseFunction: {}
     }
-
-
 }
 
 

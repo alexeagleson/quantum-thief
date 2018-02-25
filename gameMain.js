@@ -16,9 +16,13 @@ var Game = {
   gameWidth: 24,
   gameHeight: 24,
   myTravelChecklist: ["Throne Universe"],
-  gameDone: false,
+  gameDone: true,
 
   init: function() {
+    
+    document.createElement("img");
+    
+    
     
     Game.player = new Object(char = "@", name = "Scarlic", wall = true, alive = true, clickFunction = null, myDialogue = null, portraitChar = "@", moveType = null);
 
