@@ -72,7 +72,7 @@ var Game = {
       }
     }
     
-    universeName = "Throne Universe";
+    universeName = "Hot Dog Universe";
     
     Game.myTravelChecklist.push(universeName);
     
