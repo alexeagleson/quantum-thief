@@ -18,7 +18,7 @@ var menuResponse = {
 
 var creativeContent = {
 
-  allFacePortraits:"https://i.imgur.com/wb3gFai.png",
+  allFacePortraits:"https://i.imgur.com/nKkmYRG.png",
   defaultBlackHUD:"https://i.imgur.com/VQ2sSG2.png",
   
   throneTile: "https://i.imgur.com/C2pOPKO.png",
@@ -30,7 +30,7 @@ var creativeContent = {
     "a": multiplyBy12(multiplyBy32([2, 0])),
   },
   
-  throneLegend: {
+  masterPngLegend: {
     "#": multiplyBy32([1, 0]),
     ".": multiplyBy32([2, 0]),
     "@": multiplyBy32([0, 0]),
@@ -47,9 +47,9 @@ var creativeContent = {
     var throneRoom = [];
     var emptyCell = null;
     
-    throneRoom[0] = Game.createMap(creativeContent.throneTile, creativeContent.throneLegend, 0, "Arena");
+    throneRoom[0] = Game.createMap(creativeContent.throneTile, creativeContent.masterPngLegend, 0, "Arena");
     emptyCell = throneRoom[0].randomEmptyCellCoords();
-    throneRoom[0].addObjectToMap(new Object(char = "!", name = "Throne", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.throneDialogue), 10, 10);
+    throneRoom[0].addObjectToMap(new Object(char = "!", name = "Throne", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.throneDialogue, portraitChar = "a"), 10, 10);
     throneRoom[0].addObjectToMap(new Object(char = "a", name = "Scott Dracula", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.gameBeginDialogue), 11, 10);
     return throneRoom;
   },
@@ -61,7 +61,7 @@ var creativeContent = {
     var emptyCell = null;
     
     for (var i = 0; i < 5; i++) {
-      fireUniverse[i] = Game.createMap(creativeContent.fireTile, creativeContent.throneLegend, i);
+      fireUniverse[i] = Game.createMap(creativeContent.fireTile, creativeContent.masterPngLegend, i);
       
       emptyCell = fireUniverse[i].randomEmptyCellCoords();
       fireUniverse[i].addObjectToMap(new Object(char = "!", name = "Throne", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.throneDialogue), emptyCell.x, emptyCell.y);

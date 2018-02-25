@@ -71,12 +71,22 @@ var Game = {
     this.gameHUD.setOptions(tileLegend);
     Game.gameHUD.clear();
     
+    var displayChar = "@";
+    alert(talkingObject);
+    
+    if (talkingObject) {
+      if (talkingObject.portraitChar) {
+        displayChar = talkingObject.portraitChar;
+      }
+    }
+    
+    
     setTimeout(function() { 
       if (Game.hudWidth < Game.hudHeight) {
-        Game.gameHUD.drawText(0, 0, "@", Game.hudWidth);
+        Game.gameHUD.drawText(0, 0, displayChar, Game.hudWidth);
         Game.gameHUD.drawText(0, 1, "#", Game.hudWidth);
       } else {
-        Game.gameHUD.drawText(0, 0, "@", Game.hudWidth);
+        Game.gameHUD.drawText(0, 0, displayChar, Game.hudWidth);
         Game.gameHUD.drawText(1, 0, "#", Game.hudWidth);
       }
     }, 100);

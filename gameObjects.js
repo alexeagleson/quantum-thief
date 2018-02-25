@@ -42,7 +42,7 @@ var Tile = function(x, y, char, wall) {
 
 
 
-var Object = function(char, name, wall, alive, clickFunction, myDialogue, portraitCoords) {
+var Object = function(char, name, wall, alive, clickFunction, myDialogue, portraitChar) {
   this.x = null;
   this.y = null;
   this.char = char;
@@ -52,7 +52,7 @@ var Object = function(char, name, wall, alive, clickFunction, myDialogue, portra
   this.path = [],
   this.clickFunction = clickFunction,
   this.myDialogue = myDialogue,
-  this.portraitCoords = portraitCoords,
+  this.portraitCoords = portraitChar,
   
   this.act = function() {
     if (this === Game.player) {
