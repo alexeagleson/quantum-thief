@@ -20,24 +20,20 @@ var Game = {
     
     
     //Game.currentUniverse = creativeContent.iceUniverse();
-    emptyCell = iceUniverse[0].randomEmptyCellCoords();
-    iceUniverse[0].addObjectToMap(creativeContent.scottDracula, emptyCell.x, emptyCell.y);
-    
-    
-    //Game.currentUniverse = creativeContent.iceUniverse();
-  
+    Game.currentUniverse = creativeContent.draculaThrone();
+
     Game.CompleteMap = Game.currentUniverse[Game.currentFloor];
     
+  
+    emptyCell = Game.CompleteMap.randomEmptyCellCoords();
     Game.player = creativeContent.scottDracula;
-    
-    Game.renderGame();
-
+    Game.CompleteMap.addObjectToMap(Game.player, emptyCell.x, emptyCell.y);
     
     if (true) {
       this.display.setOptions(Game.CompleteMap.tileLegend);
     }
     
-    
+    Game.renderGame();
 
     
     

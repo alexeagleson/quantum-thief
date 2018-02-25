@@ -1,7 +1,7 @@
 var creativeContent = {
   
   jodieAlex:"https://i.imgur.com/cvdNPEA.png",
-  scottDrac:"https://i.imgur.com/vhXIEtE.png",
+  scottDrac:"https://i.imgur.com/um3EcHw.png",
   
   throneTile: "https://i.imgur.com/M4rxuYB.png",
   
@@ -24,7 +24,9 @@ var creativeContent = {
   
   draculaThrone: function() {
     var throneRoom = [];
-    throneRoom[0] = Game.createMap(creativeContent.throneTile, creativeContent.throneLegend, i, "Arena");
+    var emptyCell = null;
+    
+    throneRoom[0] = Game.createMap(creativeContent.throneTile, creativeContent.throneLegend, 0, "Arena");
     emptyCell = throneRoom[0].randomEmptyCellCoords();
     throneRoom[0].addObjectToMap(new Object(char = "!", name = "Throne", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.throneDialogue), emptyCell.x, emptyCell.y);
     return throneRoom;
@@ -34,7 +36,7 @@ var creativeContent = {
   
   iceUniverse: function() {
     var iceUniverse = [];
-    emptyCell = null;
+    var emptyCell = null;
     
     for (var i = 0; i < 5; i++) {
       iceUniverse[i] = Game.createMap(creativeContent.throneTile, creativeContent.throneLegend, i);
