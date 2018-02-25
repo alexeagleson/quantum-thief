@@ -122,6 +122,7 @@ var creativeContent = {
     "k": multiplyBy12(multiplyBy32([13, 0])),
     "l": multiplyBy12(multiplyBy32([14, 0])),
     "m": multiplyBy12(multiplyBy32([15, 0])),
+    
     "n": multiplyBy12(multiplyBy32([0, 1])),
     "o": multiplyBy12(multiplyBy32([1, 1])),
     "p": multiplyBy12(multiplyBy32([2, 1])),
@@ -278,7 +279,7 @@ var creativeContent = {
     // put stuff on specific floors
 
     emptyCell = oldPersonUniverse[0].randomEmptyCellCoords();
-    oldPersonUniverse[0].addObjectToMap(new Object(char = "*", name = "Retired Robocop", wall = false, alive = true, clickFunction = "talk", myDialogue = creativeContent.retiredRobocopDialogue, portraitChar = "l", moveType = "random"), emptyCell.x, emptyCell.y);
+    oldPersonUniverse[0].addObjectToMap(new Object(char = "*", name = "Robocop - Retired", wall = false, alive = true, clickFunction = "talk", myDialogue = creativeContent.retiredRobocopDialogue, portraitChar = "-", moveType = "random"), emptyCell.x, emptyCell.y);
 
   return oldPersonUniverse;
   },
@@ -430,8 +431,18 @@ var creativeContent = {
       spaces: [0, 1],
       fgColours: ["blue", "white"],
       responseFunction: {}
-  }
+  },
+  
+  // OldPersonUniverse Dialogue
+
+retiredRobocopDialogue: {
+      textStrings: ["Robocop - Retired", "Hello there, Sonny. You look strong and... smart. Can you help out a Robo Pop in need?", "{Yar, what do you need?}", "Well sure, I'm just a retired cop looking for the Real Good Stuff?"],
+      spaces: [0, 1],
+      fgColours: ["blue", "lightyellow", "#b0ec62", "lightyellow"],
+      responseFunction: {"{Yar, what do you need?}"}: menuResponse.retiredRobocopDialogue2}
+  },
 }
+
 
 
 
