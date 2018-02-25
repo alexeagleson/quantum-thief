@@ -100,18 +100,31 @@ var menuResponse = {
   retiredRobocop4Dialogue: function() {
     return true;
   },  
+  werthersDescript: function() {
+    return true;
+  },  
+  wheelchairDescript: function() {
+    return true;
+  },  
+  : function() {
+    return true;
+  },  
+  : function() {
+    return true;
+  },  
+  : function() {
+    return true;
+  },  
+  : function() {
+    return true;
+  },  
+  : function() {
+    return true;
+  },  
+  : function() {
+    return true;
+  },  
 }
-
-
-
-
-
-
-
-
-
-
-
 
 
 var creativeContent = {
@@ -122,9 +135,6 @@ var creativeContent = {
   throneTile: "https://i.imgur.com/cnFUoqC.png",
   fireTile: "https://i.imgur.com/P9IXmPt.png",
   oldPersonTile: "https://i.imgur.com/S535JYS.png",
-
-  
-  
   
   faceLegend: {
     "-": multiplyBy12(multiplyBy32([0, 0])),
@@ -158,7 +168,6 @@ var creativeContent = {
     "y": multiplyBy12(multiplyBy32([11, 1])),
     "z": multiplyBy12(multiplyBy32([12, 1])),
   },
-  
   masterPngLegend: {
     "@": multiplyBy32([0, 0]),
     "#": multiplyBy32([1, 0]),
@@ -201,14 +210,8 @@ var creativeContent = {
   },
   
   
-  
-  
-  
-  
-  
-  
-  
-  
+
+ //UPDATED TO SCOTT FOLLOWS YOU - SPEED UP THRONE ROOM FOR TESTING. WHY AM I YE
   draculaThrone: function() {
     var throneRoom = [];
     var emptyCell = null;
@@ -216,11 +219,9 @@ var creativeContent = {
     throneRoom[0] = Game.createMap(creativeContent.throneTile, creativeContent.masterPngLegend, 0, "Arena", visible = true);
     emptyCell = throneRoom[0].randomEmptyCellCoords();
     throneRoom[0].addObjectToMap(new Object(char = "!", name = "Throne", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.throneDialogue, portraitChar = "-"), 10, 10);
-    throneRoom[0].addObjectToMap(new Object(char = "*", name = "Scott Dracula", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.gameBeginDialogue, portraitChar = "#"), 11, 10);
+    throneRoom[0].addObjectToMap(new Object(char = "*", name = "Scott Dracula", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.gameBeginDialogue, portraitChar = "#", moveType = "follow"), 11, 10);
     return throneRoom;
   },
-  
-  
   fireUniverse: function() {
     var fireUniverse = [];
     var emptyCell = null;
@@ -269,13 +270,7 @@ var creativeContent = {
     fireUniverse[1].addObjectToMap(new Object(char = "k", name = "Soda Can", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.SodaCan1Dialogue, portraitChar = "-"), emptyCell.x, emptyCell.y);
     
     return fireUniverse;
-  },
-  
-  
-  
-  
-  
-  
+  },   
   oldPersonUniverse: function() {
     var oldPersonUniverse = [];
     var emptyCell = null;
@@ -283,9 +278,7 @@ var creativeContent = {
     for (var i = 0; i < 3; i++) {
       oldPersonUniverse[i] = Game.createMap(creativeContent.oldPersonTile, creativeContent.masterPngLegend, i);
       
-       // stuff here will appear on every floor
-
-      
+       // stuff here will appear on every floor  
       if (i != 0) {
         emptyCell = oldPersonUniverse[i].randomEmptyCellCoords();
         oldPersonUniverse[i].addObjectToMap(new Object(char = ">", name = "Downstairs", wall = false, alive = false, clickFunction = "floor down"), emptyCell.x, emptyCell.y);
@@ -338,11 +331,7 @@ var creativeContent = {
 
   return oldPersonUniverse;
   },
-  
-  
-  
-  
-  
+    
   
   // object name colour: "red"
   // text colour: "lightyellow"
@@ -522,27 +511,27 @@ var creativeContent = {
       fgColours: ["red", "lightyellow","#b0ec62", "lightyellow"],
       responseFunction: {}
   },
-    retiredRobocop3Dialogue: {
+  retiredRobocop3Dialogue: {
       textStrings: ["Robocop - Still Kickin'", "Hello, dearie. Please help yourself to some mentos."],
       spaces: [0, 1],
       fgColours: ["red", "lightyellow", "#b0ec62", "lightyellow"],
       responseFunction: {}
   },
-    retiredRobocop4Dialogue: {
+  retiredRobocop4Dialogue: {
       textStrings: ["Robocop - Poppa Wheelie", "Alex Murphy! I haven't seen you since the bank heist of 2044. Come here and check out this sick grind."],
       spaces: [0, 1],
       fgColours: ["red", "lightyellow", "#b0ec62", "lightyellow"],
       responseFunction: {}
   },
   
-      retiredRobocop4Dialogue: {
-      textStrings: ["Robocop - Poppa Wheelie", "Alex Murphy! I haven't seen you since the bank heist of 2044. Come here and check out this sick grind."],
+      werthersDescript: {
+      textStrings: ["Werther's Original", "Sweet, delicious goodness that will break your dentures again if you aren't careful."],
       spaces: [0, 1],
       fgColours: ["red", "lightyellow", "#b0ec62", "lightyellow"],
       responseFunction: {}
   },
-      retiredRobocop4Dialogue: {
-      textStrings: ["Robocop - Poppa Wheelie", "Alex Murphy! I haven't seen you since the bank heist of 2044. Come here and check out this sick grind."],
+      wheelchairDescript: {
+      textStrings: ["Wheelchair", "It's a sturdy looking wheelchair with glow in the dark wheels. There are bright pink tassels on it. You could pull some sick wheelies on this thing."],
       spaces: [0, 1],
       fgColours: ["red", "lightyellow", "#b0ec62", "lightyellow"],
       responseFunction: {}
