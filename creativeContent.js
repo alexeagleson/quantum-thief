@@ -126,7 +126,7 @@ var menuResponse = {
   },  
   goodOnesDescript: function() {
     return true;
-  } 
+  },
   
   // Ice Universe Dialogue/Descripts
   
