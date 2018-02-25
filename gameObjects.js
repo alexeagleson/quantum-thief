@@ -3,7 +3,6 @@ var CompleteMap = function(map, tileLegend, floor) {
   this.tileLegend = tileLegend;
   this.freeCells = [];
   this.floor = floor;
-  this.currentFloor = 0;
   this.activeObjects = [];
   
   this.randomEmptyCellCoords = function() {
@@ -136,6 +135,7 @@ var Object = function(char, name, wall, alive, clickFunction, myDialogue, portra
     
   this.moveTo = function(newX, newY) {
     var spliceLocation = null;
+    
     for (var i = 0; i < Game.CompleteMap.map[this.x + "," + this.y].objectsOnThisTile.length; i++) {
       if (this === Game.CompleteMap.map[this.x + "," + this.y].objectsOnThisTile[i]) {
         spliceLocation = i;

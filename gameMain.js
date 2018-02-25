@@ -41,8 +41,6 @@ var Game = {
   
   travelTo: function(worldFunction, ascii) {
 
-    scheduler = new ROT.Scheduler.Simple();
-
     Game.currentUniverse = worldFunction();
     Game.CompleteMap = Game.currentUniverse[Game.currentFloor];
     if (!ascii) {
@@ -50,6 +48,19 @@ var Game = {
     }
     emptyCell = Game.CompleteMap.randomEmptyCellCoords();
     Game.CompleteMap.addObjectToMap(Game.player, emptyCell.x, emptyCell.y);
+    
+    Game.resetEngine();
+    
+    Game.computeFOV();
+    Game.renderGame();
+    
+    setTimeout(function() { 
+      Game.renderGame();
+    }, 500);
+  },
+  
+  resetEngine: function() {
+    var scheduler = new ROT.Scheduler.Simple();
     
     Game.CompleteMap.activeObjects.forEach(function(object) {
       if (object.alive) { 
@@ -62,13 +73,6 @@ var Game = {
     
     this.engine = new ROT.Engine(scheduler);
     this.engine.start();
-    
-    Game.computeFOV();
-    Game.renderGame();
-    
-    setTimeout(function() { 
-      Game.renderGame();
-    }, 500);
   },
 
   
@@ -119,10 +123,6 @@ var Game = {
   floorUp: function() {
     Game.currentFloor += 1;
     Game.CompleteMap = Game.currentUniverse[Game.currentFloor];
-    Game.CompleteMap.activeObjects.forEach(function(object) {
-      object.x = rollDie(24);
-      object.y = rollDie(24);
-    });
     for (var key in Game.CompleteMap.map) {
       Game.CompleteMap.map[key].objectsOnThisTile.forEach(function(object) {
         if (object.char === ">") {
@@ -131,16 +131,13 @@ var Game = {
         }
       });
     }
+    Game.resetEngine();
     Game.renderGame();
   },
   
   floorDown: function() {
     Game.currentFloor -= 1;
     Game.CompleteMap = Game.currentUniverse[Game.currentFloor];
-    this.activeObjects.forEach(function(object) {
-      object.x = rollDie(24);
-      object.y = rollDie(24);
-    });
     for (var key in Game.CompleteMap.map) {
       Game.CompleteMap.map[key].objectsOnThisTile.forEach(function(object) {
         if (object.char === "<") {
@@ -149,6 +146,7 @@ var Game = {
         }
       });
     }
+    Game.resetEngine();
     Game.renderGame();
   },
   
