@@ -901,25 +901,88 @@ iceUniverse[1].addObjectToMap(new Object(char = ")", name = "Sweetheart Octopuss
  emptyCell = hotdogUniverse[2].randomEmptyCellCoords();
     hotdogUniverse[2].addObjectToMap(new Object(char = "{", name = "Hotgod", wall = false, alive = true, clickFunction = "talk", myDialogue = creativeContent.hotgodDescript, portraitChar = "x", moveType = "random"), emptyCell.x, emptyCell.y);
    
-//coleslaw    -- updated sprites
+//coleslaw    -- updated sprites, increased spawns
 //Curios
     emptyCell = hotdogUniverse[0].randomEmptyCellCoords();
     hotdogUniverse[0].addObjectToMap(new Object(char = "!", name = "Potted Hotdog Plant", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.hdPlantDescript, portraitChar = "-", moveType = "", allowSteal = true), emptyCell.x, emptyCell.y);
 
+    emptyCell = hotdogUniverse[0].randomEmptyCellCoords();
+    hotdogUniverse[0].addObjectToMap(new Object(char = "!", name = "Potted Hotdog Plant", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.hdPlantDescript, portraitChar = "-", moveType = "", allowSteal = true), emptyCell.x, emptyCell.y);
+
+    emptyCell = hotdogUniverse[0].randomEmptyCellCoords();
+    hotdogUniverse[0].addObjectToMap(new Object(char = "!", name = "Potted Hotdog Plant", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.hdPlantDescript, portraitChar = "-", moveType = "", allowSteal = true), emptyCell.x, emptyCell.y);
+
+    emptyCell = hotdogUniverse[0].randomEmptyCellCoords();
+    hotdogUniverse[0].addObjectToMap(new Object(char = "!", name = "Potted Hotdog Plant", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.hdPlantDescript, portraitChar = "-", moveType = "", allowSteal = true), emptyCell.x, emptyCell.y);
+
+    emptyCell = hotdogUniverse[1].randomEmptyCellCoords();
+    hotdogUniverse[1].addObjectToMap(new Object(char = "!", name = "Potted Hotdog Plant", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.hdPlantDescript, portraitChar = "-", moveType = "", allowSteal = true), emptyCell.x, emptyCell.y);
+
+    emptyCell = hotdogUniverse[1].randomEmptyCellCoords();
+    hotdogUniverse[1].addObjectToMap(new Object(char = "!", name = "Potted Hotdog Plant", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.hdPlantDescript, portraitChar = "-", moveType = "", allowSteal = true), emptyCell.x, emptyCell.y);
+
+    emptyCell = hotdogUniverse[2].randomEmptyCellCoords();
+    hotdogUniverse[2].addObjectToMap(new Object(char = "!", name = "Potted Hotdog Plant", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.hdPlantDescript, portraitChar = "-", moveType = "", allowSteal = true), emptyCell.x, emptyCell.y);
+
+    emptyCell = hotdogUniverse[2].randomEmptyCellCoords();
+    hotdogUniverse[2].addObjectToMap(new Object(char = "!", name = "Potted Hotdog Plant", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.hdPlantDescript, portraitChar = "-", moveType = "", allowSteal = true), emptyCell.x, emptyCell.y);
+
+    emptyCell = hotdogUniverse[2].randomEmptyCellCoords();
+    hotdogUniverse[2].addObjectToMap(new Object(char = "!", name = "Potted Hotdog Plant", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.hdPlantDescript, portraitChar = "-", moveType = "", allowSteal = true), emptyCell.x, emptyCell.y);
+
+    emptyCell = hotdogUniverse[2].randomEmptyCellCoords();
+    hotdogUniverse[2].addObjectToMap(new Object(char = "!", name = "Potted Hotdog Plant", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.hdPlantDescript, portraitChar = "-", moveType = "", allowSteal = true), emptyCell.x, emptyCell.y);
+
     emptyCell = hotdogUniverse[1].randomEmptyCellCoords();
     hotdogUniverse[1].addObjectToMap(new Object(char = "e", name = "Hotdog With Ketchup", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.hdKetchupDescript, portraitChar = "-", moveType = "", allowSteal = true), emptyCell.x, emptyCell.y);
+
+    emptyCell = hotdogUniverse[0].randomEmptyCellCoords();
+    hotdogUniverse[0].addObjectToMap(new Object(char = "e", name = "Hotdog With Ketchup", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.hdKetchupDescript, portraitChar = "-", moveType = "", allowSteal = true), emptyCell.x, emptyCell.y);
+
+    emptyCell = hotdogUniverse[0].randomEmptyCellCoords();
+    hotdogUniverse[0].addObjectToMap(new Object(char = "e", name = "Hotdog With Ketchup", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.hdKetchupDescript, portraitChar = "-", moveType = "", allowSteal = true), emptyCell.x, emptyCell.y);
+
+    emptyCell = hotdogUniverse[2].randomEmptyCellCoords();
+    hotdogUniverse[2].addObjectToMap(new Object(char = "e", name = "Hotdog With Ketchup", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.hdKetchupDescript, portraitChar = "-", moveType = "", allowSteal = true), emptyCell.x, emptyCell.y);
 
     emptyCell = hotdogUniverse[2].randomEmptyCellCoords();
     hotdogUniverse[2].addObjectToMap(new Object(char = "f", name = "Hotdog With Relish", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.hdRelishDescript, portraitChar = "-", moveType = "", allowSteal = true), emptyCell.x, emptyCell.y);
 
+    emptyCell = hotdogUniverse[2].randomEmptyCellCoords();
+    hotdogUniverse[2].addObjectToMap(new Object(char = "f", name = "Hotdog With Relish", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.hdRelishDescript, portraitChar = "-", moveType = "", allowSteal = true), emptyCell.x, emptyCell.y);
+    
     emptyCell = hotdogUniverse[2].randomEmptyCellCoords();
     hotdogUniverse[2].addObjectToMap(new Object(char = "g", name = "Rotdog", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.rotdogDescript, portraitChar = "-", moveType = "", allowSteal = true), emptyCell.x, emptyCell.y);
 
     emptyCell = hotdogUniverse[0].randomEmptyCellCoords();
     hotdogUniverse[0].addObjectToMap(new Object(char = "h", name = "Finest Yellow Mustard", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.fineYellowDescript, portraitChar = "-", moveType = "", allowSteal = true), emptyCell.x, emptyCell.y);
 
-    emptyCell = hotdogUniverse[2].randomEmptyCellCoords();
-    hotdogUniverse[2].addObjectToMap(new Object(char = "i", name = "Real Tomato Ketchup", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.realTomatoDescript, portraitChar = "-", moveType = "", allowSteal = true), emptyCell.x, emptyCell.y);
+    emptyCell = hotdogUniverse[0].randomEmptyCellCoords();
+    hotdogUniverse[0].addObjectToMap(new Object(char = "h", name = "Finest Yellow Mustard", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.fineYellowDescript, portraitChar = "-", moveType = "", allowSteal = true), emptyCell.x, emptyCell.y);
+    
+    emptyCell = hotdogUniverse[1].randomEmptyCellCoords();
+    hotdogUniverse[1].addObjectToMap(new Object(char = "h", name = "Finest Yellow Mustard", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.fineYellowDescript, portraitChar = "-", moveType = "", allowSteal = true), emptyCell.x, emptyCell.y);
+
+    emptyCell = hotdogUniverse[1].randomEmptyCellCoords();
+    hotdogUniverse[1].addObjectToMap(new Object(char = "h", name = "Finest Yellow Mustard", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.fineYellowDescript, portraitChar = "-", moveType = "", allowSteal = true), emptyCell.x, emptyCell.y);
+
+    emptyCell = hotdogUniverse[0].randomEmptyCellCoords();
+    hotdogUniverse[0].addObjectToMap(new Object(char = "i", name = "Real Tomato Ketchup", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.realTomatoDescript, portraitChar = "-", moveType = "", allowSteal = true), emptyCell.x, emptyCell.y);
+
+      emptyCell = hotdogUniverse[0].randomEmptyCellCoords();
+    hotdogUniverse[0].addObjectToMap(new Object(char = "i", name = "Real Tomato Ketchup", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.realTomatoDescript, portraitChar = "-", moveType = "", allowSteal = true), emptyCell.x, emptyCell.y);
+
+    emptyCell = hotdogUniverse[1].randomEmptyCellCoords();
+    hotdogUniverse[1].addObjectToMap(new Object(char = "i", name = "Real Tomato Ketchup", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.realTomatoDescript, portraitChar = "-", moveType = "", allowSteal = true), emptyCell.x, emptyCell.y);
+
+    emptyCell = hotdogUniverse[1].randomEmptyCellCoords();
+    hotdogUniverse[1].addObjectToMap(new Object(char = "i", name = "Real Tomato Ketchup", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.realTomatoDescript, portraitChar = "-", moveType = "", allowSteal = true), emptyCell.x, emptyCell.y);
+
+    emptyCell = hotdogUniverse[1].randomEmptyCellCoords();
+    hotdogUniverse[1].addObjectToMap(new Object(char = "j", name = "The Big One", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.bigOneDescript, portraitChar = "-", moveType = "", allowSteal = true), emptyCell.x, emptyCell.y);
+
+    emptyCell = hotdogUniverse[1].randomEmptyCellCoords();
+    hotdogUniverse[1].addObjectToMap(new Object(char = "j", name = "The Big One", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.bigOneDescript, portraitChar = "-", moveType = "", allowSteal = true), emptyCell.x, emptyCell.y);
 
     emptyCell = hotdogUniverse[1].randomEmptyCellCoords();
     hotdogUniverse[1].addObjectToMap(new Object(char = "j", name = "The Big One", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.bigOneDescript, portraitChar = "-", moveType = "", allowSteal = true), emptyCell.x, emptyCell.y);
@@ -1448,9 +1511,11 @@ iceUniverse[1].addObjectToMap(new Object(char = ")", name = "Sweetheart Octopuss
       responseFunction: {}
   },  
   
-  // snorkelbutt - Hotdog Universe Dialogue created
+  // Hotdog Universe Dialogue created
+  
+    //coleslaw begins - updated descriptions
   hdPlantDescript: {
-      textStrings: ["Potted Hotdog Plant", "A plant that srpouts hotdogs! A little thorn here, a little relish there. It's making you hungry, but also embarassed. You're not 100% sure this isn't someone's kid. 5 minutes ago, you didn't even know that Hotdogs were a fruit, did you?"],
+      textStrings: ["Potted Hotdog Plant", "A plant that sprouts hotdogs! A little thorn here, a little relish there... You're careful as you weigh your options. You're not 100% sure this isn't someone's kid. 5 minutes ago, you didn't even know that Hotdogs were a type of fruit, did you?"],
       spaces: [0, 1],
       fgColours: ["red", "lightyellow", "#b0ec62", "lightyellow"],
       responseFunction: {}
@@ -1462,17 +1527,19 @@ iceUniverse[1].addObjectToMap(new Object(char = ")", name = "Sweetheart Octopuss
       responseFunction: {}
   },
   hdRelishDescript: {
-      textStrings: ["Hotdog with Relish", "Not to be confused with Relish Dog, who almost certainly isn't nearly so sweet."],
+      textStrings: ["Hotdog with Relish", "Not to be confused with Relish Dog, who is certainly not as sweet."],
       spaces: [0, 1],
       fgColours: ["red", "lightyellow", "#b0ec62", "lightyellow"],
       responseFunction: {}
   },
+  
   rotdogDescript: {
-      textStrings: ["Rotdog", "It is what it is."],
-      spaces: [0, 1],
-      fgColours: ["red", "lightyellow", "#b0ec62", "lightyellow"],
+      textStrings: ["Rotdog", "A hotdog with ketchup. The bun is a hypnotic blend of green and aquamarine. You gaze at it for several moments in quiet meditation.", "How long has this been here?"],
+      spaces: [1, 1, 1],
+      fgColours: ["red", "lightyellow", "lightyellow"],
       responseFunction: {}
   },
+  //coleslaw ends
   fineYellowDescript: {
       textStrings: ["Fine German Mustard", "A delicacy beyond the knowledge of your caste. Thinking it's that regular stinky yellow mustard, you kick it away."],
       spaces: [0, 1],
@@ -1530,7 +1597,7 @@ iceUniverse[1].addObjectToMap(new Object(char = ")", name = "Sweetheart Octopuss
       responseFunction: {}
     },
   hotgodDescript: {
-      textStrings: ["Hot God", "... Something happened."],
+      textStrings: ["Hot God", "Wh--... Something... Something has happened."],
       spaces: [1, 2],
       fgColours: ["red", "lightyellow"],
       responseFunction: {}
