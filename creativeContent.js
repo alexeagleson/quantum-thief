@@ -901,7 +901,7 @@ iceUniverse[1].addObjectToMap(new Object(char = ")", name = "Sweetheart Octopuss
  emptyCell = hotdogUniverse[2].randomEmptyCellCoords();
     hotdogUniverse[2].addObjectToMap(new Object(char = "{", name = "Hotgod", wall = false, alive = true, clickFunction = "talk", myDialogue = creativeContent.hotgodDescript, portraitChar = "x", moveType = "random"), emptyCell.x, emptyCell.y);
    
-    
+//coleslaw    -- updated sprites
 //Curios
     emptyCell = hotdogUniverse[0].randomEmptyCellCoords();
     hotdogUniverse[0].addObjectToMap(new Object(char = "!", name = "Potted Hotdog Plant", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.hdPlantDescript, portraitChar = "-", moveType = "", allowSteal = true), emptyCell.x, emptyCell.y);
@@ -916,18 +916,18 @@ iceUniverse[1].addObjectToMap(new Object(char = ")", name = "Sweetheart Octopuss
     hotdogUniverse[2].addObjectToMap(new Object(char = "g", name = "Rotdog", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.rotdogDescript, portraitChar = "-", moveType = "", allowSteal = true), emptyCell.x, emptyCell.y);
 
     emptyCell = hotdogUniverse[0].randomEmptyCellCoords();
-    hotdogUniverse[0].addObjectToMap(new Object(char = "i", name = "Finest Yellow Mustard", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.fineYellowDescript, portraitChar = "-", moveType = "", allowSteal = true), emptyCell.x, emptyCell.y);
+    hotdogUniverse[0].addObjectToMap(new Object(char = "h", name = "Finest Yellow Mustard", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.fineYellowDescript, portraitChar = "-", moveType = "", allowSteal = true), emptyCell.x, emptyCell.y);
 
     emptyCell = hotdogUniverse[2].randomEmptyCellCoords();
-    hotdogUniverse[2].addObjectToMap(new Object(char = "j", name = "Real Tomato Ketchup", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.realTomatoDescript, portraitChar = "-", moveType = "", allowSteal = true), emptyCell.x, emptyCell.y);
+    hotdogUniverse[2].addObjectToMap(new Object(char = "i", name = "Real Tomato Ketchup", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.realTomatoDescript, portraitChar = "-", moveType = "", allowSteal = true), emptyCell.x, emptyCell.y);
 
     emptyCell = hotdogUniverse[1].randomEmptyCellCoords();
-    hotdogUniverse[1].addObjectToMap(new Object(char = "k", name = "The Big One", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.bigOneDescript, portraitChar = "-", moveType = "", allowSteal = true), emptyCell.x, emptyCell.y);
+    hotdogUniverse[1].addObjectToMap(new Object(char = "j", name = "The Big One", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.bigOneDescript, portraitChar = "-", moveType = "", allowSteal = true), emptyCell.x, emptyCell.y);
 
     emptyCell = hotdogUniverse[2].randomEmptyCellCoords();
     hotdogUniverse[2].addObjectToMap(new Object(char = "(", name = "Portal", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.portalDialogue, portraitChar = "y"), emptyCell.x, emptyCell.y);
 
-    
+ // coleslaw ends here   
 
   return hotdogUniverse;
   },  
