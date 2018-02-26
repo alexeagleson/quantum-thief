@@ -488,11 +488,12 @@ var creativeContent = {
       throneRoom[0].addObjectToMap(new Object(char = "f", name = "Healthy Fern", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.fernDescript, portraitChar = "-"), 22, i);
     }
     //coleslaw tidying the throne room
-    throneRoom[0].addObjectToMap(new Object(char = "e", name = "Pile of Booty", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.bootyDescript, portraitChar = "-"), 7, 4);
+
     throneRoom[0].addObjectToMap(new Object(char = "e", name = "Pile of Booty", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.bootyDescript, portraitChar = "-"), 8, 4);
     throneRoom[0].addObjectToMap(new Object(char = "e", name = "Pile of Booty", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.bootyDescript, portraitChar = "-"), 9, 4);
     throneRoom[0].addObjectToMap(new Object(char = "e", name = "Pile of Booty", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.bootyDescript, portraitChar = "-"), 10, 4);
     throneRoom[0].addObjectToMap(new Object(char = "e", name = "Pile of Booty", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.bootyDescript, portraitChar = "-"), 11, 4);
+    throneRoom[0].addObjectToMap(new Object(char = "e", name = "Pile of Booty", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.bootyDescript, portraitChar = "-"), 12, 4);
   
     
     throneRoom[0].addObjectToMap(new Object(char = "g", name = "Vision Tree", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.visionTreeDescript, portraitChar = "-"), 2, 1);
@@ -505,20 +506,24 @@ var creativeContent = {
     throneRoom[0].addObjectToMap(new Object(char = "i", name = "Mystical Blood Magic Chrysanthemum", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.bloodMagicDescript, portraitChar = "-"), 2, 22);
 
     emptyCell = throneRoom[0].randomEmptyCellCoords();
-    throneRoom[0].addObjectToMap(new Object(char = "j", name = "Ornate Chest", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.ornateChestDescript, portraitChar = "-"), 9, 5);
+    throneRoom[0].addObjectToMap(new Object(char = "j", name = "Ornate Chest", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.ornateChestDescript, portraitChar = "-"), 11, 5);
 
     emptyCell = throneRoom[0].randomEmptyCellCoords();
-    throneRoom[0].addObjectToMap(new Object(char = "k", name = "Enhanced Ornate Chest", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.enhancedChestDescript, portraitChar = "-"), 8, 5);
+    throneRoom[0].addObjectToMap(new Object(char = "k", name = "Enhanced Ornate Chest", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.enhancedChestDescript, portraitChar = "-"), 9, 5);
 
     emptyCell = throneRoom[0].randomEmptyCellCoords();
     throneRoom[0].addObjectToMap(new Object(char = "l", name = "Sparkling Rubies", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.rubiesDescript, portraitChar = "-"), 8, 3);
     throneRoom[0].addObjectToMap(new Object(char = "l", name = "Sparkling Rubies", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.rubiesDescript, portraitChar = "-"), 9, 3);
     throneRoom[0].addObjectToMap(new Object(char = "l", name = "Sparkling Rubies", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.rubiesDescript, portraitChar = "-"), 10, 3);
+    throneRoom[0].addObjectToMap(new Object(char = "l", name = "Sparkling Rubies", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.rubiesDescript, portraitChar = "-"), 11, 3);
+    throneRoom[0].addObjectToMap(new Object(char = "l", name = "Sparkling Rubies", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.rubiesDescript, portraitChar = "-"), 12, 3);
+    throneRoom[0].addObjectToMap(new Object(char = "l", name = "Sparkling Rubies", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.rubiesDescript, portraitChar = "-"), 8, 3);
+    
     emptyCell = throneRoom[0].randomEmptyCellCoords();
-    throneRoom[0].addObjectToMap(new Object(char = "m", name = "Emerald Shards", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.emeraldsDescript, portraitChar = "-"), 7, 2);
-    throneRoom[0].addObjectToMap(new Object(char = "m", name = "Emerald Shards", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.emeraldsDescript, portraitChar = "-"), 8, 2);
+  
     throneRoom[0].addObjectToMap(new Object(char = "m", name = "Emerald Shards", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.emeraldsDescript, portraitChar = "-"), 9, 2);
     throneRoom[0].addObjectToMap(new Object(char = "m", name = "Emerald Shards", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.emeraldsDescript, portraitChar = "-"), 10, 2);
+    throneRoom[0].addObjectToMap(new Object(char = "m", name = "Emerald Shards", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.emeraldsDescript, portraitChar = "-"), 11, 2);
     
     
     //tidying complete
