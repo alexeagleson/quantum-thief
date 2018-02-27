@@ -9,7 +9,7 @@ var Game = {
   currentFloor: 0,
   engine: null,
   player: null,
-  gameSpeed: 200,
+  gameSpeed: 100,
   gameWidth: 24,
   gameHeight: 24,
   myTravelChecklist: [],

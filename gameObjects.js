@@ -128,6 +128,22 @@ var Object = function(char, name, wall, alive, clickFunction, myDialogue, portra
     }
   },
     
+  this.pathTo = function(targetTile) {
+
+    let astar = new ROT.Path.AStar(targetTile.x, targetTile.y, Game.checkIfWall, {topology: 4});
+    let addPath = (x, y) => this.path.push({x, y});
+    astar.compute(this.x, this.y, addPath);
+
+    this.path.shift();
+    let step = this.path.shift();
+    this.path = [];
+
+    if(!step) { return false; }
+
+    return this.moveToward({x: step.x, y: step.y});
+
+  },
+    
   this.steal = function(objectToSteal) {
     removeObjectFromTile(objectToSteal);
     removeObjectFromActive(objectToSteal);
@@ -228,10 +244,7 @@ var Object = function(char, name, wall, alive, clickFunction, myDialogue, portra
         if (this.name === "Scott Dracula" && Game.gameDone) {
           this.myDialogue = creativeContent.gameOver;
         }
-        
-        
-        
-        
+
         
         showMenu(this.myDialogue, this);
       }
@@ -259,10 +272,10 @@ var Object = function(char, name, wall, alive, clickFunction, myDialogue, portra
           if (distance < 1.5) {
             objectAtTile(tileLocation).clickedOn();
           } else {
-            Game.player.moveToward(convertMouseTouchToTile(mousePos));
+            Game.player.pathTo(convertMouseTouchToTile(mousePos));
           }
         } else {
-          Game.player.moveToward(convertMouseTouchToTile(mousePos));
+          Game.player.pathTo(convertMouseTouchToTile(mousePos));
         }
       } else if (e.type === "keydown") {
         var keyMap = {};
