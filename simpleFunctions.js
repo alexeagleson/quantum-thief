@@ -133,6 +133,8 @@ function removeObjectFromActive(object) {
 
 
 function show_image(src, width, height, alt) {
+  var totalDOM = document.getElementsByClassName("totalDiv")[0];
+  totalDOM.style.display = "none";
   var img = document.createElement("img");
   img.src = src;
   img.width = width;
@@ -147,6 +149,8 @@ function show_image(src, width, height, alt) {
 }
 
 function removeTitle() {
+  var totalDOM = document.getElementsByClassName("totalDiv")[0];
+  totalDOM.style.display = "block";
   img = document.getElementById("Quantum Thief");
   img.parentNode.removeChild(img);
   Game.showControls();
@@ -154,7 +158,28 @@ function removeTitle() {
 
 
 function removeControls() {
+  var totalDOM = document.getElementsByClassName("totalDiv")[0];
+  totalDOM.style.display = "block";
   img = document.getElementById("Controls");
   img.parentNode.removeChild(img);
   Game.startGame();
 }
+
+function removeControls() {
+  var totalDOM = document.getElementsByClassName("totalDiv")[0];
+  totalDOM.style.display = "block";
+  img = document.getElementById("Controls");
+  img.parentNode.removeChild(img);
+  Game.startGame();
+}
+
+function iceUniverseTransition() {
+  var totalDOM = document.getElementsByClassName("totalDiv")[0];
+  totalDOM.style.display = "block";
+  img = document.getElementById("Ice Universe");
+  img.parentNode.removeChild(img);
+  Game.startGame();
+}
+
+
+Game.travelTo(creativeContent.iceUniverse);

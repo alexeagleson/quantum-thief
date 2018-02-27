@@ -18,7 +18,9 @@ var Game = {
 
   init: function() {
     
-    var title = show_image("https://i.imgur.com/2guV4yZ.png", 1728, 768, "Quantum Thief");
+    view.defineView();
+    
+    var title = show_image("https://i.imgur.com/pjIChhJ.png", 1728, 768, "Quantum Thief");
     title.addEventListener("click", removeTitle);
     
   },
@@ -37,7 +39,7 @@ var Game = {
    Game.player = new Object(char = "@", name = "Scarlic", wall = true, alive = true, clickFunction = null, myDialogue = null, portraitChar = "@", moveType = null);
 
     
-    view.defineView();
+    
 
     Game.travelTo(creativeContent.draculaThrone);
 
@@ -78,8 +80,11 @@ var Game = {
     }
       
 
-    
-    if (goToUniverseName === "Fire Universe") {
+    if (goToUniverseName === "Ice Universe") {
+      Game.currentUniverseName = "Ice Universe";
+      var iceUniverseIMG = show_image("https://i.imgur.com/E3wdGB0.png", 1728, 768, "Ice Universe");
+      iceUniverseIMG.addEventListener("click", removeControls);
+    } else if (goToUniverseName === "Fire Universe") {
       Game.travelTo(creativeContent.fireUniverse);
       Game.currentUniverseName = "Fire Universe";
     } else if (goToUniverseName === "Old Person Universe") {
@@ -92,9 +97,6 @@ var Game = {
     } else if (goToUniverseName === "Hot Dog Universe") {
       Game.travelTo(creativeContent.hotdogUniverse);
       Game.currentUniverseName = "Hot Dog Universe";
-    } else if (goToUniverseName === "Ice Universe") {
-      Game.travelTo(creativeContent.iceUniverse);
-      Game.currentUniverseName = "Ice Universe";
     } else if (goToUniverseName === "Robocop Universe") {
       Game.travelTo(creativeContent.robocopUniverse);
       Game.currentUniverseName = "Robocop Universe";
