@@ -25,13 +25,13 @@ var Game = {
   
   startGame: function() {    
     
-    Game.player = new Object(char = "@", name = "Scarlic", wall = true, alive = true, clickFunction = null, myDialogue = null, portraitChar = "@", moveType = null);
+   Game.player = new Object(char = "@", name = "Scarlic", wall = true, alive = true, clickFunction = null, myDialogue = null, portraitChar = "@", moveType = null);
 
+    
     view.defineView();
 
     Game.travelTo(creativeContent.draculaThrone);
-    Game.player.x = 11;
-    Game.player.y = 15;
+
   },
   
   computeFOV: function() {
@@ -98,7 +98,12 @@ var Game = {
       this.display.setOptions(Game.CompleteMap.tileLegend);
     }
     emptyCell = Game.CompleteMap.randomEmptyCellCoords();
-    Game.CompleteMap.addObjectToMap(Game.player, emptyCell.x, emptyCell.y);
+    if (worldFunction === creativeContent.draculaThrone) {
+      Game.player.x = 11;
+      Game.player.y = 15;
+    } else {
+      Game.CompleteMap.addObjectToMap(Game.player, emptyCell.x, emptyCell.y);
+    }
     
     Game.resetEngine();
     
@@ -339,6 +344,7 @@ var Game = {
         totalMap.map[key] = new Tile(x, y, ".", false, visible);
         totalMap.freeCells.push(key);
     }
+    
     digger.create(digCallback.bind(this));
     
     return totalMap;
