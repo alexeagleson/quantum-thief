@@ -393,6 +393,7 @@ var creativeContent = {
   hotDogTile: "https://i.imgur.com/Ai7caH4.png",
   iceTile: "https://i.imgur.com/qQ1lgrF.png",
   robocopTile: "https://i.imgur.com/qWTXTHZ.png",
+  bakulaTile: "https://i.imgur.com/QCvyHIZ.jpg",
   
   faceLegend: {
     "-": multiplyBy12(multiplyBy32([0, 0])),
@@ -637,6 +638,95 @@ var creativeContent = {
     
     return fireUniverse;
   },
+  
+  fireUniverse: function() {
+    var fireUniverse = [];
+    var emptyCell = null;
+    
+    for (var i = 0; i < 3; i++) {
+      fireUniverse[i] = Game.createMap(creativeContent.fireTile, creativeContent.masterPngLegend, i);
+      
+       // stuff here will appear on every floor
+      emptyCell = fireUniverse[i].randomEmptyCellCoords();
+      fireUniverse[i].addObjectToMap(new Object(char = "!", name = "Fire Plant", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.defaultDialogue, portraitChar = "-"), emptyCell.x, emptyCell.y);
+      
+      if (i != 0) {
+        emptyCell = fireUniverse[i].randomEmptyCellCoords();
+        fireUniverse[i].addObjectToMap(new Object(char = ">", name = "Downstairs", wall = false, alive = false, clickFunction = "floor down"), emptyCell.x, emptyCell.y);
+      }
+      
+      if (i != 2) {
+        emptyCell = fireUniverse[i].randomEmptyCellCoords();
+        fireUniverse[i].addObjectToMap(new Object(char = "<", name = "Upstairs", wall = false, alive = false, clickFunction = "floor up"), emptyCell.x, emptyCell.y);
+      }
+    }
+    
+    //LAVAWORLD starts
+    
+    
+    // put stuff on specific floors
+    emptyCell = fireUniverse[2].randomEmptyCellCoords();
+    fireUniverse[2].addObjectToMap(new Object(char = "q", name = "Garbage Can", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.GarbageCanDialogue, portraitChar = "-", moveType = "", allowSteal = true), emptyCell.x, emptyCell.y);
+    
+    emptyCell = fireUniverse[2].randomEmptyCellCoords();
+    fireUniverse[2].addObjectToMap(new Object(char = "h", name = "Violet Crystal", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.VioletCrystalDialogue, portraitChar = "-", moveType = "", allowSteal = true), emptyCell.x, emptyCell.y);
+
+    emptyCell = fireUniverse[0].randomEmptyCellCoords();
+    fireUniverse[0].addObjectToMap(new Object(char = "p", name = "Garbage Bag", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.garbageBagDialogue, portraitChar = "-", moveType = "", allowSteal = true), emptyCell.x, emptyCell.y);
+
+    emptyCell = fireUniverse[1].randomEmptyCellCoords();
+    fireUniverse[1].addObjectToMap(new Object(char = "o", name = "Garbage Bag 2", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.garbageBag2Dialogue, portraitChar = "-", moveType = "", allowSteal = true), emptyCell.x, emptyCell.y);
+    
+    emptyCell = fireUniverse[0].randomEmptyCellCoords();
+    fireUniverse[0].addObjectToMap(new Object(char = "*", name = "Lava Person1", wall = false, alive = true, clickFunction = "talk", myDialogue = creativeContent.LavaPerson1Dialogue, portraitChar = "l", moveType = "follow"), emptyCell.x, emptyCell.y);
+    
+    emptyCell = fireUniverse[0].randomEmptyCellCoords();
+    fireUniverse[0].addObjectToMap(new Object(char = "+", name = "Lava Person2", wall = false, alive = true, clickFunction = "talk", myDialogue = creativeContent.LavaPerson2Dialogue, portraitChar = "m", moveType = "follow"), emptyCell.x, emptyCell.y);
+    
+    emptyCell = fireUniverse[1].randomEmptyCellCoords();
+    fireUniverse[1].addObjectToMap(new Object(char = "$", name = "Lava Person3", wall = false, alive = true, clickFunction = "talk", myDialogue = creativeContent.LavaPerson3Dialogue, portraitChar = "n", moveType = "random"), emptyCell.x, emptyCell.y);
+    
+    emptyCell = fireUniverse[2].randomEmptyCellCoords();
+    fireUniverse[2].addObjectToMap(new Object(char = "&", name = "Lava Person4", wall = false, alive = true, clickFunction = "talk", myDialogue = creativeContent.LavaPerson4Dialogue, portraitChar = "o", moveType = "random"), emptyCell.x, emptyCell.y);
+  
+    emptyCell = fireUniverse[0].randomEmptyCellCoords();
+    fireUniverse[0].addObjectToMap(new Object(char = "?", name = "Lava Person5", wall = false, alive = true, clickFunction = "talk", myDialogue = creativeContent.LavaPerson5Dialogue, portraitChar = "p", moveType = "random"), emptyCell.x, emptyCell.y);
+  
+    emptyCell = fireUniverse[1].randomEmptyCellCoords();
+    fireUniverse[1].addObjectToMap(new Object(char = "{", name = "Lava Person6", wall = false, alive = true, clickFunction = "talk", myDialogue = creativeContent.LavaPerson6Dialogue, portraitChar = "q", moveType = "random"), emptyCell.x, emptyCell.y);
+  
+    emptyCell = fireUniverse[1].randomEmptyCellCoords();
+    fireUniverse[1].addObjectToMap(new Object(char = "k", name = "Soda Can", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.SodaCan1Dialogue, portraitChar = "-", moveType = "", allowSteal = true), emptyCell.x, emptyCell.y);
+    
+    emptyCell = fireUniverse[0].randomEmptyCellCoords();
+    fireUniverse[0].addObjectToMap(new Object(char = "m", name = "Soda Blue", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.SodaBlue1Dialogue, portraitChar = "-", moveType = "", allowSteal = true), emptyCell.x, emptyCell.y);
+    
+    emptyCell = fireUniverse[2].randomEmptyCellCoords();
+    fireUniverse[2].addObjectToMap(new Object(char = "n", name = "Soda Red", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.SodaRed1Dialogue, portraitChar = "-", moveType = "", allowSteal = true), emptyCell.x, emptyCell.y);
+    
+    emptyCell = fireUniverse[1].randomEmptyCellCoords();
+    fireUniverse[1].addObjectToMap(new Object(char = "f", name = "Classic Volcano", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.VolcanoDescription, portraitChar = "-", moveType = "", allowSteal = true), emptyCell.x, emptyCell.y);
+    
+    emptyCell = fireUniverse[2].randomEmptyCellCoords();
+    fireUniverse[2].addObjectToMap(new Object(char = ")", name = "SPIZ", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.SPIZDescription, portraitChar = "-", moveType = "", allowSteal = true), emptyCell.x, emptyCell.y);
+    
+    emptyCell = fireUniverse[0].randomEmptyCellCoords();
+    fireUniverse[0].addObjectToMap(new Object(char = "i", name = "BlueCrystal", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.BlueCrystalDescription, portraitChar = "-", moveType = "", allowSteal = true), emptyCell.x, emptyCell.y);
+    
+    emptyCell = fireUniverse[2].randomEmptyCellCoords();
+    fireUniverse[2].addObjectToMap(new Object(char = "j", name = "Yum Bar", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.YumBarDescription, portraitChar = "-", moveType = "", allowSteal = true), emptyCell.x, emptyCell.y);
+    
+    
+    emptyCell = fireUniverse[2].randomEmptyCellCoords();
+    fireUniverse[2].addObjectToMap(new Object(char = "(", name = "Portal", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.portalDialogue, portraitChar = "y"), emptyCell.x, emptyCell.y);
+
+    
+    return fireUniverse;
+  },
+  
+  
+  
+  bakulaTile
   
 // snorkelbutt  - NO DIALOGUE for nurse rachet! Portraits updated.
   oldPersonUniverse: function() {
