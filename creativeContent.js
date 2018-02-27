@@ -697,7 +697,7 @@ var creativeContent = {
     var randomFloor = (rollDie(2) - 1); emptyCell = null;
     
     for (var i = 0; i < 2; i++) {
-      bakulaUniverse[i] = Game.createMap(creativeContent.bakulaTile, creativeContent.masterPngLegend, i, "Arena", "true", bakula = 1);
+      bakulaUniverse[i] = Game.createMap(creativeContent.bakulaTile, creativeContent.masterPngLegend, i, "Rogue");
       
     }
     
@@ -754,7 +754,7 @@ var creativeContent = {
     var bakulaDie;
     var bakulaChar;
     
-    for (var i; i < 400; i++) {
+    for (var i; i < 100; i++) {
       bakulaDie = rollDie(47);
       bakulaChar = bakulaCharArray[bakulaDie];
 

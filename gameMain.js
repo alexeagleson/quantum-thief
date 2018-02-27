@@ -13,7 +13,7 @@ var Game = {
   gameWidth: 24,
   gameHeight: 24,
   currentUniverseName: "Throne Universe",
-  gameDone: false,
+  gameDone: true,
   stolenItems: 0,
 
   init: function() {
@@ -48,7 +48,7 @@ var Game = {
     var fov = new ROT.FOV.PreciseShadowcasting(Game.checkIfWall);
 
     /* output callback */
-    fov.compute(Game.player.x, Game.player.y, 6, function(x, y, r, visibility) {
+    fov.compute(Game.player.x, Game.player.y, 9, function(x, y, r, visibility) {
       if (visibility < 0.75) {
         // nada
       } else if (Game.CompleteMap.map[x + "," + y].visible === false) {
@@ -302,7 +302,7 @@ var Game = {
     return true;
   },
   
-  createMap:function(tileset, tileMap, floor, mapType, visible, bakula) {
+  createMap:function(tileset, tileMap, floor, mapType, visible) {
 
     var thisMap = {};
     var tileElement = document.createElement("img");
@@ -312,17 +312,14 @@ var Game = {
       var visible = false;
     }
 
-    if (!bakula) {
-      bakula = 1;
-    }
 
     var tileLegend = {
         width: Game.display._options.width,
         height: Game.display._options.height,
         layout: "tile",
         bg: "transparent",
-        tileWidth: 32 * bakula,
-        tileHeight: 32 * bakula,
+        tileWidth: 32,
+        tileHeight: 32,
         tileSet: tileElement,
         tileMap: tileMap
       };
