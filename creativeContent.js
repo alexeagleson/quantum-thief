@@ -582,8 +582,14 @@ var creativeContent = {
         } else {
           bagChar = "p";
         }
-        randomFloor = (rollDie(2) - 1); emptyCell = throneRoom[randomFloor].randomEmptyCellCoords();
-        throneRoom[randomFloor].addObjectToMap(new Object(char = bagChar, name = "Interdimensional Booty", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.bootyDialogue, portraitChar = "-", moveType = "", allowSteal = false), emptyCell.x, emptyCell.y);
+
+        endx = rollDie(8) + 6;
+        endy = rollDie(3) + 15;
+        
+        emptyCell = {x: endx, y: endy};
+
+        
+        throneRoom[0].addObjectToMap(new Object(char = bagChar, name = "Interdimensional Booty", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.bootyDialogue, portraitChar = "-", moveType = "", allowSteal = false), emptyCell.x, emptyCell.y);
       }
     }
     return throneRoom;
