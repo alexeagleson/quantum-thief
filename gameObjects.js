@@ -74,6 +74,30 @@ var Object = function(char, name, wall, alive, clickFunction, myDialogue, portra
     if (this === Game.player) {
       this.handlePlayerTurn();
     } else{
+      
+      if (this.name === ("The Thing")) {
+        var d20 = rollDie(25);
+        
+        if (d20 === 14) {
+          this.char = "i";
+        } else if (d20 === 15) {
+          this.char = "i";
+        } else if (d20 === 16) {
+          this.char = "?";
+        } else if (d20 === 17) {
+          this.char = "?";
+        } else if (d20 === 18) {
+          this.char = "@";
+        } else if (d20 === 19) {
+          this.char = "*";
+        } else if (d20 === 20) {
+          this.char = "h";
+        }
+      }
+      
+      
+      
+      
       this.handleNpcTurn();
     }
   },

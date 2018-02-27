@@ -507,6 +507,16 @@ var creativeContent = {
     throneRoom[0].addObjectToMap(new Object(char = "!", name = "Throne", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.throneDialogue, portraitChar = "-", moveType = "", allowSteal = false), 10, 5);
     throneRoom[0].addObjectToMap(new Object(char = "*", name = "Scott Dracula", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.gameBeginDialogue, portraitChar = "#", moveType = "", allowSteal = false), 11, 10);
     
+
+    for (var i = 1; i < Game.gameWidth - 1; i++) { 
+      for (var j = 1; i < Game.gameHeight - 1; i++) { 
+        if (i === 5) {
+          throneRoom.map[i + "," + j].char = "#";
+        }
+        
+      }
+    }
+
     
 
     for (var i = 1; i < Game.gameHeight - 1; i++) { 
@@ -551,10 +561,6 @@ var creativeContent = {
     throneRoom[0].addObjectToMap(new Object(char = "m", name = "Emerald Shards", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.emeraldsDescript, portraitChar = "-"), 10, 2);
     throneRoom[0].addObjectToMap(new Object(char = "m", name = "Emerald Shards", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.emeraldsDescript, portraitChar = "-"), 11, 2);
     
-    
-    //tidying complete
-    emptyCell = throneRoom[0].randomEmptyCellCoords();
-    throneRoom[0].addObjectToMap(new Object(char = "n", name = "Rotdog", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.rotdogDescript, portraitChar = "-"), 4, 5);
     
 
     
@@ -930,7 +936,7 @@ emptyCell = iceUniverse[1].randomEmptyCellCoords();
 iceUniverse[1].addObjectToMap(new Object(char = "?", name = "MacReady", wall = false, alive = true, clickFunction = "talk", myDialogue = creativeContent.MacReadyDescription, portraitChar = "k", moveType = "random"), emptyCell.x, emptyCell.y);
 
 emptyCell = iceUniverse[1].randomEmptyCellCoords();
-iceUniverse[1].addObjectToMap(new Object(char = "i", name = "The Thing", wall = false, alive = true, clickFunction = "talk", myDialogue = creativeContent.TheThingDescription, portraitChar = "-", moveType = "random"), emptyCell.x, emptyCell.y);
+iceUniverse[1].addObjectToMap(new Object(char = "?", name = "The Thing", wall = false, alive = true, clickFunction = "talk", myDialogue = creativeContent.TheThingDescription, portraitChar = "-", moveType = "random"), emptyCell.x, emptyCell.y);
 
 emptyCell = iceUniverse[0].randomEmptyCellCoords();
 iceUniverse[0].addObjectToMap(new Object(char = "f", name = "Blue Fish", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.BlueFishDescription, portraitChar = "-", moveType = "random", allowSteal = true), emptyCell.x, emptyCell.y);
