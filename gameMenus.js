@@ -10,8 +10,6 @@ var Menu = function(textStrings, spaces, fgColours, responseFunction, object) {
   this.display = function() {  
     if (this.textStrings[this.textStrings.length - 1][0] != "{") {
       this.textStrings.push("{Goodbye}");
-      this.spaces.push(2);
-      this.fgColours.push("#b0ec62");
       this.responseFunction["{Goodbye}"] = menuResponse.done;
     }
     
@@ -19,14 +17,28 @@ var Menu = function(textStrings, spaces, fgColours, responseFunction, object) {
       if (this.object.allowSteal) {
         if (this.textStrings[this.textStrings.length - 1] != "{Yoink!}") {
           Game.player.myCurrentChat = object;
-          
           this.textStrings.push("{Yoink!}");
-          this.spaces.push(1);
-          this.fgColours.push("#b0ec62");
           this.responseFunction["{Yoink!}"] = menuResponse.steal;
         }
       }
     }
+    
+    this.spaces = [];
+    this.fgColours = [];
+    
+    for (var i = 0; i < this.textStrings.length - 1; i++) {
+      if (i === 0) {
+        this.spaces.push(0);
+        this.fgColours.push("red");
+      } else if (i === 1) {
+        this.spaces.push(1);
+        this.fgColours.push("goldenrod");
+      } else {
+        this.spaces.push(1);
+        this.fgColours.push("green");
+      }
+    }
+    
     
     
     Game.menu.clear();
