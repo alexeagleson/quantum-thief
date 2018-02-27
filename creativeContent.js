@@ -913,7 +913,7 @@ var creativeContent = {
         iceUniverse[i].addObjectToMap(new Object(char = ">", name = "Downstairs", wall = false, alive = false, clickFunction = "floor down"), emptyCell.x, emptyCell.y);
       }
       
-      if (i != 2) {
+      if (i != 1) {
         randomFloor = (rollDie(2) - 1); emptyCell = iceUniverse[i].randomEmptyCellCoords();
         iceUniverse[i].addObjectToMap(new Object(char = "<", name = "Upstairs", wall = false, alive = false, clickFunction = "floor up"), emptyCell.x, emptyCell.y);
       }
@@ -1053,36 +1053,26 @@ iceUniverse[randomFloor].addObjectToMap(new Object(char = ")", name = "Sweethear
 
     bootyDescript: {
       textStrings: ["Pile of Booty","A big pile o' booty. Your piratey bones are aquiver with motivation!"],
-      spaces: [1, 2, 1],
-      fgColours: ["red", "lightyellow", "green"],
       responseFunction: {}
   },   
 
     fernDescript: {
       textStrings: ["A Healthy Fern","It is bright green and has no bugs on it. You have never seen anything like this before."],
-      spaces: [1, 2, 1],
-      fgColours: ["red", "lightyellow", "green"],
       responseFunction: {}
   },   
 
     visionTreeDescript: {
       textStrings: ["Vision Tree","Are those eyeballs?"],
-      spaces: [1, 2, 1],
-      fgColours: ["red", "lightyellow", "green"],
       responseFunction: {}
   },   
 
     figTreeDescript: {
       textStrings: ["Fig Tree of Foresight","This stout tree gives me the creeps. But you rather like it."],
-      spaces: [1, 2, 1],
-      fgColours: ["red", "lightyellow", "green"],
       responseFunction: {}
   },   
     bloodMagicDescript: {
-      textStrings: ["Blood Magic Chysanthemum","Tiny pink blossoms on dark leaves that ooze some kind of liquid back onto its roots. Wait... are those magic portals?", "{Ice Universe}", "{Fire Universe}", "{Robocop Universe}", "{Old Universe}", "{Hot Dog Universe}", "{Nevermind}"],
-      spaces: [1, 1, 0, 0, 0, 0, 0, 0],
-      fgColours: ["red", "lightyellow", "green", "green", "green", "green", "green", "green"],
-      responseFunction: {"{Ice Universe}": menuResponse.iceu, "{Fire Universe}": menuResponse.fireu, "{Robocop Universe}": menuResponse.robocopu, "{Old Universe}": menuResponse.oldpersonu, "{Hot Dog Universe}": menuResponse.hotdogu, "{Nevermind}": menuResponse.done}
+      textStrings: ["Magic Chysanthemum","Wait... are those magic portals?", "{Ice Universe}", "{Lava Universe}", "{Detroit Universe}", "{Oldfolk Universe}", "{Hot Dog Universe}"],
+      responseFunction: {"{Ice Universe}": menuResponse.iceu, "{Lava Universe}": menuResponse.fireu, "{Detroit Universe}": menuResponse.robocopu, "{Oldfolk Universe}": menuResponse.oldpersonu, "{Hot Dog Universe}": menuResponse.hotdogu}
   },   
   
   
@@ -1090,33 +1080,23 @@ iceUniverse[randomFloor].addObjectToMap(new Object(char = ")", name = "Sweethear
 
  ornateChestDescript: {
       textStrings: ["Ornate Chest","Guilded metal seals this deftly crafted chest. There's a big scary lock at the front, in the shape of a skull."],
-      spaces: [1, 2, 1],
-      fgColours: ["red", "lightyellow", "green"],
       responseFunction: {}
   },
   enchantedChestDescript: {
       textStrings: ["Enchanted Ornate Chest","This silver chest emits a gentle hum when you put your hand near it. You probably shouldn't touch this."],
-      spaces: [1, 2, 1],
-      fgColours: ["red", "lightyellow", "green"],
       responseFunction: {}
   },
   rubiesDescript: {
       textStrings: ["Sparkling Rubies","Sweet, sweet bullion. Where can else can you find such treasure?"],
-      spaces: [1, 2, 1],
-      fgColours: ["red", "lightyellow", "green"],
       responseFunction: {}
   },  
   emeraldsDescript: {
       textStrings: ["Emerald Shards","A remarkable stack of pure emerald. There is a little horse inside, and some tiny people dancing around a yellow brick road that leads straight to the red velvet carpet. Nobody is leaving that place anytime soon."],
-      spaces: [1, 2, 1],
-      fgColours: ["red", "lightyellow", "green"],
       responseFunction: {}
   },     
   
   defaultDialogue: {
-      textStrings: ["I don't know what this is!"],
-      spaces: [randomFloor],
-      fgColours: ["white"],
+      textStrings: ["Fire Plant", "I don't know what this is!"],
       responseFunction: {}
   }, 
   
@@ -1127,149 +1107,101 @@ iceUniverse[randomFloor].addObjectToMap(new Object(char = ")", name = "Sweethear
   
   GarbageCanDialogue: {
       textStrings: ["Trash Can", "The sides of this tin warrior bulge with the infinite elbows of a wasteful society. You've been around the block a few times but you've never seen a cram like this before.", "{Can you tell me how to get to--}"],
-      spaces: [1, 2, 1],
-      fgColours: ["red", "lightyellow", "green"],
       responseFunction: {"{Can you tell me how to get to--}": menuResponse.GarbageCanDialogue1}
   }, 
   GarbageCanDialogue1: {
       textStrings: ["Trash Can", "Nope.", "{Well what good are you?}"],
-      spaces: [1, 2, 1],
-      fgColours: ["red", "lightyellow", "green"],
       responseFunction: {"{Well what good are you?}": menuResponse.GarbageCanDialogue2}
   },
   garbageBagDialogue: {
       textStrings: ["Garbage Bag", "I'm so full of garbage, I'm about ready to BURST! I think someone put a diaper in here..", "{I'm so ready,}"],
-      spaces: [1, 2, 1],
-      fgColours: ["red", "lightyellow", "green"],
       responseFunction: {"{I'm so ready,}": menuResponse.garbageBagDialogue2}
   },   
   garbageBag2Dialogue: {
       textStrings: ["Another Garbage Bag", "So you just go around in caves talking to bags of strange garbage?", "{So what if I do!?!?}"],
-      spaces: [1, 2, 1],
-      fgColours: ["red", "lightyellow", "green"],
       responseFunction: {"{So what if I do!?!?}": menuResponse.garbageBag2Dialogue1}
   },  
   garbageBag2Dialogue1: {
       textStrings: ["Another Garbage Bag", "Nuthin baby nevermind, you do you.", "{I will! I will do me!}"],
-      spaces: [1, 2, 1],
-      fgColours: ["red", "lightyellow", "green"],
       responseFunction: {"{I will! I will do me!}": menuResponse.garbageBag2Dialogue2}
   },
   garbageBagDialogue2: {
       textStrings: ["Garbage Bag", "GROSS! Ready for WHAT??.", "{Yah no nevermind.}"],
-      spaces: [1, 2, 1],
-      fgColours: ["red", "lightyellow", "green"],
       responseFunction: {"{Yah no nevermind.}": menuResponse.garbageBagDialogue3}
   },  
   LavaPerson1Dialogue: {
       textStrings: ["Hunk, The Lava Person", "A fresh face, don't get too many visitors down here these days.. R U Cool?", "{Ice cold, baby.}"],
-      spaces: [1, 2, 1],
-      fgColours: ["red", "lightyellow", "green"],
       responseFunction: {"{Ice cold, baby.}": menuResponse.LavaPersonDialogue2}
   },  
   LavaPersonDialogue2: {
       textStrings: ["Hunk, The Lava Person", "Heck yeah that's what I'm talking about! So do you have any on you? Any of that sweet stuff?", "{Errrr...}"],
-      spaces: [1, 2, 1],
-      fgColours: ["red", "lightyellow", "green"],
       responseFunction: {"{Errrr...}": menuResponse.LavaPersonDialogue3}
   },
   LavaPersonDialogue3: {
       textStrings: ["Hunk, The Lava Person", "Look dude if you don't have any SPIZ on you just take a hike.", "{Whatever.}"],
-      spaces: [1, 2, 1],
-      fgColours: ["red", "lightyellow", "green"],
       responseFunction: {"{Whatever.}": menuResponse.LavaPersonDialogue4}
   },
   LavaPerson2Dialogue: {
       textStrings: ["Flipp Smokewiff, The Lava Person", "I had a dream once that there were HEAPS of worlds beyond this one, bro can you even imagine?", "{Yeah, I actually can.}"],
-      spaces: [1, 2, 1],
-      fgColours: ["red", "lightyellow", "green"],
       responseFunction: {"{Yeah, I actually can.}": menuResponse.LavaPerson2Dialogue2}
   },
   LavaPerson2Dialogue2: {
       textStrings: ["Flipp Smokewiff, The Lava Person", "You must be absolutely wrecked on candy right now! I had so much this morning I'm ready to believe in anything. Like a whole WORLD made of old-ass retired cyborg cops!", "{Wait, now I actually can't.}"],
-      spaces: [1, 2, 1],
-      fgColours: ["red", "lightyellow", "green"],
       responseFunction: {"{Wait, now I actually can't.}": menuResponse.LavaPerson2Dialogue3}
   },
   LavaPerson3Dialogue: {
       textStrings: ["Gatcha Cablebinder, The Grabby Lava Person", "Just.. a little bit.. closer..", "{I can totally see AND hear you, dude.}"],
-      spaces: [1, 2, 1],
-      fgColours: ["red", "lightyellow", "green"],
       responseFunction: {"{I can totally see AND hear you, dude.}": menuResponse.LavaPerson3Dialogue1}
   },
   LavaPerson3Dialogue1: {
       textStrings: ["Gatcha Cablebinder, The Grabby Lava Person", "EMPTY YOUR POCKETS, KNAVE! I need the STICKY stuff! The Melty, chocolatey, messy NASTY stuff!", "{Yeah no. Seems like everyone down here is addicted to sugar.}"],
-      spaces: [1, 2, 1],
-      fgColours: ["red", "lightyellow", "green"],
       responseFunction: {"{Yeah no. Seems like everyone down here is addicted to sugar.}": menuResponse.LavaPerson3Dialogue3}
   },
   LavaPerson4Dialogue: {
       textStrings: ["Hobbles the Contemplator", "Sometimes I wonder if it was worth trading the beauty of our world for the sweet taste of sugar.", "{Probably not, but you have to make the best of what you get.}"],
-      spaces: [1, 2, 1],
-      fgColours: ["red", "lightyellow", "green"],
       responseFunction: {"{Probably not, but you have to make the best of what you get.}": menuResponse.LavaPerson4Dialogue}
   },
   
   SodaCan1Dialogue: {
       textStrings: ["A Fast Looking Soda Can", "This can isn't alive and can't speak, but you get the impression that if WAS speaking you couldn't keep up with it.", "{RIP, Recycle.}"],
-      spaces: [1, 2, 1],
-      fgColours: ["red", "lightyellow", "green"],
       responseFunction: {"{RIP, Recycle.}": menuResponse.SodaCan1Dialogue1}
   },
   VioletCrystalDialogue: {
       textStrings: ["A Mysterious Violet Crystal", "This strange crystaline formation almost pulses with weird energy. You could get lost gazing into its lovely facetous depths.", "{But I'm a pirate so *FART* YEAAAARRRR!}"],
-      spaces: [1, 2, 1],
-      fgColours: ["red", "lightyellow", "green"],
       responseFunction: {"{But I'm a pirate so *FART* YEAAAARRRR!}": menuResponse.VioletCrystalDialogue1}
   },
   
   SodaBlue1Dialogue: {
       textStrings: ["A Blue Soda Can", "It must have been a berry or grape flavor. Why else make it blue!?", "{STEP ON IT!}"],
-      spaces: [1, 2, 1],
-      fgColours: ["red", "lightyellow", "green"],
       responseFunction: {"{STEP ON IT!}": menuResponse.SodaBlue1Dialogue}
   },
 
   SodaRed1Dialogue: {
       textStrings: ["A Red Soda Can", "Awwww maaaaan... this was definitely a strawberry kiwi, Lord of the Drink Flavors...", "{Try and fail to forget that sweet taste.}"],
-      spaces: [1, 2, 1],
-      fgColours: ["red", "lightyellow", "green"],
       responseFunction: {"{Try and fail to forget that sweet taste.}": menuResponse.SodaBlue1Dialogue}
   },
   VolcanoDescription: {
       textStrings: ["A Classic Volcano", "It looks just like the big burning mountains in the south you once saw from your days on the high seas..", "{Cute! But very very hot.}"],
-      spaces: [1, 2, 1],
-      fgColours: ["red", "lightyellow", "green"],
       responseFunction: {"{Cute! But very very hot.}": menuResponse.VolcanoDescription}
   },
   SPIZDescription: {
       textStrings: ["SPIZ! The Breath Taker", "Hey, that's the candy bar everyone around here is crazy for. Should I take it with me? Maybe I can trade it to one of these loonies for something actually valuable..", "{Is it worth risking addiction tho?}"],
-      spaces: [1, 2, 1],
-      fgColours: ["red", "lightyellow", "green"],
       responseFunction: {"{Is it worth risking addiction tho?}": menuResponse.SPIZDescription}
   },
   BlueCrystalDescription: {
       textStrings: ["Tangy Blue Crystal", "It is a chunk of candy someone dropped on the ground, getting it all dirty. Looks like they made it to resemble the minerals around here.", "{Not gonna break my teeth on it.}"],
-      spaces: [1, 2, 1],
-      fgColours: ["red", "lightyellow", "green"],
       responseFunction: {"{Not gonna break my teeth on it.}": menuResponse.BlueCrystalDescription}
   },
   YumBarDescription: {
       textStrings: ["Yum Bar", "The wrapper says that it 'Tastes Just Like Dirt!'", "{Haha.. at least it is honest.}"],
-      spaces: [1, 2, 1],
-      fgColours: ["red", "lightyellow", "green"],
       responseFunction: {"{Haha.. at least it is honest.}": menuResponse.YumBarDescription}
   },
   LavaPerson5Dialogue: {
       textStrings: ["Pharb The Gobbler", "They call me the Gobbler, but my real passion is puking! BBLEEARRGHH!", "{Nasty, goodbye!}"],
-      spaces: [1, 2, 1],
-      fgColours: ["red", "lightyellow", "green"],
       responseFunction: {"{Nasty, goodbye!}": menuResponse.LavaPerson5Dialogue}
   },
   LavaPerson6Dialogue: {
       textStrings: ["Shybro The Student", "I'm studying the effects of sugar on Lava people in school but no one seems very interested..", "{Keep at it and maybe someday you can be the servant of a capricious tyrant, like me!}"],
-      spaces: [1, 2, 1],
-      fgColours: ["red", "lightyellow", "green"],
       responseFunction: {"{Keep at it and maybe someday you can be the servant of a capricious tyrant, like me!}": menuResponse.LavaPerson6Dialogue}
   },
   //LAVAWORLD ENDS
@@ -1278,26 +1210,18 @@ iceUniverse[randomFloor].addObjectToMap(new Object(char = ")", name = "Sweethear
   
   gameBeginDialogue: {
       textStrings: ["Scott Dracula", "Scarlic! I am bored. Prepare an overnight bag. What's that? You do not have a bag? I thought you were a pirate, not a peasant. Anyway, I am sending you back through Space and Time! You aren't to come back until you steal the most valuable treasure. Alley-oop!", "{Yaarrr! Send me back in time oh great timelord!}"],
-      spaces: [1, 2, 1],
-      fgColours: ["red", "lightyellow", "green"],
       responseFunction: {"{Yaarrr! Send me back in time oh great timelord!}": menuResponse.gameBeginDialogue}
   },  
   throneDialogue: {
       textStrings: ["Throne", "The throne of the great timelord Scott Dracula"],
-      spaces: [0, 1],
-      fgColours: ["red", "white"],
       responseFunction: {"The throne of the great timelord Scott Dracula": menuResponse.throneDialogue2}
   },
   throneDialogue2: {
       textStrings: ["Throne", "there is not much more to tell"],
-      spaces: [0, 1],
-      fgColours: ["red", "white"],
       responseFunction: {"there is not much more to tell": menuResponse.throneDialogue3}
   },
   throneDialogue3: {
       textStrings: ["Throne", "stop asking"],
-      spaces: [0, 1],
-      fgColours: ["red", "white"],
       responseFunction: {}
   },
   
@@ -1305,98 +1229,66 @@ iceUniverse[randomFloor].addObjectToMap(new Object(char = ")", name = "Sweethear
 
   retiredRobocopDialogue: {
       textStrings: ["Robocop - Retired", "Hello there, Sonny. You look strong and... er, smart. Can you help out a Robo Pop in need?", "{Yar, not another has-been looking for favours!}"],
-      spaces: [0, 1, 0],
-      fgColours: ["red", "lightyellow", "green", "lightyellow"],
       responseFunction: {"{Yar, not another has-been looking for favours!}": menuResponse.retiredRobocopDialogue2}
   },
   retiredRobocopDialogue2: {
       textStrings: ["Robocop - Retired", "Well sure, I'm just a retired cop looking for the REAL good stuff. Not the usual Good Ones...  You know the ones I mean.", "{ahhh...}" ],
-      spaces: [0, 1, 2],
-      fgColours: ["red", "lightyellow", "green", "lightyellow"],
       responseFunction: {"{ahhh...}": menuResponse.retiredRobocopDialogue3}
   },
   retiredRobocopDialogue3: {
       textStrings: ["Robocop - Retired", "Ah that sweet mess. Where have my robotic dentures got to now?"],
-      spaces: [0, 1, 0],
-      fgColours: ["red", "lightyellow", "green", "lightyellow"],
       responseFunction: {}
   },
   retiredRobocop2Dialogue: {
       textStrings: ["Robocop - Finally Alive", "Hello what are you doing here?", "{I'm looking for booty. Do you know where I can find something to impress my boss?}"],
-      spaces: [0, 1, 0],
-      fgColours: ["red", "lightyellow", "green", "lightyellow"],
       responseFunction: {"{I'm looking for booty. Do you know where I can find something to impress my boss?}": menuResponse.retiredRobocop2Dialogue2}
   },
   retiredRobocop2Dialogue2: {
       textStrings: ["Robocop - Finally Alive", "Get your hands on a crinkly brown bag and you'll always be impressive to me."],
-      spaces: [0, 1, 0],
-      fgColours: ["red", "lightyellow","green", "lightyellow"],
       responseFunction: {}
   },
   retiredRobocop3Dialogue: {
       textStrings: ["Robocop - Still Kickin'", "Hello, dearie. Please help yourself to some mentos."],
-      spaces: [0, 1],
-      fgColours: ["red", "lightyellow", "green", "lightyellow"],
       responseFunction: {}
   },
   retiredRobocop4Dialogue: {
       textStrings: ["Robocop - Poppa Wheelie", "Alex Murphy! I haven't seen you since the bank heist of 2044. Come here and check out this sick grind."],
-      spaces: [0, 1],
-      fgColours: ["red", "lightyellow", "green", "lightyellow"],
       responseFunction: {}
   },
   werthersDescript: {
       textStrings: ["Werther's Original", "Sweet, delicious goodness that will break your dentures again if you aren't careful."],
-      spaces: [0, 1],
-      fgColours: ["red", "lightyellow", "green", "lightyellow"],
       responseFunction: {}
   },
   wheelchairDescript: {
       textStrings: ["Wheelchair", "It's a sturdy looking wheelchair with glow in the dark wheels. There are bright pink tassels on it. You could pull some sick wheelies on this thing."],
-      spaces: [0, 1],
-      fgColours: ["red", "lightyellow", "green", "lightyellow"],
       responseFunction: {}
   },
   crosswordDescript: {
       textStrings: ["Crossword", "A whole book of them! You could spend hours crossing words and doing puzzles... if you weren't an illiterate pirate."],
-      spaces: [0, 1],
-      fgColours: ["red", "lightyellow", "green", "lightyellow"],
       responseFunction: {}
   },
   mentosDescript: {
       textStrings: ["Mentos- The Freshmaker (from the game the Witcher 3)", "Almost a whole roll of them! Oh, what's this? Bonus lint from Gramma Cop's purse."],
-      spaces: [0, 1],
-      fgColours: ["red", "lightyellow", "green", "lightyellow"],
       responseFunction: {}
   },
   badOnesDescript: {
       textStrings: ["A Prescription", "Instructions: Take one with a meal. A real meal. I said no more pizza pockets!"],
-      spaces: [0, 1],
-      fgColours: ["red", "lightyellow", "green", "lightyellow"],
       responseFunction: {}
   },
   funOnesDescript: {
       textStrings: ["A Prescription", "Do not exceed daily recommended dose of flowers. Call your philanthropist if you experience side effects for more than 35 hamsters."],
-      spaces: [0, 1],
-      fgColours: ["red", "lightyellow", "green", "lightyellow"],
       responseFunction: {}
   },
   goodOnesDescript: {
       textStrings: ["A Prescription", "These are real good."],
-      spaces: [0, 1],
-      fgColours: ["red", "lightyellow", "green", "lightyellow"],
       responseFunction: {}
   },
   retiredRobocop4Dialogue: {
       textStrings: ["Robocop - Poppa Wheelie", "Alex Murphy! I haven't seen you since the bank heist of 2044. Come here and check out this sick grind."],
-      spaces: [0, 1],
-      fgColours: ["red", "lightyellow", "green", "lightyellow"],
       responseFunction: {}
   },
   nurseRachetDialogue: {
       textStrings: ["Nurse Rachet", "Hmm, let me see. Two cans of oil, three titanium sheets and a little solder over there. Good as new! Say what you want, these Robo Cops won't ever quit."],
-      spaces: [0, 1],
-      fgColours: ["red", "lightyellow", "green", "lightyellow"],
       responseFunction: {}
   },
   
@@ -1406,92 +1298,66 @@ iceUniverse[randomFloor].addObjectToMap(new Object(char = ")", name = "Sweethear
   
   YollandaDialogue1: {
       textStrings: ["Yollanda Ruud", "Have you ever had a frozen pickled egg for dinner? What a tasty treat!", "{What, no, that doesn't sound good at all.}"],
-      spaces: [0, 2, 1],
-      fgColours: ["red", "lightyellow", "green", "lightyellow"],
       responseFunction: {"{What, no, that doesn't sound good at all.}": menuResponse.YollandaDialogue1}
   },
   
   PickAxeDescript: {
       textStrings: ["A Well-Made Pickaxe", "This kind of tool has many uses in a frozen world like this one, but it still looks brand new. ", "{Not like SOME pirates I know.}"],
-      spaces: [0, 2, 1],
-      fgColours: ["red", "lightyellow", "green", "lightyellow"],
       responseFunction: {"{Not like SOME pirates I know.}": menuResponse.PickAxeDescript}
   },
   
   ICEBUSHDescript: {
       textStrings: ["ICE BUSH!", "The frozen branches of this chilly plant clink like chimes in the soft breeze yet they refuse to break.", "{Pretty cool, but there is no way I could get this back to my boss without getting frostbite.}"],
-      spaces: [0, 2, 1],
-      fgColours: ["red", "lightyellow", "green", "lightyellow"],
       responseFunction: {"{Pretty cool, but there is no way I could get this back to my boss without getting frostbite.}": menuResponse.ICEBUSHDescript}
   },
   
   FrozenPizzaDescript: {
       textStrings: ["Frozen Pizza", "It is actually made (baked?) out of ice and snow. How are you supposed to eat this?", "{I wasn't hungry anyway..}"],
-      spaces: [0, 2, 1],
-      fgColours: ["red", "lightyellow", "green", "lightyellow"],
       responseFunction: {"{I wasn't hungry anyway..}": menuResponse.ICEBUSHDescript}
   },
   
   FrancisBubblesmithDescript: {
       textStrings: ["Francis Bubblesmith", "Hey guy! I'm a bit busy right now but maybe some day you'd want to get together for chess or something?", "{Yyyyyynnnnnnoo. No.}"],
-      spaces: [0, 2, 1],
-      fgColours: ["red", "lightyellow", "green", "lightyellow"],
       responseFunction: {"{Yyyyyynnnnnnoo. No.}": menuResponse.FrancisBubblesmithDescript}
   },
   
   ShiraBalewaDescript: {
       textStrings: ["Shira Balewa", "Have you seen that hot guy wandering around downstairs? If he ever stops mumbling about his cheating b*tch ex maybe he'll take me out for a snow cone.", "{I mean, I guess anyone has a chance with anyone so long as they're not a shapeshifting alien.}"],
-      spaces: [0, 2, 1],
-      fgColours: ["red", "lightyellow", "green", "lightyellow"],
       responseFunction: {"{I mean, I guess anyone has a chance with anyone so long as they're not a shapeshifting alien.}": menuResponse.ShiraBalewaDescript}
   },
   
   GreenFishDescription: {
       textStrings: ["Green Fish", "There is no way that this fish is going to split open and attack me with tentacles.. is there?", "{Probaly not tho, right?}"],
-      spaces: [0, 2, 1],
-      fgColours: ["red", "lightyellow", "green", "lightyellow"],
       responseFunction: {"{Probaly not tho, right?}": menuResponse.GreenFishDescription}
   },
   
   YippersDescription: {
       textStrings: ["Yippers The Huskydog", "I would totally avoid going near that bearded dude and his gross pet if I were you. There is something reeeeaaaally strange about those two. ....... I mean.. BARK BARK!", "{Loud and clear little buddy.}"],
-      spaces: [0, 2, 1],
-      fgColours: ["red", "lightyellow", "green", "lightyellow"],
       responseFunction: {"{Loud and clear little buddy.}": menuResponse.YippersDescription}
   },
     
     MacReadyDescription: {
       textStrings: ["MacReady", "Me and that godawful abomination used to tussle all over this snowy wasteland, but we've recently come to an understanding: She stays away from my whisky, and I don't try an' burn her with a flamethrower.", "{.....she?}"],
-      spaces: [0, 2, 1],
-      fgColours: ["red", "lightyellow", "green", "lightyellow"],
       responseFunction: {"{.....she?}": menuResponse.MacReadyDescription}
   },
   
     TheThingDescription: {
       textStrings: ["The Thing", "Here's the Thing.... SKRREEEEEEAAEAEEEEAAEEAE!", "{You have GOT to be kidding me!}"],
-      spaces: [0, 2, 1],
-      fgColours: ["red", "lightyellow", "green", "lightyellow"],
       responseFunction: {"{You have GOT to be kidding me!}": menuResponse.TheThingDescription}
   },
   
     BlueFishDescription: {
       textStrings: ["Blue Fish", "I ain't got nothing to say to you, Mr. Two-Legs One-Eye.", "{I know I'm a pirate but that's just rude.}"],
-      spaces: [0, 2, 1],
-      fgColours: ["red", "lightyellow", "green", "lightyellow"],
       responseFunction: {"{I know I'm a pirate but that's just rude.}": menuResponse.BlueFishDescription}
   },
   
     IceFishingRodDescription: {
       textStrings: ["An Ice Fishing Rod", "This rod has been patched and repaired several times and is beginning to show it's age. There are initials on the handle that are all but worn away.", "{Fishing is really just a few steps away from the awesome life of a pirate.}"],
-      spaces: [0, 2, 1],
-      fgColours: ["red", "lightyellow", "green", "lightyellow"],
       responseFunction: {"{Fishing is really just a few steps away from the awesome life of a pirate.}": menuResponse.IceFishingRodDescription}
   },
   
     SweetheartOctopussDescription: {
       textStrings: ["Sweetheart Octupuss", "This cute little thing isn't a stuffed animal, but you SURE want to give it a squeeze!.", "{Don't tho.}"],
-      spaces: [0, 2, 1],
-      fgColours: ["red", "lightyellow", "green", "lightyellow"],
       responseFunction: {"{Don't tho.}": menuResponse.SweetheartOctopussDescription}
   },
   
@@ -1501,62 +1367,42 @@ iceUniverse[randomFloor].addObjectToMap(new Object(char = ")", name = "Sweethear
  //brownbag starts
     robocopDialogue: {
       textStrings: ["Alex Murphy - The Original Robo Cop","A mechanical man who is currently struggling with his humanity while also saving the world all the time and every day. Scarlic doesn't deserve to talk to the likes of him."],
-      spaces: [1, 2, 1],
-      fgColours: ["red", "lightyellow", "green"],
       responseFunction: {}
   },   
    robocop2Dialogue: {
       textStrings: ["Robo Cop 2","Stay alert, citizen! Systems detect a thief in our midst. We have orders to blastenate on sight!"],
-      spaces: [1, 2, 1],
-      fgColours: ["red", "lightyellow", "green"],
       responseFunction: {}
   },  
     robocop3Dialogue: {
       textStrings: ["Robo Cop 3","Scarlic can see that they have a small scanner of some sort. He peers over their shoulder and see the words 'HAMBURGER WITHIN 20M'. Scarlic mouth begins to water as he scampers off to check out the trashcan."],
-      spaces: [1, 2, 1],
-      fgColours: ["red", "lightyellow", "green"],
       responseFunction: {}
   },  
     popCopDialogue: {
       textStrings: ["Poppa of the Coppas","This gentlebot is actually on a skateboard, scouting the roof tops while doing sick tricks on the metal railings. Schhhrrrwooo, clank! Wrreeeeeeee, krrrrrr, bonk!"],
-      spaces: [1, 2, 1],
-      fgColours: ["red", "lightyellow", "green"],
       responseFunction: {}
   },  
    rickDogDialogue: {
       textStrings: ["Rick Robo Cop", "The dog cop is running around smelling trash and wires. He finds a hotdog and, lucky for Scarlic, he dismisses it and tosses it aside.", "Bark, bark! Justice! Bark!"],
-      spaces: [1, 2, 1],
-      fgColours: ["red", "lightyellow", "green"],
       responseFunction: {}
   },   
    trashCanDialogue: {
       textStrings: ["Heaping Trash Bin", "So full of trash... there's a hotdog in me. Help!"],
-      spaces: [1, 2, 1],
-      fgColours: ["red", "lightyellow", "green"],
       responseFunction: {}
   },  
     cheeseburgerpDialogue: {
       textStrings: ["Cheeseburger", "Not a hamburger; a cheeseburger. With avocado. And bacon. Glory be! This must be what they are looking for!"],
-      spaces: [1, 2, 1],
-      fgColours: ["red", "lightyellow", "green"],
       responseFunction: {}
   },  
     wiresDialogue: {
       textStrings: ["Pile o' wires","These might be useful, if you knew anything about what wires do"],
-      spaces: [1, 2, 1],
-      fgColours: ["red", "lightyellow", "green"],
       responseFunction: {}
   },  
      handDialogue: {
       textStrings: ["Dismembered Hand","Long wires extend from the wrist of this armored hand. It's givin' me the spooks."],
-      spaces: [1, 2, 1],
-      fgColours: ["red", "lightyellow", "green"],
       responseFunction: {}
   },  
     legDialogue: {
       textStrings: ["Just a Leg","It looks like it was blasted right off someone. You smell the acrid odoor of butane or kerosene and see the remains of a large rocket and some NYE glasses lying on the ground. Strange."],
-      spaces: [1, 2, 1],
-      fgColours: ["red", "lightyellow", "green"],
       responseFunction: {}
   },  
   
@@ -1565,96 +1411,66 @@ iceUniverse[randomFloor].addObjectToMap(new Object(char = ")", name = "Sweethear
     //coleslaw begins - updated descriptions
   hdPlantDescript: {
       textStrings: ["Potted Hotdog Plant", "A plant that sprouts hotdogs! A little thorn here, a little relish there... You're careful as you weigh your options. You're not 100% sure this isn't someone's kid. 5 minutes ago, you didn't even know that Hotdogs were a type of fruit, did you?"],
-      spaces: [0, 1],
-      fgColours: ["red", "lightyellow", "green", "lightyellow"],
       responseFunction: {}
   },
   hdKetchupDescript: {
       textStrings: ["Classic Hotdog with Ketchup", "Hot off the grills of Fire World, this timeless treat is found in abundance here."],
-      spaces: [0, 1],
-      fgColours: ["red", "lightyellow", "green", "lightyellow"],
       responseFunction: {}
   },
   hdRelishDescript: {
       textStrings: ["Hotdog with Relish", "Not to be confused with Relish Dog, who is certainly not as sweet."],
-      spaces: [0, 1],
-      fgColours: ["red", "lightyellow", "green", "lightyellow"],
       responseFunction: {}
   },
   
   rotdogDescript: {
       textStrings: ["Rotdog", "A hotdog with ketchup. The bun is a hypnotic blend of green and aquamarine. You gaze at it for several moments in quiet meditation.", "How long has this been here?"],
-      spaces: [1, 1, 1],
-      fgColours: ["red", "lightyellow", "lightyellow"],
       responseFunction: {}
   },
   //coleslaw ends
   fineYellowDescript: {
       textStrings: ["Fine German Mustard", "A delicacy beyond the knowledge of your caste. Thinking it's that regular stinky yellow mustard, you kick it away."],
-      spaces: [0, 1],
-      fgColours: ["red", "lightyellow", "green", "lightyellow"],
       responseFunction: {}
   },
   realTomatoDescript: {
       textStrings: ["Fancy Ketchup", "Only the fanciest Dijon ketchup. Excitedly, you squeeze some on your hand and give it a lick. Ketchupy."],
-      spaces: [0, 1],
-      fgColours: ["red", "lightyellow", "green", "lightyellow"],
       responseFunction: {}
   },
   bigOneDescript: {
       textStrings: ["The Big One", "A big, fat, juicy weiner in a soft, hot bun. Too bad you had lunch before you got explorted here."],
-      spaces: [0, 1],
-      fgColours: ["red", "lightyellow", "green", "lightyellow"],
       responseFunction: {}
   },
   // snorkelbutt - Character Interactions created
 
   fryGuyDescript: {
       textStrings: ["Fry Guy", "You have to be sure you get the Good Ones, before the Bad Ones get you. Trust me, it's nooooooooo Fun.", "{Hey, are you feeling, okay?}"],
-      spaces: [1, 2, 1],
-      fgColours: ["red", "lightyellow", "green"],
       responseFunction: {"{Hey, are you feeling, okay?}": menuResponse.fryGuyDescript2}
   }, 
   fryGuyDescript2: {
       textStrings: ["Fry Guy", "GAH! Who are you? How did you get here? What's that you got in your hand?? IS THAT A HOTDOG PLANT?", "{Nyarrr, this be my lunch... Goodbye.}"],
-      spaces: [1, 2, 1],
-      fgColours: ["red", "lightyellow", "green"],
       responseFunction: {"{Nyarrr, this be my lunch... Goodbye.}": menuResponse.fryGuyDescript3}
     },
   relishDescript: {
       textStrings: ["Relish Dog", "Have you seen the new and improved Potted Hotdog Plant? You can grow them in the ground! In pots! Astounding."],
-      spaces: [1, 2, 1],
-      fgColours: ["red", "lightyellow", "green"],
       responseFunction: {}
     },
   ketchupDescript: {
       textStrings: ["Ketchup Dog", "Don't listen to Relish Dog. He's just trying to sell you some fake garbage.", "Ketchup Hotdog Thinks to Himself:", "Heh heh... those Pot Dogs are mine! All mine!"],
-      spaces: [1, 2, 1, 1],
-      fgColours: ["red", "lightyellow", "red", "lightyellow"],
       responseFunction: {}
     },
   allDressedDescript: {
       textStrings: ["All Dressed", "Don't listen to Ketchup Dog. He does things for the wrong reasons. Some day, Hotdoggod will come and he'll get his comeuppance.", "{Thanks for the advice}"],
-      spaces: [1, 2, 1, 1],
-      fgColours: ["red", "lightyellow", "green"],
      responseFunction: {"{Thanks for the advice}": menuResponse.allDressedDescript2}
     },
   fineMustardDescript: {
       textStrings: ["Finest Mustard Dog", "Hotdog Planters are so tired and passé. I have my eyes set on 'The Big One'. But, of course, you've never heard of it."],
-      spaces: [1, 2],
-      fgColours: ["red", "lightyellow"],
       responseFunction: {}
     },
   hotgodDescript: {
       textStrings: ["Hot God", "Wh--... Something... Something has happened."],
-      spaces: [1, 2],
-      fgColours: ["red", "lightyellow"],
       responseFunction: {}
   },
   portalDialogue: {
       textStrings: ["Portal", "...looks like a portal to another universe.", "{Step through}"],
-      spaces: [1, 2, 2],
-      fgColours: ["red", "lightyellow", "green"],
       responseFunction: {"{Step through}": menuResponse.portalPass}
   },
   
@@ -1663,15 +1479,11 @@ iceUniverse[randomFloor].addObjectToMap(new Object(char = ")", name = "Sweethear
   // hd7fdhdf78
   gameOver: {
       textStrings: ["Scott Dracula", "So it seems you have found your way back through my evil time portals.", "And you brought lots of interdimensional space booty back with you!", "Great work!", "{Finish Game}"],
-      spaces: [1, 2, 2, 2, 2],
-      fgColours: ["red", "lightyellow", "lightyellow", "lightyellow", "green"],
       responseFunction: {"{Finish Game}": menuResponse.gameEnd}
     },
   
   bootyDialogue: {
       textStrings: ["Interdimensional Booty", "Just one piece of your sweet haul."],
-      spaces: [1, 2],
-      fgColours: ["red", "lightyellow", "green"],
       responseFunction: {}
   }
 }

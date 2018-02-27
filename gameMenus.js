@@ -1,8 +1,8 @@
-var Menu = function(textStrings, spaces, fgColours, responseFunction, object) {
+var Menu = function(textStrings, responseFunction, object) {
   
   this.textStrings = textStrings;
-  this.spaces = spaces;
-  this.fgColours = fgColours;
+  this.spaces = [];
+  this.fgColours = [];
   this.responseFunction = responseFunction;  
   this.textAtLines = {};
   this.object = object;
@@ -23,23 +23,19 @@ var Menu = function(textStrings, spaces, fgColours, responseFunction, object) {
       }
     }
     
-    this.spaces = [];
-    this.fgColours = [];
     
-    for (var i = 0; i < this.textStrings.length - 1; i++) {
+    for (var i = 0; i < this.textStrings.length; i++) {
       if (i === 0) {
         this.spaces.push(0);
         this.fgColours.push("red");
       } else if (i === 1) {
         this.spaces.push(1);
-        this.fgColours.push("goldenrod");
+        this.fgColours.push("lightyellow");
       } else {
         this.spaces.push(1);
         this.fgColours.push("green");
       }
     }
-    
-    
     
     Game.menu.clear();
     Game.currentMenuDisplay = this;
@@ -173,6 +169,6 @@ var view = {
 
 
 var showMenu = function(dialogue, object) {
-  var thisMenu = new Menu(dialogue.textStrings, dialogue.spaces, dialogue.fgColours, dialogue.responseFunction, object);
+  var thisMenu = new Menu(dialogue.textStrings, dialogue.responseFunction, object);
   thisMenu.display();
 }
