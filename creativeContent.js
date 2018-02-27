@@ -583,7 +583,7 @@ var creativeContent = {
         fireUniverse[i].addObjectToMap(new Object(char = ">", name = "Downstairs", wall = false, alive = false, clickFunction = "floor down"), emptyCell.x, emptyCell.y);
       }
       
-      if (i != 2) {
+      if (i != 1) {
         emptyCell = fireUniverse[i].randomEmptyCellCoords();
         fireUniverse[i].addObjectToMap(new Object(char = "<", name = "Upstairs", wall = false, alive = false, clickFunction = "floor up"), emptyCell.x, emptyCell.y);
       }
@@ -756,7 +756,7 @@ var creativeContent = {
         oldPersonUniverse[i].addObjectToMap(new Object(char = ">", name = "Downstairs", wall = false, alive = false, clickFunction = "floor down"), emptyCell.x, emptyCell.y);
       }
       
-      if (i != 2) {
+      if (i != 1) {
         emptyCell = oldPersonUniverse[i].randomEmptyCellCoords();
         oldPersonUniverse[i].addObjectToMap(new Object(char = "<", name = "Upstairs", wall = false, alive = false, clickFunction = "floor up"), emptyCell.x, emptyCell.y);
       }
@@ -821,7 +821,7 @@ var creativeContent = {
         robocopUniverse[i].addObjectToMap(new Object(char = ">", name = "Downstairs", wall = false, alive = false, clickFunction = "floor down"), emptyCell.x, emptyCell.y);
       }
       
-      if (i != 2) {
+      if (i != 1) {
         emptyCell = robocopUniverse[i].randomEmptyCellCoords();
         robocopUniverse[i].addObjectToMap(new Object(char = "<", name = "Upstairs", wall = false, alive = false, clickFunction = "floor up"), emptyCell.x, emptyCell.y);
       }
@@ -955,7 +955,7 @@ iceUniverse[1].addObjectToMap(new Object(char = ")", name = "Sweetheart Octopuss
         hotdogUniverse[i].addObjectToMap(new Object(char = ">", name = "Downstairs", wall = false, alive = false, clickFunction = "floor down"), emptyCell.x, emptyCell.y);
       }
       
-      if (i != 2) {
+      if (i != 1) {
         emptyCell = hotdogUniverse[i].randomEmptyCellCoords();
         hotdogUniverse[i].addObjectToMap(new Object(char = "<", name = "Upstairs", wall = false, alive = false, clickFunction = "floor up"), emptyCell.x, emptyCell.y);
       }

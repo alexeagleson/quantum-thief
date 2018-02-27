@@ -12,7 +12,7 @@ var Game = {
   gameSpeed: 100,
   gameWidth: 24,
   gameHeight: 24,
-  myTravelChecklist: [],
+  currentUniverseName: "Throne Universe",
   gameDone: false,
   stolenItems: 0,
 
@@ -49,44 +49,46 @@ var Game = {
     });
   },
   
-  travelToRandomUnvisitedUniverse: function(universeName) {
+  travelToRandomUnvisitedUniverse: function(goToUniverseName) {
     Game.currentFloor = 0;
     
-    var allUniverses = ["Fire Universe", "Old Person Universe", "Hot Dog Universe", "Ice Universe", "Robocop Universe", "Throne Universe"]
-
-    while (!universeName) {
-      
-      var thisDie = rollDie(allUniverses.length) - 1;
-      var universeName = allUniverses[thisDie];
-      
-      for (var i = 0; i < Game.myTravelChecklist.length; i++) {
-        if (Game.myTravelChecklist[i] === universeName) {
-          // if youve been there, try another random unvisited one
-          universeName = null;
-        }
+    if (!goToUniverseName) {
+      if (Game.currentUniverseName === "Throne Universe") {
+        goToUniverseName = "Ice Universe";
+      } else if (Game.currentUniverseName === "Ice Universe") {
+        goToUniverseName = "Fire Universe";
+      } else if (Game.currentUniverseName === "Fire Universe") {
+        goToUniverseName = "Robocop Universe";
+      } else if (Game.currentUniverseName === "Robocop Universe") {
+        goToUniverseName = "Old Person Universe";
+      } else if (Game.currentUniverseName === "Old Person Universe") {
+        goToUniverseName = "Hot Dog Universe";
+      } else if (Game.currentUniverseName === "Hot Dog Universe") {
+        goToUniverseName = "Throne Universe";
       }
     }
+      
 
-    if (Game.myTravelChecklist.length === 0 && universeName === "Throne Universe") {
-      universeName = "Hot Dog Universe";
-    }
     
-    Game.myTravelChecklist.push(universeName);
-    
-    if (universeName === "Fire Universe") {
+    if (goToUniverseName === "Fire Universe") {
       Game.travelTo(creativeContent.fireUniverse);
-    } else if (universeName === "Old Person Universe") {
+      Game.currentUniverseName = "Fire Universe";
+    } else if (goToUniverseName === "Old Person Universe") {
+      Game.currentUniverseName = "Old Person Universe";
       Game.travelTo(creativeContent.oldPersonUniverse);
-    } else if (universeName === "Throne Universe") {
+    } else if (goToUniverseName === "Throne Universe") {
       Game.gameDone = true;
       Game.travelTo(creativeContent.draculaThrone);
-    } else if (universeName === "Hot Dog Universe") {
+      Game.currentUniverseName = "Throne Universe";
+    } else if (goToUniverseName === "Hot Dog Universe") {
       Game.travelTo(creativeContent.hotdogUniverse);
-    } else if (universeName === "Ice Universe") {
+      Game.currentUniverseName = "Hot Dog Universe";
+    } else if (goToUniverseName === "Ice Universe") {
       Game.travelTo(creativeContent.iceUniverse);
-    } else if (universeName === "Robocop Universe") {
+      Game.currentUniverseName = "Ice Universe";
+    } else if (goToUniverseName === "Robocop Universe") {
       Game.travelTo(creativeContent.robocopUniverse);
-
+      Game.currentUniverseName = "Robocop Universe";
     }
     
   },
