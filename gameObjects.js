@@ -171,6 +171,7 @@ var Object = function(char, name, wall, alive, clickFunction, myDialogue, portra
   },
 
   this.move = function(directionArray) {
+    
     var newX = this.x + directionArray[0];
     var newY = this.y + directionArray[1];
     var newKey = newX + "," + newY;

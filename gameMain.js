@@ -1,3 +1,7 @@
+soundy = document.getElementById("soundy");
+step = document.getElementById("step");
+
+
 var Game = {
   mainDisplayDiv: null,
   display: null,
@@ -19,7 +23,7 @@ var Game = {
   init: function() {
     
     
-    soundy = document.getElementById("soundy");
+    
     
     soundy.play();
     
