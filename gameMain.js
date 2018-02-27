@@ -19,11 +19,20 @@ var Game = {
   init: function() {
     
     var title = show_image("https://i.imgur.com/2guV4yZ.png", 1728, 768, "Quantum Thief");
-    title.addEventListener("click", removeImage);
+    title.addEventListener("click", removeTitle);
     
   },
   
-  startGame: function() {    
+  showControls: function() {
+    
+    var controls = show_image("https://i.imgur.com/0L6ibqpr.png", 1728, 768, "Controls");
+    controls.addEventListener("click", removeControls);
+    
+  },
+  
+  
+  
+  startGame: function() {
     
    Game.player = new Object(char = "@", name = "Scarlic", wall = true, alive = true, clickFunction = null, myDialogue = null, portraitChar = "@", moveType = null);
 

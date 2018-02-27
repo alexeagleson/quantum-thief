@@ -138,7 +138,7 @@ function show_image(src, width, height, alt) {
   img.width = width;
   img.height = height;
   img.alt = alt;
-  img.id = "titleScreen";
+  img.id = alt;
 
   // This next line will just add it to the <body> tag
   document.body.appendChild(img);
@@ -146,8 +146,15 @@ function show_image(src, width, height, alt) {
   return img;
 }
 
-function removeImage() {
-  img = document.getElementById("titleScreen");
+function removeTitle() {
+  img = document.getElementById("Quantum Thief");
+  img.parentNode.removeChild(img);
+  Game.showControls();
+}
+
+
+function removeControls() {
+  img = document.getElementById("Controls");
   img.parentNode.removeChild(img);
   Game.startGame();
 }
