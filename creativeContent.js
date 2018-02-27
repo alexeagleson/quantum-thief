@@ -393,7 +393,7 @@ var creativeContent = {
   hotDogTile: "https://i.imgur.com/Ai7caH4.png",
   iceTile: "https://i.imgur.com/qQ1lgrF.png",
   robocopTile: "https://i.imgur.com/qWTXTHZ.png",
-  bakulaTile: "https://i.imgur.com/QCvyHIZ.jpg",
+  bakulaTile: "https://i.imgur.com/ReUCLx9.png",
   
   faceLegend: {
     "-": multiplyBy12(multiplyBy32([0, 0])),
@@ -726,7 +726,7 @@ var creativeContent = {
     var bakulaDie;
     var bakulaChar;
     
-    for (var i; i < 300; i++) {
+    for (var i; i < 500; i++) {
       bakulaDie = rollDie(47);
       bakulaChar = bakulaCharArray[bakulaDie];
 
