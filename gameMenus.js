@@ -42,10 +42,12 @@ var Menu = function(textStrings, responseFunction, object) {
     var menuCanvas = Game.menu.getContainer();
     var currentLine = 2;
     var numLines = 0;
+    var thisLineText = "";
   
     for (var i = 0; i < this.textStrings.length; i++) {
-      Game.menu.drawText(2, currentLine, "%c{" + this.fgColours[i] + "}" + this.textStrings[i], (Game.display._options.width - 4));
-      numLines = Math.floor(this.textStrings[i].length / (Game.display._options.width - 4)) + 1;
+      thisLineText = "%c{" + this.fgColours[i] + "}" + this.textStrings[i];
+      Game.menu.drawText(2, currentLine, thisLineText, (Game.display._options.width - 4));
+      numLines = Math.floor(thisLineText.length / (Game.display._options.width - 4)) + 1;
       for (var j = 0; j < numLines; j++) {
         this.textAtLines[currentLine + j] = this.textStrings[i];
       }

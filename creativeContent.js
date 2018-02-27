@@ -546,7 +546,9 @@ var creativeContent = {
     throneRoom[0].addObjectToMap(new Object(char = "g", name = "Vision Tree", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.visionTreeDescript, portraitChar = "-"), 18, 20);
     throneRoom[0].addObjectToMap(new Object(char = "g", name = "Vision Tree", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.visionTreeDescript, portraitChar = "-"), 7, 20);
     throneRoom[0].addObjectToMap(new Object(char = "h", name = "Fig Tree of Foresight", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.figTreeDescript, portraitChar = "-"), 19, 20);
-    throneRoom[0].addObjectToMap(new Object(char = "i", name = "Mystical Blood Magic Chrysanthemum", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.bloodMagicDescript, portraitChar = "-"), 6, 20);
+    
+    if (!Game.gameDone) {
+      throneRoom[0].addObjectToMap(new Object(char = "i", name = "Mystical Blood Magic Chrysanthemum", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.bloodMagicDescript, portraitChar = "-"), 6, 20);
 
     throneRoom[0].addObjectToMap(new Object(char = "e", name = "Pile of Booty", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.bootyDescript, portraitChar = "-"), 11, 8);
     throneRoom[0].addObjectToMap(new Object(char = "e", name = "Pile of Booty", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.bootyDescript, portraitChar = "-"), 12, 8);
@@ -1423,7 +1425,7 @@ iceUniverse[randomFloor].addObjectToMap(new Object(char = ")", name = "Sweethear
   },
   
   rotdogDescript: {
-      textStrings: ["Rotdog", "A hotdog with ketchup. The bun is a hypnotic blend of green and aquamarine. You gaze at it for several moments in quiet meditation.", "How long has this been here?"],
+      textStrings: ["Rotdog", "A hotdog with ketchup. The bun is a hypnotic blend of green and aquamarine. You gaze at it for several moments in quiet meditation.  How long has this been here?"],
       responseFunction: {}
   },
   //coleslaw ends
@@ -1454,7 +1456,7 @@ iceUniverse[randomFloor].addObjectToMap(new Object(char = ")", name = "Sweethear
       responseFunction: {}
     },
   ketchupDescript: {
-      textStrings: ["Ketchup Dog", "Don't listen to Relish Dog. He's just trying to sell you some fake garbage.", "Ketchup Hotdog Thinks to Himself:", "Heh heh... those Pot Dogs are mine! All mine!"],
+      textStrings: ["Ketchup Dog", "Don't listen to Relish Dog. He's just trying to sell you some fake garbage. **Ketchup Hotdog Thinks to Himself**  Heh heh... those Pot Dogs are mine! All mine!"],
       responseFunction: {}
     },
   allDressedDescript: {
@@ -1478,7 +1480,7 @@ iceUniverse[randomFloor].addObjectToMap(new Object(char = ")", name = "Sweethear
   
   // hd7fdhdf78
   gameOver: {
-      textStrings: ["Scott Dracula", "So it seems you have found your way back through my evil time portals.", "And you brought lots of interdimensional space booty back with you!", "Great work!", "{Finish Game}"],
+      textStrings: ["Scott Dracula", "So it seems you have found your way back through my evil time portals -- and you brought lots of interdimensional space booty back with you!  Great work!", "{Finish Game}"],
       responseFunction: {"{Finish Game}": menuResponse.gameEnd}
     },
   
