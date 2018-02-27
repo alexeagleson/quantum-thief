@@ -362,7 +362,13 @@ YollandaDialogue1: function() {
     return true;
   },
   
+  gameBeginDialogue: function() {
+    Game.travelToRandomUnvisitedUniverse();
+    return true;
+  },
   
+  
+  responseFunction: {"{Ice Universe}": menuResponse.fireu, "{Fire Universe}": menuResponse.iceu, "{Robocop Universe}": menuResponse.robocopu, "{Old Universe}": menuResponse.oldpersonu, "{Hot Dog Universe}": menuResponse.hotdogu, "{Nevermind}": menuResponse.done}
   
   // hd7fdhdf78
   gameEnd: function() {
@@ -1053,11 +1059,14 @@ iceUniverse[1].addObjectToMap(new Object(char = ")", name = "Sweetheart Octopuss
       responseFunction: {}
   },   
     bloodMagicDescript: {
-      textStrings: ["Blood Magic Chysanthemum","Tiny pink blossoms on dark leaves that ooze some kind of liquid back onto its roots. This is probably not the same kind of flower you would give to your mom on Mother's Day. Probably."],
-      spaces: [1, 2, 1],
-      fgColours: ["red", "lightyellow", "#b0ec62"],
-      responseFunction: {}
+      textStrings: ["Blood Magic Chysanthemum","Tiny pink blossoms on dark leaves that ooze some kind of liquid back onto its roots. Wait... are those magic portals?", "{Ice Universe}", "{Fire Universe}", "{Robocop Universe}", "{Old Universe}", "{Hot Dog Universe}", "{Nevermind}"],
+      spaces: [1, 1, 0, 0, 0, 0, 0, 0],
+      fgColours: ["red", "lightyellow", "#b0ec62", "#b0ec62", "#b0ec62", "#b0ec62", "#b0ec62", "#b0ec62"],
+      responseFunction: {"{Ice Universe}": menuResponse.iceu, "{Fire Universe}": menuResponse.fireu, "{Robocop Universe}": menuResponse.robocopu, "{Old Universe}": menuResponse.oldpersonu, "{Hot Dog Universe}": menuResponse.hotdogu, "{Nevermind}": menuResponse.done}
   },   
+  
+  
+
 
  ornateChestDescript: {
       textStrings: ["Ornate Chest","Guilded metal seals this deftly crafted chest. There's a big scary lock at the front, in the shape of a skull."],
