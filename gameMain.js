@@ -18,6 +18,12 @@ var Game = {
 
   init: function() {
     
+    
+    soundy = document.getElementById("soundy");
+    
+    soundy.play();
+    
+    
     view.defineView();
     
     var title = show_image("https://i.imgur.com/pjIChhJ.png", 1728, 768, "Quantum Thief");
