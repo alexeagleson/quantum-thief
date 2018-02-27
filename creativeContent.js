@@ -673,14 +673,75 @@ var creativeContent = {
       
     }
     
-    //LAVAWORLD starts
-    
-    
-    
-    // put stuff on specific floors
-    emptyCell = bakulaUniverse[0].randomEmptyCellCoords();
-    bakulaUniverse[0].addObjectToMap(new Object(char = "q", name = "Scott Bakula", wall = false, alive = true, clickFunction = "talk", myDialogue = creativeContent.GarbageCanDialogue, portraitChar = "*", moveType = "random", allowSteal = false), emptyCell.x, emptyCell.y);
 
+    var bakulaCharArray = ["@",
+	  "#",
+    ".",
+    ">",
+    "<",
+    "(",
+    ")",
+    "*",
+    "+",
+    "$",
+    "&",
+    "?",
+    "{",
+    "}",
+    "a",
+    "b",
+    "c",
+    "!",
+    "e",
+    "f",
+    "g",
+    "h",
+    "i",
+    "j",
+    "k",
+    "l",
+    "m",
+    "n",
+    "o",
+    "p",
+    "q",
+    "r",
+    "s",
+    "t",
+    "u",
+    "v",
+    "w",
+    "x",
+    "y",
+    "z",
+    "1",
+    "2",
+    "3",
+    "4",
+    "5",
+    "6",
+    "7",
+    "8"];
+    
+    var bakulaDie;
+    var bakulaChar;
+    
+    for (var i; i < 300; i++) {
+      bakulaDie = rollDie(47);
+      bakulaChar = bakulaCharArray[bakulaDie];
+
+      emptyCell = bakulaUniverse[0].randomEmptyCellCoords();
+      bakulaUniverse[0].addObjectToMap(new Object(char = bakulaChar, name = "Scott Bakula", wall = false, alive = true, clickFunction = "talk", myDialogue = creativeContent.GarbageCanDialogue, portraitChar = "*", moveType = "random", allowSteal = false), emptyCell.x, emptyCell.y);
+
+    }
+    
+
+    
+    
+    
+
+    
+    
     
     return bakulaUniverse;
   },

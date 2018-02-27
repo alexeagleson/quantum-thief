@@ -239,7 +239,7 @@ var Game = {
     var options = {
       width: width,
       height: height,
-      fontSize: 32,
+      fontSize: 64,
       forceSquareRatio:true
     }
     thisRotDisplay = new ROT.Display(options);
@@ -303,8 +303,8 @@ var Game = {
         height: Game.display._options.height,
         layout: "tile",
         bg: "transparent",
-        tileWidth: 32 * bakula,
-        tileHeight: 32 * bakula,
+        tileWidth: 64 * bakula,
+        tileHeight: 64* bakula,
         tileSet: tileElement,
         tileMap: tileMap
       };
