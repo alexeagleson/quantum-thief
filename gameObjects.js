@@ -78,7 +78,9 @@ var Object = function(char, name, wall, alive, clickFunction, myDialogue, portra
       if (this.name === ("The Thing")) {
         var d20 = rollDie(25);
         
-        if (d20 === 13) {
+        if (d20 === 12) {
+          this.char = "@";
+        } else if (d20 === 13) {
           this.char = "i";
         } else if (d20 === 14) {
           this.char = "i";
@@ -270,6 +272,7 @@ var Object = function(char, name, wall, alive, clickFunction, myDialogue, portra
       Game.floorDown();
     }
   },
+    
 
   this.handleEvent = function(e) {
     var gameCanvas = Game.display.getContainer();
