@@ -726,7 +726,7 @@ var creativeContent = {
     var bakulaDie;
     var bakulaChar;
     
-    for (var i; i < 500; i++) {
+    for (var i; i < 400; i++) {
       bakulaDie = rollDie(47);
       bakulaChar = bakulaCharArray[bakulaDie];
 
