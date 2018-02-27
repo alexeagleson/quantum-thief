@@ -13,7 +13,7 @@ var Game = {
   gameWidth: 24,
   gameHeight: 24,
   currentUniverseName: "Throne Universe",
-  gameDone: true,
+  gameDone: false,
   stolenItems: 0,
 
   init: function() {
