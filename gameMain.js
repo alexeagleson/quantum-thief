@@ -29,9 +29,9 @@ var Game = {
 
     view.defineView();
 
-    Game.travelTo(creativeContent.draculaThrone);
-    Game.player.x = 11;
-    Game.player.y = 15;
+    Game.travelTo(creativeContent.bakulaUniverse);
+    //Game.player.x = 11;
+    //Game.player.y = 15;
   },
   
   computeFOV: function() {
@@ -284,7 +284,7 @@ var Game = {
     return true;
   },
   
-  createMap:function(tileset, tileMap, floor, mapType, visible) {
+  createMap:function(tileset, tileMap, floor, mapType, visible, bakula) {
 
     var thisMap = {};
     var tileElement = document.createElement("img");
@@ -294,13 +294,17 @@ var Game = {
       var visible = false;
     }
 
+    if (!bakula) {
+      bakula = 1;
+    }
+
     var tileLegend = {
         width: Game.display._options.width,
         height: Game.display._options.height,
         layout: "tile",
         bg: "transparent",
-        tileWidth: 32,
-        tileHeight: 32,
+        tileWidth: 32 * bakula,
+        tileHeight: 32 * bakula,
         tileSet: tileElement,
         tileMap: tileMap
       };

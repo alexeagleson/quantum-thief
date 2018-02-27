@@ -428,6 +428,7 @@ var creativeContent = {
     "z": multiplyBy12(multiplyBy32([12, 1])),
     
     ")": multiplyBy12(multiplyBy32([0, 2])),
+    "*": multiplyBy12(multiplyBy32([2, 2])),
     "(": multiplyBy12(multiplyBy32([0, 3]))
     
     
@@ -644,7 +645,7 @@ var creativeContent = {
     var emptyCell = null;
     
     for (var i = 0; i < 3; i++) {
-      bakulaUniverse[i] = Game.createMap(creativeContent.bakulaTile, creativeContent.masterPngLegend, i);
+      bakulaUniverse[i] = Game.createMap(creativeContent.bakulaTile, creativeContent.masterPngLegend, i, "Arena", "true", bakula = 4);
       
     }
     
@@ -653,7 +654,7 @@ var creativeContent = {
     
     // put stuff on specific floors
     emptyCell = bakulaUniverse[0].randomEmptyCellCoords();
-    bakulaUniverse[0].addObjectToMap(new Object(char = "q", name = "Scott Bakula", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.GarbageCanDialogue, portraitChar = "-", moveType = "", allowSteal = true), emptyCell.x, emptyCell.y);
+    bakulaUniverse[0].addObjectToMap(new Object(char = "q", name = "Scott Bakula", wall = false, alive = true, clickFunction = "talk", myDialogue = creativeContent.GarbageCanDialogue, portraitChar = "*", moveType = "random", allowSteal = false), emptyCell.x, emptyCell.y);
 
     
     return bakulaUniverse;
