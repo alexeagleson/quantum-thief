@@ -29,7 +29,7 @@ var Game = {
 
     view.defineView();
 
-    Game.travelTo(creativeContent.bakulaUniverse);
+    Game.travelTo(creativeContent.draculaThrone);
     //Game.player.x = 11;
     //Game.player.y = 15;
   },
@@ -310,14 +310,7 @@ var Game = {
       };
 
     if (!mapType) {
-
-      if (floor === 0) {
-        mapType = "Rogue Open";
-      } else if (floor === 1) {
-        mapType = "Rogue";
-      } else if (floor === 2) {
-        mapType = "Rogue";
-      }
+      mapType = "Digger";
     }
     
     var totalMap = new CompleteMap(thisMap, tileLegend, floor);
@@ -328,6 +321,8 @@ var Game = {
       digger = new ROT.Map.Arena(Game.display._options.width, Game.display._options.height);
     } else if (mapType === "Rogue") {
       digger = new ROT.Map.Rogue(Game.display._options.width, Game.display._options.height);
+    } else if (mapType === "Digger") {
+      digger = new ROT.Map.Digger(Game.display._options.width, Game.display._options.height);
     } else if (mapType === "Rogue Open") {
       var digOptions = {cellWidth: 2, cellHeight: 2, roomWidth: [5, 10], roomHeight: [5, 10]};
       digger = new ROT.Map.Rogue(Game.display._options.width, Game.display._options.height, digOptions);
