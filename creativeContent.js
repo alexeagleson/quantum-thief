@@ -395,6 +395,13 @@ YollandaDialogue1: function() {
     document.body.appendChild(score);
     return true;
   },
+  
+  sendToBakula: function() {
+    Game.travelToRandomUnvisitedUniverse("Bakula Universe");
+    return true;
+  },
+  
+  
   steal: function() {
     Game.player.steal(Game.player.myCurrentChat);
     return true;
@@ -820,14 +827,14 @@ var creativeContent = {
     randomFloor = (rollDie(2) - 1); emptyCell = oldPersonUniverse[randomFloor].randomEmptyCellCoords();
     oldPersonUniverse[randomFloor].addObjectToMap(new Object(char = "f", name = "Mentos - the freshmaker", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.mentosDescript, portraitChar = "-", moveType = "", allowSteal = true), emptyCell.x, emptyCell.y);
 
-    randomFloor = (rollDie(2) - 1); emptyCell = oldPersonUniverse[randomFloor].randomEmptyCellCoords();
-    oldPersonUniverse[randomFloor].addObjectToMap(new Object(char = "g", name = "The Bad Ones", wall = false, alive = true, clickFunction = "talk", myDialogue = creativeContent.badOnesDescript, portraitChar = "-", moveType = "follow", allowSteal = true), emptyCell.x, emptyCell.y);
+    randomFloor = (rollDie(2) - 1); emptyCell = oldPersonUniverse[1].randomEmptyCellCoords();
+    oldPersonUniverse[1].addObjectToMap(new Object(char = "g", name = "The Bad Ones", wall = false, alive = true, clickFunction = "talk", myDialogue = creativeContent.badOnesDescript, portraitChar = "-", moveType = "follow", allowSteal = true), emptyCell.x, emptyCell.y);
 
-    randomFloor = (rollDie(2) - 1); emptyCell = oldPersonUniverse[randomFloor].randomEmptyCellCoords();
-    oldPersonUniverse[randomFloor].addObjectToMap(new Object(char = "h", name = "The Fun Ones", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.funOnesDescript, portraitChar = "-", moveType = "", allowSteal = true), emptyCell.x, emptyCell.y);
+    randomFloor = (rollDie(2) - 1); emptyCell = oldPersonUniverse[1].randomEmptyCellCoords();
+    oldPersonUniverse[1].addObjectToMap(new Object(char = "h", name = "The Fun Ones", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.funOnesDescript, portraitChar = "-", moveType = "", allowSteal = true), emptyCell.x, emptyCell.y);
 
-    randomFloor = (rollDie(2) - 1); emptyCell = oldPersonUniverse[randomFloor].randomEmptyCellCoords();
-    oldPersonUniverse[randomFloor].addObjectToMap(new Object(char = "i", name = "The Good Ones", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.goodOnesDescript, portraitChar = "-", moveType = "", allowSteal = true), emptyCell.x, emptyCell.y);
+    randomFloor = (rollDie(2) - 1); emptyCell = oldPersonUniverse[1].randomEmptyCellCoords();
+    oldPersonUniverse[1].addObjectToMap(new Object(char = "i", name = "The Good Ones", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.goodOnesDescript, portraitChar = "-", moveType = "", allowSteal = true), emptyCell.x, emptyCell.y);
     
     randomFloor = (rollDie(2) - 1); emptyCell = oldPersonUniverse[1].randomEmptyCellCoords();
     oldPersonUniverse[1].addObjectToMap(new Object(char = "(", name = "Portal", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.portalDialogue, portraitChar = "y"), emptyCell.x, emptyCell.y);
@@ -1483,6 +1490,11 @@ iceUniverse[randomFloor].addObjectToMap(new Object(char = ")", name = "Sweethear
   gameOver: {
       textStrings: ["Scott Dracula", "So it seems you have found your way back through my evil time portals -- and you brought lots of interdimensional space booty back with you!  Great work!", "{Finish Game}"],
       responseFunction: {"{Finish Game}": menuResponse.gameEnd}
+    },
+  
+  sendToBakula: {
+      textStrings: ["Scott Dracula", "What's this?  You brought me no treasure at all!?  Well then, I've got a universe just for you.  Eternity there will be sufficient punishment for your arrogance.", "{Accept Fate}"],
+      responseFunction: {"{Accept Fate}": menuResponse.sendToBakula}
     },
   
   bootyDialogue: {

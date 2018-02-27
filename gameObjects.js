@@ -259,8 +259,10 @@ var Object = function(char, name, wall, alive, clickFunction, myDialogue, portra
         
         
         
-        if (this.name === "Scott Dracula" && Game.gameDone) {
+        if (this.name === "Scott Dracula" && Game.gameDone && stolenItems > 0) {
           this.myDialogue = creativeContent.gameOver;
+        } else if (this.name === "Scott Dracula" && Game.gameDone && stolenItems === 0) {
+          this.myDialogue = creativeContent.sendToBakula;
         }
 
         

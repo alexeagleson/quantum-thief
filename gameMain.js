@@ -48,7 +48,7 @@ var Game = {
     var fov = new ROT.FOV.PreciseShadowcasting(Game.checkIfWall);
 
     /* output callback */
-    fov.compute(Game.player.x, Game.player.y, 10, function(x, y, r, visibility) {
+    fov.compute(Game.player.x, Game.player.y, 6, function(x, y, r, visibility) {
       if (visibility < 0.75) {
         // nada
       } else if (Game.CompleteMap.map[x + "," + y].visible === false) {
@@ -98,8 +98,10 @@ var Game = {
     } else if (goToUniverseName === "Robocop Universe") {
       Game.travelTo(creativeContent.robocopUniverse);
       Game.currentUniverseName = "Robocop Universe";
+    } else if (goToUniverseName === "Bakula Universe") {
+      Game.travelTo(creativeContent.bakulaUniverse);
+      Game.currentUniverseName = "Bakula Universe";
     }
-    
   },
   
   travelTo: function(worldFunction, ascii) {
@@ -110,8 +112,8 @@ var Game = {
     }
     emptyCell = Game.CompleteMap.randomEmptyCellCoords();
     if (worldFunction === creativeContent.draculaThrone) {
-      Game.player.x = 11;
-      Game.player.y = 15;
+      Game.player.x = 13;
+      Game.player.y = 12;
     } else {
       Game.CompleteMap.addObjectToMap(Game.player, emptyCell.x, emptyCell.y);
     }
