@@ -50,7 +50,7 @@ var Game = {
     var fov = new ROT.FOV.PreciseShadowcasting(Game.checkIfWall);
 
     /* output callback */
-    fov.compute(Game.player.x, Game.player.y, 9, function(x, y, r, visibility) {
+    fov.compute(Game.player.x, Game.player.y, 10, function(x, y, r, visibility) {
       if (visibility < 0.75) {
         // nada
       } else if (Game.CompleteMap.map[x + "," + y].visible === false) {
@@ -83,7 +83,7 @@ var Game = {
     if (goToUniverseName === "Ice Universe") {
       Game.currentUniverseName = "Ice Universe";
       var iceUniverseIMG = show_image("https://i.imgur.com/E3wdGB0.png", 1728, 768, "Ice Universe");
-      iceUniverseIMG.addEventListener("click", removeControls);
+      iceUniverseIMG.addEventListener("click", iceUniverseTransition);
     } else if (goToUniverseName === "Fire Universe") {
       Game.travelTo(creativeContent.fireUniverse);
       Game.currentUniverseName = "Fire Universe";
@@ -115,7 +115,7 @@ var Game = {
     emptyCell = Game.CompleteMap.randomEmptyCellCoords();
     if (worldFunction === creativeContent.draculaThrone) {
       Game.player.x = 13;
-      Game.player.y = 12;
+      Game.player.y = 14;
     } else {
       Game.CompleteMap.addObjectToMap(Game.player, emptyCell.x, emptyCell.y);
     }

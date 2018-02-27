@@ -178,8 +178,7 @@ function iceUniverseTransition() {
   totalDOM.style.display = "block";
   img = document.getElementById("Ice Universe");
   img.parentNode.removeChild(img);
-  Game.startGame();
+  Game.travelTo(creativeContent.iceUniverse);
 }
 
 
-Game.travelTo(creativeContent.iceUniverse);

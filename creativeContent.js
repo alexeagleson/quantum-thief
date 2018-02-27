@@ -415,7 +415,7 @@ var creativeContent = {
   defaultBlackHUD:"https://i.imgur.com/VQ2sSG2.png",
   
   // hd7fdhdf78
-  throneTile: "https://i.imgur.com/Xq8Wkqa.png",
+  throneTile: "https://i.imgur.com/0ezvL0O.png",
   fireTile: "https://i.imgur.com/P9IXmPt.png",
   oldPersonTile: "https://i.imgur.com/R21tfHE.png",  
   hotDogTile: "https://i.imgur.com/Ai7caH4.png",
@@ -531,9 +531,15 @@ var creativeContent = {
     var randomFloor = (rollDie(2) - 1); emptyCell = null;
     
     throneRoom[0] = Game.createMap(creativeContent.throneTile, creativeContent.masterPngLegend, 0, "Arena", visible = false);
+
     throneRoom[0].addObjectToMap(new Object(char = "!", name = "Throne", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.throneDialogue, portraitChar = "-", moveType = "", allowSteal = false), 13, 9);
-    throneRoom[0].addObjectToMap(new Object(char = "*", name = "Scott Dracula", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.gameBeginDialogue, portraitChar = "#", moveType = "", allowSteal = false), 13, 10);
+
     
+    throneRoom[0].addObjectToMap(new Object(char = ")", name = "Scott Dracula", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.gameBeginDialogue, portraitChar = "#", moveType = "", allowSteal = false), 13, 10);
+    throneRoom[0].addObjectToMap(new Object(char = "a", name = "Scott Dracula", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.gameBeginDialogue, portraitChar = "#", moveType = "", allowSteal = false), 13, 11);
+    throneRoom[0].addObjectToMap(new Object(char = "*", name = "Scott Dracula", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.gameBeginDialogue, portraitChar = "#", moveType = "", allowSteal = false), 14, 10);
+    throneRoom[0].addObjectToMap(new Object(char = "b", name = "Scott Dracula", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.gameBeginDialogue, portraitChar = "#", moveType = "", allowSteal = false), 14, 11);
+
 
     for (var i = 1; i < Game.gameWidth - 1; i++) { 
       for (var j = 1; j < Game.gameHeight - 1; j++) { 
