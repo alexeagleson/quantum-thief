@@ -470,6 +470,30 @@ var creativeContent = {
     "q": multiplyBy32([6, 3]),
     "r": multiplyBy32([7, 3]),
     
+    "s": multiplyBy32([0, 4]),
+    "t": multiplyBy32([1, 4]),
+    "u": multiplyBy32([2, 4]),
+    "v": multiplyBy32([3, 4]),
+    "w": multiplyBy32([4, 4]),
+    "x": multiplyBy32([5, 4]),
+    "y": multiplyBy32([6, 4]),
+    "z": multiplyBy32([7, 4]),
+    
+    "1": multiplyBy32([0, 5]),
+    "2": multiplyBy32([1, 5]),
+    "3": multiplyBy32([2, 5]),
+    "4": multiplyBy32([3, 5]),
+    "5": multiplyBy32([4, 5]),
+    "6": multiplyBy32([5, 5]),
+    "7": multiplyBy32([6, 5]),
+    "8": multiplyBy32([7, 5]),
+
+
+    
+
+    
+
+    
     "~": multiplyBy32([7, 7])
   },
 
@@ -645,11 +669,12 @@ var creativeContent = {
     var emptyCell = null;
     
     for (var i = 0; i < 3; i++) {
-      bakulaUniverse[i] = Game.createMap(creativeContent.bakulaTile, creativeContent.masterPngLegend, i, "Arena", "true", bakula = 4);
+      bakulaUniverse[i] = Game.createMap(creativeContent.bakulaTile, creativeContent.masterPngLegend, i, "Arena", "true", bakula = 1);
       
     }
     
     //LAVAWORLD starts
+    
     
     
     // put stuff on specific floors
