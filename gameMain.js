@@ -96,8 +96,9 @@ var Game = {
       iceUniverseIMG.addEventListener("click", iceUniverseTransition);
     } else if (goToUniverseName === "Fire Universe") {
       playSound("lavaMusic");
-      Game.travelTo(creativeContent.fireUniverse);
       Game.currentUniverseName = "Fire Universe";
+      var lavaUniverseIMG = show_image("https://i.imgur.com/7Bl6zwg.png", 1728, 768, "Lava Universe");
+      lavaUniverseIMG.addEventListener("click", lavaUniverseTransition);
     } else if (goToUniverseName === "Old Person Universe") {
       playSound("oldfolksMusic");
       Game.currentUniverseName = "Old Person Universe";

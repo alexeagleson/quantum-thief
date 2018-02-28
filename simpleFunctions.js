@@ -178,6 +178,15 @@ function iceUniverseTransition() {
   Game.travelTo(creativeContent.iceUniverse);
 }
 
+function lavaUniverseTransition() {
+  var totalDOM = document.getElementsByClassName("totalDiv")[0];
+  totalDOM.style.display = "block";
+  img = document.getElementById("Lava Universe");
+  img.parentNode.removeChild(img);
+  Game.travelTo(creativeContent.fireUniverse);
+}
+
+
 
 function playSound(soundName) {
   sound = document.getElementById(soundName);

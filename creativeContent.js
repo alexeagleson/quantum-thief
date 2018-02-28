@@ -393,6 +393,7 @@ YollandaDialogue1: function() {
     var score = document.createElement("h1");
     score.innerHTML = "Congratulations, you collected " + Game.stolenItems + " pieces of space loot!";
     document.body.appendChild(score);
+    showIntroInfo();
     return true;
   },
   
