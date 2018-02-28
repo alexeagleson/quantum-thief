@@ -24,7 +24,8 @@ var Game = {
     
     
     
-    
+    soundy.pause();
+    soundy.currentTime = 0.0;
     soundy.play();
     
     
