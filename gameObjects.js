@@ -175,10 +175,10 @@ var Object = function(char, name, wall, alive, clickFunction, myDialogue, portra
     
     if (this === Game.player) {
       if (Game.popStep) {
-        playSound("popStep");
+        playSound("step1");
         Game.popStep = false;
       } else {
-        playSound("squeakStep");
+        playSound("step2");
         Game.popStep = true;
       }
     }
