@@ -16,6 +16,7 @@ var Game = {
   currentUniverseName: "Throne Universe",
   gameDone: false,
   stolenItems: 0,
+  popStep: false,
 
   init: function() {
     
@@ -84,6 +85,9 @@ var Game = {
 
     if (goToUniverseName === "Ice Universe") {
       Game.currentUniverseName = "Ice Universe";
+      
+      
+      
       var iceUniverseIMG = show_image("https://i.imgur.com/E3wdGB0.png", 1728, 768, "Ice Universe");
       iceUniverseIMG.addEventListener("click", iceUniverseTransition);
     } else if (goToUniverseName === "Fire Universe") {

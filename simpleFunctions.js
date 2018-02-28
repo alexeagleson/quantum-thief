@@ -171,6 +171,7 @@ function removeControls() {
 }
 
 function iceUniverseTransition() {
+  
   var totalDOM = document.getElementsByClassName("totalDiv")[0];
   totalDOM.style.display = "block";
   img = document.getElementById("Ice Universe");

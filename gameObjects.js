@@ -174,7 +174,13 @@ var Object = function(char, name, wall, alive, clickFunction, myDialogue, portra
   this.move = function(directionArray) {
     
     if (this === Game.player) {
-      playSound("squeakStep");
+      if (Game.popStep) {
+        playSound("popStep");
+        Game.popStep = false;
+      } else {
+        playSound("squeakStep");
+        Game.popStep = true;
+      }
     }
     
     
