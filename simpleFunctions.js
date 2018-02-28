@@ -196,4 +196,7 @@ function stopAllMusic() {
   stopSound("titleMusic");
   stopSound("throneMusic");
   stopSound("iceMusic");
+  stopSound("lavaMusic");
+  stopSound("robocopMusic");
+  stopSound("oldfolksMusic");
 }

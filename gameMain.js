@@ -85,6 +85,7 @@ var Game = {
 
     stopAllMusic();
     
+    
     if (goToUniverseName === "Ice Universe") {
       playSound("iceMusic");
       Game.currentUniverseName = "Ice Universe";
@@ -95,6 +96,7 @@ var Game = {
       Game.travelTo(creativeContent.fireUniverse);
       Game.currentUniverseName = "Fire Universe";
     } else if (goToUniverseName === "Old Person Universe") {
+      playSound("oldfolksMusic");
       Game.currentUniverseName = "Old Person Universe";
       Game.travelTo(creativeContent.oldPersonUniverse);
     } else if (goToUniverseName === "Throne Universe") {
@@ -105,6 +107,7 @@ var Game = {
       Game.travelTo(creativeContent.hotdogUniverse);
       Game.currentUniverseName = "Hot Dog Universe";
     } else if (goToUniverseName === "Robocop Universe") {
+      playSound("robocopMusic");
       Game.travelTo(creativeContent.robocopUniverse);
       Game.currentUniverseName = "Robocop Universe";
     } else if (goToUniverseName === "Bakula Universe") {

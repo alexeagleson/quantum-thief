@@ -173,9 +173,9 @@ var view = {
 
 
 var showMenu = function(dialogue, object) {
-
-    
-
+  if (object.name === "Portal") {
+    playSound("portal");
+  }
   var thisMenu = new Menu(dialogue.textStrings, dialogue.responseFunction, object);
   thisMenu.display();
 }

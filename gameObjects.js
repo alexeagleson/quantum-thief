@@ -175,7 +175,13 @@ var Object = function(char, name, wall, alive, clickFunction, myDialogue, portra
     
     if (this === Game.player) {
       if (Game.popStep) {
-        playSound("step2");
+        if (Game.currentUniverseName === "Ice Universe") {
+          playSound("step3");
+        } else if (Game.currentUniverseName === "Old Person Universe") {
+          playSound("step1");
+        } else {
+          playSound("step2");
+        }
         Game.popStep = false;
       } else {
         playSound("step2");
