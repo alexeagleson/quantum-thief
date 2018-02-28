@@ -25,3 +25,8 @@
 {"name":"squish.mp3","date":"2018-02-25T21:23:52.185Z","url":"https://cdn.glitch.com/5aeb9b4d-b3ca-4b75-b543-41926a48732c%2Fsquish.mp3","type":"audio/mp3","size":44928,"thumbnail":"https://cdn.glitch.com/5aeb9b4d-b3ca-4b75-b543-41926a48732c%2Fthumbnails%2Fsquish.mp3","thumbnailWidth":210,"thumbnailHeight":210,"dominantColor":"rgba(216, 108, 178, 0.60)","uuid":"5d4jb8SDX3PMoa92"}
 {"name":"iceUniverse.mp3","date":"2018-02-27T22:49:00.439Z","url":"https://cdn.glitch.com/e3b5935e-ee9f-4955-b4c7-b8052660a6e3%2FiceUniverse.mp3","type":"audio/mp3","size":2033414,"thumbnail":"https://cdn.glitch.com/e3b5935e-ee9f-4955-b4c7-b8052660a6e3%2Fthumbnails%2FiceUniverse.mp3","thumbnailWidth":210,"thumbnailHeight":210,"dominantColor":"rgba(198, 52, 209, 0.60)","uuid":"aZtAvleTRJCqeAjy"}
 {"name":"step.mp3","date":"2018-02-27T23:01:47.404Z","url":"https://cdn.glitch.com/e3b5935e-ee9f-4955-b4c7-b8052660a6e3%2Fstep.mp3","type":"audio/mp3","size":3119,"thumbnail":"https://cdn.glitch.com/e3b5935e-ee9f-4955-b4c7-b8052660a6e3%2Fthumbnails%2Fstep.mp3","thumbnailWidth":210,"thumbnailHeight":210,"dominantColor":"rgba(198, 55, 211, 0.60)","uuid":"GEKcwgeZmSRCRPHe"}
+{"uuid":"5d4jb8SDX3PMoa92","deleted":true}
+{"uuid":"gsjkLtL87IYg0gRq","deleted":true}
+{"uuid":"2NrSm6ypXpr3hJMI","deleted":true}
+{"uuid":"GEKcwgeZmSRCRPHe","deleted":true}
+{"name":"throneMusic.mp3","date":"2018-02-28T02:52:58.223Z","url":"https://cdn.glitch.com/1e526555-015a-4353-af08-5c9dc6374277%2FthroneMusic.mp3","type":"audio/mp3","size":1873969,"thumbnail":"https://cdn.glitch.com/1e526555-015a-4353-af08-5c9dc6374277%2Fthumbnails%2FthroneMusic.mp3","thumbnailWidth":210,"thumbnailHeight":210,"dominantColor":"rgba(181, 56, 58, 0.60)","uuid":"CO3TmxqLa1CkhtFs"}

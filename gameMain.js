@@ -19,10 +19,10 @@ var Game = {
 
   init: function() {
     
-    playSound("iceMusic");
+    playSound("titleMusic");
     
     
-    stopSound("iceMusic");
+    
 
     
     
@@ -50,6 +50,8 @@ var Game = {
     
 
     Game.travelTo(creativeContent.draculaThrone);
+    stopSound("iceMusic");
+    playSound("throneMusic");
 
   },
   
