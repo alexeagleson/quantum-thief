@@ -221,6 +221,7 @@ var Game = {
   floorUp: function() {
     if (Game.currentUniverseName === "Robocop Universe" || Game.currentUniverseName === "Old Folks Universe") {
       playSound("metalLadder");
+      playSound("metalLadder");
     } else {
       playSound("woodLadder");
     }

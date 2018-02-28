@@ -172,12 +172,14 @@ var view = {
 
 
 var showMenu = function(dialogue, object) {
-  if (object.name === "Portal") {
-    playSound("portal");
-  } else if (object.name === "Scott Dracula") {
-    playSound("scottDracula");
-  } else {
-    playSound("menuOpen");
+  if (object) {
+    if (object.name === "Portal") {
+      playSound("portal");
+    } else if (object.name === "Scott Dracula") {
+      playSound("scottDracula");
+    } else {
+      playSound("menuOpen");
+    }
   }
   var thisMenu = new Menu(dialogue.textStrings, dialogue.responseFunction, object);
   thisMenu.display();
