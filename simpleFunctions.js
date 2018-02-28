@@ -182,3 +182,14 @@ function iceUniverseTransition() {
 }
 
 
+function playSound(soundName) {
+  sound = document.getElementById(soundName);
+  sound.pause();
+  sound.currentTime = 0.0;
+  sound.play();
+}
+
+function stopSound(soundName) {
+  sound = document.getElementById(soundName);
+  sound.stop();
+}

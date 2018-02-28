@@ -1,6 +1,3 @@
-soundy = document.getElementById("soundy");
-step = document.getElementById("step");
-
 
 var Game = {
   mainDisplayDiv: null,
@@ -22,11 +19,11 @@ var Game = {
 
   init: function() {
     
+    playSound("iceMusic");
     
     
-    soundy.pause();
-    soundy.currentTime = 0.0;
-    soundy.play();
+    stopSound("iceMusic");
+
     
     
     view.defineView();
