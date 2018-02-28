@@ -163,6 +163,7 @@ var Object = function(char, name, wall, alive, clickFunction, myDialogue, portra
   },
     
   this.steal = function(objectToSteal) {
+    playSound("click1");
     removeObjectFromTile(objectToSteal);
     removeObjectFromActive(objectToSteal);
     Game.resetEngine();
