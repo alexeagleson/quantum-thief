@@ -83,11 +83,11 @@ var Game = {
     }
       
 
+    stopAllMusic();
+    
     if (goToUniverseName === "Ice Universe") {
+      playSound("iceMusic");
       Game.currentUniverseName = "Ice Universe";
-      
-      
-      
       var iceUniverseIMG = show_image("https://i.imgur.com/E3wdGB0.png", 1728, 768, "Ice Universe");
       iceUniverseIMG.addEventListener("click", iceUniverseTransition);
     } else if (goToUniverseName === "Fire Universe") {
@@ -113,6 +113,8 @@ var Game = {
   },
   
   travelTo: function(worldFunction, ascii) {
+    
+    
     Game.currentUniverse = worldFunction();
     Game.CompleteMap = Game.currentUniverse[Game.currentFloor];
     if (!ascii) {

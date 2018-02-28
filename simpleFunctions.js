@@ -167,11 +167,10 @@ function removeControls() {
   img.parentNode.removeChild(img);
   setTimeout(function() { 
     Game.startGame();
-  }, 250);
+  }, 100);
 }
 
 function iceUniverseTransition() {
-  
   var totalDOM = document.getElementsByClassName("totalDiv")[0];
   totalDOM.style.display = "block";
   img = document.getElementById("Ice Universe");
@@ -191,4 +190,10 @@ function stopSound(soundName) {
   sound = document.getElementById(soundName);
   sound.pause();
   sound.currentTime = 0.0;
+}
+
+function stopAllMusic() {
+  stopSound("titleMusic");
+  stopSound("throneMusic");
+  stopSound("iceMusic");
 }
