@@ -42,7 +42,7 @@ var Game = {
    Game.player = new Object(char = "@", name = "Scarlic", wall = true, alive = true, clickFunction = null, myDialogue = null, portraitChar = "@", moveType = null);
 
     Game.travelTo(creativeContent.draculaThrone);
-    stopSound("iceMusic");
+    stopSound("titleMusic");
     playSound("throneMusic");
 
   },

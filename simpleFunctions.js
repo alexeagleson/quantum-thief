@@ -149,6 +149,7 @@ function show_image(src, width, height, alt) {
 }
 
 function removeTitle() {
+  playSound("click1");
   var totalDOM = document.getElementsByClassName("totalDiv")[0];
   totalDOM.style.display = "block";
   img = document.getElementById("Quantum Thief");
@@ -157,20 +158,16 @@ function removeTitle() {
 }
 
 
-function removeControls() {
-  var totalDOM = document.getElementsByClassName("totalDiv")[0];
-  totalDOM.style.display = "block";
-  img = document.getElementById("Controls");
-  img.parentNode.removeChild(img);
-  Game.startGame();
-}
 
 function removeControls() {
+  playSound("click1");
   var totalDOM = document.getElementsByClassName("totalDiv")[0];
   totalDOM.style.display = "block";
   img = document.getElementById("Controls");
   img.parentNode.removeChild(img);
-  Game.startGame();
+  setTimeout(function() { 
+    Game.startGame();
+  }, 250);
 }
 
 function iceUniverseTransition() {
