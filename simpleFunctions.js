@@ -200,3 +200,29 @@ function stopAllMusic() {
   stopSound("robocopMusic");
   stopSound("oldfolksMusic");
 }
+
+function showIntroInfo() {
+  var credits = document.createElement("h1");
+  credits.id = "credits";
+  credits.innerHTML = "Game Design By: Alex Eagleson, Jodie Eagleson & Aaron Dagenais."
+  document.body.appendChild(credits);
+  
+  var credits3 = document.createElement("h1");
+  credits3.id = "credits3";
+  credits3.innerHTML = "https://www.facebook.com/wolfdogstudiosgames"
+  document.body.appendChild(credits3);
+  
+  var credits2 = document.createElement("h1");
+  credits2.id = "credits2";
+  credits2.innerHTML = "Music By: Jay Man - OurMusicBox: http://www.youtube.com/c/ourmusicbox"
+  document.body.appendChild(credits2);
+}
+
+function clearIntroInfo() {
+  var credits = document.getElementById("credits");
+  document.body.removeChild(credits);
+  var credits2 = document.getElementById("credits2");
+  document.body.removeChild(credits2);
+  var credits3 = document.getElementById("credits3");
+  document.body.removeChild(credits3);
+}

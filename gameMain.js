@@ -27,10 +27,12 @@ var Game = {
     var title = show_image("https://i.imgur.com/pjIChhJ.png", 1728, 768, "Quantum Thief");
     title.addEventListener("click", removeTitle);
     
+    showIntroInfo();
+    
   },
   
   showControls: function() {
-    
+    clearIntroInfo();
     var controls = show_image("https://i.imgur.com/0L6ibqpr.png", 1728, 768, "Controls");
     controls.addEventListener("click", removeControls);
     
@@ -43,6 +45,7 @@ var Game = {
    Game.player = new Object(char = "@", name = "Scarlic", wall = true, alive = true, clickFunction = null, myDialogue = null, portraitChar = "@", moveType = null);
 
     Game.travelTo(creativeContent.draculaThrone);
+    
     stopSound("titleMusic");
     playSound("throneMusic");
 
@@ -219,10 +222,11 @@ var Game = {
   },
   
   floorUp: function() {
-    if (Game.currentUniverseName === "Robocop Universe" || Game.currentUniverseName === "Old Folks Universe") {
+    if (Game.currentUniverseName === "Robocop Universe" || Game.currentUniverseName === "Old Person Universe") {
       playSound("metalLadder");
       playSound("metalLadder");
     } else {
+      playSound("woodLadder");
       playSound("woodLadder");
     }
     removeObjectFromTile(Game.player);
@@ -244,7 +248,7 @@ var Game = {
   },
   
   floorDown: function() {
-    if (Game.currentUniverseName === "Robocop Universe" || Game.currentUniverseName === "Old Folks Universe") {
+    if (Game.currentUniverseName === "Robocop Universe" || Game.currentUniverseName === "Old Person Universe") {
       playSound("metalLadder");
     } else {
       playSound("woodLadder");

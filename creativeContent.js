@@ -635,7 +635,7 @@ var creativeContent = {
     
      // stuff here will appear on every floor
     randomFloor = (rollDie(2) - 1); emptyCell = fireUniverse[randomFloor].randomEmptyCellCoords();
-    fireUniverse[randomFloor].addObjectToMap(new Object(char = "!", name = "Fire Plant", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.defaultDialogue, portraitChar = "-"), emptyCell.x, emptyCell.y);
+    fireUniverse[randomFloor].addObjectToMap(new Object(char = "!", name = "Fire Plant", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.defaultDialogue, portraitChar = "-", moveType = "", allowSteal = true), emptyCell.x, emptyCell.y);
 
 
     // put stuff on specific floors
@@ -944,7 +944,7 @@ randomFloor = (rollDie(2) - 1); emptyCell = iceUniverse[randomFloor].randomEmpty
 iceUniverse[randomFloor].addObjectToMap(new Object(char = "j", name = "A Well-Made Pickaxe", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.PickAxeDescript, portraitChar = "-", moveType = "random", allowSteal = true), emptyCell.x, emptyCell.y);
 
 randomFloor = (rollDie(2) - 1); emptyCell = iceUniverse[randomFloor].randomEmptyCellCoords();
-iceUniverse[randomFloor].addObjectToMap(new Object(char = "!", name = "ICE BUSH!", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.ICEBUSHDescript, portraitChar = "-", moveType = "random"), emptyCell.x, emptyCell.y);
+iceUniverse[randomFloor].addObjectToMap(new Object(char = "!", name = "ICE BUSH!", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.ICEBUSHDescript, portraitChar = "-", moveType = "random", allowSteal = true), emptyCell.x, emptyCell.y);
 
 randomFloor = (rollDie(2) - 1); emptyCell = iceUniverse[randomFloor].randomEmptyCellCoords();
 iceUniverse[randomFloor].addObjectToMap(new Object(char = "h", name = "Frozen Pizza", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.FrozenPizzaDescript, portraitChar = "-", moveType = "random", allowSteal = true), emptyCell.x, emptyCell.y);
