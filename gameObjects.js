@@ -175,7 +175,7 @@ var Object = function(char, name, wall, alive, clickFunction, myDialogue, portra
     
     if (this === Game.player) {
       if (Game.popStep) {
-        playSound("step1");
+        playSound("step2");
         Game.popStep = false;
       } else {
         playSound("step2");
