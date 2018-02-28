@@ -952,8 +952,8 @@ iceUniverse[randomFloor].addObjectToMap(new Object(char = "h", name = "Frozen Pi
 randomFloor = (rollDie(2) - 1); emptyCell = iceUniverse[randomFloor].randomEmptyCellCoords();
 iceUniverse[randomFloor].addObjectToMap(new Object(char = "$", name = "Francis Bubblesmith", wall = false, alive = true, clickFunction = "talk", myDialogue = creativeContent.FrancisBubblesmithDescript, portraitChar = "c", moveType = "random"), emptyCell.x, emptyCell.y);
 
-randomFloor = (rollDie(2) - 1); emptyCell = iceUniverse[randomFloor].randomEmptyCellCoords();
-iceUniverse[randomFloor].addObjectToMap(new Object(char = "+", name = "Shira Balewa", wall = false, alive = true, clickFunction = "talk", myDialogue = creativeContent.ShiraBalewaDescript, portraitChar = "b", moveType = "random"), emptyCell.x, emptyCell.y);
+randomFloor = (rollDie(2) - 1); emptyCell = iceUniverse[0].randomEmptyCellCoords();
+iceUniverse[0].addObjectToMap(new Object(char = "+", name = "Shira Balewa", wall = false, alive = true, clickFunction = "talk", myDialogue = creativeContent.ShiraBalewaDescript, portraitChar = "b", moveType = "random"), emptyCell.x, emptyCell.y);
 
 randomFloor = (rollDie(2) - 1); emptyCell = iceUniverse[randomFloor].randomEmptyCellCoords();
 iceUniverse[randomFloor].addObjectToMap(new Object(char = "e", name = "Green Fish", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.GreenFishDescription, portraitChar = "-", moveType = "random", allowSteal = true), emptyCell.x, emptyCell.y);

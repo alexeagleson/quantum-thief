@@ -191,5 +191,6 @@ function playSound(soundName) {
 
 function stopSound(soundName) {
   sound = document.getElementById(soundName);
-  sound.stop();
+  sound.pause();
+  sound.currentTime = 0.0;
 }
