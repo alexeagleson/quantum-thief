@@ -21,11 +21,6 @@ var Game = {
     
     playSound("titleMusic");
     
-    
-    
-
-    
-    
     view.defineView();
     
     var title = show_image("https://i.imgur.com/pjIChhJ.png", 1728, 768, "Quantum Thief");
@@ -45,9 +40,6 @@ var Game = {
   startGame: function() {
     
    Game.player = new Object(char = "@", name = "Scarlic", wall = true, alive = true, clickFunction = null, myDialogue = null, portraitChar = "@", moveType = null);
-
-    
-    
 
     Game.travelTo(creativeContent.draculaThrone);
     stopSound("iceMusic");
