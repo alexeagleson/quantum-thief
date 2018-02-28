@@ -177,6 +177,16 @@ var showMenu = function(dialogue, object) {
       playSound("portal");
     } else if (object.name === "Scott Dracula") {
       playSound("scottDracula");
+    } else if (object.name.includes("Robo") || object.name.includes("robo") || object.name.includes("Rachet") || object.name.includes("Pop Cop")) {
+      var d3 = rollDie(3);
+      
+      if (d3 === 1) {
+        playSound("robot1");
+      } else if (d3 === 2) {
+        playSound("robot2");
+      } else {
+        playSound("robot3");
+      }
     } else {
       playSound("menuClose");
     }
