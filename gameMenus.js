@@ -150,6 +150,7 @@ var view = {
   },
   
   showGame: function() {
+    playSound("menuClose");
     var gameDisplayDOM = document.getElementsByClassName("gameDisplay")[0];
     var menuDisplayDOM = document.getElementsByClassName("menuDisplay")[0];
     gameDisplayDOM.style.display = "block";
@@ -158,6 +159,7 @@ var view = {
   },
   
   showMenu: function() {
+    playSound("menuOpen");
     var gameDisplayDOM = document.getElementsByClassName("gameDisplay")[0];
     var menuDisplayDOM = document.getElementsByClassName("menuDisplay")[0];
     gameDisplayDOM.style.display = "none";
@@ -171,6 +173,9 @@ var view = {
 
 
 var showMenu = function(dialogue, object) {
+
+    
+
   var thisMenu = new Menu(dialogue.textStrings, dialogue.responseFunction, object);
   thisMenu.display();
 }
