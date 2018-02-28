@@ -190,25 +190,30 @@ var Game = {
       }
     }
     
+    Game.drawPortraits(faceSet, displayChar);
     setTimeout(function() { 
-      if (!faceSet) {
-        if (Game.hudWidth < Game.hudHeight) {
-          Game.gameHUD.drawText(0, 0, ")", Game.hudWidth);
-          Game.gameHUD.drawText(0, 1, "(", Game.hudWidth);
-        } else {
-          Game.gameHUD.drawText(0, 0, "-", Game.hudWidth);
-          Game.gameHUD.drawText(1, 0, "-", Game.hudWidth);
-        }
+      Game.drawPortraits(faceSet);
+    }, 500);
+  },
+  
+  drawPortraits(faceSet, displayChar) {
+    if (!faceSet) {
+      if (Game.hudWidth < Game.hudHeight) {
+        Game.gameHUD.drawText(0, 0, ")", Game.hudWidth);
+        Game.gameHUD.drawText(0, 1, "(", Game.hudWidth);
       } else {
-        if (Game.hudWidth < Game.hudHeight) {
-          Game.gameHUD.drawText(0, 0, displayChar, Game.hudWidth);
-          Game.gameHUD.drawText(0, 1, Game.player.portraitChar, Game.hudWidth);
-        } else {
-          Game.gameHUD.drawText(0, 0, displayChar, Game.hudWidth);
-          Game.gameHUD.drawText(1, 0, Game.player.portraitChar, Game.hudWidth);
-        }
+        Game.gameHUD.drawText(0, 0, "-", Game.hudWidth);
+        Game.gameHUD.drawText(1, 0, "-", Game.hudWidth);
       }
-    }, 50);
+    } else {
+      if (Game.hudWidth < Game.hudHeight) {
+        Game.gameHUD.drawText(0, 0, displayChar, Game.hudWidth);
+        Game.gameHUD.drawText(0, 1, Game.player.portraitChar, Game.hudWidth);
+      } else {
+        Game.gameHUD.drawText(0, 0, displayChar, Game.hudWidth);
+        Game.gameHUD.drawText(1, 0, Game.player.portraitChar, Game.hudWidth);
+      }
+    }
   },
   
   floorUp: function() {

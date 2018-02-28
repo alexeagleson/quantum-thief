@@ -535,10 +535,10 @@ var creativeContent = {
     throneRoom[0].addObjectToMap(new Object(char = "!", name = "Throne", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.throneDialogue, portraitChar = "-", moveType = "", allowSteal = false), 13, 9);
 
     
-    throneRoom[0].addObjectToMap(new Object(char = ")", name = "Scott Dracula", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.gameBeginDialogue, portraitChar = "#", moveType = "", allowSteal = false), 13, 10);
-    throneRoom[0].addObjectToMap(new Object(char = "a", name = "Scott Dracula", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.gameBeginDialogue, portraitChar = "#", moveType = "", allowSteal = false), 13, 11);
-    throneRoom[0].addObjectToMap(new Object(char = "*", name = "Scott Dracula", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.gameBeginDialogue, portraitChar = "#", moveType = "", allowSteal = false), 14, 10);
-    throneRoom[0].addObjectToMap(new Object(char = "b", name = "Scott Dracula", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.gameBeginDialogue, portraitChar = "#", moveType = "", allowSteal = false), 14, 11);
+    throneRoom[0].addObjectToMap(new Object(char = ")", name = "Scott Dracula", wall = true, alive = false, clickFunction = "talk", myDialogue = creativeContent.gameBeginDialogue, portraitChar = "#", moveType = "", allowSteal = false), 13, 10);
+    throneRoom[0].addObjectToMap(new Object(char = "a", name = "Scott Dracula", wall = true, alive = false, clickFunction = "talk", myDialogue = creativeContent.gameBeginDialogue, portraitChar = "#", moveType = "", allowSteal = false), 13, 11);
+    throneRoom[0].addObjectToMap(new Object(char = "*", name = "Scott Dracula", wall = true, alive = false, clickFunction = "talk", myDialogue = creativeContent.gameBeginDialogue, portraitChar = "#", moveType = "", allowSteal = false), 14, 10);
+    throneRoom[0].addObjectToMap(new Object(char = "b", name = "Scott Dracula", wall = true, alive = false, clickFunction = "talk", myDialogue = creativeContent.gameBeginDialogue, portraitChar = "#", moveType = "", allowSteal = false), 14, 11);
 
 
     for (var i = 1; i < Game.gameWidth - 1; i++) { 
