@@ -202,6 +202,10 @@ function stopAllMusic() {
 }
 
 function showIntroInfo() {
+  var p = document.createElement("p");
+  p.id = "p";
+  document.body.appendChild(p);
+  
   var credits = document.createElement("h1");
   credits.id = "credits";
   credits.innerHTML = "Game Design By: Alex Eagleson, Jodie Eagleson & Aaron Dagenais."
@@ -214,11 +218,13 @@ function showIntroInfo() {
   
   var credits2 = document.createElement("h1");
   credits2.id = "credits2";
-  credits2.innerHTML = "Music By: Jay Man - OurMusicBox: http://www.youtube.com/c/ourmusicbox"
+  credits2.innerHTML = "Music By: Jay Man - OurMusicBox: http://www.youtube.com/c/ourmusicbox & Wolfdog Studios"
   document.body.appendChild(credits2);
 }
 
 function clearIntroInfo() {
+  var p = document.getElementById("p");
+  document.body.removeChild(p);
   var credits = document.getElementById("credits");
   document.body.removeChild(credits);
   var credits2 = document.getElementById("credits2");

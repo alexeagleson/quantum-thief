@@ -178,7 +178,7 @@ var showMenu = function(dialogue, object) {
     } else if (object.name === "Scott Dracula") {
       playSound("scottDracula");
     } else {
-      playSound("menuOpen");
+      playSound("menuClose");
     }
   }
   var thisMenu = new Menu(dialogue.textStrings, dialogue.responseFunction, object);
