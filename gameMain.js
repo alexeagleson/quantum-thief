@@ -219,6 +219,11 @@ var Game = {
   },
   
   floorUp: function() {
+    if (Game.currentUniverseName === "Robocop Universe" || Game.currentUniverseName === "Old Folks Universe") {
+      playSound("metalLadder");
+    } else {
+      playSound("woodLadder");
+    }
     removeObjectFromTile(Game.player);
     Game.currentFloor += 1;
     Game.CompleteMap = Game.currentUniverse[Game.currentFloor];
@@ -238,6 +243,11 @@ var Game = {
   },
   
   floorDown: function() {
+    if (Game.currentUniverseName === "Robocop Universe" || Game.currentUniverseName === "Old Folks Universe") {
+      playSound("metalLadder");
+    } else {
+      playSound("woodLadder");
+    }
     removeObjectFromTile(Game.player);
     Game.currentFloor -= 1;
     Game.CompleteMap = Game.currentUniverse[Game.currentFloor];

@@ -159,7 +159,6 @@ var view = {
   },
   
   showMenu: function() {
-    playSound("menuOpen");
     var gameDisplayDOM = document.getElementsByClassName("gameDisplay")[0];
     var menuDisplayDOM = document.getElementsByClassName("menuDisplay")[0];
     gameDisplayDOM.style.display = "none";
@@ -175,6 +174,10 @@ var view = {
 var showMenu = function(dialogue, object) {
   if (object.name === "Portal") {
     playSound("portal");
+  } else if (object.name === "Scott Dracula") {
+    playSound("scottDracula");
+  } else {
+    playSound("menuOpen");
   }
   var thisMenu = new Menu(dialogue.textStrings, dialogue.responseFunction, object);
   thisMenu.display();
