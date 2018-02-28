@@ -704,7 +704,7 @@ var creativeContent = {
     var randomFloor = (rollDie(2) - 1); emptyCell = null;
     
     for (var i = 0; i < 2; i++) {
-      bakulaUniverse[i] = Game.createMap(creativeContent.bakulaTile, creativeContent.masterPngLegend, i, "Rogue");
+      bakulaUniverse[i] = Game.createMap(creativeContent.bakulaTile, creativeContent.masterPngLegend, i, "Arena");
       
     }
     
