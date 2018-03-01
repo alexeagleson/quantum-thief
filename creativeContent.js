@@ -410,7 +410,7 @@ YollandaDialogue1: function() {
   // hd7fdhdf78
   gameEnd: function() {
     stopAllMusic();
-    playSound("hotdogMusic");
+    playSound("endingMusic");
     var allDiv = document.getElementsByClassName("totalDiv")[0];
     allDiv.style.display = "none";
     show_image("https://i.imgur.com/QrpX3Ps.png", 1728, 768, "A Wolfdog Studios production.  Alex Eagleson, Jodie Eagleson & Aaron Dagenais.");
