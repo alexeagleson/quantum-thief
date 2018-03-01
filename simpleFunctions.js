@@ -204,6 +204,9 @@ function oldfolksUniverseTransition() {
 
 
 function playSound(soundName) {
+  if (!Game.audioOn) {
+    return false;
+  }
   sound = document.getElementById(soundName);
   sound.pause();
   sound.currentTime = 0.0;
@@ -211,6 +214,9 @@ function playSound(soundName) {
 }
 
 function stopSound(soundName) {
+  if (!Game.audioOn) {
+    return false;
+  }
   sound = document.getElementById(soundName);
   sound.pause();
   sound.currentTime = 0.0;
@@ -224,7 +230,7 @@ function stopAllMusic() {
   stopSound("robocopMusic");
   stopSound("oldfolksMusic");
   stopSound("quantumMusic");
-  stopSound("hotdogMusic");
+  stopSound("endingMusic");
   stopSound("singHotdogMusic");
 }
 

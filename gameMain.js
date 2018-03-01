@@ -1,4 +1,3 @@
-
 var Game = {
   mainDisplayDiv: null,
   display: null,
@@ -19,6 +18,12 @@ var Game = {
   popStep: false,
 
   init: function() {
+    
+    if (confirm('Quantum Thief includes music & sound.  Press "Ok" to continue with full audio, or cancel to play with no audio.')) {
+      Game.audioOn = true;
+    } else {
+      Game.audioOn = false;
+    }
     
     playSound("titleMusic");
     
