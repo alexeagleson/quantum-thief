@@ -202,6 +202,15 @@ function oldfolksUniverseTransition() {
   Game.travelTo(creativeContent.oldPersonUniverse);
 }
 
+function bakulaUniverseTransition() {
+  var totalDOM = document.getElementsByClassName("totalDiv")[0];
+  totalDOM.style.display = "block";
+  img = document.getElementById("Bakula Universe");
+  img.parentNode.removeChild(img);
+  Game.travelTo(creativeContent.bakulaUniverse);
+}
+
+
 
 function playSound(soundName) {
   if (!Game.audioOn) {

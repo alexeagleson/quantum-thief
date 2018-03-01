@@ -19,7 +19,7 @@ var Game = {
 
   init: function() {
     
-    if (confirm('Quantum Thief includes music & sound.  Press "Ok" to continue with full audio, or cancel to play with no audio.')) {
+    if (confirm('Press "Ok" to play with audio, or "Cancel" to play without.')) {
       Game.audioOn = true;
     } else {
       Game.audioOn = false;
@@ -125,8 +125,9 @@ var Game = {
       robocopUniverseIMG.addEventListener("click", detroitUniverseTransition);
     } else if (goToUniverseName === "Bakula Universe") {
       playSound("quantumMusic");
-      Game.travelTo(creativeContent.bakulaUniverse);
       Game.currentUniverseName = "Bakula Universe";
+      var bakulaUniverseIMG = show_image("https://i.imgur.com/2ckH8aH.png", 1728, 768, "Bakula Universe");
+      bakulaUniverseIMG.addEventListener("click", bakulaUniverseTransition);
     }
   },
   
