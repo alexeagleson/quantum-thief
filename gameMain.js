@@ -115,6 +115,7 @@ var Game = {
       Game.travelTo(creativeContent.robocopUniverse);
       Game.currentUniverseName = "Robocop Universe";
     } else if (goToUniverseName === "Bakula Universe") {
+      playSound("quantumMusic");
       Game.travelTo(creativeContent.bakulaUniverse);
       Game.currentUniverseName = "Bakula Universe";
     }
