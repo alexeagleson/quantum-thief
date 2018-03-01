@@ -126,7 +126,7 @@ var Game = {
     } else if (goToUniverseName === "Bakula Universe") {
       playSound("quantumMusic");
       Game.currentUniverseName = "Bakula Universe";
-      var bakulaUniverseIMG = show_image("https://i.imgur.com/2ckH8aH.png", 1728, 768, "Bakula Universe");
+      var bakulaUniverseIMG = show_image("https://i.imgur.com/1JSclIt.png", 1728, 768, "Bakula Universe");
       bakulaUniverseIMG.addEventListener("click", bakulaUniverseTransition);
     }
   },
