@@ -186,6 +186,21 @@ function lavaUniverseTransition() {
   Game.travelTo(creativeContent.fireUniverse);
 }
 
+function detroitUniverseTransition() {
+  var totalDOM = document.getElementsByClassName("totalDiv")[0];
+  totalDOM.style.display = "block";
+  img = document.getElementById("Detroit Universe");
+  img.parentNode.removeChild(img);
+  Game.travelTo(creativeContent.robocopUniverse);
+}
+
+function oldfolksUniverseTransition() {
+  var totalDOM = document.getElementsByClassName("totalDiv")[0];
+  totalDOM.style.display = "block";
+  img = document.getElementById("Old Folks Universe");
+  img.parentNode.removeChild(img);
+  Game.travelTo(creativeContent.oldPersonUniverse);
+}
 
 
 function playSound(soundName) {
@@ -208,6 +223,9 @@ function stopAllMusic() {
   stopSound("lavaMusic");
   stopSound("robocopMusic");
   stopSound("oldfolksMusic");
+  stopSound("quantumMusic");
+  stopSound("hotdogMusic");
+  stopSound("singHotdogMusic");
 }
 
 function showIntroInfo() {

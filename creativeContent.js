@@ -409,7 +409,9 @@ YollandaDialogue1: function() {
 
   // hd7fdhdf78
   gameEnd: function() {
-    var allDiv = document.getElementsByClassName("totalDiv")[randomFloor];
+    stopAllMusic();
+    playSound("hotdogMusic");
+    var allDiv = document.getElementsByClassName("totalDiv")[0];
     allDiv.style.display = "none";
     show_image("https://i.imgur.com/QrpX3Ps.png", 1728, 768, "A Wolfdog Studios production.  Alex Eagleson, Jodie Eagleson & Aaron Dagenais.");
     var score = document.createElement("h2");
@@ -995,7 +997,7 @@ randomFloor = (rollDie(2) - 1); emptyCell = iceUniverse[randomFloor].randomEmpty
 iceUniverse[randomFloor].addObjectToMap(new Object(char = "e", name = "Green Fish", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.GreenFishDescription, portraitChar = "-", moveType = "random", allowSteal = true), emptyCell.x, emptyCell.y);
 
 randomFloor = (rollDie(2) - 1); emptyCell = iceUniverse[1].randomEmptyCellCoords();
-iceUniverse[1].addObjectToMap(new Object(char = "*", name = "Yippers The Huskydog", wall = false, alive = true, clickFunction = "talk", myDialogue = creativeContent.YippersDescription, portraitChar = "e", moveType = "random", allowSteal = true), emptyCell.x, emptyCell.y);
+iceUniverse[1].addObjectToMap(new Object(char = "*", name = "Yippers The Huskypup", wall = false, alive = true, clickFunction = "talk", myDialogue = creativeContent.YippersDescription, portraitChar = "e", moveType = "random", allowSteal = true), emptyCell.x, emptyCell.y);
   
 emptyCell = iceUniverse[1].randomEmptyCellCoords();
 iceUniverse[1].addObjectToMap(new Object(char = "?", name = "MacReady", wall = false, alive = true, clickFunction = "talk", myDialogue = creativeContent.MacReadyDescription, portraitChar = "k", moveType = "random"), emptyCell.x, emptyCell.y);

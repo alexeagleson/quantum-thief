@@ -189,6 +189,13 @@ var Object = function(char, name, wall, alive, clickFunction, myDialogue, portra
       }
     }
     
+    if (this.name.includes("Relish Dog") || this.name.includes("Ketchup Dog") || this.name.includes("Finest Mustard Dog")  || this.name.includes("All Dressed Dog")  || this.name.includes("Potted Hotdog Plant")) {
+      var d4 = rollDie(6);
+      if (d4 === 4) {
+        playSound("hotdog3");
+      }
+    }
+    
     
     var newX = this.x + directionArray[0];
     var newY = this.y + directionArray[1];

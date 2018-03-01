@@ -102,18 +102,22 @@ var Game = {
     } else if (goToUniverseName === "Old Person Universe") {
       playSound("oldfolksMusic");
       Game.currentUniverseName = "Old Person Universe";
-      Game.travelTo(creativeContent.oldPersonUniverse);
+      var oldfolksUniverseIMG = show_image("https://i.imgur.com/ITIcCsU.png", 1728, 768, "Old Folks Universe");
+      oldfolksUniverseIMG.addEventListener("click", oldfolksUniverseTransition);
     } else if (goToUniverseName === "Throne Universe") {
+      playSound("throneMusic");
       Game.gameDone = true;
       Game.travelTo(creativeContent.draculaThrone);
       Game.currentUniverseName = "Throne Universe";
     } else if (goToUniverseName === "Hot Dog Universe") {
+      playSound("singHotdogMusic");
       Game.travelTo(creativeContent.hotdogUniverse);
       Game.currentUniverseName = "Hot Dog Universe";
     } else if (goToUniverseName === "Robocop Universe") {
       playSound("robocopMusic");
-      Game.travelTo(creativeContent.robocopUniverse);
       Game.currentUniverseName = "Robocop Universe";
+      var robocopUniverseIMG = show_image("https://i.imgur.com/2ckH8aH.png", 1728, 768, "Detroit Universe");
+      robocopUniverseIMG.addEventListener("click", detroitUniverseTransition);
     } else if (goToUniverseName === "Bakula Universe") {
       playSound("quantumMusic");
       Game.travelTo(creativeContent.bakulaUniverse);

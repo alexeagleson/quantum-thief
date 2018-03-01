@@ -187,6 +187,26 @@ var showMenu = function(dialogue, object) {
       } else {
         playSound("robot3");
       }
+    } else if (object.name.includes("Relish Dog") || object.name.includes("Ketchup Dog") || object.name.includes("Finest Mustard Dog")  || object.name.includes("All Dressed Dog")  || object.name.includes("Potted Hotdog Plant")) {
+      var d4 = rollDie(4);
+      
+      if (d4 === 1) {
+        playSound("hotdog1");
+      } else if (d4 === 2) {
+        playSound("hotdog2");
+      } else if (d4 === 3) {
+        playSound("hotdog2");
+      } else {
+        playSound("hotdog4");
+      }
+    } else if (object.name.includes("Lava Person")) {
+      var d2 = rollDie(2);
+      
+      if (d2 === 1) {
+        playSound("lavaman2");
+      } else {
+        playSound("lavaman3");
+      }
     } else {
       playSound("menuClose");
     }
@@ -194,3 +214,4 @@ var showMenu = function(dialogue, object) {
   var thisMenu = new Menu(dialogue.textStrings, dialogue.responseFunction, object);
   thisMenu.display();
 }
+
