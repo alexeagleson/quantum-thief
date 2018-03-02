@@ -1081,8 +1081,8 @@ iceUniverse[randomFloor].addObjectToMap(new Object(char = ")", name = "Sweethear
     // put stuff on specific floors
 
     //Characters
- randomFloor = (rollDie(2) - 1); emptyCell = hotdogUniverse[randomFloor].randomEmptyCellCoords();
-    hotdogUniverse[randomFloor].addObjectToMap(new Object(char = "*", name = "Fry Guy", wall = false, alive = true, clickFunction = "talk", myDialogue = creativeContent.fryGuyDescript, portraitChar = "a", moveType = "random"), emptyCell.x, emptyCell.y);
+ emptyCell = hotdogUniverse[0].randomEmptyCellCoords();
+    hotdogUniverse[0].addObjectToMap(new Object(char = "*", name = "Fry Guy", wall = false, alive = true, clickFunction = "talk", myDialogue = creativeContent.fryGuyDescript, portraitChar = "a", moveType = "random"), emptyCell.x, emptyCell.y);
 
  emptyCell = hotdogUniverse[0].randomEmptyCellCoords();
     hotdogUniverse[0].addObjectToMap(new Object(char = "+", name = "Relish Dog", wall = false, alive = true, clickFunction = "talk", myDialogue = creativeContent.relishDescript, portraitChar = "f", moveType = "random"), emptyCell.x, emptyCell.y);
@@ -1093,8 +1093,8 @@ emptyCell = hotdogUniverse[0].randomEmptyCellCoords();
  emptyCell = hotdogUniverse[1].randomEmptyCellCoords();
     hotdogUniverse[1].addObjectToMap(new Object(char = "&", name = "All Dressed Dog", wall = false, alive = true, clickFunction = "talk", myDialogue = creativeContent.allDressedDescript, portraitChar = "f", moveType = "random"), emptyCell.x, emptyCell.y);
 
- randomFloor = (rollDie(2) - 1); emptyCell = hotdogUniverse[randomFloor].randomEmptyCellCoords();
-    hotdogUniverse[randomFloor].addObjectToMap(new Object(char = "?", name = "Finest Mustard Dog", wall = false, alive = true, clickFunction = "talk", myDialogue = creativeContent.fineMustardDescript, portraitChar = "f", moveType = "random"), emptyCell.x, emptyCell.y);
+ emptyCell = hotdogUniverse[0].randomEmptyCellCoords();
+    hotdogUniverse[0].addObjectToMap(new Object(char = "?", name = "Finest Mustard Dog", wall = false, alive = true, clickFunction = "talk", myDialogue = creativeContent.fineMustardDescript, portraitChar = "f", moveType = "random"), emptyCell.x, emptyCell.y);
 
 emptyCell = hotdogUniverse[1].randomEmptyCellCoords();
     hotdogUniverse[1].addObjectToMap(new Object(char = "{", name = "Hotgod", wall = false, alive = true, clickFunction = "talk", myDialogue = creativeContent.hotgodDescript, portraitChar = "x", moveType = "random"), emptyCell.x, emptyCell.y);
@@ -1131,17 +1131,17 @@ emptyCell = hotdogUniverse[1].randomEmptyCellCoords();
     randomFloor = (rollDie(2) - 1); emptyCell = hotdogUniverse[randomFloor].randomEmptyCellCoords();
     hotdogUniverse[randomFloor].addObjectToMap(new Object(char = "f", name = "Hotdog With Relish", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.hdRelishDescript, portraitChar = "-", moveType = "", allowSteal = true), emptyCell.x, emptyCell.y);
 
-    randomFloor = (rollDie(2) - 1); emptyCell = hotdogUniverse[randomFloor].randomEmptyCellCoords();
-    hotdogUniverse[randomFloor].addObjectToMap(new Object(char = "g", name = "Rotdog", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.rotdogDescript, portraitChar = "-", moveType = "", allowSteal = true), emptyCell.x, emptyCell.y);
+    emptyCell = hotdogUniverse[1].randomEmptyCellCoords();
+    hotdogUniverse[1].addObjectToMap(new Object(char = "g", name = "Rotdog", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.rotdogDescript, portraitChar = "-", moveType = "", allowSteal = true), emptyCell.x, emptyCell.y);
 
-    randomFloor = (rollDie(2) - 1); emptyCell = hotdogUniverse[randomFloor].randomEmptyCellCoords();
-    hotdogUniverse[randomFloor].addObjectToMap(new Object(char = "h", name = "Finest Yellow Mustard", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.fineYellowDescript, portraitChar = "-", moveType = "", allowSteal = true), emptyCell.x, emptyCell.y);
+      emptyCell = hotdogUniverse[0].randomEmptyCellCoords();
+    hotdogUniverse[0].addObjectToMap(new Object(char = "h", name = "Finest Yellow Mustard", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.fineYellowDescript, portraitChar = "-", moveType = "", allowSteal = true), emptyCell.x, emptyCell.y);
 
-    randomFloor = (rollDie(2) - 1); emptyCell = hotdogUniverse[randomFloor].randomEmptyCellCoords();
-    hotdogUniverse[randomFloor].addObjectToMap(new Object(char = "i", name = "Real Tomato Ketchup", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.realTomatoDescript, portraitChar = "-", moveType = "", allowSteal = true), emptyCell.x, emptyCell.y);
+     emptyCell = hotdogUniverse[0].randomEmptyCellCoords();
+    hotdogUniverse[0].addObjectToMap(new Object(char = "i", name = "Real Tomato Ketchup", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.realTomatoDescript, portraitChar = "-", moveType = "", allowSteal = true), emptyCell.x, emptyCell.y);
 
-    randomFloor = (rollDie(2) - 1); emptyCell = hotdogUniverse[randomFloor].randomEmptyCellCoords();
-    hotdogUniverse[randomFloor].addObjectToMap(new Object(char = "j", name = "The Big One", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.bigOneDescript, portraitChar = "-", moveType = "", allowSteal = true), emptyCell.x, emptyCell.y);
+     emptyCell = hotdogUniverse[1].randomEmptyCellCoords();
+    hotdogUniverse[1].addObjectToMap(new Object(char = "j", name = "The Big One", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.bigOneDescript, portraitChar = "-", moveType = "", allowSteal = true), emptyCell.x, emptyCell.y);
 
     randomFloor = (rollDie(2) - 1); emptyCell = hotdogUniverse[1].randomEmptyCellCoords();
     hotdogUniverse[1].addObjectToMap(new Object(char = "(", name = "Portal", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.portalDialogue, portraitChar = "y"), emptyCell.x, emptyCell.y);
