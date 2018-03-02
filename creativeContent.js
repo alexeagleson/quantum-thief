@@ -1533,7 +1533,7 @@ emptyCell = hotdogUniverse[1].randomEmptyCellCoords();
       responseFunction: {}
     },
   hotgodDescript: {
-      textStrings: ["Hot God", "Wh--... Something... Something has happened."],
+      textStrings: ["Hot God", "Something... Something has happened."],
       responseFunction: {}
   },
   portalDialogue: {
