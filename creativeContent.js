@@ -830,26 +830,12 @@ var creativeContent = {
     bakulaChar = bakulaCharArray[bakulaDie];
 
       randomFloor = (rollDie(2) - 1); emptyCell = bakulaUniverse[randomFloor].randomEmptyCellCoords();
-      bakulaUniverse[randomFloor].addObjectToMap(new Object(char = "$", name = "Scott Bakula", wall = true, alive = true, clickFunction = "talk", myDialogue = creativeContent.bakulaDialogue, portraitChar = "z", moveType = "random", allowSteal = false), emptyCell.x, emptyCell.y);
-      bakulaUniverse[randomFloor].addObjectToMap(new Object(char = "+", name = "Scott Bakula", wall = true, alive = true, clickFunction = "talk", myDialogue = creativeContent.bakulaDialogue, portraitChar = "<", moveType = "random", allowSteal = false), emptyCell.x, emptyCell.y);
-      bakulaUniverse[randomFloor].addObjectToMap(new Object(char = "*", name = "Scott Bakula", wall = true, alive = true, clickFunction = "talk", myDialogue = creativeContent.bakulaDialogue, portraitChar = ">", moveType = "random", allowSteal = false), emptyCell.x, emptyCell.y);
-
- 
+      bakulaUniverse[randomFloor].addObjectToMap(new Object(char = "$", name = "Scott Bakula", wall = false, alive = true, clickFunction = "talk", myDialogue = creativeContent.bakulaDialogue, portraitChar = "z", moveType = "random", allowSteal = false), emptyCell.x, emptyCell.y);
+      randomFloor = (rollDie(2) - 1); emptyCell = bakulaUniverse[randomFloor].randomEmptyCellCoords();
+      bakulaUniverse[randomFloor].addObjectToMap(new Object(char = "+", name = "Scott Bakula", wall = false, alive = true, clickFunction = "talk", myDialogue = creativeContent.bakulaDialogue, portraitChar = "<", moveType = "random", allowSteal = false), emptyCell.x, emptyCell.y);
+      randomFloor = (rollDie(2) - 1); emptyCell = bakulaUniverse[randomFloor].randomEmptyCellCoords();
+      bakulaUniverse[randomFloor].addObjectToMap(new Object(char = "*", name = "Scott Bakula", wall = false, alive = true, clickFunction = "talk", myDialogue = creativeContent.bakulaDialogue, portraitChar = ">", moveType = "random", allowSteal = false), emptyCell.x, emptyCell.y);
     }
-    
-
-    
-    //lampshade ends
-    
-
-       for (var i = 1; i < Game.gameWidth - 1; i++) { 
-      for (var j = 1; j < Game.gameHeight - 1; j++) { 
-        if (i < 5 || i > 20 || j < 5 || j > 20) {
-          bakulaUniverse[0].map[i + "," + j].wall = true;
-          bakulaUniverse[0].map[i + "," + j].char = "#";
-        }
-      }
-       }
     
     return bakulaUniverse;
   },
