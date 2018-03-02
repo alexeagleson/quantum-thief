@@ -1059,8 +1059,29 @@ emptyCell = hotdogUniverse[1].randomEmptyCellCoords();
 
 //Curios
     randomFloor = (rollDie(2) - 1); emptyCell = hotdogUniverse[randomFloor].randomEmptyCellCoords();
-    hotdogUniverse[randomFloor].addObjectToMap(new Object(char = "!", name = "Potted Hotdog Plant", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.hdPlantDescript, portraitChar = "-", moveType = "", allowSteal = true), emptyCell.x, emptyCell.y);
+    hotdogUniverse[randomFloor].addObjectToMap(new Object(char = "!", name = "Potted Hotdog Plant", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.hdPlantDescript, portraitChar = "-", moveType = "", allowSteal = false), emptyCell.x, emptyCell.y);
 
+    randomFloor = (rollDie(2) - 1); emptyCell = hotdogUniverse[randomFloor].randomEmptyCellCoords();
+    hotdogUniverse[randomFloor].addObjectToMap(new Object(char = "!", name = "Potted Hotdog Plant", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.hdPlantDescript, portraitChar = "-", moveType = "", allowSteal = false), emptyCell.x, emptyCell.y);
+
+    randomFloor = (rollDie(2) - 1); emptyCell = hotdogUniverse[randomFloor].randomEmptyCellCoords();
+    hotdogUniverse[randomFloor].addObjectToMap(new Object(char = "!", name = "Potted Hotdog Plant", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.hdPlantDescript, portraitChar = "-", moveType = "", allowSteal = false), emptyCell.x, emptyCell.y);
+
+    randomFloor = (rollDie(2) - 1); emptyCell = hotdogUniverse[randomFloor].randomEmptyCellCoords();
+    hotdogUniverse[randomFloor].addObjectToMap(new Object(char = "!", name = "Potted Hotdog Plant", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.hdPlantDescript, portraitChar = "-", moveType = "", allowSteal = false), emptyCell.x, emptyCell.y);
+
+    randomFloor = (rollDie(2) - 1); emptyCell = hotdogUniverse[randomFloor].randomEmptyCellCoords();
+    hotdogUniverse[randomFloor].addObjectToMap(new Object(char = "!", name = "Potted Hotdog Plant", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.hdPlantDescript, portraitChar = "-", moveType = "", allowSteal = false), emptyCell.x, emptyCell.y);
+
+    randomFloor = (rollDie(2) - 1); emptyCell = hotdogUniverse[randomFloor].randomEmptyCellCoords();
+    hotdogUniverse[randomFloor].addObjectToMap(new Object(char = "!", name = "Potted Hotdog Plant", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.hdPlantDescript, portraitChar = "-", moveType = "", allowSteal = false), emptyCell.x, emptyCell.y);
+
+    randomFloor = (rollDie(2) - 1); emptyCell = hotdogUniverse[randomFloor].randomEmptyCellCoords();
+    hotdogUniverse[randomFloor].addObjectToMap(new Object(char = "!", name = "Potted Hotdog Plant", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.hdPlantDescript, portraitChar = "-", moveType = "", allowSteal = false), emptyCell.x, emptyCell.y);
+
+    randomFloor = (rollDie(2) - 1); emptyCell = hotdogUniverse[randomFloor].randomEmptyCellCoords();
+    hotdogUniverse[randomFloor].addObjectToMap(new Object(char = "!", name = "Potted Hotdog Plant", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.hdPlantDescript, portraitChar = "-", moveType = "", allowSteal = false), emptyCell.x, emptyCell.y);
+    
     randomFloor = (rollDie(2) - 1); emptyCell = hotdogUniverse[randomFloor].randomEmptyCellCoords();
     hotdogUniverse[randomFloor].addObjectToMap(new Object(char = "e", name = "Hotdog With Ketchup", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.hdKetchupDescript, portraitChar = "-", moveType = "", allowSteal = true), emptyCell.x, emptyCell.y);
 
@@ -1500,7 +1521,7 @@ emptyCell = hotdogUniverse[1].randomEmptyCellCoords();
       responseFunction: {}
     },
   ketchupDescript: {
-      textStrings: ["Ketchup Dog", "Don't listen to Relish Dog. He's just trying to sell you some fake garbage.", "**thinks to himself**""Heh heh... those Pot Dogs are mine! All mine!"],
+      textStrings: ["Ketchup Dog", "Don't listen to Relish Dog. He's just trying to sell you some fake garbage. Hotdog plants are a dime a dozen.", "**thinks to himself**", "Heh heh... those Pot Dogs are mine! All mine! Muah ha ha ha"],
       responseFunction: {}
     },
   allDressedDescript: {
