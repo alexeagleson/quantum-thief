@@ -116,8 +116,9 @@ var Game = {
       Game.currentUniverseName = "Throne Universe";
     } else if (goToUniverseName === "Hot Dog Universe") {
       playSound("singHotdogMusic");
-      Game.travelTo(creativeContent.hotdogUniverse);
       Game.currentUniverseName = "Hot Dog Universe";
+      var hotdogUniverseIMG = show_image("https://i.imgur.com/tKJEwNd.png", 1728, 768, "Hot Dog Universe");
+      hotdogUniverseIMG.addEventListener("click", hotdogUniverseTransition);
     } else if (goToUniverseName === "Robocop Universe") {
       playSound("robocopMusic");
       Game.currentUniverseName = "Robocop Universe";

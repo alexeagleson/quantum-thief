@@ -210,6 +210,13 @@ function bakulaUniverseTransition() {
   Game.travelTo(creativeContent.bakulaUniverse);
 }
 
+function hotdogUniverseTransition() {
+  var totalDOM = document.getElementsByClassName("totalDiv")[0];
+  totalDOM.style.display = "block";
+  img = document.getElementById("Hot Dog Universe");
+  img.parentNode.removeChild(img);
+  Game.travelTo(creativeContent.hotdogUniverse);
+}
 
 
 function playSound(soundName) {
