@@ -544,12 +544,6 @@ var creativeContent = {
     "7": multiplyBy32([6, 5]),
     "8": multiplyBy32([7, 5]),
 
-
-    
-
-    
-
-    
     "~": multiplyBy32([7, 7])
   },
 
@@ -579,14 +573,14 @@ var creativeContent = {
     }
 
     for (var i = 5; i < Game.gameHeight - 3; i++) { 
-      throneRoom[0].addObjectToMap(new Object(char = "f", name = "Healthy Fern", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.fernDescript, portraitChar = "-"), 5, i);
-      throneRoom[0].addObjectToMap(new Object(char = "f", name = "Healthy Fern", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.fernDescript, portraitChar = "-"), 20, i);
+      throneRoom[0].addObjectToMap(new Object(char = "f", name = "Healthy Fern", wall = true, alive = false, clickFunction = "talk", myDialogue = creativeContent.fernDescript, portraitChar = "-"), 5, i);
+      throneRoom[0].addObjectToMap(new Object(char = "f", name = "Healthy Fern", wall = true, alive = false, clickFunction = "talk", myDialogue = creativeContent.fernDescript, portraitChar = "-"), 20, i);
     }
   
 	
-    throneRoom[0].addObjectToMap(new Object(char = "g", name = "Vision Tree", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.visionTreeDescript, portraitChar = "-"), 18, 20);
-    throneRoom[0].addObjectToMap(new Object(char = "g", name = "Vision Tree", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.visionTreeDescript, portraitChar = "-"), 7, 20);
-    throneRoom[0].addObjectToMap(new Object(char = "h", name = "Fig Tree of Foresight", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.figTreeDescript, portraitChar = "-"), 19, 20);
+    throneRoom[0].addObjectToMap(new Object(char = "g", name = "Vision Tree", wall = true, alive = false, clickFunction = "talk", myDialogue = creativeContent.visionTreeDescript, portraitChar = "-"), 18, 20);
+    throneRoom[0].addObjectToMap(new Object(char = "g", name = "Vision Tree", wall = true, alive = false, clickFunction = "talk", myDialogue = creativeContent.visionTreeDescript, portraitChar = "-"), 7, 20);
+    throneRoom[0].addObjectToMap(new Object(char = "h", name = "Fig Tree of Foresight", wall = true, alive = false, clickFunction = "talk", myDialogue = creativeContent.figTreeDescript, portraitChar = "-"), 19, 20);
     
     if (!Game.gameDone) {
       throneRoom[0].addObjectToMap(new Object(char = "i", name = "Mystical Blood Magic Chrysanthemum", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.bloodMagicDescript, portraitChar = "-"), 6, 20);
@@ -599,7 +593,7 @@ var creativeContent = {
     throneRoom[0].addObjectToMap(new Object(char = "e", name = "Pile of Booty", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.bootyDescript, portraitChar = "-"), 15, 8);
   
     throneRoom[0].addObjectToMap(new Object(char = "j", name = "Ornate Chest", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.ornateChestDescript, portraitChar = "-"), 14, 9);
-    throneRoom[0].addObjectToMap(new Object(char = "k", name = "Enhanced Ornate Chest", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.enhancedChestDescript, portraitChar = "-"), 12, 9);
+    throneRoom[0].addObjectToMap(new Object(char = "k", name = "Enchanted Ornate Chest", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.enhancedChestDescript, portraitChar = "-"), 12, 9);
 
     throneRoom[0].addObjectToMap(new Object(char = "l", name = "Sparkling Rubies", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.rubiesDescript, portraitChar = "-"), 11, 7);
     throneRoom[0].addObjectToMap(new Object(char = "l", name = "Sparkling Rubies", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.rubiesDescript, portraitChar = "-"), 12, 7);

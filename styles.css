@@ -1,7 +1,16 @@
 h1 {
   color: orange;
   text-align: center;
-  font-size:125%;
+  font-size:100%;
+  margin: 1px;
+  padding: 1px;
+  font-family: "Trebuchet MS"
+}
+
+h2 {
+  color: orange;
+  text-align: center;
+  font-size:175%;
   margin: 1px;
   padding: 1px;
   font-family: "Trebuchet MS"
