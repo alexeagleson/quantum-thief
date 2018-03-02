@@ -661,8 +661,29 @@ var creativeContent = {
     
      // stuff here will appear on every floor
     randomFloor = (rollDie(2) - 1); emptyCell = fireUniverse[randomFloor].randomEmptyCellCoords();
-    fireUniverse[randomFloor].addObjectToMap(new Object(char = "!", name = "Fire Plant", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.defaultDialogue, portraitChar = "-", moveType = "", allowSteal = true), emptyCell.x, emptyCell.y);
+    fireUniverse[randomFloor].addObjectToMap(new Object(char = "!", name = "Potted Fire Plant", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.fireBushDialogue, portraitChar = "-", moveType = "", allowSteal = false), emptyCell.x, emptyCell.y);
 
+     randomFloor = (rollDie(2) - 1); emptyCell = fireUniverse[randomFloor].randomEmptyCellCoords();
+    fireUniverse[randomFloor].addObjectToMap(new Object(char = "!", name = "Potted Fire Plant", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.fireBushDialogue, portraitChar = "-", moveType = "", allowSteal = false), emptyCell.x, emptyCell.y);
+
+
+     randomFloor = (rollDie(2) - 1); emptyCell = fireUniverse[randomFloor].randomEmptyCellCoords();
+    fireUniverse[randomFloor].addObjectToMap(new Object(char = "!", name = "Potted Fire Plant", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.fireBushDialogue, portraitChar = "-", moveType = "", allowSteal = false), emptyCell.x, emptyCell.y);
+
+
+     randomFloor = (rollDie(2) - 1); emptyCell = fireUniverse[randomFloor].randomEmptyCellCoords();
+    fireUniverse[randomFloor].addObjectToMap(new Object(char = "!", name = "Potted Fire Plant", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.fireBushDialogue, portraitChar = "-", moveType = "", allowSteal = false), emptyCell.x, emptyCell.y);
+
+
+     randomFloor = (rollDie(2) - 1); emptyCell = fireUniverse[randomFloor].randomEmptyCellCoords();
+    fireUniverse[randomFloor].addObjectToMap(new Object(char = "!", name = "Potted Fire Plant", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.fireBushDialogue, portraitChar = "-", moveType = "", allowSteal = false), emptyCell.x, emptyCell.y);
+
+
+     randomFloor = (rollDie(2) - 1); emptyCell = fireUniverse[randomFloor].randomEmptyCellCoords();
+    fireUniverse[randomFloor].addObjectToMap(new Object(char = "!", name = "Potted Fire Plant", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.fireBushDialogue, portraitChar = "-", moveType = "", allowSteal = false), emptyCell.x, emptyCell.y);
+
+    randomFloor = (rollDie(2) - 1); emptyCell = fireUniverse[randomFloor].randomEmptyCellCoords();
+    fireUniverse[randomFloor].addObjectToMap(new Object(char = "!", name = "Potted Fire Plant", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.fireBushDialogue, portraitChar = "-", moveType = "", allowSteal = false), emptyCell.x, emptyCell.y);
 
     // put stuff on specific floors
     randomFloor = (rollDie(2) - 1); emptyCell = fireUniverse[randomFloor].randomEmptyCellCoords();
@@ -715,7 +736,6 @@ var creativeContent = {
     
     randomFloor = (rollDie(2) - 1); emptyCell = fireUniverse[randomFloor].randomEmptyCellCoords();
     fireUniverse[randomFloor].addObjectToMap(new Object(char = "j", name = "Yum Bar", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.YumBarDescription, portraitChar = "-", moveType = "", allowSteal = true), emptyCell.x, emptyCell.y);
-    
     
     randomFloor = (rollDie(2) - 1); emptyCell = fireUniverse[1].randomEmptyCellCoords();
     fireUniverse[1].addObjectToMap(new Object(char = "(", name = "Portal", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.portalDialogue, portraitChar = "y"), emptyCell.x, emptyCell.y);
@@ -981,7 +1001,25 @@ randomFloor = (rollDie(2) - 1); emptyCell = iceUniverse[randomFloor].randomEmpty
 iceUniverse[randomFloor].addObjectToMap(new Object(char = "j", name = "A Well-Made Pickaxe", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.PickAxeDescript, portraitChar = "-", moveType = "random", allowSteal = true), emptyCell.x, emptyCell.y);
 
 randomFloor = (rollDie(2) - 1); emptyCell = iceUniverse[randomFloor].randomEmptyCellCoords();
-iceUniverse[randomFloor].addObjectToMap(new Object(char = "!", name = "ICE BUSH!", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.ICEBUSHDescript, portraitChar = "-", moveType = "random", allowSteal = true), emptyCell.x, emptyCell.y);
+iceUniverse[randomFloor].addObjectToMap(new Object(char = "!", name = "ICE BUSH!", wall = true, alive = false, clickFunction = "talk", myDialogue = creativeContent.ICEBUSHDescript, portraitChar = "-", moveType = "random", allowSteal = false), emptyCell.x, emptyCell.y);
+
+randomFloor = (rollDie(2) - 1); emptyCell = iceUniverse[randomFloor].randomEmptyCellCoords();
+iceUniverse[randomFloor].addObjectToMap(new Object(char = "!", name = "ICE BUSH!", wall = true, alive = false, clickFunction = "talk", myDialogue = creativeContent.ICEBUSHDescript, portraitChar = "-", moveType = "random", allowSteal = false), emptyCell.x, emptyCell.y);
+
+randomFloor = (rollDie(2) - 1); emptyCell = iceUniverse[randomFloor].randomEmptyCellCoords();
+iceUniverse[randomFloor].addObjectToMap(new Object(char = "!", name = "ICE BUSH!", wall = true, alive = false, clickFunction = "talk", myDialogue = creativeContent.ICEBUSHDescript, portraitChar = "-", moveType = "random", allowSteal = false), emptyCell.x, emptyCell.y);
+
+randomFloor = (rollDie(2) - 1); emptyCell = iceUniverse[randomFloor].randomEmptyCellCoords();
+iceUniverse[randomFloor].addObjectToMap(new Object(char = "!", name = "ICE BUSH!", wall = true, alive = false, clickFunction = "talk", myDialogue = creativeContent.ICEBUSHDescript, portraitChar = "-", moveType = "random", allowSteal = false), emptyCell.x, emptyCell.y);
+
+randomFloor = (rollDie(2) - 1); emptyCell = iceUniverse[randomFloor].randomEmptyCellCoords();
+iceUniverse[randomFloor].addObjectToMap(new Object(char = "!", name = "ICE BUSH!", wall = true, alive = false, clickFunction = "talk", myDialogue = creativeContent.ICEBUSHDescript, portraitChar = "-", moveType = "random", allowSteal = false), emptyCell.x, emptyCell.y);
+
+randomFloor = (rollDie(2) - 1); emptyCell = iceUniverse[randomFloor].randomEmptyCellCoords();
+iceUniverse[randomFloor].addObjectToMap(new Object(char = "!", name = "ICE BUSH!", wall = true, alive = false, clickFunction = "talk", myDialogue = creativeContent.ICEBUSHDescript, portraitChar = "-", moveType = "random", allowSteal = false), emptyCell.x, emptyCell.y);
+
+randomFloor = (rollDie(2) - 1); emptyCell = iceUniverse[randomFloor].randomEmptyCellCoords();
+iceUniverse[randomFloor].addObjectToMap(new Object(char = "!", name = "ICE BUSH!", wall = true, alive = false, clickFunction = "talk", myDialogue = creativeContent.ICEBUSHDescript, portraitChar = "-", moveType = "random", allowSteal = false), emptyCell.x, emptyCell.y);
 
 randomFloor = (rollDie(2) - 1); emptyCell = iceUniverse[randomFloor].randomEmptyCellCoords();
 iceUniverse[randomFloor].addObjectToMap(new Object(char = "h", name = "Frozen Pizza", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.FrozenPizzaDescript, portraitChar = "-", moveType = "random", allowSteal = true), emptyCell.x, emptyCell.y);
@@ -1167,8 +1205,8 @@ emptyCell = hotdogUniverse[1].randomEmptyCellCoords();
       responseFunction: {}
   },     
   
-  defaultDialogue: {
-      textStrings: ["Fire Plant", "I don't know what this is!"],
+  fireBushDialogue: {
+      textStrings: ["Potted Fire Plant", "I don't know what this is! A plant, yes. In a pot, sure. But instead of leaves there's just a bunch of hot fire sparking all over the place. Have to pass on this treasure."],
       responseFunction: {}
   }, 
   
@@ -1580,7 +1618,7 @@ emptyCell = hotdogUniverse[1].randomEmptyCellCoords();
       responseFunction: {"{Errr....}": menuResponse.bakulaDialogue5}
   },
   bakulaDialogue5: {
-    textStrings: ["Scott Bakula", " . . . Alright, that's a wrap! Good shooting today."],
+    textStrings: ["Scott Bakula", "Alright, that's a wrap! Good shooting today."],
     responseFunction: {}
   } 
 }
