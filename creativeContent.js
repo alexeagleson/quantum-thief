@@ -441,7 +441,7 @@ YollandaDialogue1: function() {
 
 var creativeContent = {
 //lampshade updated allFacePortraits, bakulaTile
-  allFacePortraits:"https://i.imgur.com/2mK4fjp.png",
+  allFacePortraits:"https://i.imgur.com/8YLC8Fx.png",
   defaultBlackHUD:"https://i.imgur.com/VQ2sSG2.png",
   
   throneTile: "https://i.imgur.com/0ezvL0O.png",
@@ -490,7 +490,24 @@ var creativeContent = {
     
     ")": multiplyBy12(multiplyBy32([0, 2])),
     "(": multiplyBy12(multiplyBy32([0, 3])),
-    "*": multiplyBy12(multiplyBy32([1, 2]))
+    "*": multiplyBy12(multiplyBy32([1, 2])),
+    
+    "N": multiplyBy12(multiplyBy32([0, 2])),
+    "*": multiplyBy12(multiplyBy32([1, 2])),
+    "p": multiplyBy12(multiplyBy32([2, 2])),
+    "q": multiplyBy12(multiplyBy32([3, 2])),
+    "r": multiplyBy12(multiplyBy32([4, 2])),
+    "s": multiplyBy12(multiplyBy32([5, 2])),
+    "t": multiplyBy12(multiplyBy32([6, 2])),
+    "u": multiplyBy12(multiplyBy32([7, 2])),
+    "v": multiplyBy12(multiplyBy32([8, 2])),
+    "w": multiplyBy12(multiplyBy32([9, 2])),
+    "x": multiplyBy12(multiplyBy32([10, 2])),
+    "y": multiplyBy12(multiplyBy32([11, 2])),
+    "z": multiplyBy12(multiplyBy32([12, 2])),
+    "<": multiplyBy12(multiplyBy32([13, 2])),
+    ">": multiplyBy12(multiplyBy32([14, 2])),
+    "=": multiplyBy12(multiplyBy32([15, 2])),
     
     
   },
