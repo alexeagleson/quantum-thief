@@ -31,6 +31,11 @@ var menuResponse = {
     return false;
   },
  
+  bakulaDialogue5: function() {
+    setTimeout(function() { showMenu(creativeContent.bakulaDialogue5); }, 10);
+    return false;
+  },
+  
   throneDialogue: function() {
     setTimeout(function() { showMenu(creativeContent.throneDialogue); }, 10);
     return false;
@@ -583,7 +588,7 @@ var creativeContent = {
     throneRoom[0].addObjectToMap(new Object(char = "h", name = "Fig Tree of Foresight", wall = true, alive = false, clickFunction = "talk", myDialogue = creativeContent.figTreeDescript, portraitChar = "-"), 19, 20);
     
     if (!Game.gameDone) {
-      throneRoom[0].addObjectToMap(new Object(char = "i", name = "Mystical Blood Magic Chrysanthemum", wall = false, alive = false, clickFunction = "talk", myDialogue = creativeContent.bloodMagicDescript, portraitChar = "-"), 6, 20);
+      throneRoom[0].addObjectToMap(new Object(char = "i", name = "Mystical Blood Magic Chrysanthemum", wall = true, alive = false, clickFunction = "talk", myDialogue = creativeContent.bloodMagicDescript, portraitChar = "-"), 6, 20);
     }
     
     throneRoom[0].addObjectToMap(new Object(char = "e", name = "Pile of Booty", wall = true, alive = false, clickFunction = "talk", myDialogue = creativeContent.bootyDescript, portraitChar = "-"), 11, 8);
@@ -788,9 +793,9 @@ var creativeContent = {
     bakulaChar = bakulaCharArray[bakulaDie];
 
       randomFloor = (rollDie(2) - 1); emptyCell = bakulaUniverse[randomFloor].randomEmptyCellCoords();
-      bakulaUniverse[randomFloor].addObjectToMap(new Object(char = "$", name = "Scott Bakula", wall = false, alive = true, clickFunction = "talk", myDialogue = creativeContent.bakulaDialogue, portraitChar = "z", moveType = "random", allowSteal = false), emptyCell.x, emptyCell.y);
-      bakulaUniverse[randomFloor].addObjectToMap(new Object(char = "+", name = "Scott Bakula", wall = false, alive = true, clickFunction = "talk", myDialogue = creativeContent.bakulaDialogue, portraitChar = "<", moveType = "random", allowSteal = false), emptyCell.x, emptyCell.y);
-      bakulaUniverse[randomFloor].addObjectToMap(new Object(char = "*", name = "Scott Bakula", wall = false, alive = true, clickFunction = "talk", myDialogue = creativeContent.bakulaDialogue, portraitChar = ">", moveType = "random", allowSteal = false), emptyCell.x, emptyCell.y);
+      bakulaUniverse[randomFloor].addObjectToMap(new Object(char = "$", name = "Scott Bakula", wall = true, alive = true, clickFunction = "talk", myDialogue = creativeContent.bakulaDialogue, portraitChar = "z", moveType = "random", allowSteal = false), emptyCell.x, emptyCell.y);
+      bakulaUniverse[randomFloor].addObjectToMap(new Object(char = "+", name = "Scott Bakula", wall = true, alive = true, clickFunction = "talk", myDialogue = creativeContent.bakulaDialogue, portraitChar = "<", moveType = "random", allowSteal = false), emptyCell.x, emptyCell.y);
+      bakulaUniverse[randomFloor].addObjectToMap(new Object(char = "*", name = "Scott Bakula", wall = true, alive = true, clickFunction = "talk", myDialogue = creativeContent.bakulaDialogue, portraitChar = ">", moveType = "random", allowSteal = false), emptyCell.x, emptyCell.y);
 
  
     }
@@ -1525,11 +1530,11 @@ emptyCell = hotdogUniverse[1].randomEmptyCellCoords();
       responseFunction: {}
     },
   allDressedDescript: {
-      textStrings: ["All Dressed", "Don't listen to Ketchup Dog. He does things for the wrong reasons. Some day, Hotdoggod will come and he'll get his comeuppance.", "{Thanks for the advice}"],
+      textStrings: ["All Dressed", "Don't listen to Ketchup Dog. He does things for the wrong reasons. Some day, Hotdog God will come and he'll get his comeuppance.", "{Thanks for the advice}"],
      responseFunction: {"{Thanks for the advice}": menuResponse.allDressedDescript2}
     },
   fineMustardDescript: {
-      textStrings: ["Finest Mustard Dog", "Hotdog Planters are so tired and passé. I have my eyes set on 'The Big One'. But, of course, you've never heard of it."],
+      textStrings: ["Finest Mustard Dog", "Hotdog Planters are so passé. I have my eyes set on 'The Big One'. But, of course, you've never heard of it."],
       responseFunction: {}
     },
   hotgodDescript: {
@@ -1571,9 +1576,13 @@ emptyCell = hotdogUniverse[1].randomEmptyCellCoords();
   },
     
   bakulaDialogue4: {
-      textStrings: ["Scott Bakula", "And so I, Dr. Sam Beckett, find myself striving to put right what once went wrong... hoping each time that my next leap will be the leap home. . . . . . . . . . . . . . . . ALRIGHT GUYS, THAT'S A WRAP! Good shooting today."],
-      responseFunction: {}
-  }   
+      textStrings: ["Scott Bakula", "And so I, Dr. Sam Beckett, find myself striving to put right what once went wrong... hoping each time that my next leap will be the leap home. . . ", "{Errr....}"],
+      responseFunction: {"{Errr....}": menuResponse.bakulaDialogue5}
+  },
+  bakulaDialogue5: {
+    textStrings: ["Scott Bakula", " . . . Alright, that's a wrap! Good shooting today."],
+    responseFunction: {}
+  } 
 }
 
 
